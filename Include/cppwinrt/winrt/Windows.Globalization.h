@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.System.2.h"
@@ -1925,6 +1925,34 @@ template <typename D> hstring consume_Windows_Globalization_ICurrencyIdentifiers
     return value;
 }
 
+template <typename D> hstring consume_Windows_Globalization_ICurrencyIdentifiersStatics3<D>::MRU() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Globalization::ICurrencyIdentifiersStatics3)->get_MRU(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring consume_Windows_Globalization_ICurrencyIdentifiersStatics3<D>::SSP() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Globalization::ICurrencyIdentifiersStatics3)->get_SSP(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring consume_Windows_Globalization_ICurrencyIdentifiersStatics3<D>::STN() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Globalization::ICurrencyIdentifiersStatics3)->get_STN(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring consume_Windows_Globalization_ICurrencyIdentifiersStatics3<D>::VES() const
+{
+    hstring value{};
+    check_hresult(WINRT_SHIM(Windows::Globalization::ICurrencyIdentifiersStatics3)->get_VES(put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring consume_Windows_Globalization_IGeographicRegion<D>::Code() const
 {
     hstring value{};
@@ -2458,5383 +2486,4725 @@ template <typename D> hstring consume_Windows_Globalization_ITimeZoneOnCalendar<
 template <typename D>
 struct produce<D, Windows::Globalization::IApplicationLanguagesStatics> : produce_base<D, Windows::Globalization::IApplicationLanguagesStatics>
 {
-    HRESULT __stdcall get_PrimaryLanguageOverride(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PrimaryLanguageOverride(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryLanguageOverride, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PrimaryLanguageOverride());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_PrimaryLanguageOverride(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_PrimaryLanguageOverride(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PrimaryLanguageOverride, WINRT_WRAP(void), hstring const&);
             this->shim().PrimaryLanguageOverride(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ManifestLanguages(void** value) noexcept final
+    int32_t WINRT_CALL get_ManifestLanguages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ManifestLanguages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().ManifestLanguages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IApplicationLanguagesStatics2> : produce_base<D, Windows::Globalization::IApplicationLanguagesStatics2>
 {
-    HRESULT __stdcall GetLanguagesForUser(void* user, void** value) noexcept final
+    int32_t WINRT_CALL GetLanguagesForUser(void* user, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetLanguagesForUser, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>), Windows::System::User const&);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().GetLanguagesForUser(*reinterpret_cast<Windows::System::User const*>(&user)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendar> : produce_base<D, Windows::Globalization::ICalendar>
 {
-    HRESULT __stdcall Clone(void** value) noexcept final
+    int32_t WINRT_CALL Clone(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Clone, WINRT_WRAP(Windows::Globalization::Calendar));
             *value = detach_from<Windows::Globalization::Calendar>(this->shim().Clone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetToMin() noexcept final
+    int32_t WINRT_CALL SetToMin() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetToMin, WINRT_WRAP(void));
             this->shim().SetToMin();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetToMax() noexcept final
+    int32_t WINRT_CALL SetToMax() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetToMax, WINRT_WRAP(void));
             this->shim().SetToMax();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Languages(void** value) noexcept final
+    int32_t WINRT_CALL get_Languages(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Languages, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().Languages());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumeralSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NumeralSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NumeralSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_NumeralSystem(HSTRING value) noexcept final
+    int32_t WINRT_CALL put_NumeralSystem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumeralSystem, WINRT_WRAP(void), hstring const&);
             this->shim().NumeralSystem(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetCalendarSystem(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetCalendarSystem(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetCalendarSystem, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetCalendarSystem());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeCalendarSystem(HSTRING value) noexcept final
+    int32_t WINRT_CALL ChangeCalendarSystem(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeCalendarSystem, WINRT_WRAP(void), hstring const&);
             this->shim().ChangeCalendarSystem(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetClock(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetClock(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetClock, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetClock());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeClock(HSTRING value) noexcept final
+    int32_t WINRT_CALL ChangeClock(void* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeClock, WINRT_WRAP(void), hstring const&);
             this->shim().ChangeClock(*reinterpret_cast<hstring const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDateTime(Windows::Foundation::DateTime* result) noexcept final
+    int32_t WINRT_CALL GetDateTime(Windows::Foundation::DateTime* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDateTime, WINRT_WRAP(Windows::Foundation::DateTime));
             *result = detach_from<Windows::Foundation::DateTime>(this->shim().GetDateTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetDateTime(Windows::Foundation::DateTime value) noexcept final
+    int32_t WINRT_CALL SetDateTime(Windows::Foundation::DateTime value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetDateTime, WINRT_WRAP(void), Windows::Foundation::DateTime const&);
             this->shim().SetDateTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&value));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SetToNow() noexcept final
+    int32_t WINRT_CALL SetToNow() noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetToNow, WINRT_WRAP(void));
             this->shim().SetToNow();
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstEra(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstEra(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstEra, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstEra());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastEra(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastEra(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastEra, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastEra());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfEras(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfEras(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfEras, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfEras());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Era(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Era(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Era, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Era());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Era(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Era(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Era, WINRT_WRAP(void), int32_t);
             this->shim().Era(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddEras(int32_t eras) noexcept final
+    int32_t WINRT_CALL AddEras(int32_t eras) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddEras, WINRT_WRAP(void), int32_t);
             this->shim().AddEras(eras);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EraAsFullString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL EraAsFullString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EraAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().EraAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall EraAsString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL EraAsString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EraAsString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().EraAsString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstYearInThisEra(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstYearInThisEra(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstYearInThisEra, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstYearInThisEra());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastYearInThisEra(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastYearInThisEra(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastYearInThisEra, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastYearInThisEra());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfYearsInThisEra(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfYearsInThisEra(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfYearsInThisEra, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfYearsInThisEra());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Year(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Year(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Year, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Year());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Year(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Year(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Year, WINRT_WRAP(void), int32_t);
             this->shim().Year(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddYears(int32_t years) noexcept final
+    int32_t WINRT_CALL AddYears(int32_t years) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddYears, WINRT_WRAP(void), int32_t);
             this->shim().AddYears(years);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall YearAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL YearAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YearAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().YearAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall YearAsTruncatedString(int32_t remainingDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL YearAsTruncatedString(int32_t remainingDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YearAsTruncatedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().YearAsTruncatedString(remainingDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall YearAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL YearAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YearAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().YearAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstMonthInThisYear(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstMonthInThisYear(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstMonthInThisYear, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstMonthInThisYear());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastMonthInThisYear(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastMonthInThisYear(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastMonthInThisYear, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastMonthInThisYear());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfMonthsInThisYear(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfMonthsInThisYear(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfMonthsInThisYear, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfMonthsInThisYear());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Month(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Month(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Month, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Month());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Month(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Month(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Month, WINRT_WRAP(void), int32_t);
             this->shim().Month(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddMonths(int32_t months) noexcept final
+    int32_t WINRT_CALL AddMonths(int32_t months) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddMonths, WINRT_WRAP(void), int32_t);
             this->shim().AddMonths(months);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsFullString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsFullString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().MonthAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().MonthAsString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsFullSoloString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsFullSoloString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsSoloString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().MonthAsSoloString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsSoloString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsSoloString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsSoloString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().MonthAsSoloString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsNumericString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsNumericString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsNumericString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().MonthAsNumericString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MonthAsPaddedNumericString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL MonthAsPaddedNumericString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MonthAsPaddedNumericString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().MonthAsPaddedNumericString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddWeeks(int32_t weeks) noexcept final
+    int32_t WINRT_CALL AddWeeks(int32_t weeks) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddWeeks, WINRT_WRAP(void), int32_t);
             this->shim().AddWeeks(weeks);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstDayInThisMonth(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstDayInThisMonth(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstDayInThisMonth, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstDayInThisMonth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastDayInThisMonth(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastDayInThisMonth(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastDayInThisMonth, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastDayInThisMonth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfDaysInThisMonth(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfDaysInThisMonth(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfDaysInThisMonth, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfDaysInThisMonth());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Day(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Day(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Day, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Day());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Day(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Day(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Day, WINRT_WRAP(void), int32_t);
             this->shim().Day(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddDays(int32_t days) noexcept final
+    int32_t WINRT_CALL AddDays(int32_t days) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddDays, WINRT_WRAP(void), int32_t);
             this->shim().AddDays(days);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().DayAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().DayAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DayOfWeek(Windows::Globalization::DayOfWeek* value) noexcept final
+    int32_t WINRT_CALL get_DayOfWeek(Windows::Globalization::DayOfWeek* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayOfWeek, WINRT_WRAP(Windows::Globalization::DayOfWeek));
             *value = detach_from<Windows::Globalization::DayOfWeek>(this->shim().DayOfWeek());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayOfWeekAsFullString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayOfWeekAsFullString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayOfWeekAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().DayOfWeekAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayOfWeekAsString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayOfWeekAsString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayOfWeekAsString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().DayOfWeekAsString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayOfWeekAsFullSoloString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayOfWeekAsFullSoloString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayOfWeekAsSoloString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().DayOfWeekAsSoloString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall DayOfWeekAsSoloString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL DayOfWeekAsSoloString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DayOfWeekAsSoloString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().DayOfWeekAsSoloString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstPeriodInThisDay(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstPeriodInThisDay(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstPeriodInThisDay, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstPeriodInThisDay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastPeriodInThisDay(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastPeriodInThisDay(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastPeriodInThisDay, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastPeriodInThisDay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfPeriodsInThisDay(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfPeriodsInThisDay(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfPeriodsInThisDay, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfPeriodsInThisDay());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Period(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Period(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Period());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Period(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Period(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Period, WINRT_WRAP(void), int32_t);
             this->shim().Period(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddPeriods(int32_t periods) noexcept final
+    int32_t WINRT_CALL AddPeriods(int32_t periods) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddPeriods, WINRT_WRAP(void), int32_t);
             this->shim().AddPeriods(periods);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PeriodAsFullString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL PeriodAsFullString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeriodAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().PeriodAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall PeriodAsString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL PeriodAsString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PeriodAsString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().PeriodAsString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstHourInThisPeriod(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstHourInThisPeriod(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstHourInThisPeriod, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstHourInThisPeriod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastHourInThisPeriod(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastHourInThisPeriod(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastHourInThisPeriod, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastHourInThisPeriod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfHoursInThisPeriod(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfHoursInThisPeriod(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfHoursInThisPeriod, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfHoursInThisPeriod());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hour(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Hour(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hour, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Hour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Hour(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Hour(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hour, WINRT_WRAP(void), int32_t);
             this->shim().Hour(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddHours(int32_t hours) noexcept final
+    int32_t WINRT_CALL AddHours(int32_t hours) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddHours, WINRT_WRAP(void), int32_t);
             this->shim().AddHours(hours);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HourAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL HourAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HourAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().HourAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall HourAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL HourAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HourAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().HourAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Minute(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Minute(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Minute, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Minute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Minute(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Minute(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Minute, WINRT_WRAP(void), int32_t);
             this->shim().Minute(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddMinutes(int32_t minutes) noexcept final
+    int32_t WINRT_CALL AddMinutes(int32_t minutes) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddMinutes, WINRT_WRAP(void), int32_t);
             this->shim().AddMinutes(minutes);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MinuteAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL MinuteAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinuteAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().MinuteAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall MinuteAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL MinuteAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MinuteAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().MinuteAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Second(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Second(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Second, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Second());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Second(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Second(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Second, WINRT_WRAP(void), int32_t);
             this->shim().Second(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddSeconds(int32_t seconds) noexcept final
+    int32_t WINRT_CALL AddSeconds(int32_t seconds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddSeconds, WINRT_WRAP(void), int32_t);
             this->shim().AddSeconds(seconds);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SecondAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL SecondAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().SecondAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall SecondAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL SecondAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SecondAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().SecondAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nanosecond(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_Nanosecond(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nanosecond, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().Nanosecond());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall put_Nanosecond(int32_t value) noexcept final
+    int32_t WINRT_CALL put_Nanosecond(int32_t value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nanosecond, WINRT_WRAP(void), int32_t);
             this->shim().Nanosecond(value);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall AddNanoseconds(int32_t nanoseconds) noexcept final
+    int32_t WINRT_CALL AddNanoseconds(int32_t nanoseconds) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AddNanoseconds, WINRT_WRAP(void), int32_t);
             this->shim().AddNanoseconds(nanoseconds);
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall NanosecondAsString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL NanosecondAsString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NanosecondAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().NanosecondAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall NanosecondAsPaddedString(int32_t minDigits, HSTRING* result) noexcept final
+    int32_t WINRT_CALL NanosecondAsPaddedString(int32_t minDigits, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NanosecondAsPaddedString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().NanosecondAsPaddedString(minDigits));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall Compare(void* other, int32_t* result) noexcept final
+    int32_t WINRT_CALL Compare(void* other, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Compare, WINRT_WRAP(int32_t), Windows::Globalization::Calendar const&);
             *result = detach_from<int32_t>(this->shim().Compare(*reinterpret_cast<Windows::Globalization::Calendar const*>(&other)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CompareDateTime(Windows::Foundation::DateTime other, int32_t* result) noexcept final
+    int32_t WINRT_CALL CompareDateTime(Windows::Foundation::DateTime other, int32_t* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CompareDateTime, WINRT_WRAP(int32_t), Windows::Foundation::DateTime const&);
             *result = detach_from<int32_t>(this->shim().CompareDateTime(*reinterpret_cast<Windows::Foundation::DateTime const*>(&other)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CopyTo(void* other) noexcept final
+    int32_t WINRT_CALL CopyTo(void* other) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CopyTo, WINRT_WRAP(void), Windows::Globalization::Calendar const&);
             this->shim().CopyTo(*reinterpret_cast<Windows::Globalization::Calendar const*>(&other));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstMinuteInThisHour(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstMinuteInThisHour(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstMinuteInThisHour, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstMinuteInThisHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastMinuteInThisHour(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastMinuteInThisHour(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastMinuteInThisHour, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastMinuteInThisHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfMinutesInThisHour(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfMinutesInThisHour(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfMinutesInThisHour, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfMinutesInThisHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FirstSecondInThisMinute(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_FirstSecondInThisMinute(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FirstSecondInThisMinute, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().FirstSecondInThisMinute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LastSecondInThisMinute(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_LastSecondInThisMinute(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LastSecondInThisMinute, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().LastSecondInThisMinute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NumberOfSecondsInThisMinute(int32_t* value) noexcept final
+    int32_t WINRT_CALL get_NumberOfSecondsInThisMinute(int32_t* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NumberOfSecondsInThisMinute, WINRT_WRAP(int32_t));
             *value = detach_from<int32_t>(this->shim().NumberOfSecondsInThisMinute());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ResolvedLanguage(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ResolvedLanguage(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ResolvedLanguage, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ResolvedLanguage());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsDaylightSavingTime(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsDaylightSavingTime(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsDaylightSavingTime, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsDaylightSavingTime());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendarFactory> : produce_base<D, Windows::Globalization::ICalendarFactory>
 {
-    HRESULT __stdcall CreateCalendarDefaultCalendarAndClock(void* languages, void** result) noexcept final
+    int32_t WINRT_CALL CreateCalendarDefaultCalendarAndClock(void* languages, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCalendarDefaultCalendarAndClock, WINRT_WRAP(Windows::Globalization::Calendar), Windows::Foundation::Collections::IIterable<hstring> const&);
             *result = detach_from<Windows::Globalization::Calendar>(this->shim().CreateCalendarDefaultCalendarAndClock(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall CreateCalendar(void* languages, HSTRING calendar, HSTRING clock, void** result) noexcept final
+    int32_t WINRT_CALL CreateCalendar(void* languages, void* calendar, void* clock, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCalendar, WINRT_WRAP(Windows::Globalization::Calendar), Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&, hstring const&);
             *result = detach_from<Windows::Globalization::Calendar>(this->shim().CreateCalendar(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&calendar), *reinterpret_cast<hstring const*>(&clock)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendarFactory2> : produce_base<D, Windows::Globalization::ICalendarFactory2>
 {
-    HRESULT __stdcall CreateCalendarWithTimeZone(void* languages, HSTRING calendar, HSTRING clock, HSTRING timeZoneId, void** result) noexcept final
+    int32_t WINRT_CALL CreateCalendarWithTimeZone(void* languages, void* calendar, void* clock, void* timeZoneId, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateCalendarWithTimeZone, WINRT_WRAP(Windows::Globalization::Calendar), Windows::Foundation::Collections::IIterable<hstring> const&, hstring const&, hstring const&, hstring const&);
             *result = detach_from<Windows::Globalization::Calendar>(this->shim().CreateCalendarWithTimeZone(*reinterpret_cast<Windows::Foundation::Collections::IIterable<hstring> const*>(&languages), *reinterpret_cast<hstring const*>(&calendar), *reinterpret_cast<hstring const*>(&clock), *reinterpret_cast<hstring const*>(&timeZoneId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics> : produce_base<D, Windows::Globalization::ICalendarIdentifiersStatics>
 {
-    HRESULT __stdcall get_Gregorian(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Gregorian(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gregorian, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Gregorian());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hebrew(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Hebrew(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hebrew, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Hebrew());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Hijri(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Hijri(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Hijri, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Hijri());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Japanese(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Japanese(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Japanese, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Japanese());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Julian(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Julian(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Julian, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Julian());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Korean(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Korean(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Korean, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Korean());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Taiwan(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Taiwan(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Taiwan, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Taiwan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thai(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Thai(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thai, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Thai());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UmAlQura(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UmAlQura(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UmAlQura, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UmAlQura());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics2> : produce_base<D, Windows::Globalization::ICalendarIdentifiersStatics2>
 {
-    HRESULT __stdcall get_Persian(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Persian(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Persian, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Persian());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICalendarIdentifiersStatics3> : produce_base<D, Windows::Globalization::ICalendarIdentifiersStatics3>
 {
-    HRESULT __stdcall get_ChineseLunar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ChineseLunar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChineseLunar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ChineseLunar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JapaneseLunar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_JapaneseLunar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JapaneseLunar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().JapaneseLunar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KoreanLunar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KoreanLunar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KoreanLunar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KoreanLunar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TaiwanLunar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TaiwanLunar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TaiwanLunar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TaiwanLunar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VietnameseLunar(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VietnameseLunar(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VietnameseLunar, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VietnameseLunar());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IClockIdentifiersStatics> : produce_base<D, Windows::Globalization::IClockIdentifiersStatics>
 {
-    HRESULT __stdcall get_TwelveHour(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TwelveHour(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TwelveHour, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TwelveHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TwentyFourHour(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TwentyFourHour(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TwentyFourHour, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TwentyFourHour());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce_base<D, Windows::Globalization::ICurrencyIdentifiersStatics>
 {
-    HRESULT __stdcall get_AED(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AED(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AED, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AED());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AFN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AFN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AFN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AFN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ALL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ALL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ALL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ALL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AMD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AMD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AMD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AMD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ANG(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ANG(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ANG, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ANG());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AOA(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AOA(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AOA, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AOA());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ARS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ARS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ARS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ARS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AUD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AUD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AUD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AUD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AWG(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AWG(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AWG, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AWG());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_AZN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_AZN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(AZN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().AZN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BAM(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BAM(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BAM, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BAM());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BBD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BBD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BBD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BBD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BDT(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BDT(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BDT, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BDT());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BGN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BGN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BGN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BGN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BHD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BHD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BHD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BHD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BIF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BIF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BIF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BIF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BMD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BMD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BMD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BMD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BND(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BND(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BND, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BND());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BOB(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BOB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BOB, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BOB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BRL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BRL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BRL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BRL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BSD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BSD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BSD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BSD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BTN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BTN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BTN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BTN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BWP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BWP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BWP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BWP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BYR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BYR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BYR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BYR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_BZD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BZD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BZD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BZD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CAD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CAD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CAD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CAD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CDF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CDF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CDF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CDF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CHF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CHF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CHF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CHF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CLP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CLP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CLP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CLP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CNY(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CNY(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CNY, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CNY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_COP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_COP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(COP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().COP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CRC(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CRC(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CRC, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CRC());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CUP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CUP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CUP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CUP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CVE(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CVE(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CVE, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CVE());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CZK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CZK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CZK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CZK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DJF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DJF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DJF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DJF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DKK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DKK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DKK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DKK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DOP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DOP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DOP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DOP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DZD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DZD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DZD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DZD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EGP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EGP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EGP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EGP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ERN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ERN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ERN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ERN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ETB(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ETB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ETB, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ETB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_EUR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_EUR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(EUR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().EUR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FJD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FJD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FJD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FJD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FKP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FKP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FKP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FKP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GBP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GBP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GBP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GBP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GEL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GEL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GEL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GEL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GHS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GHS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GHS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GHS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GIP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GIP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GIP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GIP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GMD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GMD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GMD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GMD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GNF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GNF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GNF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GNF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GTQ(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GTQ(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GTQ, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GTQ());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_GYD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_GYD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GYD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GYD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HKD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HKD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HKD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HKD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HNL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HNL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HNL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HNL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HRK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HRK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HRK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HRK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HTG(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HTG(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HTG, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HTG());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HUF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HUF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HUF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HUF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IDR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IDR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IDR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IDR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ILS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ILS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ILS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ILS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_INR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_INR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(INR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().INR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IQD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IQD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IQD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IQD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IRR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_IRR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IRR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().IRR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ISK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ISK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ISK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ISK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JMD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_JMD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JMD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().JMD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JOD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_JOD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JOD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().JOD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_JPY(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_JPY(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(JPY, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().JPY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KES(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KES(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KES, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KES());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KGS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KGS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KGS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KGS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KHR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KHR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KHR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KHR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KMF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KMF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KMF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KMF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KPW(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KPW(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KPW, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KPW());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KRW(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KRW(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KRW, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KRW());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KWD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KWD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KWD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KWD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KYD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KYD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KYD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KYD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_KZT(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_KZT(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(KZT, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().KZT());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LAK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LAK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LAK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LAK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LBP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LBP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LBP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LBP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LKR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LKR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LKR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LKR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LRD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LRD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LRD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LRD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LSL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LSL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LSL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LSL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LTL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LTL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LTL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LTL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LVL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LVL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LVL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LVL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LYD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LYD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LYD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LYD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MAD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MAD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MAD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MAD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MDL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MDL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MDL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MDL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MGA(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MGA(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MGA, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MGA());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MKD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MKD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MKD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MKD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MMK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MMK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MMK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MMK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MNT(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MNT(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MNT, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MNT());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MOP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MOP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MOP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MOP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MRO(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MRO(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MRO, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MRO());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MUR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MUR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MUR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MUR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MVR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MVR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MVR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MVR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MWK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MWK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MWK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MWK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MXN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MXN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MXN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MXN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MYR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MYR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MYR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MYR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MZN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MZN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MZN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MZN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NAD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NAD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NAD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NAD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NGN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NGN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NGN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NGN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NIO(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NIO(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NIO, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NIO());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NOK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NOK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NOK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NOK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NPR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NPR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NPR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NPR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NZD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NZD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NZD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NZD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_OMR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_OMR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(OMR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().OMR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PAB(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PAB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PAB, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PAB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PEN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PEN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PEN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PEN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PGK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PGK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PGK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PGK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PHP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PHP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PHP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PHP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PKR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PKR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PKR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PKR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PLN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PLN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PLN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PLN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_PYG(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_PYG(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(PYG, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().PYG());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_QAR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_QAR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(QAR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().QAR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RON(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RON(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RON, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RON());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RSD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RSD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RSD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RSD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RUB(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RUB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RUB, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RUB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_RWF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_RWF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RWF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().RWF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SAR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SAR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SAR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SAR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SBD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SBD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SBD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SBD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SCR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SCR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SCR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SCR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SDG(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SDG(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SDG, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SDG());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SEK(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SEK(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SEK, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SEK());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SGD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SGD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SGD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SGD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SHP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SHP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SHP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SHP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SLL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SLL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SLL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SLL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SOS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SOS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SOS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SOS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SRD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SRD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SRD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SRD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_STD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_STD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(STD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().STD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SYP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SYP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SYP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SYP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_SZL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_SZL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SZL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().SZL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_THB(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_THB(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(THB, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().THB());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TJS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TJS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TJS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TJS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TMT(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TMT(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TMT, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TMT());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TND(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TND(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TND, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TND());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TOP(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TOP(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TOP, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TOP());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TRY(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TRY(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TRY, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TRY());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TTD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TTD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TTD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TTD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TWD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TWD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TWD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TWD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TZS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TZS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TZS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TZS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UAH(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UAH(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UAH, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UAH());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UGX(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UGX(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UGX, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UGX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_USD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_USD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(USD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().USD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UYU(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UYU(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UYU, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UYU());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_UZS(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_UZS(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(UZS, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().UZS());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VEF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VEF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VEF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VEF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VND(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VND(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VND, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VND());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_VUV(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_VUV(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VUV, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().VUV());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_WST(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_WST(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(WST, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().WST());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XAF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_XAF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XAF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().XAF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XCD(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_XCD(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XCD, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().XCD());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XOF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_XOF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XOF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().XOF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XPF(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_XPF(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XPF, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().XPF());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_XXX(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_XXX(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(XXX, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().XXX());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YER(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_YER(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YER, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().YER());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZAR(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZAR(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZAR, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZAR());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZMW(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZMW(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZMW, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZMW());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZWL(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZWL(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZWL, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZWL());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics2> : produce_base<D, Windows::Globalization::ICurrencyIdentifiersStatics2>
 {
-    HRESULT __stdcall get_BYN(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_BYN(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(BYN, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().BYN());
-            return S_OK;
+            return 0;
         }
-        catch (...)
+        catch (...) { return to_hresult(); }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics3> : produce_base<D, Windows::Globalization::ICurrencyIdentifiersStatics3>
+{
+    int32_t WINRT_CALL get_MRU(void** value) noexcept final
+    {
+        try
         {
-            return to_hresult();
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MRU, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().MRU());
+            return 0;
         }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_SSP(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SSP, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().SSP());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_STN(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(STN, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().STN());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    }
+
+    int32_t WINRT_CALL get_VES(void** value) noexcept final
+    {
+        try
+        {
+            *value = nullptr;
+            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(VES, WINRT_WRAP(hstring));
+            *value = detach_from<hstring>(this->shim().VES());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, Windows::Globalization::IGeographicRegion>
 {
-    HRESULT __stdcall get_Code(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Code(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Code, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Code());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CodeTwoLetter(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CodeTwoLetter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CodeTwoLetter, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CodeTwoLetter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CodeThreeLetter(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CodeThreeLetter(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CodeThreeLetter, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CodeThreeLetter());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CodeThreeDigit(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CodeThreeDigit(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CodeThreeDigit, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CodeThreeDigit());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NativeName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NativeName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NativeName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrenciesInUse(void** value) noexcept final
+    int32_t WINRT_CALL get_CurrenciesInUse(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrenciesInUse, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>));
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().CurrenciesInUse());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IGeographicRegionFactory> : produce_base<D, Windows::Globalization::IGeographicRegionFactory>
 {
-    HRESULT __stdcall CreateGeographicRegion(HSTRING geographicRegionCode, void** result) noexcept final
+    int32_t WINRT_CALL CreateGeographicRegion(void* geographicRegionCode, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateGeographicRegion, WINRT_WRAP(Windows::Globalization::GeographicRegion), hstring const&);
             *result = detach_from<Windows::Globalization::GeographicRegion>(this->shim().CreateGeographicRegion(*reinterpret_cast<hstring const*>(&geographicRegionCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IGeographicRegionStatics> : produce_base<D, Windows::Globalization::IGeographicRegionStatics>
 {
-    HRESULT __stdcall IsSupported(HSTRING geographicRegionCode, bool* result) noexcept final
+    int32_t WINRT_CALL IsSupported(void* geographicRegionCode, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsSupported, WINRT_WRAP(bool), hstring const&);
             *result = detach_from<bool>(this->shim().IsSupported(*reinterpret_cast<hstring const*>(&geographicRegionCode)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IJapanesePhoneme> : produce_base<D, Windows::Globalization::IJapanesePhoneme>
 {
-    HRESULT __stdcall get_DisplayText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_YomiText(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_YomiText(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(YomiText, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().YomiText());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_IsPhraseStart(bool* value) noexcept final
+    int32_t WINRT_CALL get_IsPhraseStart(bool* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsPhraseStart, WINRT_WRAP(bool));
             *value = detach_from<bool>(this->shim().IsPhraseStart());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::IJapanesePhoneticAnalyzerStatics> : produce_base<D, Windows::Globalization::IJapanesePhoneticAnalyzerStatics>
 {
-    HRESULT __stdcall GetWords(HSTRING input, void** result) noexcept final
+    int32_t WINRT_CALL GetWords(void* input, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWords, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme>), hstring const&);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme>>(this->shim().GetWords(*reinterpret_cast<hstring const*>(&input)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby, void** result) noexcept final
+    int32_t WINRT_CALL GetWordsWithMonoRubyOption(void* input, bool monoRuby, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetWords, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme>), hstring const&, bool);
             *result = detach_from<Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme>>(this->shim().GetWords(*reinterpret_cast<hstring const*>(&input), monoRuby));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguage> : produce_base<D, Windows::Globalization::ILanguage>
 {
-    HRESULT __stdcall get_LanguageTag(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LanguageTag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanguageTag, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LanguageTag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_DisplayName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_DisplayName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(DisplayName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().DisplayName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_NativeName(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_NativeName(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(NativeName, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().NativeName());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Script(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Script(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Script, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Script());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguage2> : produce_base<D, Windows::Globalization::ILanguage2>
 {
-    HRESULT __stdcall get_LayoutDirection(Windows::Globalization::LanguageLayoutDirection* value) noexcept final
+    int32_t WINRT_CALL get_LayoutDirection(Windows::Globalization::LanguageLayoutDirection* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LayoutDirection, WINRT_WRAP(Windows::Globalization::LanguageLayoutDirection));
             *value = detach_from<Windows::Globalization::LanguageLayoutDirection>(this->shim().LayoutDirection());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguageExtensionSubtags> : produce_base<D, Windows::Globalization::ILanguageExtensionSubtags>
 {
-    HRESULT __stdcall GetExtensionSubtags(HSTRING singleton, void** value) noexcept final
+    int32_t WINRT_CALL GetExtensionSubtags(void* singleton, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetExtensionSubtags, WINRT_WRAP(Windows::Foundation::Collections::IVectorView<hstring>), hstring const&);
             *value = detach_from<Windows::Foundation::Collections::IVectorView<hstring>>(this->shim().GetExtensionSubtags(*reinterpret_cast<hstring const*>(&singleton)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguageFactory> : produce_base<D, Windows::Globalization::ILanguageFactory>
 {
-    HRESULT __stdcall CreateLanguage(HSTRING languageTag, void** result) noexcept final
+    int32_t WINRT_CALL CreateLanguage(void* languageTag, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CreateLanguage, WINRT_WRAP(Windows::Globalization::Language), hstring const&);
             *result = detach_from<Windows::Globalization::Language>(this->shim().CreateLanguage(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguageStatics> : produce_base<D, Windows::Globalization::ILanguageStatics>
 {
-    HRESULT __stdcall IsWellFormed(HSTRING languageTag, bool* result) noexcept final
+    int32_t WINRT_CALL IsWellFormed(void* languageTag, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(IsWellFormed, WINRT_WRAP(bool), hstring const&);
             *result = detach_from<bool>(this->shim().IsWellFormed(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_CurrentInputMethodLanguageTag(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_CurrentInputMethodLanguageTag(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(CurrentInputMethodLanguageTag, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().CurrentInputMethodLanguageTag());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ILanguageStatics2> : produce_base<D, Windows::Globalization::ILanguageStatics2>
 {
-    HRESULT __stdcall TrySetInputMethodLanguageTag(HSTRING languageTag, bool* result) noexcept final
+    int32_t WINRT_CALL TrySetInputMethodLanguageTag(void* languageTag, bool* result) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TrySetInputMethodLanguageTag, WINRT_WRAP(bool), hstring const&);
             *result = detach_from<bool>(this->shim().TrySetInputMethodLanguageTag(*reinterpret_cast<hstring const*>(&languageTag)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics> : produce_base<D, Windows::Globalization::INumeralSystemIdentifiersStatics>
 {
-    HRESULT __stdcall get_Arab(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Arab(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Arab, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Arab());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ArabExt(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ArabExt(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ArabExt, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ArabExt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Bali(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Bali(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Bali, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Bali());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Beng(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Beng(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Beng, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Beng());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Cham(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Cham(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Cham, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Cham());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Deva(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Deva(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Deva, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Deva());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_FullWide(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_FullWide(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FullWide, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().FullWide());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Gujr(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Gujr(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Gujr, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Gujr());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Guru(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Guru(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Guru, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Guru());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_HaniDec(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_HaniDec(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(HaniDec, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().HaniDec());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Java(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Java(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Java, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Java());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kali(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Kali(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kali, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Kali());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Khmr(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Khmr(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Khmr, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Khmr());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Knda(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Knda(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Knda, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Knda());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Lana(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Lana(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Lana, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Lana());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_LanaTham(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_LanaTham(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(LanaTham, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().LanaTham());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Laoo(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Laoo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Laoo, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Laoo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Latn(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Latn(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Latn, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Latn());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Lepc(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Lepc(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Lepc, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Lepc());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Limb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Limb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Limb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Limb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mlym(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mlym(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mlym, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mlym());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mong(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mong(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mong, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mong());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mtei(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mtei(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mtei, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mtei());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Mymr(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Mymr(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Mymr, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Mymr());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MymrShan(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MymrShan(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MymrShan, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MymrShan());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Nkoo(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Nkoo(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Nkoo, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Nkoo());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Olck(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Olck(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Olck, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Olck());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Orya(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Orya(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Orya, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Orya());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Saur(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Saur(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Saur, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Saur());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Sund(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Sund(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Sund, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Sund());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Talu(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Talu(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Talu, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Talu());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_TamlDec(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_TamlDec(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TamlDec, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().TamlDec());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Telu(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Telu(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Telu, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Telu());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Thai(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Thai(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Thai, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Thai());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Tibt(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Tibt(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Tibt, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Tibt());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Vaii(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Vaii(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Vaii, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Vaii());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::INumeralSystemIdentifiersStatics2> : produce_base<D, Windows::Globalization::INumeralSystemIdentifiersStatics2>
 {
-    HRESULT __stdcall get_Brah(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Brah(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Brah, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Brah());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Osma(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Osma(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Osma, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Osma());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MathBold(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MathBold(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MathBold, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MathBold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MathDbl(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MathDbl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MathDbl, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MathDbl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MathSans(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MathSans(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MathSans, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MathSans());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MathSanb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MathSanb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MathSanb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MathSanb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_MathMono(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_MathMono(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(MathMono, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().MathMono());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZmthBold(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZmthBold(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZmthBold, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZmthBold());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZmthDbl(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZmthDbl(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZmthDbl, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZmthDbl());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZmthSans(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZmthSans(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZmthSans, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZmthSans());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZmthSanb(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZmthSanb(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZmthSanb, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZmthSanb());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_ZmthMono(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_ZmthMono(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ZmthMono, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().ZmthMono());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Globalization::ITimeZoneOnCalendar> : produce_base<D, Windows::Globalization::ITimeZoneOnCalendar>
 {
-    HRESULT __stdcall GetTimeZone(HSTRING* value) noexcept final
+    int32_t WINRT_CALL GetTimeZone(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetTimeZone, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().GetTimeZone());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall ChangeTimeZone(HSTRING timeZoneId) noexcept final
+    int32_t WINRT_CALL ChangeTimeZone(void* timeZoneId) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(ChangeTimeZone, WINRT_WRAP(void), hstring const&);
             this->shim().ChangeTimeZone(*reinterpret_cast<hstring const*>(&timeZoneId));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TimeZoneAsFullString(HSTRING* result) noexcept final
+    int32_t WINRT_CALL TimeZoneAsFullString(void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeZoneAsString, WINRT_WRAP(hstring));
             *result = detach_from<hstring>(this->shim().TimeZoneAsString());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall TimeZoneAsString(int32_t idealLength, HSTRING* result) noexcept final
+    int32_t WINRT_CALL TimeZoneAsString(int32_t idealLength, void** result) noexcept final
     {
         try
         {
             *result = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(TimeZoneAsString, WINRT_WRAP(hstring), int32_t);
             *result = detach_from<hstring>(this->shim().TimeZoneAsString(idealLength));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -7844,1200 +7214,1220 @@ WINRT_EXPORT namespace winrt::Windows::Globalization {
 
 inline hstring ApplicationLanguages::PrimaryLanguageOverride()
 {
-    return get_activation_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>().PrimaryLanguageOverride();
+    return impl::call_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>([&](auto&& f) { return f.PrimaryLanguageOverride(); });
 }
 
 inline void ApplicationLanguages::PrimaryLanguageOverride(param::hstring const& value)
 {
-    get_activation_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>().PrimaryLanguageOverride(value);
+    impl::call_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>([&](auto&& f) { return f.PrimaryLanguageOverride(value); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> ApplicationLanguages::Languages()
 {
-    return get_activation_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>().Languages();
+    return impl::call_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>([&](auto&& f) { return f.Languages(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> ApplicationLanguages::ManifestLanguages()
 {
-    return get_activation_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>().ManifestLanguages();
+    return impl::call_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics>([&](auto&& f) { return f.ManifestLanguages(); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<hstring> ApplicationLanguages::GetLanguagesForUser(Windows::System::User const& user)
 {
-    return get_activation_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics2>().GetLanguagesForUser(user);
+    return impl::call_factory<ApplicationLanguages, Windows::Globalization::IApplicationLanguagesStatics2>([&](auto&& f) { return f.GetLanguagesForUser(user); });
 }
 
 inline Calendar::Calendar() :
-    Calendar(get_activation_factory<Calendar>().ActivateInstance<Calendar>())
+    Calendar(impl::call_factory<Calendar>([](auto&& f) { return f.template ActivateInstance<Calendar>(); }))
 {}
 
 inline Calendar::Calendar(param::iterable<hstring> const& languages) :
-    Calendar(get_activation_factory<Calendar, Windows::Globalization::ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
+    Calendar(impl::call_factory<Calendar, Windows::Globalization::ICalendarFactory>([&](auto&& f) { return f.CreateCalendarDefaultCalendarAndClock(languages); }))
 {}
 
 inline Calendar::Calendar(param::iterable<hstring> const& languages, param::hstring const& calendar, param::hstring const& clock) :
-    Calendar(get_activation_factory<Calendar, Windows::Globalization::ICalendarFactory>().CreateCalendar(languages, calendar, clock))
+    Calendar(impl::call_factory<Calendar, Windows::Globalization::ICalendarFactory>([&](auto&& f) { return f.CreateCalendar(languages, calendar, clock); }))
 {}
 
 inline Calendar::Calendar(param::iterable<hstring> const& languages, param::hstring const& calendar, param::hstring const& clock, param::hstring const& timeZoneId) :
-    Calendar(get_activation_factory<Calendar, Windows::Globalization::ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
+    Calendar(impl::call_factory<Calendar, Windows::Globalization::ICalendarFactory2>([&](auto&& f) { return f.CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId); }))
 {}
 
 inline hstring CalendarIdentifiers::Gregorian()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Gregorian();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Gregorian(); });
 }
 
 inline hstring CalendarIdentifiers::Hebrew()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Hebrew();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Hebrew(); });
 }
 
 inline hstring CalendarIdentifiers::Hijri()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Hijri();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Hijri(); });
 }
 
 inline hstring CalendarIdentifiers::Japanese()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Japanese();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Japanese(); });
 }
 
 inline hstring CalendarIdentifiers::Julian()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Julian();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Julian(); });
 }
 
 inline hstring CalendarIdentifiers::Korean()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Korean();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Korean(); });
 }
 
 inline hstring CalendarIdentifiers::Taiwan()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Taiwan();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Taiwan(); });
 }
 
 inline hstring CalendarIdentifiers::Thai()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().Thai();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.Thai(); });
 }
 
 inline hstring CalendarIdentifiers::UmAlQura()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>().UmAlQura();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics>([&](auto&& f) { return f.UmAlQura(); });
 }
 
 inline hstring CalendarIdentifiers::Persian()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics2>().Persian();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics2>([&](auto&& f) { return f.Persian(); });
 }
 
 inline hstring CalendarIdentifiers::ChineseLunar()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>().ChineseLunar();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>([&](auto&& f) { return f.ChineseLunar(); });
 }
 
 inline hstring CalendarIdentifiers::JapaneseLunar()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>().JapaneseLunar();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>([&](auto&& f) { return f.JapaneseLunar(); });
 }
 
 inline hstring CalendarIdentifiers::KoreanLunar()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>().KoreanLunar();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>([&](auto&& f) { return f.KoreanLunar(); });
 }
 
 inline hstring CalendarIdentifiers::TaiwanLunar()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>().TaiwanLunar();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>([&](auto&& f) { return f.TaiwanLunar(); });
 }
 
 inline hstring CalendarIdentifiers::VietnameseLunar()
 {
-    return get_activation_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>().VietnameseLunar();
+    return impl::call_factory<CalendarIdentifiers, Windows::Globalization::ICalendarIdentifiersStatics3>([&](auto&& f) { return f.VietnameseLunar(); });
 }
 
 inline hstring ClockIdentifiers::TwelveHour()
 {
-    return get_activation_factory<ClockIdentifiers, Windows::Globalization::IClockIdentifiersStatics>().TwelveHour();
+    return impl::call_factory<ClockIdentifiers, Windows::Globalization::IClockIdentifiersStatics>([&](auto&& f) { return f.TwelveHour(); });
 }
 
 inline hstring ClockIdentifiers::TwentyFourHour()
 {
-    return get_activation_factory<ClockIdentifiers, Windows::Globalization::IClockIdentifiersStatics>().TwentyFourHour();
+    return impl::call_factory<ClockIdentifiers, Windows::Globalization::IClockIdentifiersStatics>([&](auto&& f) { return f.TwentyFourHour(); });
 }
 
 inline hstring CurrencyIdentifiers::AED()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AED();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AED(); });
 }
 
 inline hstring CurrencyIdentifiers::AFN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AFN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AFN(); });
 }
 
 inline hstring CurrencyIdentifiers::ALL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ALL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ALL(); });
 }
 
 inline hstring CurrencyIdentifiers::AMD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AMD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AMD(); });
 }
 
 inline hstring CurrencyIdentifiers::ANG()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ANG();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ANG(); });
 }
 
 inline hstring CurrencyIdentifiers::AOA()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AOA();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AOA(); });
 }
 
 inline hstring CurrencyIdentifiers::ARS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ARS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ARS(); });
 }
 
 inline hstring CurrencyIdentifiers::AUD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AUD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AUD(); });
 }
 
 inline hstring CurrencyIdentifiers::AWG()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AWG();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AWG(); });
 }
 
 inline hstring CurrencyIdentifiers::AZN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().AZN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.AZN(); });
 }
 
 inline hstring CurrencyIdentifiers::BAM()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BAM();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BAM(); });
 }
 
 inline hstring CurrencyIdentifiers::BBD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BBD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BBD(); });
 }
 
 inline hstring CurrencyIdentifiers::BDT()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BDT();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BDT(); });
 }
 
 inline hstring CurrencyIdentifiers::BGN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BGN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BGN(); });
 }
 
 inline hstring CurrencyIdentifiers::BHD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BHD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BHD(); });
 }
 
 inline hstring CurrencyIdentifiers::BIF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BIF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BIF(); });
 }
 
 inline hstring CurrencyIdentifiers::BMD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BMD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BMD(); });
 }
 
 inline hstring CurrencyIdentifiers::BND()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BND();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BND(); });
 }
 
 inline hstring CurrencyIdentifiers::BOB()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BOB();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BOB(); });
 }
 
 inline hstring CurrencyIdentifiers::BRL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BRL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BRL(); });
 }
 
 inline hstring CurrencyIdentifiers::BSD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BSD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BSD(); });
 }
 
 inline hstring CurrencyIdentifiers::BTN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BTN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BTN(); });
 }
 
 inline hstring CurrencyIdentifiers::BWP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BWP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BWP(); });
 }
 
 inline hstring CurrencyIdentifiers::BYR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BYR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BYR(); });
 }
 
 inline hstring CurrencyIdentifiers::BZD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().BZD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.BZD(); });
 }
 
 inline hstring CurrencyIdentifiers::CAD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CAD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CAD(); });
 }
 
 inline hstring CurrencyIdentifiers::CDF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CDF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CDF(); });
 }
 
 inline hstring CurrencyIdentifiers::CHF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CHF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CHF(); });
 }
 
 inline hstring CurrencyIdentifiers::CLP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CLP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CLP(); });
 }
 
 inline hstring CurrencyIdentifiers::CNY()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CNY();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CNY(); });
 }
 
 inline hstring CurrencyIdentifiers::COP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().COP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.COP(); });
 }
 
 inline hstring CurrencyIdentifiers::CRC()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CRC();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CRC(); });
 }
 
 inline hstring CurrencyIdentifiers::CUP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CUP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CUP(); });
 }
 
 inline hstring CurrencyIdentifiers::CVE()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CVE();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CVE(); });
 }
 
 inline hstring CurrencyIdentifiers::CZK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().CZK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.CZK(); });
 }
 
 inline hstring CurrencyIdentifiers::DJF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().DJF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.DJF(); });
 }
 
 inline hstring CurrencyIdentifiers::DKK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().DKK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.DKK(); });
 }
 
 inline hstring CurrencyIdentifiers::DOP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().DOP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.DOP(); });
 }
 
 inline hstring CurrencyIdentifiers::DZD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().DZD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.DZD(); });
 }
 
 inline hstring CurrencyIdentifiers::EGP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().EGP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.EGP(); });
 }
 
 inline hstring CurrencyIdentifiers::ERN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ERN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ERN(); });
 }
 
 inline hstring CurrencyIdentifiers::ETB()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ETB();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ETB(); });
 }
 
 inline hstring CurrencyIdentifiers::EUR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().EUR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.EUR(); });
 }
 
 inline hstring CurrencyIdentifiers::FJD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().FJD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.FJD(); });
 }
 
 inline hstring CurrencyIdentifiers::FKP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().FKP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.FKP(); });
 }
 
 inline hstring CurrencyIdentifiers::GBP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GBP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GBP(); });
 }
 
 inline hstring CurrencyIdentifiers::GEL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GEL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GEL(); });
 }
 
 inline hstring CurrencyIdentifiers::GHS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GHS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GHS(); });
 }
 
 inline hstring CurrencyIdentifiers::GIP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GIP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GIP(); });
 }
 
 inline hstring CurrencyIdentifiers::GMD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GMD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GMD(); });
 }
 
 inline hstring CurrencyIdentifiers::GNF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GNF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GNF(); });
 }
 
 inline hstring CurrencyIdentifiers::GTQ()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GTQ();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GTQ(); });
 }
 
 inline hstring CurrencyIdentifiers::GYD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().GYD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.GYD(); });
 }
 
 inline hstring CurrencyIdentifiers::HKD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().HKD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.HKD(); });
 }
 
 inline hstring CurrencyIdentifiers::HNL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().HNL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.HNL(); });
 }
 
 inline hstring CurrencyIdentifiers::HRK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().HRK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.HRK(); });
 }
 
 inline hstring CurrencyIdentifiers::HTG()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().HTG();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.HTG(); });
 }
 
 inline hstring CurrencyIdentifiers::HUF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().HUF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.HUF(); });
 }
 
 inline hstring CurrencyIdentifiers::IDR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().IDR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.IDR(); });
 }
 
 inline hstring CurrencyIdentifiers::ILS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ILS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ILS(); });
 }
 
 inline hstring CurrencyIdentifiers::INR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().INR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.INR(); });
 }
 
 inline hstring CurrencyIdentifiers::IQD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().IQD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.IQD(); });
 }
 
 inline hstring CurrencyIdentifiers::IRR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().IRR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.IRR(); });
 }
 
 inline hstring CurrencyIdentifiers::ISK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ISK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ISK(); });
 }
 
 inline hstring CurrencyIdentifiers::JMD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().JMD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.JMD(); });
 }
 
 inline hstring CurrencyIdentifiers::JOD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().JOD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.JOD(); });
 }
 
 inline hstring CurrencyIdentifiers::JPY()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().JPY();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.JPY(); });
 }
 
 inline hstring CurrencyIdentifiers::KES()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KES();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KES(); });
 }
 
 inline hstring CurrencyIdentifiers::KGS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KGS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KGS(); });
 }
 
 inline hstring CurrencyIdentifiers::KHR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KHR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KHR(); });
 }
 
 inline hstring CurrencyIdentifiers::KMF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KMF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KMF(); });
 }
 
 inline hstring CurrencyIdentifiers::KPW()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KPW();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KPW(); });
 }
 
 inline hstring CurrencyIdentifiers::KRW()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KRW();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KRW(); });
 }
 
 inline hstring CurrencyIdentifiers::KWD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KWD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KWD(); });
 }
 
 inline hstring CurrencyIdentifiers::KYD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KYD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KYD(); });
 }
 
 inline hstring CurrencyIdentifiers::KZT()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().KZT();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.KZT(); });
 }
 
 inline hstring CurrencyIdentifiers::LAK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LAK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LAK(); });
 }
 
 inline hstring CurrencyIdentifiers::LBP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LBP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LBP(); });
 }
 
 inline hstring CurrencyIdentifiers::LKR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LKR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LKR(); });
 }
 
 inline hstring CurrencyIdentifiers::LRD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LRD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LRD(); });
 }
 
 inline hstring CurrencyIdentifiers::LSL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LSL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LSL(); });
 }
 
 inline hstring CurrencyIdentifiers::LTL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LTL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LTL(); });
 }
 
 inline hstring CurrencyIdentifiers::LVL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LVL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LVL(); });
 }
 
 inline hstring CurrencyIdentifiers::LYD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().LYD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.LYD(); });
 }
 
 inline hstring CurrencyIdentifiers::MAD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MAD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MAD(); });
 }
 
 inline hstring CurrencyIdentifiers::MDL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MDL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MDL(); });
 }
 
 inline hstring CurrencyIdentifiers::MGA()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MGA();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MGA(); });
 }
 
 inline hstring CurrencyIdentifiers::MKD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MKD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MKD(); });
 }
 
 inline hstring CurrencyIdentifiers::MMK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MMK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MMK(); });
 }
 
 inline hstring CurrencyIdentifiers::MNT()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MNT();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MNT(); });
 }
 
 inline hstring CurrencyIdentifiers::MOP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MOP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MOP(); });
 }
 
 inline hstring CurrencyIdentifiers::MRO()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MRO();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MRO(); });
 }
 
 inline hstring CurrencyIdentifiers::MUR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MUR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MUR(); });
 }
 
 inline hstring CurrencyIdentifiers::MVR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MVR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MVR(); });
 }
 
 inline hstring CurrencyIdentifiers::MWK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MWK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MWK(); });
 }
 
 inline hstring CurrencyIdentifiers::MXN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MXN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MXN(); });
 }
 
 inline hstring CurrencyIdentifiers::MYR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MYR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MYR(); });
 }
 
 inline hstring CurrencyIdentifiers::MZN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().MZN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.MZN(); });
 }
 
 inline hstring CurrencyIdentifiers::NAD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NAD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NAD(); });
 }
 
 inline hstring CurrencyIdentifiers::NGN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NGN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NGN(); });
 }
 
 inline hstring CurrencyIdentifiers::NIO()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NIO();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NIO(); });
 }
 
 inline hstring CurrencyIdentifiers::NOK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NOK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NOK(); });
 }
 
 inline hstring CurrencyIdentifiers::NPR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NPR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NPR(); });
 }
 
 inline hstring CurrencyIdentifiers::NZD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().NZD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.NZD(); });
 }
 
 inline hstring CurrencyIdentifiers::OMR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().OMR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.OMR(); });
 }
 
 inline hstring CurrencyIdentifiers::PAB()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PAB();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PAB(); });
 }
 
 inline hstring CurrencyIdentifiers::PEN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PEN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PEN(); });
 }
 
 inline hstring CurrencyIdentifiers::PGK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PGK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PGK(); });
 }
 
 inline hstring CurrencyIdentifiers::PHP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PHP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PHP(); });
 }
 
 inline hstring CurrencyIdentifiers::PKR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PKR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PKR(); });
 }
 
 inline hstring CurrencyIdentifiers::PLN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PLN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PLN(); });
 }
 
 inline hstring CurrencyIdentifiers::PYG()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().PYG();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.PYG(); });
 }
 
 inline hstring CurrencyIdentifiers::QAR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().QAR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.QAR(); });
 }
 
 inline hstring CurrencyIdentifiers::RON()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().RON();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.RON(); });
 }
 
 inline hstring CurrencyIdentifiers::RSD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().RSD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.RSD(); });
 }
 
 inline hstring CurrencyIdentifiers::RUB()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().RUB();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.RUB(); });
 }
 
 inline hstring CurrencyIdentifiers::RWF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().RWF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.RWF(); });
 }
 
 inline hstring CurrencyIdentifiers::SAR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SAR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SAR(); });
 }
 
 inline hstring CurrencyIdentifiers::SBD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SBD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SBD(); });
 }
 
 inline hstring CurrencyIdentifiers::SCR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SCR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SCR(); });
 }
 
 inline hstring CurrencyIdentifiers::SDG()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SDG();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SDG(); });
 }
 
 inline hstring CurrencyIdentifiers::SEK()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SEK();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SEK(); });
 }
 
 inline hstring CurrencyIdentifiers::SGD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SGD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SGD(); });
 }
 
 inline hstring CurrencyIdentifiers::SHP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SHP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SHP(); });
 }
 
 inline hstring CurrencyIdentifiers::SLL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SLL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SLL(); });
 }
 
 inline hstring CurrencyIdentifiers::SOS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SOS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SOS(); });
 }
 
 inline hstring CurrencyIdentifiers::SRD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SRD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SRD(); });
 }
 
 inline hstring CurrencyIdentifiers::STD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().STD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.STD(); });
 }
 
 inline hstring CurrencyIdentifiers::SYP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SYP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SYP(); });
 }
 
 inline hstring CurrencyIdentifiers::SZL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().SZL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.SZL(); });
 }
 
 inline hstring CurrencyIdentifiers::THB()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().THB();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.THB(); });
 }
 
 inline hstring CurrencyIdentifiers::TJS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TJS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TJS(); });
 }
 
 inline hstring CurrencyIdentifiers::TMT()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TMT();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TMT(); });
 }
 
 inline hstring CurrencyIdentifiers::TND()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TND();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TND(); });
 }
 
 inline hstring CurrencyIdentifiers::TOP()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TOP();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TOP(); });
 }
 
 inline hstring CurrencyIdentifiers::TRY()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TRY();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TRY(); });
 }
 
 inline hstring CurrencyIdentifiers::TTD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TTD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TTD(); });
 }
 
 inline hstring CurrencyIdentifiers::TWD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TWD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TWD(); });
 }
 
 inline hstring CurrencyIdentifiers::TZS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().TZS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.TZS(); });
 }
 
 inline hstring CurrencyIdentifiers::UAH()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().UAH();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.UAH(); });
 }
 
 inline hstring CurrencyIdentifiers::UGX()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().UGX();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.UGX(); });
 }
 
 inline hstring CurrencyIdentifiers::USD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().USD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.USD(); });
 }
 
 inline hstring CurrencyIdentifiers::UYU()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().UYU();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.UYU(); });
 }
 
 inline hstring CurrencyIdentifiers::UZS()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().UZS();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.UZS(); });
 }
 
 inline hstring CurrencyIdentifiers::VEF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().VEF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.VEF(); });
 }
 
 inline hstring CurrencyIdentifiers::VND()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().VND();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.VND(); });
 }
 
 inline hstring CurrencyIdentifiers::VUV()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().VUV();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.VUV(); });
 }
 
 inline hstring CurrencyIdentifiers::WST()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().WST();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.WST(); });
 }
 
 inline hstring CurrencyIdentifiers::XAF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().XAF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.XAF(); });
 }
 
 inline hstring CurrencyIdentifiers::XCD()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().XCD();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.XCD(); });
 }
 
 inline hstring CurrencyIdentifiers::XOF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().XOF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.XOF(); });
 }
 
 inline hstring CurrencyIdentifiers::XPF()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().XPF();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.XPF(); });
 }
 
 inline hstring CurrencyIdentifiers::XXX()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().XXX();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.XXX(); });
 }
 
 inline hstring CurrencyIdentifiers::YER()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().YER();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.YER(); });
 }
 
 inline hstring CurrencyIdentifiers::ZAR()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ZAR();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ZAR(); });
 }
 
 inline hstring CurrencyIdentifiers::ZMW()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ZMW();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ZMW(); });
 }
 
 inline hstring CurrencyIdentifiers::ZWL()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>().ZWL();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics>([&](auto&& f) { return f.ZWL(); });
 }
 
 inline hstring CurrencyIdentifiers::BYN()
 {
-    return get_activation_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics2>().BYN();
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics2>([&](auto&& f) { return f.BYN(); });
+}
+
+inline hstring CurrencyIdentifiers::MRU()
+{
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics3>([&](auto&& f) { return f.MRU(); });
+}
+
+inline hstring CurrencyIdentifiers::SSP()
+{
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics3>([&](auto&& f) { return f.SSP(); });
+}
+
+inline hstring CurrencyIdentifiers::STN()
+{
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics3>([&](auto&& f) { return f.STN(); });
+}
+
+inline hstring CurrencyIdentifiers::VES()
+{
+    return impl::call_factory<CurrencyIdentifiers, Windows::Globalization::ICurrencyIdentifiersStatics3>([&](auto&& f) { return f.VES(); });
 }
 
 inline GeographicRegion::GeographicRegion() :
-    GeographicRegion(get_activation_factory<GeographicRegion>().ActivateInstance<GeographicRegion>())
+    GeographicRegion(impl::call_factory<GeographicRegion>([](auto&& f) { return f.template ActivateInstance<GeographicRegion>(); }))
 {}
 
 inline GeographicRegion::GeographicRegion(param::hstring const& geographicRegionCode) :
-    GeographicRegion(get_activation_factory<GeographicRegion, Windows::Globalization::IGeographicRegionFactory>().CreateGeographicRegion(geographicRegionCode))
+    GeographicRegion(impl::call_factory<GeographicRegion, Windows::Globalization::IGeographicRegionFactory>([&](auto&& f) { return f.CreateGeographicRegion(geographicRegionCode); }))
 {}
 
 inline bool GeographicRegion::IsSupported(param::hstring const& geographicRegionCode)
 {
-    return get_activation_factory<GeographicRegion, Windows::Globalization::IGeographicRegionStatics>().IsSupported(geographicRegionCode);
+    return impl::call_factory<GeographicRegion, Windows::Globalization::IGeographicRegionStatics>([&](auto&& f) { return f.IsSupported(geographicRegionCode); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> JapanesePhoneticAnalyzer::GetWords(param::hstring const& input)
 {
-    return get_activation_factory<JapanesePhoneticAnalyzer, Windows::Globalization::IJapanesePhoneticAnalyzerStatics>().GetWords(input);
+    return impl::call_factory<JapanesePhoneticAnalyzer, Windows::Globalization::IJapanesePhoneticAnalyzerStatics>([&](auto&& f) { return f.GetWords(input); });
 }
 
 inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::JapanesePhoneme> JapanesePhoneticAnalyzer::GetWords(param::hstring const& input, bool monoRuby)
 {
-    return get_activation_factory<JapanesePhoneticAnalyzer, Windows::Globalization::IJapanesePhoneticAnalyzerStatics>().GetWords(input, monoRuby);
+    return impl::call_factory<JapanesePhoneticAnalyzer, Windows::Globalization::IJapanesePhoneticAnalyzerStatics>([&](auto&& f) { return f.GetWords(input, monoRuby); });
 }
 
 inline Language::Language(param::hstring const& languageTag) :
-    Language(get_activation_factory<Language, Windows::Globalization::ILanguageFactory>().CreateLanguage(languageTag))
+    Language(impl::call_factory<Language, Windows::Globalization::ILanguageFactory>([&](auto&& f) { return f.CreateLanguage(languageTag); }))
 {}
 
 inline bool Language::IsWellFormed(param::hstring const& languageTag)
 {
-    return get_activation_factory<Language, Windows::Globalization::ILanguageStatics>().IsWellFormed(languageTag);
+    return impl::call_factory<Language, Windows::Globalization::ILanguageStatics>([&](auto&& f) { return f.IsWellFormed(languageTag); });
 }
 
 inline hstring Language::CurrentInputMethodLanguageTag()
 {
-    return get_activation_factory<Language, Windows::Globalization::ILanguageStatics>().CurrentInputMethodLanguageTag();
+    return impl::call_factory<Language, Windows::Globalization::ILanguageStatics>([&](auto&& f) { return f.CurrentInputMethodLanguageTag(); });
 }
 
 inline bool Language::TrySetInputMethodLanguageTag(param::hstring const& languageTag)
 {
-    return get_activation_factory<Language, Windows::Globalization::ILanguageStatics2>().TrySetInputMethodLanguageTag(languageTag);
+    return impl::call_factory<Language, Windows::Globalization::ILanguageStatics2>([&](auto&& f) { return f.TrySetInputMethodLanguageTag(languageTag); });
 }
 
 inline hstring NumeralSystemIdentifiers::Arab()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Arab();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Arab(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ArabExt()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().ArabExt();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.ArabExt(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Bali()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Bali();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Bali(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Beng()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Beng();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Beng(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Cham()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Cham();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Cham(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Deva()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Deva();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Deva(); });
 }
 
 inline hstring NumeralSystemIdentifiers::FullWide()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().FullWide();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.FullWide(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Gujr()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Gujr();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Gujr(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Guru()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Guru();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Guru(); });
 }
 
 inline hstring NumeralSystemIdentifiers::HaniDec()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().HaniDec();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.HaniDec(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Java()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Java();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Java(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Kali()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Kali();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Kali(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Khmr()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Khmr();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Khmr(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Knda()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Knda();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Knda(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Lana()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Lana();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Lana(); });
 }
 
 inline hstring NumeralSystemIdentifiers::LanaTham()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().LanaTham();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.LanaTham(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Laoo()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Laoo();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Laoo(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Latn()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Latn();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Latn(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Lepc()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Lepc();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Lepc(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Limb()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Limb();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Limb(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Mlym()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Mlym();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Mlym(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Mong()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Mong();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Mong(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Mtei()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Mtei();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Mtei(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Mymr()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Mymr();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Mymr(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MymrShan()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().MymrShan();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.MymrShan(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Nkoo()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Nkoo();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Nkoo(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Olck()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Olck();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Olck(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Orya()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Orya();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Orya(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Saur()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Saur();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Saur(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Sund()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Sund();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Sund(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Talu()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Talu();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Talu(); });
 }
 
 inline hstring NumeralSystemIdentifiers::TamlDec()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().TamlDec();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.TamlDec(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Telu()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Telu();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Telu(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Thai()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Thai();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Thai(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Tibt()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Tibt();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Tibt(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Vaii()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>().Vaii();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics>([&](auto&& f) { return f.Vaii(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Brah()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().Brah();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.Brah(); });
 }
 
 inline hstring NumeralSystemIdentifiers::Osma()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().Osma();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.Osma(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MathBold()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().MathBold();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.MathBold(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MathDbl()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().MathDbl();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.MathDbl(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MathSans()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().MathSans();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.MathSans(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MathSanb()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().MathSanb();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.MathSanb(); });
 }
 
 inline hstring NumeralSystemIdentifiers::MathMono()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().MathMono();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.MathMono(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthBold()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().ZmthBold();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.ZmthBold(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthDbl()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().ZmthDbl();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.ZmthDbl(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthSans()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().ZmthSans();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.ZmthSans(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthSanb()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().ZmthSanb();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.ZmthSanb(); });
 }
 
 inline hstring NumeralSystemIdentifiers::ZmthMono()
 {
-    return get_activation_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>().ZmthMono();
+    return impl::call_factory<NumeralSystemIdentifiers, Windows::Globalization::INumeralSystemIdentifiersStatics2>([&](auto&& f) { return f.ZmthMono(); });
 }
 
 }
@@ -9055,6 +8445,7 @@ template<> struct hash<winrt::Windows::Globalization::ICalendarIdentifiersStatic
 template<> struct hash<winrt::Windows::Globalization::IClockIdentifiersStatics> : winrt::impl::hash_base<winrt::Windows::Globalization::IClockIdentifiersStatics> {};
 template<> struct hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics> : winrt::impl::hash_base<winrt::Windows::Globalization::ICurrencyIdentifiersStatics> {};
 template<> struct hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics2> : winrt::impl::hash_base<winrt::Windows::Globalization::ICurrencyIdentifiersStatics2> {};
+template<> struct hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics3> : winrt::impl::hash_base<winrt::Windows::Globalization::ICurrencyIdentifiersStatics3> {};
 template<> struct hash<winrt::Windows::Globalization::IGeographicRegion> : winrt::impl::hash_base<winrt::Windows::Globalization::IGeographicRegion> {};
 template<> struct hash<winrt::Windows::Globalization::IGeographicRegionFactory> : winrt::impl::hash_base<winrt::Windows::Globalization::IGeographicRegionFactory> {};
 template<> struct hash<winrt::Windows::Globalization::IGeographicRegionStatics> : winrt::impl::hash_base<winrt::Windows::Globalization::IGeographicRegionStatics> {};
@@ -9081,5 +8472,3 @@ template<> struct hash<winrt::Windows::Globalization::Language> : winrt::impl::h
 template<> struct hash<winrt::Windows::Globalization::NumeralSystemIdentifiers> : winrt::impl::hash_base<winrt::Windows::Globalization::NumeralSystemIdentifiers> {};
 
 }
-
-WINRT_WARNING_POP

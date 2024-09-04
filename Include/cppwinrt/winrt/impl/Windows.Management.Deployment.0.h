@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -36,6 +36,7 @@ enum class DeploymentOptions : uint32_t
     InstallAllResources = 0x20,
     ForceTargetApplicationShutdown = 0x40,
     RequiredContentGroupOnly = 0x100,
+    ForceUpdateFromAnyVersion = 0x40000,
 };
 
 enum class DeploymentProgressState : int32_t
@@ -84,6 +85,7 @@ enum class RemovalOptions : uint32_t
 {
     None = 0x0,
     PreserveApplicationData = 0x1000,
+    RemoveForAllUsers = 0x80000,
 };
 
 struct IDeploymentResult;
@@ -95,6 +97,7 @@ struct IPackageManager4;
 struct IPackageManager5;
 struct IPackageManager6;
 struct IPackageManager7;
+struct IPackageManager8;
 struct IPackageManagerDebugSettings;
 struct IPackageUserInformation;
 struct IPackageVolume;
@@ -124,6 +127,7 @@ template <> struct category<Windows::Management::Deployment::IPackageManager4>{ 
 template <> struct category<Windows::Management::Deployment::IPackageManager5>{ using type = interface_category; };
 template <> struct category<Windows::Management::Deployment::IPackageManager6>{ using type = interface_category; };
 template <> struct category<Windows::Management::Deployment::IPackageManager7>{ using type = interface_category; };
+template <> struct category<Windows::Management::Deployment::IPackageManager8>{ using type = interface_category; };
 template <> struct category<Windows::Management::Deployment::IPackageManagerDebugSettings>{ using type = interface_category; };
 template <> struct category<Windows::Management::Deployment::IPackageUserInformation>{ using type = interface_category; };
 template <> struct category<Windows::Management::Deployment::IPackageVolume>{ using type = interface_category; };
@@ -151,6 +155,7 @@ template <> struct name<Windows::Management::Deployment::IPackageManager4>{ stat
 template <> struct name<Windows::Management::Deployment::IPackageManager5>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageManager5" }; };
 template <> struct name<Windows::Management::Deployment::IPackageManager6>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageManager6" }; };
 template <> struct name<Windows::Management::Deployment::IPackageManager7>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageManager7" }; };
+template <> struct name<Windows::Management::Deployment::IPackageManager8>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageManager8" }; };
 template <> struct name<Windows::Management::Deployment::IPackageManagerDebugSettings>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageManagerDebugSettings" }; };
 template <> struct name<Windows::Management::Deployment::IPackageUserInformation>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageUserInformation" }; };
 template <> struct name<Windows::Management::Deployment::IPackageVolume>{ static constexpr auto & value{ L"Windows.Management.Deployment.IPackageVolume" }; };
@@ -169,31 +174,173 @@ template <> struct name<Windows::Management::Deployment::PackageStatus>{ static 
 template <> struct name<Windows::Management::Deployment::PackageTypes>{ static constexpr auto & value{ L"Windows.Management.Deployment.PackageTypes" }; };
 template <> struct name<Windows::Management::Deployment::RemovalOptions>{ static constexpr auto & value{ L"Windows.Management.Deployment.RemovalOptions" }; };
 template <> struct name<Windows::Management::Deployment::DeploymentProgress>{ static constexpr auto & value{ L"Windows.Management.Deployment.DeploymentProgress" }; };
-template <> struct guid<Windows::Management::Deployment::IDeploymentResult>{ static constexpr GUID value{ 0x2563B9AE,0xB77D,0x4C1F,{ 0x8A,0x7B,0x20,0xE6,0xAD,0x51,0x5E,0xF3 } }; };
-template <> struct guid<Windows::Management::Deployment::IDeploymentResult2>{ static constexpr GUID value{ 0xFC0E715C,0x5A01,0x4BD7,{ 0xBC,0xF1,0x38,0x1C,0x8C,0x82,0xE0,0x4A } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager>{ static constexpr GUID value{ 0x9A7D4B65,0x5E8F,0x4FC7,{ 0xA2,0xE5,0x7F,0x69,0x25,0xCB,0x8B,0x53 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager2>{ static constexpr GUID value{ 0xF7AAD08D,0x0840,0x46F2,{ 0xB5,0xD8,0xCA,0xD4,0x76,0x93,0xA0,0x95 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager3>{ static constexpr GUID value{ 0xDAAD9948,0x36F1,0x41A7,{ 0x91,0x88,0xBC,0x26,0x3E,0x0D,0xCB,0x72 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager4>{ static constexpr GUID value{ 0x3C719963,0xBAB6,0x46BF,{ 0x8F,0xF7,0xDA,0x47,0x19,0x23,0x0A,0xE6 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager5>{ static constexpr GUID value{ 0x711F3117,0x1AFD,0x4313,{ 0x97,0x8C,0x9B,0xB6,0xE1,0xB8,0x64,0xA7 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager6>{ static constexpr GUID value{ 0x0847E909,0x53CD,0x4E4F,{ 0x83,0x2E,0x57,0xD1,0x80,0xF6,0xE4,0x47 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManager7>{ static constexpr GUID value{ 0xF28654F4,0x2BA7,0x4B80,{ 0x88,0xD6,0xBE,0x15,0xF9,0xA2,0x3F,0xBA } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageManagerDebugSettings>{ static constexpr GUID value{ 0x1A611683,0xA988,0x4FCF,{ 0x8F,0x0F,0xCE,0x17,0x58,0x98,0xE8,0xEB } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageUserInformation>{ static constexpr GUID value{ 0xF6383423,0xFA09,0x4CBC,{ 0x90,0x55,0x15,0xCA,0x27,0x5E,0x2E,0x7E } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageVolume>{ static constexpr GUID value{ 0xCF2672C3,0x1A40,0x4450,{ 0x97,0x39,0x2A,0xCE,0x2E,0x89,0x88,0x53 } }; };
-template <> struct guid<Windows::Management::Deployment::IPackageVolume2>{ static constexpr GUID value{ 0x46ABCF2E,0x9DD4,0x47A2,{ 0xAB,0x8C,0xC6,0x40,0x83,0x49,0xBC,0xD8 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IDeploymentResult>{ static constexpr guid value{ 0x2563B9AE,0xB77D,0x4C1F,{ 0x8A,0x7B,0x20,0xE6,0xAD,0x51,0x5E,0xF3 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IDeploymentResult2>{ static constexpr guid value{ 0xFC0E715C,0x5A01,0x4BD7,{ 0xBC,0xF1,0x38,0x1C,0x8C,0x82,0xE0,0x4A } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager>{ static constexpr guid value{ 0x9A7D4B65,0x5E8F,0x4FC7,{ 0xA2,0xE5,0x7F,0x69,0x25,0xCB,0x8B,0x53 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager2>{ static constexpr guid value{ 0xF7AAD08D,0x0840,0x46F2,{ 0xB5,0xD8,0xCA,0xD4,0x76,0x93,0xA0,0x95 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager3>{ static constexpr guid value{ 0xDAAD9948,0x36F1,0x41A7,{ 0x91,0x88,0xBC,0x26,0x3E,0x0D,0xCB,0x72 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager4>{ static constexpr guid value{ 0x3C719963,0xBAB6,0x46BF,{ 0x8F,0xF7,0xDA,0x47,0x19,0x23,0x0A,0xE6 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager5>{ static constexpr guid value{ 0x711F3117,0x1AFD,0x4313,{ 0x97,0x8C,0x9B,0xB6,0xE1,0xB8,0x64,0xA7 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager6>{ static constexpr guid value{ 0x0847E909,0x53CD,0x4E4F,{ 0x83,0x2E,0x57,0xD1,0x80,0xF6,0xE4,0x47 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager7>{ static constexpr guid value{ 0xF28654F4,0x2BA7,0x4B80,{ 0x88,0xD6,0xBE,0x15,0xF9,0xA2,0x3F,0xBA } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManager8>{ static constexpr guid value{ 0xB8575330,0x1298,0x4EE2,{ 0x80,0xEE,0x7F,0x65,0x9C,0x5D,0x27,0x82 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageManagerDebugSettings>{ static constexpr guid value{ 0x1A611683,0xA988,0x4FCF,{ 0x8F,0x0F,0xCE,0x17,0x58,0x98,0xE8,0xEB } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageUserInformation>{ static constexpr guid value{ 0xF6383423,0xFA09,0x4CBC,{ 0x90,0x55,0x15,0xCA,0x27,0x5E,0x2E,0x7E } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageVolume>{ static constexpr guid value{ 0xCF2672C3,0x1A40,0x4450,{ 0x97,0x39,0x2A,0xCE,0x2E,0x89,0x88,0x53 } }; };
+template <> struct guid_storage<Windows::Management::Deployment::IPackageVolume2>{ static constexpr guid value{ 0x46ABCF2E,0x9DD4,0x47A2,{ 0xAB,0x8C,0xC6,0x40,0x83,0x49,0xBC,0xD8 } }; };
 template <> struct default_interface<Windows::Management::Deployment::DeploymentResult>{ using type = Windows::Management::Deployment::IDeploymentResult; };
 template <> struct default_interface<Windows::Management::Deployment::PackageManager>{ using type = Windows::Management::Deployment::IPackageManager; };
 template <> struct default_interface<Windows::Management::Deployment::PackageManagerDebugSettings>{ using type = Windows::Management::Deployment::IPackageManagerDebugSettings; };
 template <> struct default_interface<Windows::Management::Deployment::PackageUserInformation>{ using type = Windows::Management::Deployment::IPackageUserInformation; };
 template <> struct default_interface<Windows::Management::Deployment::PackageVolume>{ using type = Windows::Management::Deployment::IPackageVolume; };
 
+template <> struct abi<Windows::Management::Deployment::IDeploymentResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ErrorText(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ActivityId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedErrorCode(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IDeploymentResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsRegistered(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL UpdatePackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemovePackageAsync(void* packageFullName, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL StagePackageAsync(void* packageUri, void* dependencyPackageUris, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterPackageAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackages(void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityId(void* userSecurityId, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByNamePublisher(void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisher(void* userSecurityId, void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindUsers(void* packageFullName, void** users) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPackageState(void* packageFullName, Windows::Management::Deployment::PackageState packageState) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageByPackageFullName(void* packageFullName, void** packageInformation) noexcept = 0;
+    virtual int32_t WINRT_CALL CleanupPackageForUserAsync(void* packageName, void* userSecurityId, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByPackageFamilyName(void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyName(void* userSecurityId, void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageByUserSecurityIdPackageFullName(void* userSecurityId, void* packageFullName, void** packageInformation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RemovePackageWithOptionsAsync(void* packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL StagePackageWithOptionsAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterPackageByFullNameAsync(void* mainPackageFullName, void* dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByNamePublisherWithPackageTypes(void* packageName, void* packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(void* userSecurityId, void* packageName, void* packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByPackageFamilyNameWithPackageTypes(void* packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(void* userSecurityId, void* packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL StageUserDataAsync(void* packageFullName, void** deploymentOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddPackageVolumeAsync(void* packageStorePath, void** packageVolume) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL ClearPackageStatus(void* packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterPackageWithAppDataVolumeAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageVolumeByName(void* volumeName, void** volume) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageVolumes(void** volumeCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDefaultPackageVolume(void** volume) noexcept = 0;
+    virtual int32_t WINRT_CALL MovePackageToVolumeAsync(void* packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RemovePackageVolumeAsync(void* volume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetDefaultPackageVolume(void* volume) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPackageStatus(void* packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPackageVolumeOfflineAsync(void* packageVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetPackageVolumeOnlineAsync(void* packageVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL StagePackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL StageUserDataWithOptionsAsync(void* packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetPackageVolumesAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager5>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddPackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL StagePackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL RegisterPackageByFamilyNameAndOptionalPackagesAsync(void* mainPackageFamilyName, void* dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void* optionalPackageFamilyNames, void** deploymentOperation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DebugSettings(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager6>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL ProvisionPackageForAllUsersAsync(void* packageFamilyName, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AddPackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL StagePackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestAddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager7>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestAddPackageAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void* packageUrisToInstall, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManager8>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL DeprovisionPackageForAllUsersAsync(void* packageFamilyName, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageManagerDebugSettings>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SetContentGroupStateAsync(void* package, void* contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL SetContentGroupStateWithPercentageAsync(void* package, void* contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageUserInformation>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_UserSecurityId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstallState(Windows::Management::Deployment::PackageInstallState* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageVolume>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsOffline(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSystemVolume(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MountPoint(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PackageStorePath(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SupportsHardLinks(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackages(void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByNamePublisher(void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByPackageFamilyName(void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByNamePublisherWithPackagesTypes(Windows::Management::Deployment::PackageTypes packageTypes, void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByPackageFamilyNameWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageByPackageFullName(void* packageFullName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityId(void* userSecurityId, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisher(void* userSecurityId, void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyName(void* userSecurityId, void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void* packageName, void* packagePublisher, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(void* userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void* packageFamilyName, void** packageCollection) noexcept = 0;
+    virtual int32_t WINRT_CALL FindPackageByUserSecurityIdPackageFullName(void* userSecurityId, void* packageFullName, void** packageCollection) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Management::Deployment::IPackageVolume2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsFullTrustPackageSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsAppxInstallSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAvailableSpaceAsync(void** operation) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Management_Deployment_IDeploymentResult
 {
     hstring ErrorText() const;
-    GUID ActivityId() const;
-    HRESULT ExtendedErrorCode() const;
+    winrt::guid ActivityId() const;
+    winrt::hresult ExtendedErrorCode() const;
 };
 template <> struct consume<Windows::Management::Deployment::IDeploymentResult> { template <typename D> using type = consume_Windows_Management_Deployment_IDeploymentResult<D>; };
 
@@ -300,6 +447,13 @@ struct consume_Windows_Management_Deployment_IPackageManager7
 template <> struct consume<Windows::Management::Deployment::IPackageManager7> { template <typename D> using type = consume_Windows_Management_Deployment_IPackageManager7<D>; };
 
 template <typename D>
+struct consume_Windows_Management_Deployment_IPackageManager8
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> DeprovisionPackageForAllUsersAsync(param::hstring const& packageFamilyName) const;
+};
+template <> struct consume<Windows::Management::Deployment::IPackageManager8> { template <typename D> using type = consume_Windows_Management_Deployment_IPackageManager8<D>; };
+
+template <typename D>
 struct consume_Windows_Management_Deployment_IPackageManagerDebugSettings
 {
     Windows::Foundation::IAsyncAction SetContentGroupStateAsync(Windows::ApplicationModel::Package const& package, param::hstring const& contentGroupName, Windows::ApplicationModel::PackageContentGroupState const& state) const;
@@ -357,141 +511,5 @@ struct struct_Windows_Management_Deployment_DeploymentProgress
 };
 template <> struct abi<Windows::Management::Deployment::DeploymentProgress>{ using type = struct_Windows_Management_Deployment_DeploymentProgress; };
 
-
-template <> struct abi<Windows::Management::Deployment::IDeploymentResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ErrorText(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ActivityId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedErrorCode(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IDeploymentResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsRegistered(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall UpdatePackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall RemovePackageAsync(HSTRING packageFullName, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall StagePackageAsync(void* packageUri, void* dependencyPackageUris, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall RegisterPackageAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall FindPackages(void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityId(HSTRING userSecurityId, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByNamePublisher(HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindUsers(HSTRING packageFullName, void** users) noexcept = 0;
-    virtual HRESULT __stdcall SetPackageState(HSTRING packageFullName, Windows::Management::Deployment::PackageState packageState) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageByPackageFullName(HSTRING packageFullName, void** packageInformation) noexcept = 0;
-    virtual HRESULT __stdcall CleanupPackageForUserAsync(HSTRING packageName, HSTRING userSecurityId, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByPackageFamilyName(HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName, void** packageInformation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RemovePackageWithOptionsAsync(HSTRING packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall StagePackageWithOptionsAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall RegisterPackageByFullNameAsync(HSTRING mainPackageFullName, void* dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByNamePublisherWithPackageTypes(HSTRING packageName, HSTRING packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByPackageFamilyNameWithPackageTypes(HSTRING packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(HSTRING userSecurityId, HSTRING packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall StageUserDataAsync(HSTRING packageFullName, void** deploymentOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddPackageVolumeAsync(HSTRING packageStorePath, void** packageVolume) noexcept = 0;
-    virtual HRESULT __stdcall AddPackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall ClearPackageStatus(HSTRING packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept = 0;
-    virtual HRESULT __stdcall RegisterPackageWithAppDataVolumeAsync(void* manifestUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageVolumeByName(HSTRING volumeName, void** volume) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageVolumes(void** volumeCollection) noexcept = 0;
-    virtual HRESULT __stdcall GetDefaultPackageVolume(void** volume) noexcept = 0;
-    virtual HRESULT __stdcall MovePackageToVolumeAsync(HSTRING packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall RemovePackageVolumeAsync(void* volume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall SetDefaultPackageVolume(void* volume) noexcept = 0;
-    virtual HRESULT __stdcall SetPackageStatus(HSTRING packageFullName, Windows::Management::Deployment::PackageStatus status) noexcept = 0;
-    virtual HRESULT __stdcall SetPackageVolumeOfflineAsync(void* packageVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall SetPackageVolumeOnlineAsync(void* packageVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall StagePackageToVolumeAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall StageUserDataWithOptionsAsync(HSTRING packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void** deploymentOperation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager4>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetPackageVolumesAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager5>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddPackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall StagePackageToVolumeAndOptionalPackagesAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* externalPackageUris, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall RegisterPackageByFamilyNameAndOptionalPackagesAsync(HSTRING mainPackageFamilyName, void* dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* appDataVolume, void* optionalPackageFamilyNames, void** deploymentOperation) noexcept = 0;
-    virtual HRESULT __stdcall get_DebugSettings(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager6>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall ProvisionPackageForAllUsersAsync(HSTRING packageFamilyName, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestAddPackageByAppInstallerFileAsync(void* appInstallerFileUri, Windows::Management::Deployment::AddPackageByAppInstallerOptions options, void* targetVolume, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AddPackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall StagePackageToVolumeAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions options, void* targetVolume, void* optionalPackageFamilyNames, void* packageUrisToInstall, void* relatedPackageUris, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestAddPackageAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManager7>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall RequestAddPackageAndRelatedSetAsync(void* packageUri, void* dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, void* targetVolume, void* optionalPackageFamilyNames, void* relatedPackageUris, void* packageUrisToInstall, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageManagerDebugSettings>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SetContentGroupStateAsync(void* package, HSTRING contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, void** action) noexcept = 0;
-    virtual HRESULT __stdcall SetContentGroupStateWithPercentageAsync(void* package, HSTRING contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, void** action) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageUserInformation>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_UserSecurityId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstallState(Windows::Management::Deployment::PackageInstallState* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageVolume>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsOffline(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSystemVolume(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_MountPoint(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PackageStorePath(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SupportsHardLinks(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall FindPackages(void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByNamePublisher(HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByPackageFamilyName(HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByNamePublisherWithPackagesTypes(Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByPackageFamilyNameWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageByPackageFullName(HSTRING packageFullName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityId(HSTRING userSecurityId, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageName, HSTRING packagePublisher, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(HSTRING userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, HSTRING packageFamilyName, void** packageCollection) noexcept = 0;
-    virtual HRESULT __stdcall FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName, void** packageCollection) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Management::Deployment::IPackageVolume2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsFullTrustPackageSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsAppxInstallSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall GetAvailableSpaceAsync(void** operation) noexcept = 0;
-};};
 
 }

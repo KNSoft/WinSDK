@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -115,6 +115,14 @@ enum class StoreQueueItemState : int32_t
     Paused = 4,
 };
 
+enum class StoreRateAndReviewStatus : int32_t
+{
+    Succeeded = 0,
+    CanceledByUser = 1,
+    NetworkError = 2,
+    Error = 3,
+};
+
 enum class StoreUninstallStorePackageStatus : int32_t
 {
     Succeeded = 0,
@@ -126,6 +134,7 @@ enum class StoreUninstallStorePackageStatus : int32_t
 
 struct IStoreAcquireLicenseResult;
 struct IStoreAppLicense;
+struct IStoreAppLicense2;
 struct IStoreAvailability;
 struct IStoreCanAcquireLicenseResult;
 struct IStoreCollectionData;
@@ -133,6 +142,7 @@ struct IStoreConsumableResult;
 struct IStoreContext;
 struct IStoreContext2;
 struct IStoreContext3;
+struct IStoreContext4;
 struct IStoreContextStatics;
 struct IStoreImage;
 struct IStoreLicense;
@@ -151,8 +161,10 @@ struct IStorePurchaseProperties;
 struct IStorePurchasePropertiesFactory;
 struct IStorePurchaseResult;
 struct IStoreQueueItem;
+struct IStoreQueueItem2;
 struct IStoreQueueItemCompletedEventArgs;
 struct IStoreQueueItemStatus;
+struct IStoreRateAndReviewResult;
 struct IStoreRequestHelperStatics;
 struct IStoreSendRequestResult;
 struct IStoreSendRequestResult2;
@@ -184,6 +196,7 @@ struct StorePurchaseResult;
 struct StoreQueueItem;
 struct StoreQueueItemCompletedEventArgs;
 struct StoreQueueItemStatus;
+struct StoreRateAndReviewResult;
 struct StoreRequestHelper;
 struct StoreSendRequestResult;
 struct StoreSku;
@@ -198,6 +211,7 @@ namespace winrt::impl {
 
 template <> struct category<Windows::Services::Store::IStoreAcquireLicenseResult>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreAppLicense>{ using type = interface_category; };
+template <> struct category<Windows::Services::Store::IStoreAppLicense2>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreAvailability>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreCollectionData>{ using type = interface_category; };
@@ -205,6 +219,7 @@ template <> struct category<Windows::Services::Store::IStoreConsumableResult>{ u
 template <> struct category<Windows::Services::Store::IStoreContext>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreContext2>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreContext3>{ using type = interface_category; };
+template <> struct category<Windows::Services::Store::IStoreContext4>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreContextStatics>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreImage>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreLicense>{ using type = interface_category; };
@@ -223,8 +238,10 @@ template <> struct category<Windows::Services::Store::IStorePurchaseProperties>{
 template <> struct category<Windows::Services::Store::IStorePurchasePropertiesFactory>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStorePurchaseResult>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreQueueItem>{ using type = interface_category; };
+template <> struct category<Windows::Services::Store::IStoreQueueItem2>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreQueueItemStatus>{ using type = interface_category; };
+template <> struct category<Windows::Services::Store::IStoreRateAndReviewResult>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreRequestHelperStatics>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreSendRequestResult>{ using type = interface_category; };
 template <> struct category<Windows::Services::Store::IStoreSendRequestResult2>{ using type = interface_category; };
@@ -256,6 +273,7 @@ template <> struct category<Windows::Services::Store::StorePurchaseResult>{ usin
 template <> struct category<Windows::Services::Store::StoreQueueItem>{ using type = class_category; };
 template <> struct category<Windows::Services::Store::StoreQueueItemCompletedEventArgs>{ using type = class_category; };
 template <> struct category<Windows::Services::Store::StoreQueueItemStatus>{ using type = class_category; };
+template <> struct category<Windows::Services::Store::StoreRateAndReviewResult>{ using type = class_category; };
 template <> struct category<Windows::Services::Store::StoreRequestHelper>{ using type = class_category; };
 template <> struct category<Windows::Services::Store::StoreSendRequestResult>{ using type = class_category; };
 template <> struct category<Windows::Services::Store::StoreSku>{ using type = class_category; };
@@ -270,10 +288,12 @@ template <> struct category<Windows::Services::Store::StorePurchaseStatus>{ usin
 template <> struct category<Windows::Services::Store::StoreQueueItemExtendedState>{ using type = enum_category; };
 template <> struct category<Windows::Services::Store::StoreQueueItemKind>{ using type = enum_category; };
 template <> struct category<Windows::Services::Store::StoreQueueItemState>{ using type = enum_category; };
+template <> struct category<Windows::Services::Store::StoreRateAndReviewStatus>{ using type = enum_category; };
 template <> struct category<Windows::Services::Store::StoreUninstallStorePackageStatus>{ using type = enum_category; };
 template <> struct category<Windows::Services::Store::StorePackageUpdateStatus>{ using type = struct_category<hstring,uint64_t,uint64_t,double,double,Windows::Services::Store::StorePackageUpdateState>; };
 template <> struct name<Windows::Services::Store::IStoreAcquireLicenseResult>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreAcquireLicenseResult" }; };
 template <> struct name<Windows::Services::Store::IStoreAppLicense>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreAppLicense" }; };
+template <> struct name<Windows::Services::Store::IStoreAppLicense2>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreAppLicense2" }; };
 template <> struct name<Windows::Services::Store::IStoreAvailability>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreAvailability" }; };
 template <> struct name<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreCanAcquireLicenseResult" }; };
 template <> struct name<Windows::Services::Store::IStoreCollectionData>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreCollectionData" }; };
@@ -281,6 +301,7 @@ template <> struct name<Windows::Services::Store::IStoreConsumableResult>{ stati
 template <> struct name<Windows::Services::Store::IStoreContext>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreContext" }; };
 template <> struct name<Windows::Services::Store::IStoreContext2>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreContext2" }; };
 template <> struct name<Windows::Services::Store::IStoreContext3>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreContext3" }; };
+template <> struct name<Windows::Services::Store::IStoreContext4>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreContext4" }; };
 template <> struct name<Windows::Services::Store::IStoreContextStatics>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreContextStatics" }; };
 template <> struct name<Windows::Services::Store::IStoreImage>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreImage" }; };
 template <> struct name<Windows::Services::Store::IStoreLicense>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreLicense" }; };
@@ -299,8 +320,10 @@ template <> struct name<Windows::Services::Store::IStorePurchaseProperties>{ sta
 template <> struct name<Windows::Services::Store::IStorePurchasePropertiesFactory>{ static constexpr auto & value{ L"Windows.Services.Store.IStorePurchasePropertiesFactory" }; };
 template <> struct name<Windows::Services::Store::IStorePurchaseResult>{ static constexpr auto & value{ L"Windows.Services.Store.IStorePurchaseResult" }; };
 template <> struct name<Windows::Services::Store::IStoreQueueItem>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreQueueItem" }; };
+template <> struct name<Windows::Services::Store::IStoreQueueItem2>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreQueueItem2" }; };
 template <> struct name<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreQueueItemCompletedEventArgs" }; };
 template <> struct name<Windows::Services::Store::IStoreQueueItemStatus>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreQueueItemStatus" }; };
+template <> struct name<Windows::Services::Store::IStoreRateAndReviewResult>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreRateAndReviewResult" }; };
 template <> struct name<Windows::Services::Store::IStoreRequestHelperStatics>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreRequestHelperStatics" }; };
 template <> struct name<Windows::Services::Store::IStoreSendRequestResult>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreSendRequestResult" }; };
 template <> struct name<Windows::Services::Store::IStoreSendRequestResult2>{ static constexpr auto & value{ L"Windows.Services.Store.IStoreSendRequestResult2" }; };
@@ -332,6 +355,7 @@ template <> struct name<Windows::Services::Store::StorePurchaseResult>{ static c
 template <> struct name<Windows::Services::Store::StoreQueueItem>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItem" }; };
 template <> struct name<Windows::Services::Store::StoreQueueItemCompletedEventArgs>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItemCompletedEventArgs" }; };
 template <> struct name<Windows::Services::Store::StoreQueueItemStatus>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItemStatus" }; };
+template <> struct name<Windows::Services::Store::StoreRateAndReviewResult>{ static constexpr auto & value{ L"Windows.Services.Store.StoreRateAndReviewResult" }; };
 template <> struct name<Windows::Services::Store::StoreRequestHelper>{ static constexpr auto & value{ L"Windows.Services.Store.StoreRequestHelper" }; };
 template <> struct name<Windows::Services::Store::StoreSendRequestResult>{ static constexpr auto & value{ L"Windows.Services.Store.StoreSendRequestResult" }; };
 template <> struct name<Windows::Services::Store::StoreSku>{ static constexpr auto & value{ L"Windows.Services.Store.StoreSku" }; };
@@ -346,44 +370,49 @@ template <> struct name<Windows::Services::Store::StorePurchaseStatus>{ static c
 template <> struct name<Windows::Services::Store::StoreQueueItemExtendedState>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItemExtendedState" }; };
 template <> struct name<Windows::Services::Store::StoreQueueItemKind>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItemKind" }; };
 template <> struct name<Windows::Services::Store::StoreQueueItemState>{ static constexpr auto & value{ L"Windows.Services.Store.StoreQueueItemState" }; };
+template <> struct name<Windows::Services::Store::StoreRateAndReviewStatus>{ static constexpr auto & value{ L"Windows.Services.Store.StoreRateAndReviewStatus" }; };
 template <> struct name<Windows::Services::Store::StoreUninstallStorePackageStatus>{ static constexpr auto & value{ L"Windows.Services.Store.StoreUninstallStorePackageStatus" }; };
 template <> struct name<Windows::Services::Store::StorePackageUpdateStatus>{ static constexpr auto & value{ L"Windows.Services.Store.StorePackageUpdateStatus" }; };
-template <> struct guid<Windows::Services::Store::IStoreAcquireLicenseResult>{ static constexpr GUID value{ 0xFBD7946D,0xF040,0x4CB3,{ 0x9A,0x39,0x29,0xBC,0xEC,0xDB,0xE2,0x2D } }; };
-template <> struct guid<Windows::Services::Store::IStoreAppLicense>{ static constexpr GUID value{ 0xF389F9DE,0x73C0,0x45CE,{ 0x9B,0xAB,0xB2,0xFE,0x3E,0x5E,0xAF,0xD3 } }; };
-template <> struct guid<Windows::Services::Store::IStoreAvailability>{ static constexpr GUID value{ 0xFA060325,0x0FFD,0x4493,{ 0xAD,0x43,0xF1,0xF9,0x91,0x8F,0x69,0xFA } }; };
-template <> struct guid<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ static constexpr GUID value{ 0x3A693DB3,0x0088,0x482F,{ 0x86,0xD5,0xBD,0x46,0x52,0x26,0x63,0xAD } }; };
-template <> struct guid<Windows::Services::Store::IStoreCollectionData>{ static constexpr GUID value{ 0x8AA4C3B3,0x5BB3,0x441A,{ 0x2A,0xB4,0x4D,0xAB,0x73,0xD5,0xCE,0x67 } }; };
-template <> struct guid<Windows::Services::Store::IStoreConsumableResult>{ static constexpr GUID value{ 0xEA5DAB72,0x6A00,0x4052,{ 0xBE,0x5B,0xBF,0xDA,0xB4,0x43,0x33,0x52 } }; };
-template <> struct guid<Windows::Services::Store::IStoreContext>{ static constexpr GUID value{ 0xAC98B6BE,0xF4FD,0x4912,{ 0xBA,0xBD,0x50,0x35,0xE5,0xE8,0xBC,0xAB } }; };
-template <> struct guid<Windows::Services::Store::IStoreContext2>{ static constexpr GUID value{ 0x18BC54DA,0x7BD9,0x452C,{ 0x91,0x16,0x3B,0xBD,0x06,0xFF,0xC6,0x3A } }; };
-template <> struct guid<Windows::Services::Store::IStoreContext3>{ static constexpr GUID value{ 0xE26226CA,0x1A01,0x4730,{ 0x85,0xA6,0xEC,0xC8,0x96,0xE4,0xAE,0x38 } }; };
-template <> struct guid<Windows::Services::Store::IStoreContextStatics>{ static constexpr GUID value{ 0x9C06EE5F,0x15C0,0x4E72,{ 0x93,0x30,0xD6,0x19,0x1C,0xEB,0xD1,0x9C } }; };
-template <> struct guid<Windows::Services::Store::IStoreImage>{ static constexpr GUID value{ 0x081FD248,0xADB4,0x4B64,{ 0xA9,0x93,0x78,0x47,0x89,0x92,0x6E,0xD5 } }; };
-template <> struct guid<Windows::Services::Store::IStoreLicense>{ static constexpr GUID value{ 0x26DC9579,0x4C4F,0x4F30,{ 0xBC,0x89,0x64,0x9F,0x60,0xE3,0x60,0x55 } }; };
-template <> struct guid<Windows::Services::Store::IStorePackageInstallOptions>{ static constexpr GUID value{ 0x1D3D630C,0x0CCD,0x44DD,{ 0x8C,0x59,0x80,0x81,0x0A,0x72,0x99,0x73 } }; };
-template <> struct guid<Windows::Services::Store::IStorePackageLicense>{ static constexpr GUID value{ 0x0C465714,0x14E1,0x4973,{ 0xBD,0x14,0xF7,0x77,0x24,0x27,0x1E,0x99 } }; };
-template <> struct guid<Windows::Services::Store::IStorePackageUpdate>{ static constexpr GUID value{ 0x140FA150,0x3CBF,0x4A35,{ 0xB9,0x1F,0x48,0x27,0x1C,0x31,0xB0,0x72 } }; };
-template <> struct guid<Windows::Services::Store::IStorePackageUpdateResult>{ static constexpr GUID value{ 0xE79142ED,0x61F9,0x4893,{ 0xB4,0xFE,0xCF,0x19,0x16,0x03,0xAF,0x7B } }; };
-template <> struct guid<Windows::Services::Store::IStorePackageUpdateResult2>{ static constexpr GUID value{ 0x071D012E,0xBC62,0x4F2E,{ 0x87,0xEA,0x99,0xD8,0x01,0xAE,0xAF,0x98 } }; };
-template <> struct guid<Windows::Services::Store::IStorePrice>{ static constexpr GUID value{ 0x55BA94C4,0x15F1,0x407C,{ 0x8F,0x06,0x00,0x63,0x80,0xF4,0xDF,0x0B } }; };
-template <> struct guid<Windows::Services::Store::IStoreProduct>{ static constexpr GUID value{ 0x320E2C52,0xD760,0x450A,{ 0xA4,0x2B,0x67,0xD1,0xE9,0x01,0xAC,0x90 } }; };
-template <> struct guid<Windows::Services::Store::IStoreProductOptions>{ static constexpr GUID value{ 0x5B34A0F9,0xA113,0x4811,{ 0x83,0x26,0x16,0x19,0x9C,0x92,0x7F,0x31 } }; };
-template <> struct guid<Windows::Services::Store::IStoreProductPagedQueryResult>{ static constexpr GUID value{ 0xC92718C5,0x4DD5,0x4869,{ 0xA4,0x62,0xEC,0xC6,0x87,0x2E,0x43,0xC5 } }; };
-template <> struct guid<Windows::Services::Store::IStoreProductQueryResult>{ static constexpr GUID value{ 0xD805E6C5,0xD456,0x4FF6,{ 0x80,0x49,0x90,0x76,0xD5,0x16,0x5F,0x73 } }; };
-template <> struct guid<Windows::Services::Store::IStoreProductResult>{ static constexpr GUID value{ 0xB7674F73,0x3C87,0x4EE1,{ 0x82,0x01,0xF4,0x28,0x35,0x9B,0xD3,0xAF } }; };
-template <> struct guid<Windows::Services::Store::IStorePurchaseProperties>{ static constexpr GUID value{ 0x836278F3,0xFF87,0x4364,{ 0xA5,0xB4,0xFD,0x21,0x53,0xEB,0xE4,0x3B } }; };
-template <> struct guid<Windows::Services::Store::IStorePurchasePropertiesFactory>{ static constexpr GUID value{ 0xA768F59E,0xFEFD,0x489F,{ 0x9A,0x17,0x22,0xA5,0x93,0xE6,0x8B,0x9D } }; };
-template <> struct guid<Windows::Services::Store::IStorePurchaseResult>{ static constexpr GUID value{ 0xADD28552,0xF96A,0x463D,{ 0xA7,0xBB,0xC2,0x0B,0x4F,0xCA,0x69,0x52 } }; };
-template <> struct guid<Windows::Services::Store::IStoreQueueItem>{ static constexpr GUID value{ 0x56D5C32B,0xF830,0x4293,{ 0x91,0x88,0xCA,0xD2,0xDC,0xDE,0x73,0x57 } }; };
-template <> struct guid<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ static constexpr GUID value{ 0x1247DF6C,0xB44A,0x439B,{ 0xBB,0x07,0x1D,0x30,0x03,0xD0,0x05,0xC2 } }; };
-template <> struct guid<Windows::Services::Store::IStoreQueueItemStatus>{ static constexpr GUID value{ 0x9BD6796F,0x9CC3,0x4EC3,{ 0xB2,0xEF,0x7B,0xE4,0x33,0xB3,0x01,0x74 } }; };
-template <> struct guid<Windows::Services::Store::IStoreRequestHelperStatics>{ static constexpr GUID value{ 0x6CE5E5F9,0xA0C9,0x4B2C,{ 0x96,0xA6,0xA1,0x71,0xC6,0x30,0x03,0x8D } }; };
-template <> struct guid<Windows::Services::Store::IStoreSendRequestResult>{ static constexpr GUID value{ 0xC73ABE60,0x8272,0x4502,{ 0x8A,0x69,0x6E,0x75,0x15,0x3A,0x42,0x99 } }; };
-template <> struct guid<Windows::Services::Store::IStoreSendRequestResult2>{ static constexpr GUID value{ 0x2901296F,0xC0B0,0x49D0,{ 0x8E,0x8D,0xAA,0x94,0x0A,0xF9,0xC1,0x0B } }; };
-template <> struct guid<Windows::Services::Store::IStoreSku>{ static constexpr GUID value{ 0x397E6F55,0x4440,0x4F03,{ 0x86,0x3C,0x91,0xF3,0xFE,0xC8,0x3D,0x79 } }; };
-template <> struct guid<Windows::Services::Store::IStoreSubscriptionInfo>{ static constexpr GUID value{ 0x4189776A,0x0559,0x43AC,{ 0xA9,0xC6,0x3A,0xB0,0x01,0x1F,0xB8,0xEB } }; };
-template <> struct guid<Windows::Services::Store::IStoreUninstallStorePackageResult>{ static constexpr GUID value{ 0x9FCA39FD,0x126F,0x4CDA,{ 0xB8,0x01,0x13,0x46,0xB8,0xD0,0xA2,0x60 } }; };
-template <> struct guid<Windows::Services::Store::IStoreVideo>{ static constexpr GUID value{ 0xF26CB184,0x6F5E,0x4DC2,{ 0x88,0x6C,0x3C,0x63,0x08,0x3C,0x2F,0x94 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreAcquireLicenseResult>{ static constexpr guid value{ 0xFBD7946D,0xF040,0x4CB3,{ 0x9A,0x39,0x29,0xBC,0xEC,0xDB,0xE2,0x2D } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreAppLicense>{ static constexpr guid value{ 0xF389F9DE,0x73C0,0x45CE,{ 0x9B,0xAB,0xB2,0xFE,0x3E,0x5E,0xAF,0xD3 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreAppLicense2>{ static constexpr guid value{ 0xB4666E91,0x4443,0x40B3,{ 0x99,0x3F,0x28,0x90,0x44,0x35,0xBD,0xC6 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreAvailability>{ static constexpr guid value{ 0xFA060325,0x0FFD,0x4493,{ 0xAD,0x43,0xF1,0xF9,0x91,0x8F,0x69,0xFA } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ static constexpr guid value{ 0x3A693DB3,0x0088,0x482F,{ 0x86,0xD5,0xBD,0x46,0x52,0x26,0x63,0xAD } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreCollectionData>{ static constexpr guid value{ 0x8AA4C3B3,0x5BB3,0x441A,{ 0x2A,0xB4,0x4D,0xAB,0x73,0xD5,0xCE,0x67 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreConsumableResult>{ static constexpr guid value{ 0xEA5DAB72,0x6A00,0x4052,{ 0xBE,0x5B,0xBF,0xDA,0xB4,0x43,0x33,0x52 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreContext>{ static constexpr guid value{ 0xAC98B6BE,0xF4FD,0x4912,{ 0xBA,0xBD,0x50,0x35,0xE5,0xE8,0xBC,0xAB } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreContext2>{ static constexpr guid value{ 0x18BC54DA,0x7BD9,0x452C,{ 0x91,0x16,0x3B,0xBD,0x06,0xFF,0xC6,0x3A } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreContext3>{ static constexpr guid value{ 0xE26226CA,0x1A01,0x4730,{ 0x85,0xA6,0xEC,0xC8,0x96,0xE4,0xAE,0x38 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreContext4>{ static constexpr guid value{ 0xAF9C6F69,0xBEA1,0x4BF4,{ 0x8E,0x74,0xAE,0x03,0xE2,0x06,0xC6,0xB0 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreContextStatics>{ static constexpr guid value{ 0x9C06EE5F,0x15C0,0x4E72,{ 0x93,0x30,0xD6,0x19,0x1C,0xEB,0xD1,0x9C } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreImage>{ static constexpr guid value{ 0x081FD248,0xADB4,0x4B64,{ 0xA9,0x93,0x78,0x47,0x89,0x92,0x6E,0xD5 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreLicense>{ static constexpr guid value{ 0x26DC9579,0x4C4F,0x4F30,{ 0xBC,0x89,0x64,0x9F,0x60,0xE3,0x60,0x55 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePackageInstallOptions>{ static constexpr guid value{ 0x1D3D630C,0x0CCD,0x44DD,{ 0x8C,0x59,0x80,0x81,0x0A,0x72,0x99,0x73 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePackageLicense>{ static constexpr guid value{ 0x0C465714,0x14E1,0x4973,{ 0xBD,0x14,0xF7,0x77,0x24,0x27,0x1E,0x99 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePackageUpdate>{ static constexpr guid value{ 0x140FA150,0x3CBF,0x4A35,{ 0xB9,0x1F,0x48,0x27,0x1C,0x31,0xB0,0x72 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePackageUpdateResult>{ static constexpr guid value{ 0xE79142ED,0x61F9,0x4893,{ 0xB4,0xFE,0xCF,0x19,0x16,0x03,0xAF,0x7B } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePackageUpdateResult2>{ static constexpr guid value{ 0x071D012E,0xBC62,0x4F2E,{ 0x87,0xEA,0x99,0xD8,0x01,0xAE,0xAF,0x98 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePrice>{ static constexpr guid value{ 0x55BA94C4,0x15F1,0x407C,{ 0x8F,0x06,0x00,0x63,0x80,0xF4,0xDF,0x0B } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreProduct>{ static constexpr guid value{ 0x320E2C52,0xD760,0x450A,{ 0xA4,0x2B,0x67,0xD1,0xE9,0x01,0xAC,0x90 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreProductOptions>{ static constexpr guid value{ 0x5B34A0F9,0xA113,0x4811,{ 0x83,0x26,0x16,0x19,0x9C,0x92,0x7F,0x31 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreProductPagedQueryResult>{ static constexpr guid value{ 0xC92718C5,0x4DD5,0x4869,{ 0xA4,0x62,0xEC,0xC6,0x87,0x2E,0x43,0xC5 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreProductQueryResult>{ static constexpr guid value{ 0xD805E6C5,0xD456,0x4FF6,{ 0x80,0x49,0x90,0x76,0xD5,0x16,0x5F,0x73 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreProductResult>{ static constexpr guid value{ 0xB7674F73,0x3C87,0x4EE1,{ 0x82,0x01,0xF4,0x28,0x35,0x9B,0xD3,0xAF } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePurchaseProperties>{ static constexpr guid value{ 0x836278F3,0xFF87,0x4364,{ 0xA5,0xB4,0xFD,0x21,0x53,0xEB,0xE4,0x3B } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePurchasePropertiesFactory>{ static constexpr guid value{ 0xA768F59E,0xFEFD,0x489F,{ 0x9A,0x17,0x22,0xA5,0x93,0xE6,0x8B,0x9D } }; };
+template <> struct guid_storage<Windows::Services::Store::IStorePurchaseResult>{ static constexpr guid value{ 0xADD28552,0xF96A,0x463D,{ 0xA7,0xBB,0xC2,0x0B,0x4F,0xCA,0x69,0x52 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreQueueItem>{ static constexpr guid value{ 0x56D5C32B,0xF830,0x4293,{ 0x91,0x88,0xCA,0xD2,0xDC,0xDE,0x73,0x57 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreQueueItem2>{ static constexpr guid value{ 0x69491CA8,0x1AD4,0x447C,{ 0xAD,0x8C,0xA9,0x50,0x35,0xF6,0x4D,0x82 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ static constexpr guid value{ 0x1247DF6C,0xB44A,0x439B,{ 0xBB,0x07,0x1D,0x30,0x03,0xD0,0x05,0xC2 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreQueueItemStatus>{ static constexpr guid value{ 0x9BD6796F,0x9CC3,0x4EC3,{ 0xB2,0xEF,0x7B,0xE4,0x33,0xB3,0x01,0x74 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreRateAndReviewResult>{ static constexpr guid value{ 0x9D209D56,0xA6B5,0x4121,{ 0x9B,0x61,0xEE,0x6D,0x0F,0xBD,0xBD,0xBB } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreRequestHelperStatics>{ static constexpr guid value{ 0x6CE5E5F9,0xA0C9,0x4B2C,{ 0x96,0xA6,0xA1,0x71,0xC6,0x30,0x03,0x8D } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreSendRequestResult>{ static constexpr guid value{ 0xC73ABE60,0x8272,0x4502,{ 0x8A,0x69,0x6E,0x75,0x15,0x3A,0x42,0x99 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreSendRequestResult2>{ static constexpr guid value{ 0x2901296F,0xC0B0,0x49D0,{ 0x8E,0x8D,0xAA,0x94,0x0A,0xF9,0xC1,0x0B } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreSku>{ static constexpr guid value{ 0x397E6F55,0x4440,0x4F03,{ 0x86,0x3C,0x91,0xF3,0xFE,0xC8,0x3D,0x79 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreSubscriptionInfo>{ static constexpr guid value{ 0x4189776A,0x0559,0x43AC,{ 0xA9,0xC6,0x3A,0xB0,0x01,0x1F,0xB8,0xEB } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreUninstallStorePackageResult>{ static constexpr guid value{ 0x9FCA39FD,0x126F,0x4CDA,{ 0xB8,0x01,0x13,0x46,0xB8,0xD0,0xA2,0x60 } }; };
+template <> struct guid_storage<Windows::Services::Store::IStoreVideo>{ static constexpr guid value{ 0xF26CB184,0x6F5E,0x4DC2,{ 0x88,0x6C,0x3C,0x63,0x08,0x3C,0x2F,0x94 } }; };
 template <> struct default_interface<Windows::Services::Store::StoreAcquireLicenseResult>{ using type = Windows::Services::Store::IStoreAcquireLicenseResult; };
 template <> struct default_interface<Windows::Services::Store::StoreAppLicense>{ using type = Windows::Services::Store::IStoreAppLicense; };
 template <> struct default_interface<Windows::Services::Store::StoreAvailability>{ using type = Windows::Services::Store::IStoreAvailability; };
@@ -408,17 +437,369 @@ template <> struct default_interface<Windows::Services::Store::StorePurchaseResu
 template <> struct default_interface<Windows::Services::Store::StoreQueueItem>{ using type = Windows::Services::Store::IStoreQueueItem; };
 template <> struct default_interface<Windows::Services::Store::StoreQueueItemCompletedEventArgs>{ using type = Windows::Services::Store::IStoreQueueItemCompletedEventArgs; };
 template <> struct default_interface<Windows::Services::Store::StoreQueueItemStatus>{ using type = Windows::Services::Store::IStoreQueueItemStatus; };
+template <> struct default_interface<Windows::Services::Store::StoreRateAndReviewResult>{ using type = Windows::Services::Store::IStoreRateAndReviewResult; };
 template <> struct default_interface<Windows::Services::Store::StoreSendRequestResult>{ using type = Windows::Services::Store::IStoreSendRequestResult; };
 template <> struct default_interface<Windows::Services::Store::StoreSku>{ using type = Windows::Services::Store::IStoreSku; };
 template <> struct default_interface<Windows::Services::Store::StoreSubscriptionInfo>{ using type = Windows::Services::Store::IStoreSubscriptionInfo; };
 template <> struct default_interface<Windows::Services::Store::StoreUninstallStorePackageResult>{ using type = Windows::Services::Store::IStoreUninstallStorePackageResult; };
 template <> struct default_interface<Windows::Services::Store::StoreVideo>{ using type = Windows::Services::Store::IStoreVideo; };
 
+template <> struct abi<Windows::Services::Store::IStoreAcquireLicenseResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StorePackageLicense(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreAppLicense>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SkuStoreId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTrial(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AddOnLicenses(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrialTimeRemaining(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTrialOwnedByThisUser(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrialUniqueId(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreAppLicense2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsDiscLicense(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreAvailability>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StoreId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Price(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LicensableSku(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Store::StoreCanLicenseStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreCollectionData>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IsTrial(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CampaignId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeveloperOfferId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AcquiredDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StartDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EndDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrialTimeRemaining(Windows::Foundation::TimeSpan* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreConsumableResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Store::StoreConsumableStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrackingId(winrt::guid* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BalanceRemaining(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreContext>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_User(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL add_OfflineLicensesChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_OfflineLicensesChanged(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCustomerPurchaseIdAsync(void* serviceTicket, void* publisherUserId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCustomerCollectionsIdAsync(void* serviceTicket, void* publisherUserId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAppLicenseAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStoreProductForCurrentAppAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStoreProductsAsync(void* productKinds, void* storeIds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAssociatedStoreProductsAsync(void* productKinds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAssociatedStoreProductsWithPagingAsync(void* productKinds, uint32_t maxItemsToRetrievePerPage, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetUserCollectionAsync(void* productKinds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetUserCollectionWithPagingAsync(void* productKinds, uint32_t maxItemsToRetrievePerPage, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL ReportConsumableFulfillmentAsync(void* productStoreId, uint32_t quantity, winrt::guid trackingId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetConsumableBalanceRemainingAsync(void* productStoreId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL AcquireStoreLicenseForOptionalPackageAsync(void* optionalPackage, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseAsync(void* storeId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseWithPurchasePropertiesAsync(void* storeId, void* storePurchaseProperties, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAppAndOptionalStorePackageUpdatesAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestDownloadStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestDownloadAndInstallStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestDownloadAndInstallStorePackagesAsync(void* storeIds, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreContext2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL FindStoreProductForPackageAsync(void* productKinds, void* package, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreContext3>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_CanSilentlyDownloadStorePackageUpdates(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySilentDownloadStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL TrySilentDownloadAndInstallStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CanAcquireStoreLicenseForOptionalPackageAsync(void* optionalPackage, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL CanAcquireStoreLicenseAsync(void* productStoreId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStoreProductsWithOptionsAsync(void* productKinds, void* storeIds, void* storeProductOptions, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetAssociatedStoreQueueItemsAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL GetStoreQueueItemsAsync(void* storeIds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync(void* storeIds, void* storePackageInstallOptions, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL DownloadAndInstallStorePackagesAsync(void* storeIds, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestUninstallStorePackageAsync(void* package, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestUninstallStorePackageByStoreIdAsync(void* storeId, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UninstallStorePackageAsync(void* package, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL UninstallStorePackageByStoreIdAsync(void* storeId, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreContext4>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL RequestRateAndReviewAppAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL SetInstallOrderForAssociatedStoreQueueItemsAsync(void* items, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreContextStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL GetDefault(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetForUser(void* user, void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreImage>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ImagePurposeTag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Caption(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreLicense>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_SkuStoreId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsActive(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InAppOfferToken(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePackageInstallOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AllowForcedAppRestart(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AllowForcedAppRestart(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePackageLicense>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL add_LicenseLost(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_LicenseLost(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Package(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsValid(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL ReleaseLicense() noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePackageUpdate>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Package(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Mandatory(bool* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePackageUpdateResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_OverallState(Windows::Services::Store::StorePackageUpdateState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_StorePackageUpdateStatuses(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePackageUpdateResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StoreQueueItems(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePrice>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_FormattedBasePrice(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FormattedPrice(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOnSale(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SaleEndDate(Windows::Foundation::DateTime* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CurrencyCode(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_FormattedRecurrencePrice(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreProduct>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StoreId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ProductKind(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasDigitalDownload(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Keywords(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Images(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Videos(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Skus(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsInUserCollection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Price(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_LinkUri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsAnySkuInstalledAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InAppOfferToken(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreProductOptions>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ActionFilters(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreProductPagedQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Products(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasMoreResults(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetNextAsync(void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreProductQueryResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Products(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreProductResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Product(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePurchaseProperties>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Name(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Name(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ExtendedJsonData(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePurchasePropertiesFactory>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL Create(void* name, void** storePurchaseProperties) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStorePurchaseResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Store::StorePurchaseStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreQueueItem>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ProductId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PackageFamilyName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_InstallKind(Windows::Services::Store::StoreQueueItemKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetCurrentStatus(void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL add_Completed(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_Completed(winrt::event_token token) noexcept = 0;
+    virtual int32_t WINRT_CALL add_StatusChanged(void* handler, winrt::event_token* token) noexcept = 0;
+    virtual int32_t WINRT_CALL remove_StatusChanged(winrt::event_token token) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreQueueItem2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL CancelInstallAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL PauseInstallAsync(void** action) noexcept = 0;
+    virtual int32_t WINRT_CALL ResumeInstallAsync(void** action) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Status(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreQueueItemStatus>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_PackageInstallState(Windows::Services::Store::StoreQueueItemState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PackageInstallExtendedState(Windows::Services::Store::StoreQueueItemExtendedState* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_UpdateStatus(struct struct_Windows_Services_Store_StorePackageUpdateStatus* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreRateAndReviewResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WasUpdated(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Store::StoreRateAndReviewStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreRequestHelperStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SendRequestAsync(void* context, uint32_t requestKind, void* parametersAsJson, void** operation) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreSendRequestResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Response(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreSendRequestResult2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_HttpStatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreSku>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_StoreId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Language(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Title(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Description(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsTrial(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CustomDeveloperData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Images(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Videos(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Availabilities(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Price(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ExtendedJsonData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsInUserCollection(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BundledSkus(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CollectionData(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL GetIsInstalledAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseAsync(void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSubscription(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SubscriptionInfo(void** value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreSubscriptionInfo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_BillingPeriod(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_BillingPeriodUnit(Windows::Services::Store::StoreDurationUnit* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_HasTrialPeriod(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrialPeriod(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_TrialPeriodUnit(Windows::Services::Store::StoreDurationUnit* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreUninstallStorePackageResult>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_ExtendedError(winrt::hresult* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Status(Windows::Services::Store::StoreUninstallStorePackageStatus* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::Services::Store::IStoreVideo>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_Uri(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_VideoPurposeTag(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Width(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Height(uint32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Caption(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_PreviewImage(void** value) noexcept = 0;
+};};
+
 template <typename D>
 struct consume_Windows_Services_Store_IStoreAcquireLicenseResult
 {
     Windows::Services::Store::StorePackageLicense StorePackageLicense() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreAcquireLicenseResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreAcquireLicenseResult<D>; };
 
@@ -438,6 +819,13 @@ struct consume_Windows_Services_Store_IStoreAppLicense
 template <> struct consume<Windows::Services::Store::IStoreAppLicense> { template <typename D> using type = consume_Windows_Services_Store_IStoreAppLicense<D>; };
 
 template <typename D>
+struct consume_Windows_Services_Store_IStoreAppLicense2
+{
+    bool IsDiscLicense() const;
+};
+template <> struct consume<Windows::Services::Store::IStoreAppLicense2> { template <typename D> using type = consume_Windows_Services_Store_IStoreAppLicense2<D>; };
+
+template <typename D>
 struct consume_Windows_Services_Store_IStoreAvailability
 {
     hstring StoreId() const;
@@ -452,7 +840,7 @@ template <> struct consume<Windows::Services::Store::IStoreAvailability> { templ
 template <typename D>
 struct consume_Windows_Services_Store_IStoreCanAcquireLicenseResult
 {
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     hstring LicensableSku() const;
     Windows::Services::Store::StoreCanLicenseStatus Status() const;
 };
@@ -476,9 +864,9 @@ template <typename D>
 struct consume_Windows_Services_Store_IStoreConsumableResult
 {
     Windows::Services::Store::StoreConsumableStatus Status() const;
-    GUID TrackingId() const;
+    winrt::guid TrackingId() const;
     uint32_t BalanceRemaining() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreConsumableResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreConsumableResult<D>; };
 
@@ -486,10 +874,10 @@ template <typename D>
 struct consume_Windows_Services_Store_IStoreContext
 {
     Windows::System::User User() const;
-    event_token OfflineLicensesChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> const& handler) const;
-    using OfflineLicensesChanged_revoker = event_revoker<Windows::Services::Store::IStoreContext>;
+    winrt::event_token OfflineLicensesChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> const& handler) const;
+    using OfflineLicensesChanged_revoker = impl::event_revoker<Windows::Services::Store::IStoreContext, &impl::abi_t<Windows::Services::Store::IStoreContext>::remove_OfflineLicensesChanged>;
     OfflineLicensesChanged_revoker OfflineLicensesChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::Foundation::IInspectable> const& handler) const;
-    void OfflineLicensesChanged(event_token const& token) const;
+    void OfflineLicensesChanged(winrt::event_token const& token) const noexcept;
     Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(param::hstring const& serviceTicket, param::hstring const& publisherUserId) const;
     Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(param::hstring const& serviceTicket, param::hstring const& publisherUserId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> GetAppLicenseAsync() const;
@@ -499,7 +887,7 @@ struct consume_Windows_Services_Store_IStoreContext
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetAssociatedStoreProductsWithPagingAsync(param::async_iterable<hstring> const& productKinds, uint32_t maxItemsToRetrievePerPage) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetUserCollectionAsync(param::async_iterable<hstring> const& productKinds) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetUserCollectionWithPagingAsync(param::async_iterable<hstring> const& productKinds, uint32_t maxItemsToRetrievePerPage) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(param::hstring const& productStoreId, uint32_t quantity, GUID const& trackingId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(param::hstring const& productStoreId, uint32_t quantity, winrt::guid const& trackingId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> GetConsumableBalanceRemainingAsync(param::hstring const& productStoreId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> AcquireStoreLicenseForOptionalPackageAsync(Windows::ApplicationModel::Package const& optionalPackage) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(param::hstring const& storeId) const;
@@ -537,6 +925,14 @@ struct consume_Windows_Services_Store_IStoreContext3
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreUninstallStorePackageResult> UninstallStorePackageByStoreIdAsync(param::hstring const& storeId) const;
 };
 template <> struct consume<Windows::Services::Store::IStoreContext3> { template <typename D> using type = consume_Windows_Services_Store_IStoreContext3<D>; };
+
+template <typename D>
+struct consume_Windows_Services_Store_IStoreContext4
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreRateAndReviewResult> RequestRateAndReviewAppAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreQueueItem>> SetInstallOrderForAssociatedStoreQueueItemsAsync(param::async_iterable<Windows::Services::Store::StoreQueueItem> const& items) const;
+};
+template <> struct consume<Windows::Services::Store::IStoreContext4> { template <typename D> using type = consume_Windows_Services_Store_IStoreContext4<D>; };
 
 template <typename D>
 struct consume_Windows_Services_Store_IStoreContextStatics
@@ -579,10 +975,10 @@ template <> struct consume<Windows::Services::Store::IStorePackageInstallOptions
 template <typename D>
 struct consume_Windows_Services_Store_IStorePackageLicense
 {
-    event_token LicenseLost(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> const& handler) const;
-    using LicenseLost_revoker = event_revoker<Windows::Services::Store::IStorePackageLicense>;
+    winrt::event_token LicenseLost(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> const& handler) const;
+    using LicenseLost_revoker = impl::event_revoker<Windows::Services::Store::IStorePackageLicense, &impl::abi_t<Windows::Services::Store::IStorePackageLicense>::remove_LicenseLost>;
     LicenseLost_revoker LicenseLost(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::Foundation::IInspectable> const& handler) const;
-    void LicenseLost(event_token const& token) const;
+    void LicenseLost(winrt::event_token const& token) const noexcept;
     Windows::ApplicationModel::Package Package() const;
     bool IsValid() const;
     void ReleaseLicense() const;
@@ -660,7 +1056,7 @@ struct consume_Windows_Services_Store_IStoreProductPagedQueryResult
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
     bool HasMoreResults() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetNextAsync() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreProductPagedQueryResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreProductPagedQueryResult<D>; };
@@ -669,7 +1065,7 @@ template <typename D>
 struct consume_Windows_Services_Store_IStoreProductQueryResult
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreProductQueryResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreProductQueryResult<D>; };
 
@@ -677,7 +1073,7 @@ template <typename D>
 struct consume_Windows_Services_Store_IStoreProductResult
 {
     Windows::Services::Store::StoreProduct Product() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreProductResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreProductResult<D>; };
 
@@ -702,7 +1098,7 @@ template <typename D>
 struct consume_Windows_Services_Store_IStorePurchaseResult
 {
     Windows::Services::Store::StorePurchaseStatus Status() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStorePurchaseResult> { template <typename D> using type = consume_Windows_Services_Store_IStorePurchaseResult<D>; };
 
@@ -713,16 +1109,25 @@ struct consume_Windows_Services_Store_IStoreQueueItem
     hstring PackageFamilyName() const;
     Windows::Services::Store::StoreQueueItemKind InstallKind() const;
     Windows::Services::Store::StoreQueueItemStatus GetCurrentStatus() const;
-    event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Services::Store::StoreQueueItemCompletedEventArgs> const& handler) const;
-    using Completed_revoker = event_revoker<Windows::Services::Store::IStoreQueueItem>;
+    winrt::event_token Completed(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Services::Store::StoreQueueItemCompletedEventArgs> const& handler) const;
+    using Completed_revoker = impl::event_revoker<Windows::Services::Store::IStoreQueueItem, &impl::abi_t<Windows::Services::Store::IStoreQueueItem>::remove_Completed>;
     Completed_revoker Completed(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Services::Store::StoreQueueItemCompletedEventArgs> const& handler) const;
-    void Completed(event_token const& token) const;
-    event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Foundation::IInspectable> const& handler) const;
-    using StatusChanged_revoker = event_revoker<Windows::Services::Store::IStoreQueueItem>;
+    void Completed(winrt::event_token const& token) const noexcept;
+    winrt::event_token StatusChanged(Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Foundation::IInspectable> const& handler) const;
+    using StatusChanged_revoker = impl::event_revoker<Windows::Services::Store::IStoreQueueItem, &impl::abi_t<Windows::Services::Store::IStoreQueueItem>::remove_StatusChanged>;
     StatusChanged_revoker StatusChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreQueueItem, Windows::Foundation::IInspectable> const& handler) const;
-    void StatusChanged(event_token const& token) const;
+    void StatusChanged(winrt::event_token const& token) const noexcept;
 };
 template <> struct consume<Windows::Services::Store::IStoreQueueItem> { template <typename D> using type = consume_Windows_Services_Store_IStoreQueueItem<D>; };
+
+template <typename D>
+struct consume_Windows_Services_Store_IStoreQueueItem2
+{
+    Windows::Foundation::IAsyncAction CancelInstallAsync() const;
+    Windows::Foundation::IAsyncAction PauseInstallAsync() const;
+    Windows::Foundation::IAsyncAction ResumeInstallAsync() const;
+};
+template <> struct consume<Windows::Services::Store::IStoreQueueItem2> { template <typename D> using type = consume_Windows_Services_Store_IStoreQueueItem2<D>; };
 
 template <typename D>
 struct consume_Windows_Services_Store_IStoreQueueItemCompletedEventArgs
@@ -737,9 +1142,19 @@ struct consume_Windows_Services_Store_IStoreQueueItemStatus
     Windows::Services::Store::StoreQueueItemState PackageInstallState() const;
     Windows::Services::Store::StoreQueueItemExtendedState PackageInstallExtendedState() const;
     Windows::Services::Store::StorePackageUpdateStatus UpdateStatus() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreQueueItemStatus> { template <typename D> using type = consume_Windows_Services_Store_IStoreQueueItemStatus<D>; };
+
+template <typename D>
+struct consume_Windows_Services_Store_IStoreRateAndReviewResult
+{
+    winrt::hresult ExtendedError() const;
+    hstring ExtendedJsonData() const;
+    bool WasUpdated() const;
+    Windows::Services::Store::StoreRateAndReviewStatus Status() const;
+};
+template <> struct consume<Windows::Services::Store::IStoreRateAndReviewResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreRateAndReviewResult<D>; };
 
 template <typename D>
 struct consume_Windows_Services_Store_IStoreRequestHelperStatics
@@ -752,7 +1167,7 @@ template <typename D>
 struct consume_Windows_Services_Store_IStoreSendRequestResult
 {
     hstring Response() const;
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreSendRequestResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreSendRequestResult<D>; };
 
@@ -802,7 +1217,7 @@ template <> struct consume<Windows::Services::Store::IStoreSubscriptionInfo> { t
 template <typename D>
 struct consume_Windows_Services_Store_IStoreUninstallStorePackageResult
 {
-    HRESULT ExtendedError() const;
+    winrt::hresult ExtendedError() const;
     Windows::Services::Store::StoreUninstallStorePackageStatus Status() const;
 };
 template <> struct consume<Windows::Services::Store::IStoreUninstallStorePackageResult> { template <typename D> using type = consume_Windows_Services_Store_IStoreUninstallStorePackageResult<D>; };
@@ -821,7 +1236,7 @@ template <> struct consume<Windows::Services::Store::IStoreVideo> { template <ty
 
 struct struct_Windows_Services_Store_StorePackageUpdateStatus
 {
-    HSTRING PackageFamilyName;
+    void* PackageFamilyName;
     uint64_t PackageDownloadSizeInBytes;
     uint64_t PackageBytesDownloaded;
     double PackageDownloadProgress;
@@ -830,330 +1245,5 @@ struct struct_Windows_Services_Store_StorePackageUpdateStatus
 };
 template <> struct abi<Windows::Services::Store::StorePackageUpdateStatus>{ using type = struct_Windows_Services_Store_StorePackageUpdateStatus; };
 
-
-template <> struct abi<Windows::Services::Store::IStoreAcquireLicenseResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StorePackageLicense(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreAppLicense>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SkuStoreId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTrial(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AddOnLicenses(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrialTimeRemaining(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTrialOwnedByThisUser(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrialUniqueId(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreAvailability>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StoreId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Price(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreCanAcquireLicenseResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LicensableSku(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Services::Store::StoreCanLicenseStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreCollectionData>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IsTrial(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CampaignId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeveloperOfferId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_AcquiredDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StartDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_EndDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrialTimeRemaining(Windows::Foundation::TimeSpan* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreConsumableResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Services::Store::StoreConsumableStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrackingId(GUID* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BalanceRemaining(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreContext>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_User(void** value) noexcept = 0;
-    virtual HRESULT __stdcall add_OfflineLicensesChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_OfflineLicensesChanged(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetCustomerCollectionsIdAsync(HSTRING serviceTicket, HSTRING publisherUserId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAppLicenseAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetStoreProductForCurrentAppAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetStoreProductsAsync(void* productKinds, void* storeIds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAssociatedStoreProductsAsync(void* productKinds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAssociatedStoreProductsWithPagingAsync(void* productKinds, uint32_t maxItemsToRetrievePerPage, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetUserCollectionAsync(void* productKinds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetUserCollectionWithPagingAsync(void* productKinds, uint32_t maxItemsToRetrievePerPage, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall ReportConsumableFulfillmentAsync(HSTRING productStoreId, uint32_t quantity, GUID trackingId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetConsumableBalanceRemainingAsync(HSTRING productStoreId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall AcquireStoreLicenseForOptionalPackageAsync(void* optionalPackage, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseAsync(HSTRING storeId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, void* storePurchaseProperties, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAppAndOptionalStorePackageUpdatesAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestDownloadStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestDownloadAndInstallStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestDownloadAndInstallStorePackagesAsync(void* storeIds, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreContext2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall FindStoreProductForPackageAsync(void* productKinds, void* package, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreContext3>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_CanSilentlyDownloadStorePackageUpdates(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall TrySilentDownloadStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall TrySilentDownloadAndInstallStorePackageUpdatesAsync(void* storePackageUpdates, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CanAcquireStoreLicenseForOptionalPackageAsync(void* optionalPackage, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall CanAcquireStoreLicenseAsync(HSTRING productStoreId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetStoreProductsWithOptionsAsync(void* productKinds, void* storeIds, void* storeProductOptions, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetAssociatedStoreQueueItemsAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall GetStoreQueueItemsAsync(void* storeIds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestDownloadAndInstallStorePackagesWithInstallOptionsAsync(void* storeIds, void* storePackageInstallOptions, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall DownloadAndInstallStorePackagesAsync(void* storeIds, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestUninstallStorePackageAsync(void* package, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestUninstallStorePackageByStoreIdAsync(HSTRING storeId, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UninstallStorePackageAsync(void* package, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall UninstallStorePackageByStoreIdAsync(HSTRING storeId, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreContextStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall GetDefault(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetForUser(void* user, void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreImage>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ImagePurposeTag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Caption(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreLicense>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_SkuStoreId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsActive(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExpirationDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InAppOfferToken(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePackageInstallOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AllowForcedAppRestart(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AllowForcedAppRestart(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePackageLicense>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall add_LicenseLost(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_LicenseLost(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall get_Package(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsValid(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall ReleaseLicense() noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePackageUpdate>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Package(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Mandatory(bool* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePackageUpdateResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_OverallState(Windows::Services::Store::StorePackageUpdateState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_StorePackageUpdateStatuses(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePackageUpdateResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StoreQueueItems(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePrice>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_FormattedBasePrice(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FormattedPrice(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOnSale(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SaleEndDate(Windows::Foundation::DateTime* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CurrencyCode(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_FormattedRecurrencePrice(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreProduct>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StoreId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ProductKind(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasDigitalDownload(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Keywords(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Images(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Videos(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Skus(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsInUserCollection(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Price(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_LinkUri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsAnySkuInstalledAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_InAppOfferToken(HSTRING* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreProductOptions>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ActionFilters(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreProductPagedQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Products(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasMoreResults(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall GetNextAsync(void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreProductQueryResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Products(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreProductResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Product(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePurchaseProperties>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Name(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Name(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ExtendedJsonData(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePurchasePropertiesFactory>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall Create(HSTRING name, void** storePurchaseProperties) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStorePurchaseResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(Windows::Services::Store::StorePurchaseStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreQueueItem>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ProductId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PackageFamilyName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_InstallKind(Windows::Services::Store::StoreQueueItemKind* value) noexcept = 0;
-    virtual HRESULT __stdcall GetCurrentStatus(void** result) noexcept = 0;
-    virtual HRESULT __stdcall add_Completed(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_Completed(event_token token) noexcept = 0;
-    virtual HRESULT __stdcall add_StatusChanged(void* handler, event_token* token) noexcept = 0;
-    virtual HRESULT __stdcall remove_StatusChanged(event_token token) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreQueueItemCompletedEventArgs>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Status(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreQueueItemStatus>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_PackageInstallState(Windows::Services::Store::StoreQueueItemState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PackageInstallExtendedState(Windows::Services::Store::StoreQueueItemExtendedState* value) noexcept = 0;
-    virtual HRESULT __stdcall get_UpdateStatus(struct struct_Windows_Services_Store_StorePackageUpdateStatus* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreRequestHelperStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SendRequestAsync(void* context, uint32_t requestKind, HSTRING parametersAsJson, void** operation) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreSendRequestResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Response(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreSendRequestResult2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_HttpStatusCode(Windows::Web::Http::HttpStatusCode* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreSku>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_StoreId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Language(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Title(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Description(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsTrial(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CustomDeveloperData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Images(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Videos(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Availabilities(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_Price(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_ExtendedJsonData(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsInUserCollection(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BundledSkus(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_CollectionData(void** value) noexcept = 0;
-    virtual HRESULT __stdcall GetIsInstalledAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseAsync(void** operation) noexcept = 0;
-    virtual HRESULT __stdcall RequestPurchaseWithPurchasePropertiesAsync(void* storePurchaseProperties, void** operation) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSubscription(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SubscriptionInfo(void** value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreSubscriptionInfo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_BillingPeriod(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_BillingPeriodUnit(Windows::Services::Store::StoreDurationUnit* value) noexcept = 0;
-    virtual HRESULT __stdcall get_HasTrialPeriod(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrialPeriod(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_TrialPeriodUnit(Windows::Services::Store::StoreDurationUnit* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreUninstallStorePackageResult>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_ExtendedError(HRESULT* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Status(Windows::Services::Store::StoreUninstallStorePackageStatus* value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::Services::Store::IStoreVideo>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_Uri(void** value) noexcept = 0;
-    virtual HRESULT __stdcall get_VideoPurposeTag(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Width(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Height(uint32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall get_Caption(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall get_PreviewImage(void** value) noexcept = 0;
-};};
 
 }

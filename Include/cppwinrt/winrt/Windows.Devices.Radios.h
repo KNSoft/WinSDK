@@ -1,12 +1,12 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
 #pragma once
+
 #include "winrt/base.h"
 
-WINRT_WARNING_PUSH
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.Foundation.Collections.h"
 #include "winrt/impl/Windows.Devices.Radios.2.h"
@@ -21,21 +21,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Rad
     return retval;
 }
 
-template <typename D> event_token consume_Windows_Devices_Radios_IRadio<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> winrt::event_token consume_Windows_Devices_Radios_IRadio<D>::StateChanged(Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const& handler) const
 {
-    event_token eventCookie{};
+    winrt::event_token eventCookie{};
     check_hresult(WINRT_SHIM(Windows::Devices::Radios::IRadio)->add_StateChanged(get_abi(handler), put_abi(eventCookie)));
     return eventCookie;
 }
 
-template <typename D> event_revoker<Windows::Devices::Radios::IRadio> consume_Windows_Devices_Radios_IRadio<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const& handler) const
+template <typename D> typename consume_Windows_Devices_Radios_IRadio<D>::StateChanged_revoker consume_Windows_Devices_Radios_IRadio<D>::StateChanged(auto_revoke_t, Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const& handler) const
 {
-    return impl::make_event_revoker<D, Windows::Devices::Radios::IRadio>(this, &abi_t<Windows::Devices::Radios::IRadio>::remove_StateChanged, StateChanged(handler));
+    return impl::make_event_revoker<D, StateChanged_revoker>(this, StateChanged(handler));
 }
 
-template <typename D> void consume_Windows_Devices_Radios_IRadio<D>::StateChanged(event_token const& eventCookie) const
+template <typename D> void consume_Windows_Devices_Radios_IRadio<D>::StateChanged(winrt::event_token const& eventCookie) const noexcept
 {
-    check_hresult(WINRT_SHIM(Windows::Devices::Radios::IRadio)->remove_StateChanged(get_abi(eventCookie)));
+    WINRT_VERIFY_(0, WINRT_SHIM(Windows::Devices::Radios::IRadio)->remove_StateChanged(get_abi(eventCookie)));
 }
 
 template <typename D> Windows::Devices::Radios::RadioState consume_Windows_Devices_Radios_IRadio<D>::State() const
@@ -90,154 +90,130 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Rad
 template <typename D>
 struct produce<D, Windows::Devices::Radios::IRadio> : produce_base<D, Windows::Devices::Radios::IRadio>
 {
-    HRESULT __stdcall SetStateAsync(Windows::Devices::Radios::RadioState value, void** retval) noexcept final
+    int32_t WINRT_CALL SetStateAsync(Windows::Devices::Radios::RadioState value, void** retval) noexcept final
     {
         try
         {
             *retval = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(SetStateAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::RadioAccessStatus>), Windows::Devices::Radios::RadioState const);
             *retval = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::RadioAccessStatus>>(this->shim().SetStateAsync(*reinterpret_cast<Windows::Devices::Radios::RadioState const*>(&value)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall add_StateChanged(void* handler, event_token* eventCookie) noexcept final
+    int32_t WINRT_CALL add_StateChanged(void* handler, winrt::event_token* eventCookie) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *eventCookie = detach_from<event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const*>(&handler)));
-            return S_OK;
+            WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(winrt::event_token), Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const&);
+            *eventCookie = detach_from<winrt::event_token>(this->shim().StateChanged(*reinterpret_cast<Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall remove_StateChanged(event_token eventCookie) noexcept final
+    int32_t WINRT_CALL remove_StateChanged(winrt::event_token eventCookie) noexcept final
+    {
+        typename D::abi_guard guard(this->shim());
+        WINRT_ASSERT_DECLARATION(StateChanged, WINRT_WRAP(void), winrt::event_token const&);
+        this->shim().StateChanged(*reinterpret_cast<winrt::event_token const*>(&eventCookie));
+        return 0;
+    }
+
+    int32_t WINRT_CALL get_State(Windows::Devices::Radios::RadioState* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().StateChanged(*reinterpret_cast<event_token const*>(&eventCookie));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_State(Windows::Devices::Radios::RadioState* value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(State, WINRT_WRAP(Windows::Devices::Radios::RadioState));
             *value = detach_from<Windows::Devices::Radios::RadioState>(this->shim().State());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Name(HSTRING* value) noexcept final
+    int32_t WINRT_CALL get_Name(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Name, WINRT_WRAP(hstring));
             *value = detach_from<hstring>(this->shim().Name());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall get_Kind(Windows::Devices::Radios::RadioKind* value) noexcept final
+    int32_t WINRT_CALL get_Kind(Windows::Devices::Radios::RadioKind* value) noexcept final
     {
         try
         {
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(Kind, WINRT_WRAP(Windows::Devices::Radios::RadioKind));
             *value = detach_from<Windows::Devices::Radios::RadioKind>(this->shim().Kind());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
 template <typename D>
 struct produce<D, Windows::Devices::Radios::IRadioStatics> : produce_base<D, Windows::Devices::Radios::IRadioStatics>
 {
-    HRESULT __stdcall GetRadiosAsync(void** value) noexcept final
+    int32_t WINRT_CALL GetRadiosAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetRadiosAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>>>(this->shim().GetRadiosAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall GetDeviceSelector(HSTRING* deviceSelector) noexcept final
+    int32_t WINRT_CALL GetDeviceSelector(void** deviceSelector) noexcept final
     {
         try
         {
             *deviceSelector = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(GetDeviceSelector, WINRT_WRAP(hstring));
             *deviceSelector = detach_from<hstring>(this->shim().GetDeviceSelector());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall FromIdAsync(HSTRING deviceId, void** value) noexcept final
+    int32_t WINRT_CALL FromIdAsync(void* deviceId, void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(FromIdAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio>), hstring const);
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio>>(this->shim().FromIdAsync(*reinterpret_cast<hstring const*>(&deviceId)));
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 
-    HRESULT __stdcall RequestAccessAsync(void** value) noexcept final
+    int32_t WINRT_CALL RequestAccessAsync(void** value) noexcept final
     {
         try
         {
             *value = nullptr;
             typename D::abi_guard guard(this->shim());
+            WINRT_ASSERT_DECLARATION(RequestAccessAsync, WINRT_WRAP(Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::RadioAccessStatus>));
             *value = detach_from<Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::RadioAccessStatus>>(this->shim().RequestAccessAsync());
-            return S_OK;
+            return 0;
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        catch (...) { return to_hresult(); }
     }
 };
 
@@ -247,22 +223,22 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Radios {
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> Radio::GetRadiosAsync()
 {
-    return get_activation_factory<Radio, Windows::Devices::Radios::IRadioStatics>().GetRadiosAsync();
+    return impl::call_factory<Radio, Windows::Devices::Radios::IRadioStatics>([&](auto&& f) { return f.GetRadiosAsync(); });
 }
 
 inline hstring Radio::GetDeviceSelector()
 {
-    return get_activation_factory<Radio, Windows::Devices::Radios::IRadioStatics>().GetDeviceSelector();
+    return impl::call_factory<Radio, Windows::Devices::Radios::IRadioStatics>([&](auto&& f) { return f.GetDeviceSelector(); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> Radio::FromIdAsync(param::hstring const& deviceId)
 {
-    return get_activation_factory<Radio, Windows::Devices::Radios::IRadioStatics>().FromIdAsync(deviceId);
+    return impl::call_factory<Radio, Windows::Devices::Radios::IRadioStatics>([&](auto&& f) { return f.FromIdAsync(deviceId); });
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::RadioAccessStatus> Radio::RequestAccessAsync()
 {
-    return get_activation_factory<Radio, Windows::Devices::Radios::IRadioStatics>().RequestAccessAsync();
+    return impl::call_factory<Radio, Windows::Devices::Radios::IRadioStatics>([&](auto&& f) { return f.RequestAccessAsync(); });
 }
 
 }
@@ -274,5 +250,3 @@ template<> struct hash<winrt::Windows::Devices::Radios::IRadioStatics> : winrt::
 template<> struct hash<winrt::Windows::Devices::Radios::Radio> : winrt::impl::hash_base<winrt::Windows::Devices::Radios::Radio> {};
 
 }
-
-WINRT_WARNING_POP

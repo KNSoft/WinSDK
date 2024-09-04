@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -60,7 +60,7 @@ struct WINRT_EBO FontWeights :
 
 struct WINRT_EBO RichEditTextDocument :
     Windows::UI::Text::ITextDocument,
-    impl::require<RichEditTextDocument, Windows::UI::Text::ITextDocument2>
+    impl::require<RichEditTextDocument, Windows::UI::Text::ITextDocument2, Windows::UI::Text::ITextDocument3>
 {
     RichEditTextDocument(std::nullptr_t) noexcept {}
 };

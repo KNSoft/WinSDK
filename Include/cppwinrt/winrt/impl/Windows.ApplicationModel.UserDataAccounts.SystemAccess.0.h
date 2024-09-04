@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -96,11 +96,120 @@ template <> struct name<Windows::ApplicationModel::UserDataAccounts::SystemAcces
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountMailAgeFilter" }; };
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountServerType" }; };
 template <> struct name<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind>{ static constexpr auto & value{ L"Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountSyncScheduleKind" }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>{ static constexpr GUID value{ 0xAD0123A3,0xFBDC,0x4D1B,{ 0xBE,0x43,0x5A,0x27,0xEA,0x4A,0x1B,0x63 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>{ static constexpr GUID value{ 0xF2B2E5A6,0x728D,0x4A4A,{ 0x89,0x45,0x2B,0xF8,0x58,0x01,0x36,0xDE } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>{ static constexpr GUID value{ 0x9D6B11B9,0xCBE5,0x45F5,{ 0x82,0x2B,0xC2,0x67,0xB8,0x1D,0xBD,0xB6 } }; };
-template <> struct guid<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>{ static constexpr GUID value{ 0x943F854D,0x4B4E,0x439F,{ 0x83,0xD3,0x97,0x9B,0x27,0xC0,0x5A,0xC7 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>{ static constexpr guid value{ 0xAD0123A3,0xFBDC,0x4D1B,{ 0xBE,0x43,0x5A,0x27,0xEA,0x4A,0x1B,0x63 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>{ static constexpr guid value{ 0xF2B2E5A6,0x728D,0x4A4A,{ 0x89,0x45,0x2B,0xF8,0x58,0x01,0x36,0xDE } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>{ static constexpr guid value{ 0x9D6B11B9,0xCBE5,0x45F5,{ 0x82,0x2B,0xC2,0x67,0xB8,0x1D,0xBD,0xB6 } }; };
+template <> struct guid_storage<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>{ static constexpr guid value{ 0x943F854D,0x4B4E,0x439F,{ 0x83,0xD3,0x97,0x9B,0x27,0xC0,0x5A,0xC7 } }; };
 template <> struct default_interface<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>{ using type = Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration; };
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_AccountName(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccountName(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DeviceAccountTypeId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_DeviceAccountTypeId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EmailAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EmailAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_Domain(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_Domain(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_EmailSyncEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_EmailSyncEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_ContactsSyncEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_ContactsSyncEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CalendarSyncEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CalendarSyncEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncomingServerAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncomingServerPort(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerPort(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncomingServerRequiresSsl(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerRequiresSsl(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncomingServerUsername(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerUsername(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerAddress(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerAddress(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerPort(int32_t* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerPort(int32_t value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerRequiresSsl(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerRequiresSsl(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerUsername(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerUsername(void* value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL get_IncomingServerCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerCredential(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerCredential(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OAuthRefreshToken(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OAuthRefreshToken(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsExternallyManaged(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsExternallyManaged(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSsoAuthenticationSupported(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SsoAccountId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SsoAccountId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AlwaysDownloadFullMessage(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AlwaysDownloadFullMessage(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_DoesPolicyAllowMailSync(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsClientAuthenticationCertificateRequired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsClientAuthenticationCertificateRequired(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AutoSelectAuthenticationCertificate(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AutoSelectAuthenticationCertificate(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_AuthenticationCertificateId(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_AuthenticationCertificateId(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CardDavServerUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CardDavServerUrl(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CardDavRequiresSsl(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CardDavRequiresSsl(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CalDavServerUrl(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CalDavServerUrl(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_CalDavRequiresSsl(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_CalDavRequiresSsl(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WasModifiedByUser(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WasModifiedByUser(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WasIncomingServerCertificateHashConfirmed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WasIncomingServerCertificateHashConfirmed(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IncomingServerCertificateHash(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IncomingServerCertificateHash(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOutgoingServerAuthenticationRequired(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsOutgoingServerAuthenticationRequired(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsOutgoingServerAuthenticationEnabled(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsOutgoingServerAuthenticationEnabled(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_WasOutgoingServerCertificateHashConfirmed(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_WasOutgoingServerCertificateHashConfirmed(bool value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_OutgoingServerCertificateHash(void** value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_OutgoingServerCertificateHash(void* value) noexcept = 0;
+    virtual int32_t WINRT_CALL get_IsSyncScheduleManagedBySystem(bool* value) noexcept = 0;
+    virtual int32_t WINRT_CALL put_IsSyncScheduleManagedBySystem(bool value) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL AddAndShowDeviceAccountsAsync(void* accounts, void** result) noexcept = 0;
+};};
+
+template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>{ struct type : IInspectable
+{
+    virtual int32_t WINRT_CALL SuppressLocalAccountWithAccountAsync(void* userDataAccountId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL CreateDeviceAccountAsync(void* account, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL DeleteDeviceAccountAsync(void* accountId, void** result) noexcept = 0;
+    virtual int32_t WINRT_CALL GetDeviceAccountConfigurationAsync(void* accountId, void** result) noexcept = 0;
+};};
 
 template <typename D>
 struct consume_Windows_ApplicationModel_UserDataAccounts_SystemAccess_IDeviceAccountConfiguration
@@ -218,114 +327,5 @@ struct consume_Windows_ApplicationModel_UserDataAccounts_SystemAccess_IUserDataA
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> GetDeviceAccountConfigurationAsync(param::hstring const& accountId) const;
 };
 template <> struct consume<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2> { template <typename D> using type = consume_Windows_ApplicationModel_UserDataAccounts_SystemAccess_IUserDataAccountSystemAccessManagerStatics2<D>; };
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_AccountName(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccountName(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_DeviceAccountTypeId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_DeviceAccountTypeId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value) noexcept = 0;
-    virtual HRESULT __stdcall get_EmailAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EmailAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_Domain(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_Domain(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_EmailSyncEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_EmailSyncEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_ContactsSyncEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_ContactsSyncEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CalendarSyncEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CalendarSyncEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncomingServerAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncomingServerPort(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerPort(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncomingServerRequiresSsl(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerRequiresSsl(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncomingServerUsername(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerUsername(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerAddress(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerAddress(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerPort(int32_t* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerPort(int32_t value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerRequiresSsl(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerRequiresSsl(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerUsername(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerUsername(HSTRING value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall get_IncomingServerCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerCredential(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerCredential(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_OAuthRefreshToken(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OAuthRefreshToken(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsExternallyManaged(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsExternallyManaged(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSsoAuthenticationSupported(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SsoAccountId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SsoAccountId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_AlwaysDownloadFullMessage(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AlwaysDownloadFullMessage(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_DoesPolicyAllowMailSync(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall get_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter* value) noexcept = 0;
-    virtual HRESULT __stdcall put_MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsClientAuthenticationCertificateRequired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsClientAuthenticationCertificateRequired(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AutoSelectAuthenticationCertificate(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AutoSelectAuthenticationCertificate(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_AuthenticationCertificateId(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_AuthenticationCertificateId(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) noexcept = 0;
-    virtual HRESULT __stdcall get_CardDavServerUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CardDavServerUrl(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CardDavRequiresSsl(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CardDavRequiresSsl(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_CalDavServerUrl(void** value) noexcept = 0;
-    virtual HRESULT __stdcall put_CalDavServerUrl(void* value) noexcept = 0;
-    virtual HRESULT __stdcall get_CalDavRequiresSsl(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_CalDavRequiresSsl(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_WasModifiedByUser(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WasModifiedByUser(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_WasIncomingServerCertificateHashConfirmed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WasIncomingServerCertificateHashConfirmed(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IncomingServerCertificateHash(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IncomingServerCertificateHash(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOutgoingServerAuthenticationRequired(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsOutgoingServerAuthenticationRequired(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsOutgoingServerAuthenticationEnabled(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsOutgoingServerAuthenticationEnabled(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_WasOutgoingServerCertificateHashConfirmed(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_WasOutgoingServerCertificateHashConfirmed(bool value) noexcept = 0;
-    virtual HRESULT __stdcall get_OutgoingServerCertificateHash(HSTRING* value) noexcept = 0;
-    virtual HRESULT __stdcall put_OutgoingServerCertificateHash(HSTRING value) noexcept = 0;
-    virtual HRESULT __stdcall get_IsSyncScheduleManagedBySystem(bool* value) noexcept = 0;
-    virtual HRESULT __stdcall put_IsSyncScheduleManagedBySystem(bool value) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall AddAndShowDeviceAccountsAsync(void* accounts, void** result) noexcept = 0;
-};};
-
-template <> struct abi<Windows::ApplicationModel::UserDataAccounts::SystemAccess::IUserDataAccountSystemAccessManagerStatics2>{ struct type : IInspectable
-{
-    virtual HRESULT __stdcall SuppressLocalAccountWithAccountAsync(HSTRING userDataAccountId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall CreateDeviceAccountAsync(void* account, void** result) noexcept = 0;
-    virtual HRESULT __stdcall DeleteDeviceAccountAsync(HSTRING accountId, void** result) noexcept = 0;
-    virtual HRESULT __stdcall GetDeviceAccountConfigurationAsync(HSTRING accountId, void** result) noexcept = 0;
-};};
 
 }

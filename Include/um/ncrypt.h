@@ -239,6 +239,12 @@ typedef struct NCRYPT_ALLOC_PARA {
 #define NCRYPTBUFFER_TPM_SEAL_NO_DA_PROTECTION              73
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS1)
 
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+// for TPM platform attestation statements
+#define NCRYPTBUFFER_TPM_PLATFORM_CLAIM_PCR_MASK            80
+#define NCRYPTBUFFER_TPM_PLATFORM_CLAIM_NONCE               81
+#define NCRYPTBUFFER_TPM_PLATFORM_CLAIM_STATIC_CREATE       82
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 // NCRYPT shares the same BCRYPT definitions
 typedef BCryptBuffer     NCryptBuffer;
@@ -332,8 +338,11 @@ typedef struct _NCRYPT_KEY_ATTEST_PADDING_INFO {
 #define NCRYPT_CLAIM_AUTHORITY_AND_SUBJECT                  0x00000003
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 #define NCRYPT_CLAIM_VSM_KEY_ATTESTATION_STATEMENT          0x00000004
-#endif (NTDDI_VERSION >= NTDDI_WIN10_RS3)
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS3)
 #define NCRYPT_CLAIM_UNKNOWN                                0x00001000
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define NCRYPT_CLAIM_PLATFORM                               0x00010000
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 #endif // (NTDDI_VERSION >= NTDDI_WINTHRESHOLD)
 
@@ -438,6 +447,26 @@ typedef struct __NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT
 } NCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT,*PNCRYPT_PCP_TPM_WEB_AUTHN_ATTESTATION_STATEMENT;
 
 #endif// (NTDDI_VERSION >= NTDDI_WIN10_RS2)
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+#define NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT_V0 0
+#define NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT_CURRENT_VERSION NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT_V0
+
+typedef struct _NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT
+{
+    ULONG Magic;        // {'A', 'L', 'P', 'T'} - 'TPLA' for TPM Platform
+    ULONG Version;      // Set to NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT_CURRENT_VERSION
+    ULONG pcrAlg;       // The TPM hash algorithm ID
+    ULONG cbSignature;  // TPMT_SIGNATURE structure signature over the quote
+    ULONG cbQuote;      // TPMS_ATTEST structure that was generated and signed
+    ULONG cbPcrs;       // Raw concatenation of all 24 PCRs
+    // UCHAR Signature[cbSignature]
+    // UCHAR Quote[cbQuote]
+    // UCHAR Pcrs[cbPcrs]
+} NCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT, *PNCRYPT_TPM_PLATFORM_ATTESTATION_STATEMENT;
+
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 //
 // NCrypt API Flags
@@ -700,6 +729,9 @@ NCryptCreatePersistedKey(
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define NCRYPT_READER_ICON_PROPERTY             L"SmartCardReaderIcon"
 #define NCRYPT_KDF_SECRET_VALUE                 L"KDFKeySecret"
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define NCRYPT_DISMISS_UI_TIMEOUT_SEC_PROPERTY  L"SmartCardDismissUITimeoutSeconds"
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 //
 // Additional property strings specific for the Platform Crypto Provider
 //
@@ -767,6 +799,20 @@ NCryptCreatePersistedKey(
 #if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 #define NCRYPT_PCP_SESSIONID_PROPERTY                      L"PCP_SESSIONID"
 #endif // (NTDDI_VERSION >= NTDDI_WIN10_RS4)
+
+// TPM RSAPSS Salt size types
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define NCRYPT_TPM_PSS_SALT_SIZE_UNKNOWN                 0x00000000
+#define NCRYPT_TPM_PSS_SALT_SIZE_MAXIMUM                 0x00000001 // Pre-TPM Spec-1.16: Max allowed salt size
+#define NCRYPT_TPM_PSS_SALT_SIZE_HASHSIZE                0x00000002 // Post-1.16: PSS salt = hashLen
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+
+// TPM NCryptSignHash Flag
+
+#if (NTDDI_VERSION >= NTDDI_WIN10_RS5)
+#define NCRYPT_TPM_PAD_PSS_IGNORE_SALT              0x00000020  // NCryptSignHash
+#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5)
 
 //
 // NCRYPT_PCP_TPM_IFX_RSA_KEYGEN_VULNERABILITY_PROPERTY values
@@ -1254,7 +1300,7 @@ _Check_return_
 SECURITY_STATUS
 WINAPI
 NCryptCreateClaim(
-    _In_        NCRYPT_KEY_HANDLE   hSubjectKey,
+    _In_opt_    NCRYPT_KEY_HANDLE   hSubjectKey,
     _In_opt_    NCRYPT_KEY_HANDLE   hAuthorityKey,
     _In_        DWORD               dwClaimType,
     _In_opt_    NCryptBufferDesc    *pParameterList,

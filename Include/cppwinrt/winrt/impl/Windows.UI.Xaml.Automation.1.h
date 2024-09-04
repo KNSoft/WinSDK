@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -101,6 +101,13 @@ struct WINRT_EBO IAutomationElementIdentifiersStatics7 :
     IAutomationElementIdentifiersStatics7(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct WINRT_EBO IAutomationElementIdentifiersStatics8 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAutomationElementIdentifiersStatics8>
+{
+    IAutomationElementIdentifiersStatics8(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct WINRT_EBO IAutomationProperties :
     Windows::Foundation::IInspectable,
     impl::consume_t<IAutomationProperties>
@@ -155,6 +162,13 @@ struct WINRT_EBO IAutomationPropertiesStatics7 :
     impl::consume_t<IAutomationPropertiesStatics7>
 {
     IAutomationPropertiesStatics7(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct WINRT_EBO IAutomationPropertiesStatics8 :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IAutomationPropertiesStatics8>
+{
+    IAutomationPropertiesStatics8(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct WINRT_EBO IAutomationProperty :

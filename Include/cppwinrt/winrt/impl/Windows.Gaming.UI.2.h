@@ -1,4 +1,4 @@
-﻿// C++/WinRT v1.0.180227.3
+﻿// C++/WinRT v1.0.180821.2
 
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
@@ -21,14 +21,14 @@ WINRT_EXPORT namespace winrt::Windows::Gaming::UI {
 struct GameBar
 {
     GameBar() = delete;
-    static event_token VisibilityChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using VisibilityChanged_revoker = factory_event_revoker<Windows::Gaming::UI::IGameBarStatics>;
+    static winrt::event_token VisibilityChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using VisibilityChanged_revoker = impl::factory_event_revoker<Windows::Gaming::UI::IGameBarStatics, &impl::abi_t<Windows::Gaming::UI::IGameBarStatics>::remove_VisibilityChanged>;
     static VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void VisibilityChanged(event_token const& token);
-    static event_token IsInputRedirectedChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    using IsInputRedirectedChanged_revoker = factory_event_revoker<Windows::Gaming::UI::IGameBarStatics>;
+    static void VisibilityChanged(winrt::event_token const& token);
+    static winrt::event_token IsInputRedirectedChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
+    using IsInputRedirectedChanged_revoker = impl::factory_event_revoker<Windows::Gaming::UI::IGameBarStatics, &impl::abi_t<Windows::Gaming::UI::IGameBarStatics>::remove_IsInputRedirectedChanged>;
     static IsInputRedirectedChanged_revoker IsInputRedirectedChanged(auto_revoke_t, Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> const& handler);
-    static void IsInputRedirectedChanged(event_token const& token);
+    static void IsInputRedirectedChanged(winrt::event_token const& token);
     static bool Visible();
     static bool IsInputRedirected();
 };
@@ -51,13 +51,6 @@ struct WINRT_EBO GameChatOverlayMessageSource :
 {
     GameChatOverlayMessageSource(std::nullptr_t) noexcept {}
     GameChatOverlayMessageSource();
-};
-
-struct WINRT_EBO GameMonitor :
-    Windows::Gaming::UI::IGameMonitor
-{
-    GameMonitor(std::nullptr_t) noexcept {}
-    static Windows::Gaming::UI::GameMonitor GetDefault();
 };
 
 struct WINRT_EBO GameUIProviderActivatedEventArgs :

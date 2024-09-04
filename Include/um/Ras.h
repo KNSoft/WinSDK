@@ -15,6 +15,12 @@ Abstract:
         WINVER = 0x400 = Windows 95, Windows98, Windows NT4 (default)
         WINVER > 0x400 = Windows NT4 enhancements
         WINVER = 0x500 = Windows 2000
+        WINVER = 0x501 = Windows XP
+        WINVER = 0x600 = Windows Vista
+        WINVER = 0x601 = Windows 7
+        WINVER = 0x602 = Windows 8
+        WINVER = 0x603 = Windows Blue
+        WINVER = 0xA00 = Windows 10
 
 --*/
 
@@ -1267,11 +1273,15 @@ RASENTRYA
     //
     // IKEv2 related
     DWORD            dwNetworkOutageTime;
+#endif
+
+#if (WINVER >= 0xA00)
     CHAR             szIDi[RAS_MaxIDSize + 1];
     CHAR             szIDr[RAS_MaxIDSize + 1];
     BOOL             fIsImsConfig;
     IKEV2_ID_PAYLOAD_TYPE IdiType;
     IKEV2_ID_PAYLOAD_TYPE IdrType;
+    BOOL             fDisableIKEv2Fragmentation;
 #endif
 };
 
@@ -1420,13 +1430,16 @@ RASENTRYW
     //
     // IKEv2 related
     DWORD            dwNetworkOutageTime;
+#endif
+
+#if (WINVER >= 0xA00)
     WCHAR            szIDi[RAS_MaxIDSize + 1];
     WCHAR            szIDr[RAS_MaxIDSize + 1];
     BOOL             fIsImsConfig;
     IKEV2_ID_PAYLOAD_TYPE IdiType;
     IKEV2_ID_PAYLOAD_TYPE IdrType;
-
-#endif
+    BOOL             fDisableIKEv2Fragmentation;
+#endif    
 };
 
 #ifdef UNICODE
@@ -1603,6 +1616,7 @@ typedef BOOL (WINAPI *ORASADFUNC)( HWND, LPSTR, DWORD, LPDWORD );
 #define RASCN_BandwidthRemoved  0x00000008
 #define RASCN_Dormant           0x00000010
 #define RASCN_ReConnection      0x00000020
+#define RASCN_EPDGPacketArrival 0x00000040
 #endif
 
 #if (WINVER >= 0x401)

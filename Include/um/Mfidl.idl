@@ -11399,6 +11399,12 @@ cpp_quote( "EXTERN_GUID( MF_TRANSCODE_QUALITYVSSPEED, 0x98332df8, 0x03cd, 0x476b
 // {F45AA7CE-AB24-4012-A11B-DC8220201410}
 cpp_quote( "EXTERN_GUID( MF_TRANSCODE_DONOT_INSERT_ENCODER, 0xf45aa7ce, 0xab24, 0x4012, 0xa1, 0x1b, 0xdc, 0x82, 0x20, 0x20, 0x14, 0x10 );" )
 
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
+
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
+
 typedef enum _MF_VIDEO_PROCESSOR_ALGORITHM_TYPE
 {
     // default mode favors a balance of quality and speed
@@ -11432,6 +11438,19 @@ cpp_quote("#if (WINVER >= _WIN32_WINNT_WINBLUE) ")
 //  when FALSE XVP will allocate output in DX mode (and will fail if provided output)
 // {04A2CABC-0CAB-40b1-A1B9-75BC3658F000}
 cpp_quote( "EXTERN_GUID( MF_XVP_CALLER_ALLOCATES_OUTPUT, 0x4a2cabc, 0xcab, 0x40b1, 0xa1, 0xb9, 0x75, 0xbc, 0x36, 0x58, 0xf0, 0x0 );" )
+
+//#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD)
+cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINBLUE) ")
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+#pragma endregion
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+
+// This should be enabled after _WIN32_WINNT is updated.   
+//#if (_WIN32_WINNT >= _WIN32_WINNT_WINTHRESHOLD)  
+cpp_quote("#if (WINVER >= _WIN32_WINNT_WINBLUE) ")
 
 cpp_quote("#if (WINVER < _WIN32_WINNT_WINTHRESHOLD) ")
 // CLSID_VideoProcessorMFT
@@ -13329,3 +13348,185 @@ cpp_quote("    );")
 
 
 cpp_quote("#endif // (WINVER >= _WIN32_WINNT_WINTHRESHOLD) ")
+
+#pragma region Application Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)")
+
+// Focal lengths and principal points to be used together with 
+// distortion model coefficients to create complete parameter set
+// for distortion model.
+typedef struct _MFCameraIntrinsic_CameraModel
+{
+    FLOAT FocalLength_x;
+    FLOAT FocalLength_y;
+    FLOAT PrincipalPoint_x;
+    FLOAT PrincipalPoint_y;
+} MFCameraIntrinsic_CameraModel;
+
+// Coefficients for radial lens distortion model with 6 radial
+// and 2 tangential parameters
+typedef struct _MFCameraIntrinsic_DistortionModel6KT
+{
+    FLOAT Radial_k1;
+    FLOAT Radial_k2;
+    FLOAT Radial_k3;
+    FLOAT Radial_k4;
+    FLOAT Radial_k5;
+    FLOAT Radial_k6;
+    FLOAT Tangential_p1;
+    FLOAT Tangential_p2;
+} MFCameraIntrinsic_DistortionModel6KT;
+
+// Coefficients for ArcTan or F-Theta lens distortion model.
+// This is equidistant fish-eye lens model
+typedef struct _MFCameraIntrinsic_DistortionModelArcTan
+{
+    FLOAT Radial_k0;
+    FLOAT DistortionCenter_x; // center of distortion in Z=1 plane, x
+    FLOAT DistortionCenter_y; // center of distortion in Z=1 plane, y
+    FLOAT Tangential_x;
+    FLOAT Tangential_y;
+} MFCameraIntrinsic_DistortionModelArcTan;
+
+typedef enum _MFCameraIntrinsic_DistortionModelType {
+    MFCameraIntrinsic_DistortionModelType_6KT = 0,
+    MFCameraIntrinsic_DistortionModelType_ArcTan
+} MFCameraIntrinsic_DistortionModelType;
+
+typedef struct _MFExtendedCameraIntrinsic_IntrinsicModel
+{
+    // Pixel size of the frame
+    UINT32 Width;
+    UINT32 Height;
+
+    // Identifier for camera's that provide two or more frames as one combined frame
+    // E.g., 360-cameras typically contains two physical camera sensors but provides single stream of samples where one sample contains
+    // two frames, one from each sensor. This field is used to identify those individual frames starting from top-left with id 0.
+    //
+    // Example of 2x1 combined frames and their identification: [0][1]
+    UINT32 SplitFrameId;
+
+    // Pinhole camera model parameters
+    MFCameraIntrinsic_CameraModel CameraModel;
+} MFExtendedCameraIntrinsic_IntrinsicModel;
+
+[
+    object,
+    uuid(5C595E64-4630-4231-855A-12842F733245),
+    local
+]
+interface IMFExtendedCameraIntrinsicModel : IUnknown
+{
+    HRESULT GetModel(
+        [out, annotation("_Out_")] MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel
+        );
+    
+    HRESULT SetModel(
+        [in, annotation("_In_")] const MFExtendedCameraIntrinsic_IntrinsicModel* pIntrinsicModel
+        );
+
+    HRESULT GetDistortionModelType(
+        [out, annotation("_Out_")] MFCameraIntrinsic_DistortionModelType* pDistortionModelType
+        );
+};
+
+[
+    object,
+    uuid(74C2653B-5F55-4EB1-9F0F-18B8F68B7D3D),
+    local
+]
+interface IMFExtendedCameraIntrinsicsDistortionModel6KT : IUnknown
+{
+    HRESULT GetDistortionModel(
+        [out, annotation("_Out_")] MFCameraIntrinsic_DistortionModel6KT* pDistortionModel
+        );
+
+    HRESULT SetDistortionModel(
+        [in, annotation("_In_")] const MFCameraIntrinsic_DistortionModel6KT* pDistortionModel
+        );
+};
+
+[
+    object,
+    uuid(812D5F95-B572-45DC-BAFC-AE24199DDDA8),
+    local
+]
+interface IMFExtendedCameraIntrinsicsDistortionModelArcTan : IUnknown
+{
+    HRESULT GetDistortionModel(
+        [out, annotation("_Out_")] MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel
+        );
+
+    HRESULT SetDistortionModel(
+        [in, annotation("_In_")] const MFCameraIntrinsic_DistortionModelArcTan* pDistortionModel
+        );
+};
+
+[
+    object,
+    uuid(687F6DAC-6987-4750-A16A-734D1E7A10FE),
+    local
+]
+interface IMFExtendedCameraIntrinsics : IUnknown
+{
+    // Initialize from buffer will clear any existing models in underlying data store
+    HRESULT InitializeFromBuffer(
+        [in, size_is(dwBufferSize), annotation("_In_reads_bytes_(dwBufferSize)")] BYTE* pbBuffer,
+        [in] DWORD dwBufferSize
+        );
+
+    HRESULT GetBufferSize(
+        [out, annotation("_Out_")] DWORD* pdwBufferSize
+        );
+
+    HRESULT SerializeToBuffer(
+        [out, annotation("_Out_writes_bytes_to_(*pdwBufferSize, *pdwBufferSize)")] BYTE* pbBuffer,
+        [out, annotation("_Inout_")] DWORD* pdwBufferSize
+        );
+
+    HRESULT GetIntrinsicModelCount(
+        [out, annotation("_Out_")] DWORD* pdwCount
+        );
+    
+    HRESULT GetIntrinsicModelByIndex(
+        [in] DWORD dwIndex,
+        [out, annotation("_COM_Outptr_")] IMFExtendedCameraIntrinsicModel** ppIntrinsicModel
+        );
+
+    HRESULT AddIntrinsicModel(
+        [in, annotation("_In_")] IMFExtendedCameraIntrinsicModel* pIntrinsicModel
+        );
+
+};
+
+// MFStreamExtension_ExtendedCameraIntrinsics 
+// {AA74B3DF-9A2C-48D6-8393-5BD1C1A81E6E}
+// Value type: Blob
+// Stores camera intrinsics data on stream attribute store
+cpp_quote("DEFINE_GUID(MFStreamExtension_ExtendedCameraIntrinsics,")
+cpp_quote("    0xaa74b3df, 0x9a2c, 0x48d6, 0x83, 0x93, 0x5b, 0xd1, 0xc1, 0xa8, 0x1e, 0x6e);")
+
+// MFSampleExtension_ExtendedCameraIntrinsics 
+// {560BC4A5-4DE0-4113-9CDC-832DB9740F3D}
+// Value type: Blob
+// Stores camera intrinsics data on the sample's (a.k.a frame) attribute store
+cpp_quote("DEFINE_GUID(MFSampleExtension_ExtendedCameraIntrinsics,")
+cpp_quote("    0x560bc4a5, 0x4de0, 0x4113, 0x9c, 0xdc, 0x83, 0x2d, 0xb9, 0x74, 0xf, 0x3d);")
+
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WIN10_RS5) ")
+
+cpp_quote("STDAPI")
+cpp_quote("MFCreateExtendedCameraIntrinsics(")
+cpp_quote("    _COM_Outptr_ IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics")
+cpp_quote("    );")
+
+cpp_quote("STDAPI")
+cpp_quote("MFCreateExtendedCameraIntrinsicModel(")
+cpp_quote("    const MFCameraIntrinsic_DistortionModelType distortionModelType,")
+cpp_quote("    _COM_Outptr_ IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel")
+cpp_quote("    );")
+
+cpp_quote("#endif // (NTDDI_VERSION >= NTDDI_WIN10_RS5) ")
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP) */")
+#pragma endregion // Application Family  
