@@ -269,6 +269,7 @@ USBD_ParseConfigurationDescriptorEx(
     _In_ LONG InterfaceProtocol
     );
 
+
 _IRQL_requires_max_(DISPATCH_LEVEL)
 DECLSPEC_IMPORT
 PURB

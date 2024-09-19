@@ -13762,12 +13762,20 @@ HalDmaAllocateCrashDumpRegistersEx (
     _Out_ PULONG MapRegistersAvailable
     );
 
-
 NTSTATUS
 HalDmaFreeCrashDumpRegistersEx (
     _In_ PADAPTER_OBJECT Adapter,
     _In_ HAL_DMA_CRASH_DUMP_REGISTER_TYPE Type
     );
+#endif
+
+#if defined (_AMD64_)
+
+BOOLEAN
+HalCvmDmaEnabled (
+    VOID
+    );
+
 #endif
 
 #endif

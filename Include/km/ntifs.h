@@ -29242,6 +29242,10 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 
 #define SECPKG_CRED_PROCESS_POLICY_ONLY     0x00000020
 
+// Enables configuring Kerberos to only request tickets from a specific DC version
+
+#define SECPKG_CRED_KERB_ANCHOR_DS_VERSION  0x00000040
+
 
 //
 //  InitializeSecurityContext Requirement and return flags:
@@ -29388,7 +29392,8 @@ typedef struct _SEC_TRAFFIC_SECRETS {
 
 #define SECPKG_CRED_ATTR_NAMES        1
 #define SECPKG_CRED_ATTR_SSI_PROVIDER 2
-#define SECPKG_CRED_ATTR_KDC_PROXY_SETTINGS 3
+#define SECPKG_CRED_ATTR_KDC_PROXY_SETTINGS     3 // aliases SECPKG_CRED_ATTR_KDC_NETWORK_SETTINGS
+#define SECPKG_CRED_ATTR_KDC_NETWORK_SETTINGS   3 // aliases SECPKG_CRED_ATTR_KDC_PROXY_SETTINGS
 #define SECPKG_CRED_ATTR_CERT         4
 #define SECPKG_CRED_ATTR_PAC_BYPASS   5
 
@@ -29416,7 +29421,15 @@ typedef struct _SecPkgCredentials_SSIProviderW
 #  define PSecPkgCredentials_SSIProvider PSecPkgCredentials_SSIProviderW    
 
 #define KDC_PROXY_SETTINGS_V1                 1
-#define KDC_PROXY_SETTINGS_FLAGS_FORCEPROXY 0x1
+#define KDC_NETWORK_SETTINGS_V2               2
+
+#define KDC_PROXY_SETTINGS_FLAGS_FORCEPROXY     0x1
+
+#define KDC_NETWORK_SETTINGS_FLAGS_FORCEPROXY             0x1
+#define KDC_NETWORK_SETTINGS_FLAGS_CONFIGURE_PROXY        0x80000000
+#define KDC_NETWORK_SETTINGS_FLAGS_CONFIGURE_DISCOVERY    0x40000000
+
+#define KDC_NETWORK_DISCOVERY_FLAGS_DS13_REQUIRED      0x80000000
 
 typedef struct _SecPkgCredentials_KdcProxySettingsW
 {
@@ -29427,6 +29440,17 @@ typedef struct _SecPkgCredentials_KdcProxySettingsW
     USHORT ClientTlsCredOffset; // ClientTlsCred, optional
     USHORT ClientTlsCredLength;
 } SecPkgCredentials_KdcProxySettingsW, *PSecPkgCredentials_KdcProxySettingsW;
+
+typedef struct _SecPkgCredentials_KdcNetworkSettingsW
+{
+    ULONG   Version;             // KDC_NETWORK_SETTINGS_V2
+    ULONG   Flags;               // KDC_NETWORK_SETTINGS_FLAGS_*
+    USHORT  ProxyServerOffset;   // ProxyServer, optional
+    USHORT  ProxyServerLength;
+    USHORT  ClientTlsCredOffset; // ClientTlsCred, optional
+    USHORT  ClientTlsCredLength;
+    ULONG   DcDiscoveryFlags;    // KDC_NETWORK_DISCOVERY_*
+} SecPkgCredentials_KdcNetworkSettingsW, *PSecPkgCredentials_KdcNetworkSettingsW;
 
 
 typedef struct _SecPkgCredentials_Cert

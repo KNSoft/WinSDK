@@ -306,7 +306,14 @@ __FuncAlignment SETA 4
 __FuncComDat SETS ""
         __DeriveFunctionLabels $FuncName,$AreaName
         __SetFunctionAreaAndAlign $Alignment
-        __AddEntryThunkPointer $Alignment
+
+        IF ("$Alignment" != "")
+__FuncAlignment SETA $Alignment
+        ELSE
+__FuncAlignment SETA 4
+        ENDIF
+
+        __AddEntryThunkPointer $__FuncAlignment
         __ResetUnwindState $ExceptHandler
         __ExportProc $__FuncNameNoBars
         ROUT
@@ -447,7 +454,7 @@ __FuncArea SETS OriginalArea
         MEND
 
         MACRO
-        ARM64EC_CUSTOM_ENTRY_THUNK $FuncName, $AreaName
+        ARM64EC_CUSTOM_ENTRY_THUNK $FuncName, $AreaName, $Alignment
 
         LCLS    OriginalFunc
         LCLS    OriginalArea
@@ -456,9 +463,9 @@ __FuncArea SETS OriginalArea
 
         ; first derive labels for the original function
         ; and set that as the target area
-__FuncComDat SETS "COMDAT"
+__FuncComDat SETS ""
         __DeriveFunctionLabels $FuncName,$AreaName
-        __SetFunctionAreaAndAlign $__FuncAlignment
+        __SetFunctionAreaAndAlign $Alignment
 OriginalFunc SETS __FuncStartLabel
 OriginalArea SETS __FuncArea
 
@@ -483,7 +490,11 @@ __FuncArea SETS OriginalArea
 
 #else
         MACRO
-        ARM64EC_ENTRY_THUNK $FuncName, $Parameters, $SaveQCount=10, $AreaName
+        ARM64EC_ENTRY_THUNK $FuncName, $Parameters, $SaveQCount, $AreaName, $Alignment
+        MEND
+
+        MACRO
+        ARM64EC_CUSTOM_ENTRY_THUNK $FuncName, $AreaName, $Alignment
         MEND
 #endif
 

@@ -21083,6 +21083,69 @@ class ContextRegistersARM64:PerfInfo_V2
      uint64 Pc;
 };
 
+[Dynamic,
+ Description("LBR Event") : amended,
+ Guid("{99134383-5248-43fc-834b-529454e75df3}"),
+ EventVersion(2),
+ DisplayName("LBR") : amended
+]
+class LBR_V2:MSNT_SystemTrace
+{
+
+};
+
+[
+ Description("LBR Record Entry") : amended,
+ guid("{bed3d5aa-c723-4c2c-b456-3ae2a318c5d9}")
+]
+class LbrRecordEntry
+{
+    [WmiDataId(1),
+     Description("FromAddress") : amended,
+     pointer,
+     read]
+     uint64  FromAddress;
+    [WmiDataId(2),
+     Description("ToAddress") : amended,
+     pointer,
+     read]
+     uint64  ToAddress;
+    [WmiDataId(3),
+     Description("Reserved") : amended,
+     pointer,
+     read]
+     uint64  Reserved;
+};
+
+[Dynamic,
+ Description("LBR Record") : amended,
+ EventType(32),
+ EventTypeName("LbrRecord") : amended
+]
+class LbrRecord_V2:LBR_V2
+{
+    [WmiDataId(1),
+     Description("TimeStamp") : amended,
+     read]
+     uint64  TimeStamp;
+    [WmiDataId(2),
+     Description("ProcessId") : amended,
+     read]
+     uint32  ProcessId;
+    [WmiDataId(3),
+     Description("ThreadId") : amended,
+     read]
+     uint32  ThreadId;
+    [WmiDataId(4),
+     Description("Options") : amended,
+     read]
+     uint32  Options;
+    [WmiDataId(5),
+     Description("Lbr Entries Array") : amended,
+     read]
+     LbrRecordEntry  Entries[];
+};
+
 //
 // UMS events.
 //
