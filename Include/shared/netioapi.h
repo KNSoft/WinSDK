@@ -3635,6 +3635,7 @@ Notes:
 typedef enum _NET_FL_VIRTUAL_INTERFACE_ORIGIN {
     NetFlVirtualInterfaceOriginOid,
     NetFlVirtualInterfaceOriginApi,
+    NetFlVirtualInterfaceOriginDefault,
 } NET_FL_VIRTUAL_INTERFACE_ORIGIN;
 
 typedef enum _NET_FL_ISOLATION_MODE {

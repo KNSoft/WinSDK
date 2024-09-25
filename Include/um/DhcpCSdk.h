@@ -156,6 +156,8 @@ extern "C" {
 #define OPTION_TFTP_SERVER_NAME         66
 #define OPTION_BOOTFILE_NAME            67
 
+#define OPTION_IPV6_ONLY_PREFERRED      108
+
 #define OPTION_DNR                      162
 
 #define OPTION_MSFT_IE_PROXY            252

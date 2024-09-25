@@ -172,6 +172,13 @@ WINRT_EXPORT namespace winrt::Windows::Storage::Provider
         IStorageProviderQuotaUI(std::nullptr_t = nullptr) noexcept {}
         IStorageProviderQuotaUI(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
+    struct __declspec(empty_bases) IStorageProviderShareLinkSource :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IStorageProviderShareLinkSource>
+    {
+        IStorageProviderShareLinkSource(std::nullptr_t = nullptr) noexcept {}
+        IStorageProviderShareLinkSource(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) IStorageProviderStatusUI :
         winrt::Windows::Foundation::IInspectable,
         impl::consume_t<IStorageProviderStatusUI>

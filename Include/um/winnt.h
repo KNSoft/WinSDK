@@ -371,13 +371,16 @@ extern "C" {
 #endif
 
 #ifndef DECLSPEC_CHPE_PATCHABLE
-#if defined (_M_HYBRID) || defined(_M_ARM64EC)
+#if !defined(SORTPP_PASS)
+#if defined (_M_HYBRID_X86_ARM64) || defined(_M_ARM64EC)
 #define DECLSPEC_CHPE_PATCHABLE  __declspec(hybrid_patchable)
+#else
+#define DECLSPEC_CHPE_PATCHABLE  DECLSPEC_NOINLINE
+#endif
 #else
 #define DECLSPEC_CHPE_PATCHABLE
 #endif
 #endif
-
 
 #ifndef FORCEINLINE
 #if (_MSC_VER >= 1200)
@@ -792,7 +795,9 @@ typedef _Return_type_success_(return >= 0) long HRESULT;
 
 
 #define STDAPI                  EXTERN_C HRESULT STDAPICALLTYPE
+#define STDAPI_CHPE_PATCHABLE   EXTERN_C DECLSPEC_CHPE_PATCHABLE HRESULT STDAPICALLTYPE
 #define STDAPI_(type)           EXTERN_C type STDAPICALLTYPE
+#define STDAPI_CHPE_PATCHABLE_(type)           EXTERN_C DECLSPEC_CHPE_PATCHABLE type STDAPICALLTYPE
 #define DEPRECATED_STDAPI(message) EXTERN_C __declspec(deprecated(message)) HRESULT STDAPICALLTYPE
 #define DEPRECATED_NO_MESSAGE_STDAPI EXTERN_C __declspec(deprecated) HRESULT STDAPICALLTYPE
 #define DEPRECATED_STDAPI_(type, message) EXTERN_C __declspec(deprecated(message)) type STDAPICALLTYPE
@@ -3118,6 +3123,9 @@ _BitScanReverse64 (
 #define InterlockedCompareExchangeRelease64 InterlockedCompareExchange64
 #define InterlockedCompareExchangeNoFence64 InterlockedCompareExchange64
 #define InterlockedCompareExchange128 _InterlockedCompareExchange128
+#define InterlockedCompareExchangeAcquire128 _InterlockedCompareExchange128
+#define InterlockedCompareExchangeRelease128 _InterlockedCompareExchange128
+#define InterlockedCompareExchangeNoFence128 _InterlockedCompareExchange128
 
 #define InterlockedExchangePointer _InterlockedExchangePointer
 #define InterlockedExchangePointerNoFence _InterlockedExchangePointer
@@ -5736,6 +5744,9 @@ _BitTestAndSet64(__int64 *Base, __int64 Index)
 #define InterlockedCompareExchangeRelease64 _InterlockedCompareExchange64_rel
 #define InterlockedCompareExchangeNoFence64 _InterlockedCompareExchange64_nf
 #define InterlockedCompareExchange128 _InterlockedCompareExchange128
+#define InterlockedCompareExchangeAcquire128 _InterlockedCompareExchange128_acq
+#define InterlockedCompareExchangeRelease128 _InterlockedCompareExchange128_rel
+#define InterlockedCompareExchangeNoFence128 _InterlockedCompareExchange128_nf
 
 // AMD64_WORKITEM : these are redundant but necessary for AMD64 compatibility
 #define InterlockedAnd64Acquire _InterlockedAnd64_acq

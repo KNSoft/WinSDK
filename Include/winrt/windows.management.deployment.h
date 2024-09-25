@@ -392,6 +392,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager11_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IPackageManager12;
+            } /* Deployment */
+        } /* Management */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12 ABI::Windows::Management::Deployment::IPackageManager12
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_FWD_DEFINED__
 namespace ABI {
@@ -616,6 +631,21 @@ namespace ABI {
 #define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions ABI::Windows::Management::Deployment::IRemovePackageOptions
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                interface IRemovePackageOptions2;
+            } /* Deployment */
+        } /* Management */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2 ABI::Windows::Management::Deployment::IRemovePackageOptions2
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CISharedPackageContainer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CISharedPackageContainer_FWD_DEFINED__
@@ -2498,6 +2528,9 @@ namespace ABI {
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
                     RemovalOptions_PreserveRoamableApplicationData = 0x80,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+                    RemovalOptions_DeferRemovalWhenPackagesAreInUse = 0x2000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
                     RemovalOptions_RemoveForAllUsers = 0x80000,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
@@ -3555,6 +3588,57 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager12
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager12[] = L"Windows.Management.Deployment.IPackageManager12";
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                MIDL_INTERFACE("5d233adf-f9e3-4d96-b40d-96788e39539f")
+                IPackageManager12 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE IsPackageRemovalPending(
+                        HSTRING packageFullName,
+                        boolean* result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsPackageRemovalPendingForUser(
+                        HSTRING packageFullName,
+                        HSTRING userSecurityId,
+                        boolean* result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsPackageRemovalPendingByUri(
+                        ABI::Windows::Foundation::IUriRuntimeClass* packageUri,
+                        boolean* result
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE IsPackageRemovalPendingByUriForUser(
+                        ABI::Windows::Foundation::IUriRuntimeClass* packageUri,
+                        HSTRING userSecurityId,
+                        boolean* result
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IPackageManager12 = __uuidof(IPackageManager12);
+            } /* Deployment */
+        } /* Management */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManager2
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -4497,6 +4581,45 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageO
 
 /*
  *
+ * Interface Windows.Management.Deployment.IRemovePackageOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.RemovePackageOptions
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IRemovePackageOptions2[] = L"Windows.Management.Deployment.IRemovePackageOptions2";
+namespace ABI {
+    namespace Windows {
+        namespace Management {
+            namespace Deployment {
+                MIDL_INTERFACE("3fcc61e5-22c5-423b-b4b4-cf10bb50830c")
+                IRemovePackageOptions2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_DeferRemovalWhenPackagesAreInUse(
+                        boolean* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_DeferRemovalWhenPackagesAreInUse(
+                        boolean value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IRemovePackageOptions2 = __uuidof(IRemovePackageOptions2);
+            } /* Deployment */
+        } /* Management */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Management.Deployment.ISharedPackageContainer
  *
  * Introduced to Windows.Management.Deployment.SharedPackageContainerContract in version 1.0
@@ -5184,6 +5307,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager9
  *    Windows.Management.Deployment.IPackageManager10
  *    Windows.Management.Deployment.IPackageManager11
+ *    Windows.Management.Deployment.IPackageManager12
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -5293,6 +5417,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Management.Deployment.IRemovePackageOptions ** Default Interface **
+ *    Windows.Management.Deployment.IRemovePackageOptions2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *
@@ -5547,6 +5672,12 @@ typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager11 __
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager11_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12;
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2 __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager2;
@@ -5636,6 +5767,12 @@ typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIRegisterPackageOpti
 typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions;
 
 #endif // ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2 __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2;
+
+#endif // ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CManagement_CDeployment_CISharedPackageContainer_FWD_DEFINED__
 #define ____x_ABI_CWindows_CManagement_CDeployment_CISharedPackageContainer_FWD_DEFINED__
@@ -9036,6 +9173,9 @@ enum __x_ABI_CWindows_CManagement_CDeployment_CRemovalOptions
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
     RemovalOptions_PreserveRoamableApplicationData = 0x80,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+    RemovalOptions_DeferRemovalWhenPackagesAreInUse = 0x2000,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
     RemovalOptions_RemoveForAllUsers = 0x80000,
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x70000
@@ -10823,6 +10963,96 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager
 
 /*
  *
+ * Interface Windows.Management.Deployment.IPackageManager12
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.PackageManager
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IPackageManager12[] = L"Windows.Management.Deployment.IPackageManager12";
+typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* IsPackageRemovalPending)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        HSTRING packageFullName,
+        boolean* result);
+    HRESULT (STDMETHODCALLTYPE* IsPackageRemovalPendingForUser)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        HSTRING packageFullName,
+        HSTRING userSecurityId,
+        boolean* result);
+    HRESULT (STDMETHODCALLTYPE* IsPackageRemovalPendingByUri)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        __x_ABI_CWindows_CFoundation_CIUriRuntimeClass* packageUri,
+        boolean* result);
+    HRESULT (STDMETHODCALLTYPE* IsPackageRemovalPendingByUriForUser)(__x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12* This,
+        __x_ABI_CWindows_CFoundation_CIUriRuntimeClass* packageUri,
+        HSTRING userSecurityId,
+        boolean* result);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12Vtbl;
+
+interface __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12
+{
+    CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_IsPackageRemovalPending(This, packageFullName, result) \
+    ((This)->lpVtbl->IsPackageRemovalPending(This, packageFullName, result))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_IsPackageRemovalPendingForUser(This, packageFullName, userSecurityId, result) \
+    ((This)->lpVtbl->IsPackageRemovalPendingForUser(This, packageFullName, userSecurityId, result))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_IsPackageRemovalPendingByUri(This, packageUri, result) \
+    ((This)->lpVtbl->IsPackageRemovalPendingByUri(This, packageUri, result))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_IsPackageRemovalPendingByUriForUser(This, packageUri, userSecurityId, result) \
+    ((This)->lpVtbl->IsPackageRemovalPendingByUriForUser(This, packageUri, userSecurityId, result))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIPackageManager12_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Management.Deployment.IPackageManager2
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12432,6 +12662,80 @@ EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageO
 
 /*
  *
+ * Interface Windows.Management.Deployment.IRemovePackageOptions2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Management.Deployment.RemovePackageOptions
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Management_Deployment_IRemovePackageOptions2[] = L"Windows.Management.Deployment.IRemovePackageOptions2";
+typedef struct __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_DeferRemovalWhenPackagesAreInUse)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* put_DeferRemovalWhenPackagesAreInUse)(__x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2* This,
+        boolean value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2Vtbl;
+
+interface __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_get_DeferRemovalWhenPackagesAreInUse(This, value) \
+    ((This)->lpVtbl->get_DeferRemovalWhenPackagesAreInUse(This, value))
+
+#define __x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_put_DeferRemovalWhenPackagesAreInUse(This, value) \
+    ((This)->lpVtbl->put_DeferRemovalWhenPackagesAreInUse(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2;
+#endif /* !defined(____x_ABI_CWindows_CManagement_CDeployment_CIRemovePackageOptions2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Management.Deployment.ISharedPackageContainer
  *
  * Introduced to Windows.Management.Deployment.SharedPackageContainerContract in version 1.0
@@ -13486,6 +13790,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.Management.Deployment.IPackageManager9
  *    Windows.Management.Deployment.IPackageManager10
  *    Windows.Management.Deployment.IPackageManager11
+ *    Windows.Management.Deployment.IPackageManager12
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13595,6 +13900,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Management.Deployment.IRemovePackageOptions ** Default Interface **
+ *    Windows.Management.Deployment.IRemovePackageOptions2
  *
  * Class Marshaling Behavior:  Agile - Class is agile
  *

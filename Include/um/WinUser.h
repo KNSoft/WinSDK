@@ -16135,6 +16135,17 @@ IsWindowArranged(
 
 #endif /* WINVER >= 0x0604 */
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+
+#define INVALID_MONITOR_TOPOLOGY_ID 0
+
+WINUSERAPI
+UINT
+WINAPI
+GetCurrentMonitorTopologyId();
+
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GE
+
 #if _MSC_VER >= 1200
 #pragma warning(pop)
 #endif

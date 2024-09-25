@@ -4785,6 +4785,15 @@
 //
 #define PRTH_S_TRY_IMPERSONATING         0x00041225L
 
+//
+// MessageId: PRTH_E_TRANSACTION_FAILED
+//
+// MessageText:
+//
+// Transaction failed. Requeue the item for transaction.
+//
+#define PRTH_E_TRANSACTION_FAILED        0x80041226L
+
 //uebug "unexpected error is jargon we should avoid, if possible.
 //
 // MessageId: CMDLINE_E_UNEXPECTED

@@ -6589,6 +6589,14 @@ DEFINE_PROPERTYKEY(PKEY_MsGraph_DateLastShared, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1
 DEFINE_PROPERTYKEY(PKEY_MsGraph_DriveId, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29, 3);
 #define INIT_PKEY_MsGraph_DriveId { { 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29 }, 3 }
 
+//  Name:     System.MsGraph.IconUrl -- PKEY_MsGraph_IconUrl
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {4F85567E-FFF0-4DF5-B1D9-98B314FF0729}, 15
+//
+//  A URL for an icon that represents the file
+DEFINE_PROPERTYKEY(PKEY_MsGraph_IconUrl, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29, 15);
+#define INIT_PKEY_MsGraph_IconUrl { { 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29 }, 15 }
+
 //  Name:     System.MsGraph.ItemId -- PKEY_MsGraph_ItemId
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
 //  FormatID: {4F85567E-FFF0-4DF5-B1D9-98B314FF0729}, 4
@@ -8119,6 +8127,18 @@ DEFINE_PROPERTYKEY(PKEY_Search_IsClosedDirectory, 0x0B63E343, 0x9CCC, 0x11D0, 0x
 //  Any child URL of a URL which has System.Search.IsClosedDirectory=TRUE must emit System.Search.IsFullyContained=TRUE.  This ensures that the URL is not deleted at the end of a crawl because it hasn't been visited (which is the normal mechanism for detecting deletes).  For example an email attachment would emit this property
 DEFINE_PROPERTYKEY(PKEY_Search_IsFullyContained, 0x0B63E343, 0x9CCC, 0x11D0, 0xBC, 0xDB, 0x00, 0x80, 0x5F, 0xCC, 0xCE, 0x04, 24);
 #define INIT_PKEY_Search_IsFullyContained { { 0x0B63E343, 0x9CCC, 0x11D0, 0xBC, 0xDB, 0x00, 0x80, 0x5F, 0xCC, 0xCE, 0x04 }, 24 }
+
+//  Name:     System.Search.MatchKind -- PKEY_Search_MatchKind
+//  Type:     Int32 -- VT_I4
+//  FormatID: (FMTID_Query) {49691C90-7E17-101A-A91C-08002B2ECDA9}, 29
+//
+//  States the type of search used to match this file to the search query.
+DEFINE_PROPERTYKEY(PKEY_Search_MatchKind, 0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9, 29);
+#define INIT_PKEY_Search_MatchKind { { 0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9 }, 29 }
+
+// Possible discrete values for PKEY_Search_MatchKind are:
+#define MATCH_KIND_LEXICAL                  1l
+#define MATCH_KIND_SEMANTIC                 2l
 
 //  Name:     System.Search.QueryFocusedSummary -- PKEY_Search_QueryFocusedSummary
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)

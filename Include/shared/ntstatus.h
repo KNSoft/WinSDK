@@ -1326,6 +1326,15 @@ Notes:
 #define STATUS_EMULATION_SYSCALL         ((NTSTATUS)0x40000039L)
 
 //
+// MessageId: STATUS_EMULATION_FLOAT_EXCEPTION
+//
+// MessageText:
+//
+// Exception status code used by ARM64EC emulation subsystem.
+//
+#define STATUS_EMULATION_FLOAT_EXCEPTION ((NTSTATUS)0x4000003AL)
+
+//
 // MessageId: DBG_REPLY_LATER
 //
 // MessageText:
@@ -16577,6 +16586,15 @@ Notes:
 // The specified operation could not be performed because the resource manager is not enlisted in the transaction.
 //
 #define STATUS_TRANSACTION_NOT_ENLISTED  ((NTSTATUS)0xC0190061L)
+
+//
+// MessageId: STATUS_ENLISTMENT_NOT_INITIALIZED
+//
+// MessageText:
+//
+// The transaction is linked to an enlistment that is not fully initialized yet.
+//
+#define STATUS_ENLISTMENT_NOT_INITIALIZED ((NTSTATUS)0xC0190062L)
 
 
 //

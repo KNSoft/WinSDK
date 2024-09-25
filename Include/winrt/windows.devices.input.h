@@ -1008,6 +1008,9 @@ namespace ABI {
                     PointerDeviceType_Touch = 0,
                     PointerDeviceType_Pen = 1,
                     PointerDeviceType_Mouse = 2,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
+                    PointerDeviceType_Touchpad = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
                 };
             } /* Input */
         } /* Devices */
@@ -3217,6 +3220,9 @@ enum __x_ABI_CWindows_CDevices_CInput_CPointerDeviceType
     PointerDeviceType_Touch = 0,
     PointerDeviceType_Pen = 1,
     PointerDeviceType_Mouse = 2,
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
+    PointerDeviceType_Touchpad = 3,
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 

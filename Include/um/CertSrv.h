@@ -159,6 +159,11 @@
 #define CSVER_EXTRACT_MINOR(version) ((version)&0xffff)
 #define CSVER_BUILD_VERSION(major, minor) (((major)<<16)|(minor))
 
+// propertyId manipulation to pass partition index and key index
+#define CRL_BUILD_PROPID(partIndex, keyIndex) ((partIndex << 16) | keyIndex)
+#define CRL_EXTRACT_KEY_INDEX(propId) ((propId) & 0xFFFF)
+#define CRL_EXTRACT_PARTITION_INDEX(propId) ((propId) >> 16)
+
 // Keys Under "CertSvc\Configuration":
 #define wszREGKEYRESTOREINPROGRESS   TEXT("RestoreInProgress")
 #define wszREGKEYDBPARAMETERS	     TEXT("DBParameters")
@@ -192,6 +197,10 @@
 
 #define wszREGCRLPUBLICATIONURLS     TEXT("CRLPublicationURLs")
 #define wszREGCACERTPUBLICATIONURLS  TEXT("CACertPublicationURLs")
+
+#define wszREGCRLMAXPARTITIONS       TEXT("CRLMaxPartitions")
+#define wszREGCRLSUSPENDEDPARTITIONS TEXT("CRLSuspendedPartitions")
+#define wszREGCRLCURRENTPARTITION    TEXT("CRLCurrentPartition")
 
 #define wszREGCAXCHGVALIDITYPERIODSTRING  TEXT("CAXchgValidityPeriod")
 #define wszREGCAXCHGVALIDITYPERIODCOUNT   TEXT("CAXchgValidityPeriodUnits")
@@ -322,7 +331,7 @@ typedef struct _CAINFO
     LONG    lRoleSeparationEnabled;
     DWORD   cKRACertUsedCount;
     DWORD   cKRACertCount;
-    DWORD   fAdvancedServer;   
+    DWORD   fAdvancedServer;
 } CAINFO;
 
 #endif // __ENUM_CATYPES__
@@ -411,27 +420,33 @@ typedef struct _CAINFO
 #define CRLF_DELTA_USE_OLDEST_UNEXPIRED_BASE	0x00000001 // use oldest base:
 // else use newest base CRL that satisfies base CRL propagation delay
 
-#define CRLF_DELETE_EXPIRED_CRLS		0x00000002
-#define CRLF_CRLNUMBER_CRITICAL			0x00000004
-#define CRLF_REVCHECK_IGNORE_OFFLINE		0x00000008
-#define CRLF_IGNORE_INVALID_POLICIES		0x00000010
-#define CRLF_REBUILD_MODIFIED_SUBJECT_ONLY	0x00000020
-#define CRLF_SAVE_FAILED_CERTS			0x00000040
-#define CRLF_IGNORE_UNKNOWN_CMC_ATTRIBUTES	0x00000080
-#define CRLF_IGNORE_CROSS_CERT_TRUST_ERROR	0x00000100
-#define CRLF_PUBLISH_EXPIRED_CERT_CRLS		0x00000200
-#define CRLF_ENFORCE_ENROLLMENT_AGENT		0x00000400
-#define CRLF_DISABLE_RDN_REORDER		0x00000800
-#define CRLF_DISABLE_ROOT_CROSS_CERTS		0x00001000
-#define CRLF_LOG_FULL_RESPONSE	                0x00002000 // hex dump response to console
+#define CRLF_DELETE_EXPIRED_CRLS                0x00000002
+#define CRLF_CRLNUMBER_CRITICAL                 0x00000004
+#define CRLF_REVCHECK_IGNORE_OFFLINE            0x00000008
+#define CRLF_IGNORE_INVALID_POLICIES            0x00000010
+#define CRLF_REBUILD_MODIFIED_SUBJECT_ONLY      0x00000020
+#define CRLF_SAVE_FAILED_CERTS                  0x00000040
+#define CRLF_IGNORE_UNKNOWN_CMC_ATTRIBUTES      0x00000080
+#define CRLF_IGNORE_CROSS_CERT_TRUST_ERROR      0x00000100
+#define CRLF_PUBLISH_EXPIRED_CERT_CRLS          0x00000200
+#define CRLF_ENFORCE_ENROLLMENT_AGENT           0x00000400
+#define CRLF_DISABLE_RDN_REORDER                0x00000800
+#define CRLF_DISABLE_ROOT_CROSS_CERTS           0x00001000
+#define CRLF_LOG_FULL_RESPONSE                  0x00002000 // hex dump response to console
 #define CRLF_USE_XCHG_CERT_TEMPLATE             0x00004000 // enforce xchg template access
 #define CRLF_USE_CROSS_CERT_TEMPLATE            0x00008000 // enforce cross template access
-#define CRLF_ALLOW_REQUEST_ATTRIBUTE_SUBJECT	0x00010000
-#define CRLF_REVCHECK_IGNORE_NOREVCHECK		0x00020000
-#define CRLF_PRESERVE_EXPIRED_CA_CERTS		0x00040000
-#define CRLF_PRESERVE_REVOKED_CA_CERTS		0x00080000
-#define CRLF_DISABLE_CHAIN_VERIFICATION		0x00100000
+#define CRLF_ALLOW_REQUEST_ATTRIBUTE_SUBJECT    0x00010000
+#define CRLF_REVCHECK_IGNORE_NOREVCHECK         0x00020000
+#define CRLF_PRESERVE_EXPIRED_CA_CERTS          0x00040000
+#define CRLF_PRESERVE_REVOKED_CA_CERTS          0x00080000
+#define CRLF_DISABLE_CHAIN_VERIFICATION         0x00100000
 #define CRLF_BUILD_ROOTCA_CRLENTRIES_BASEDONKEY 0x00200000
+// Flag to enable CRL partition feature
+#define CRLF_ENABLE_CRL_PARTITION               0x00400000
+// Flag to make the partition zero CRLs exclusive.
+// When the flag is set, the CRLs of partition zero will exclusively contain
+// entries related to certificates assigned specifically to partition zero. 
+#define CRLF_PARTITION_ZERO_EXCLUSIVE           0x00800000
 
 //==================================
 // Values for wszREGKRAFLAGS:
@@ -1056,6 +1071,7 @@ typedef struct _CAINFO
 #define wszPROPENDORSEMENTKEYHASH               TEXT("EndorsementKeyHash")
 #define wszPROPENDORSEMENTCERTIFICATEHASH       TEXT("EndorsementCertificateHash")
 #define wszPROPRAWPRECERTIFICATE                TEXT("RawPrecertificate")
+#define wszPROPCRLPARTITIONINDEX                TEXT("CRLPartitionIndex")
 
 //+--------------------------------------------------------------------------
 // Request attribute properties:

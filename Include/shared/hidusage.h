@@ -1289,6 +1289,7 @@ typedef LONG USAGE_VALUE, *PUSAGE_VALUE;
 #define HID_USAGE_GENERIC_SYSCTL_MUTE                                   ((USAGE) 0x00A7)
 #define HID_USAGE_GENERIC_SYSCTL_HIBERNATE                              ((USAGE) 0x00A8)
 #define HID_USAGE_GENERIC_SYSCTL_MICROPHONE_MUTE                        ((USAGE) 0x00A9)
+#define HID_USAGE_GENERIC_SYSCTL_ACCESSIBILITY_BINDING                  ((USAGE) 0x00AA)
 #define HID_USAGE_GENERIC_SYSCTL_DISP_INVERT                            ((USAGE) 0x00B0)
 #define HID_USAGE_GENERIC_SYSCTL_DISP_INTERNAL                          ((USAGE) 0x00B1)
 #define HID_USAGE_GENERIC_SYSCTL_DISP_EXTERNAL                          ((USAGE) 0x00B2)

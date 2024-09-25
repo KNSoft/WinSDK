@@ -5189,7 +5189,7 @@ typedef struct _KERB_SETPASSWORD_EX_REQUEST {
 
 typedef struct _KERB_CHANGEMACHINEPASSWORD_REQUEST {
     KERB_PROTOCOL_MESSAGE_TYPE MessageType;
-    BOOLEAN        Impersonating;
+    BOOLEAN        ForcePasswordChange;
 } KERB_CHANGEMACHINEPASSWORD_REQUEST, *PKERB_CHANGEMACHINEPASSWORD_REQUEST;
 
                                                                    
@@ -5284,6 +5284,7 @@ typedef struct _KERB_ADD_CREDENTIALS_REQUEST {
 #define KERB_REQUEST_ADD_CREDENTIAL     1
 #define KERB_REQUEST_REPLACE_CREDENTIAL 2
 #define KERB_REQUEST_REMOVE_CREDENTIAL  4
+#define KERB_REQUEST_CRED_LOCAL_ACCOUNT 8
 #endif
 
 #if (_WIN32_WINNT >= 0x0600)

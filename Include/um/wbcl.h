@@ -274,6 +274,13 @@ extern "C" {
 
 #endif // NTDDI_VERSION >= NTDDI_WIN10_RS3
 
+#if NTDDI_VERSION >= NTDDI_WIN11_GE
+
+#define SIPAERROR_HYPERVISORFAILURE        (SIPAEVENTTYPE_ERROR + \
+                                            0x0005)
+
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GE
+
 //SIPAEVENTTYPE_INFORMATION
 #define SIPAEVENT_INFORMATION              (SIPAEVENTTYPE_INFORMATION + \
                                             0x0001)
@@ -507,6 +514,11 @@ extern "C" {
 
 #define SIPAEVENT_REFS_ROLLBACK_PROTECTION_VOLUME_FIRST_EVER_MOUNT           (SIPAEVENTTYPE_OSPARAMETER + \
                                                                               0x0037)
+
+typedef struct _SIPAEVENT_REFS_ROLLBACK_PROTECTION_USER_PAYLOAD_HASH_DATA {
+    UINT16 ChecksumType;
+    BYTE ChecksumBuffer[ANYSIZE_ARRAY];
+} SIPAEVENT_REFS_ROLLBACK_PROTECTION_USER_PAYLOAD_HASH_DATA, *PSIPAEVENT_REFS_ROLLBACK_PROTECTION_USER_PAYLOAD_HASH_DATA;
 
 #endif // NTDDI_VERSION >= NTDDI_WIN10_GE
 

@@ -2506,6 +2506,7 @@ typedef struct _HTTP_SERVICE_CONFIG_SSL_PARAM_EX
 #define HTTP_SERVICE_CONFIG_SSL_FLAG_DISABLE_TLS12              0x00001000
 #define HTTP_SERVICE_CONFIG_SSL_FLAG_ENABLE_CLIENT_CORRELATION  0x00002000
 #define HTTP_SERVICE_CONFIG_SSL_FLAG_DISABLE_SESSION_ID         0x00004000
+#define HTTP_SERVICE_CONFIG_SSL_FLAG_ENABLE_CACHE_CLIENT_HELLO  0x00008000
 
 
 //
@@ -2760,7 +2761,8 @@ typedef enum _HTTP_REQUEST_PROPERTY
     HttpRequestPropertyQuicApiTimings,
     HttpRequestPropertyQuicStatsV2,
     HttpRequestPropertyQuicStreamStats,
-    HttpRequestPropertyTcpInfoV2
+    HttpRequestPropertyTcpInfoV2,
+    HttpRequestPropertyTlsClientHello
 } HTTP_REQUEST_PROPERTY, *PHTTP_REQUEST_PROPERTY;
 
 typedef struct _HTTP_QUERY_REQUEST_QUALIFIER_TCP
@@ -2908,7 +2910,8 @@ typedef enum _HTTP_FEATURE_ID
     HttpFeatureAutomaticChunkedEncoding        = 8,
     HttpFeatureDedicatedReqQueueDelegationType = 9,
     HttpFeatureFastForwardResponse             = 10,
-    HttpFeatureLast                            = 11,
+    HttpFeatureCacheTlsClientHello             = 11,
+    HttpFeatureLast                            = 12,
 
 
     HttpFeaturemax              = 0xFFFFFFFF,

@@ -18186,6 +18186,15 @@
 //
 #define ERROR_TRANSACTION_NOT_ENLISTED   6855L
 
+//
+// MessageId: ERROR_ENLISTMENT_NOT_INITIALIZED
+//
+// MessageText:
+//
+// The transaction is linked to an enlistment that is not fully initialized yet.
+//
+#define ERROR_ENLISTMENT_NOT_INITIALIZED 6856L
+
 
 ///////////////////////////////////////////////////
 //                                               //
@@ -29715,6 +29724,24 @@
 // The activation failed because the package targets the arm32 architecture, which is no longer supported. Try repairing or reinstalling the application to fix the problem.
 //
 #define ERROR_UNSUPPORTED_ARM32_PACKAGE_REQUIRES_REMEDIAITON 15674L
+
+//
+// MessageId: ERROR_UUP_PRODUCT_NOT_APPLICABLE
+//
+// MessageText:
+//
+// The product is not applicable or cannot be found.
+//
+#define ERROR_UUP_PRODUCT_NOT_APPLICABLE 15675L
+
+//
+// MessageId: ERROR_BLOCKED_BY_PENDING_PACKAGE_REMOVAL
+//
+// MessageText:
+//
+// The deployment operation on this package is blocked because it or a package in the same family is pending removal. Please log off and log on again to finish the deferred package removal and try again.
+//
+#define ERROR_BLOCKED_BY_PENDING_PACKAGE_REMOVAL 15676L
 
 //////////////////////////
 //                      //

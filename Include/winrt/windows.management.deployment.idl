@@ -109,6 +109,8 @@ namespace Windows
 
             interface IPackageManager11;
 
+            interface IPackageManager12;
+
             interface IPackageManager2;
 
             interface IPackageManager3;
@@ -138,6 +140,8 @@ namespace Windows
             interface IRegisterPackageOptions2;
 
             interface IRemovePackageOptions;
+
+            interface IRemovePackageOptions2;
 
             interface ISharedPackageContainer;
 
@@ -359,12 +363,14 @@ namespace Windows
             [flags]
             enum RemovalOptions
             {
-                None                            = 0x0,
-                PreserveApplicationData         = 0x1000,
+                None                             = 0x0,
+                PreserveApplicationData          = 0x1000,
                 [contract(Windows.Foundation.UniversalApiContract, 10.0)]
-                PreserveRoamableApplicationData = 0x80,
+                PreserveRoamableApplicationData  = 0x80,
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+                DeferRemovalWhenPackagesAreInUse = 0x2000,
                 [contract(Windows.Foundation.UniversalApiContract, 7.0)]
-                RemoveForAllUsers               = 0x80000
+                RemoveForAllUsers                = 0x80000
             };
 
             [contract(Windows.Management.Deployment.SharedPackageContainerContract, 1.0)]
@@ -633,6 +639,17 @@ namespace Windows
                 HRESULT RemovePackageByUriAsync([in] Windows.Foundation.Uri* packageUri, [in] Windows.Management.Deployment.RemovePackageOptions* options, [out] [retval] Windows.Foundation.IAsyncOperationWithProgress<Windows.Management.Deployment.DeploymentResult*, Windows.Management.Deployment.DeploymentProgress>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.Management.Deployment.PackageManager)]
+            [uuid(5D233ADF-F9E3-4D96-B40D-96788E39539F)]
+            interface IPackageManager12 : IInspectable
+            {
+                HRESULT IsPackageRemovalPending([in] HSTRING packageFullName, [out] [retval] boolean* result);
+                HRESULT IsPackageRemovalPendingForUser([in] HSTRING packageFullName, [in] HSTRING userSecurityId, [out] [retval] boolean* result);
+                HRESULT IsPackageRemovalPendingByUri([in] Windows.Foundation.Uri* packageUri, [out] [retval] boolean* result);
+                HRESULT IsPackageRemovalPendingByUriForUser([in] Windows.Foundation.Uri* packageUri, [in] HSTRING userSecurityId, [out] [retval] boolean* result);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Management.Deployment.PackageManager)]
             [uuid(F7AAD08D-0840-46F2-B5D8-CAD47693A095)]
@@ -837,6 +854,15 @@ namespace Windows
                 [propput] HRESULT PreserveRoamableApplicationData([in] boolean value);
                 [propget] HRESULT RemoveForAllUsers([out] [retval] boolean* value);
                 [propput] HRESULT RemoveForAllUsers([in] boolean value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.Management.Deployment.RemovePackageOptions)]
+            [uuid(3FCC61E5-22C5-423B-B4B4-CF10BB50830C)]
+            interface IRemovePackageOptions2 : IInspectable
+            {
+                [propget] HRESULT DeferRemovalWhenPackagesAreInUse([out] [retval] boolean* value);
+                [propput] HRESULT DeferRemovalWhenPackagesAreInUse([in] boolean value);
             }
 
             [contract(Windows.Management.Deployment.SharedPackageContainerContract, 1.0)]
@@ -1050,6 +1076,7 @@ namespace Windows
                 [contract(Windows.Foundation.UniversalApiContract, 10.0)] interface Windows.Management.Deployment.IPackageManager9;
                 [contract(Windows.Foundation.UniversalApiContract, 13.0)] interface Windows.Management.Deployment.IPackageManager10;
                 [contract(Windows.Foundation.UniversalApiContract, 18.0)] interface Windows.Management.Deployment.IPackageManager11;
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)] interface Windows.Management.Deployment.IPackageManager12;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 4.0)]
@@ -1091,6 +1118,7 @@ namespace Windows
             runtimeclass RemovePackageOptions
             {
                 [default] interface Windows.Management.Deployment.IRemovePackageOptions;
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)] interface Windows.Management.Deployment.IRemovePackageOptions2;
             }
 
             [contract(Windows.Management.Deployment.SharedPackageContainerContract, 1.0)]

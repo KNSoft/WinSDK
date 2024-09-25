@@ -4400,6 +4400,12 @@ cpp_quote( "EXTERN_GUID(MF_SD_STREAM_NAME, 0x4f1b099d, 0xd314, 0x41e5, 0xa7, 0x8
 // {023EF79C-388D-487f-AC17-696CD6E3C6F5}
 cpp_quote( "EXTERN_GUID(MF_SD_MUTUALLY_EXCLUSIVE, 0x23ef79c, 0x388d, 0x487f, 0xac, 0x17, 0x69, 0x6c, 0xd6, 0xe3, 0xc6, 0xf5);" )
 
+// MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCH
+// Data type: UINT32 (treat as BOOL)
+// {8fb6b117-862e-4b31-8dab-5e0a434caef0}
+// Indicates that the media processor can do a codec switch in response to MEStreamFormatChanged
+// even if the content is protected.
+cpp_quote("DEFINE_GUID( MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCH, 0x8fb6b117, 0x862e, 0x4b31, 0x8d, 0xab, 0x5e, 0x0a, 0x43, 0x4c, 0xae, 0xf0);")
 
 [
     object,

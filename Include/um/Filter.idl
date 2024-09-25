@@ -87,7 +87,9 @@ interface IFilter : IUnknown
     {
         CHUNK_TEXT               = 0x1,
         CHUNK_VALUE              = 0x2,
-        CHUNK_FILTER_OWNED_VALUE = 0x4
+        CHUNK_FILTER_OWNED_VALUE = 0x4,
+        CHUNK_IMAGE              = 0x8
+
     } CHUNKSTATE;
     cpp_quote("#define _tagCHUNKSTATE_DEFINED")
     cpp_quote("#define _CHUNKSTATE_DEFINED")

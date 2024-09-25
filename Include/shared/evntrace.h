@@ -266,6 +266,14 @@ DEFINE_GUID( /* 4f061568-e215-499f-ab2e-eda0ae890a5b */
     0xab, 0x2e, 0xed, 0xa0, 0xae, 0x89, 0x0a, 0x5b
     );
 
+DEFINE_GUID( /* 99134383-5248-43fc-834b-529454e75df3 */
+    LastBranchRecordProviderGuid,
+    0x99134383,
+    0x5248,
+    0x43fc,
+    0x83, 0x4b, 0x52, 0x94, 0x54, 0xe7, 0x5d, 0xf3
+    );
+
 #define KERNEL_LOGGER_NAMEW         L"NT Kernel Logger"
 #define GLOBAL_LOGGER_NAMEW         L"GlobalLogger"
 #define EVENT_LOGGER_NAMEW          L"EventLog"
@@ -1443,6 +1451,25 @@ typedef enum ETW_CONTEXT_REGISTER_TYPES {
 } ETW_CONTEXT_REGISTER_TYPES;
 DEFINE_ENUM_FLAG_OPERATORS(ETW_CONTEXT_REGISTER_TYPES)
 
+#define TRACE_LBR_EVENT_OPCODE 0x20
+#define TRACE_LBR_MAXIMUM_EVENTS 4
+
+typedef enum TRACE_LBR_CONFIGURATION {
+    TRACE_LBR_CONFIGURATION_NONE                  = 0x0,   // do not exclude any branches
+    TRACE_LBR_CONFIGURATION_EXCLUDE_KERNEL        = 0x1,   // exclude branches in kernel privilege
+    TRACE_LBR_CONFIGURATION_EXCLUDE_USER          = 0x2,   // exclude branches in user privilege
+    TRACE_LBR_CONFIGURATION_EXCLUDE_JCC           = 0x4,   // exclude conditional branches
+    TRACE_LBR_CONFIGURATION_EXCLUDE_NEAR_REL_CALL = 0x8,   // exclude near relative calls
+    TRACE_LBR_CONFIGURATION_EXCLUDE_NEAR_IND_CALL = 0x10,  // exclude near indirect calls
+    TRACE_LBR_CONFIGURATION_EXCLUDE_NEAR_RET      = 0x20,  // exclude near returns
+    TRACE_LBR_CONFIGURATION_EXCLUDE_NEAR_IND_JMP  = 0x40,  // exclude near indirect jumps
+    TRACE_LBR_CONFIGURATION_EXCLUDE_NEAR_REL_JMP  = 0x80,  // exclude near relative jumps
+    TRACE_LBR_CONFIGURATION_EXCLUDE_FAR_BRANCH    = 0x100, // exclude far ("other") branches
+    TRACE_LBR_CONFIGURATION_CALLSTACK_ENABLE      = 0x200, // record branches in callstack (LIFO) mode
+    TRACE_LBR_CONFIGURATION_SAMPLED               = 0x400, // record sample-based LBR (ARM64 only)
+} TRACE_LBR_CONFIGURATION;
+DEFINE_ENUM_FLAG_OPERATORS(TRACE_LBR_CONFIGURATION)
+
 //
 // An EVENT_TRACE consists of a fixed header (EVENT_TRACE_HEADER) and
 // optionally a variable portion pointed to by MofData. The datablock
@@ -2456,6 +2483,16 @@ TraceQueryInformation (
     _Out_opt_ PULONG ReturnLength
     );
 #endif
+
+EXTERN_C
+_Success_(return == ERROR_SUCCESS)
+ULONG
+TraceConfigureLastBranchRecord (
+    _In_ CONTROLTRACE_ID TraceId,
+    _In_ TRACE_LBR_CONFIGURATION LbrConfiguration,
+    _In_reads_(EventCount) CLASSIC_EVENT_ID const* Events,
+    _In_ ULONG EventCount
+    );
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
 #pragma endregion
