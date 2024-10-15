@@ -98,13 +98,19 @@ typedef ULONG_PTR   SIZE_T;
 #undef _USE_INTRINSIC_MULTIPLY128
 
 #if !defined(_ARM64_MULT_INTRINS_SUPPORTED)
-#if (defined(_M_ARM64) || defined(_M_ARM64EC)) && \
-    defined(_MSC_VER) && (!defined(__clang__) || (defined(__clang_major__) && __clang_major__ >= 13))
-#define _ARM64_MULT_INTRINS_SUPPORTED 1
-#else
 #define _ARM64_MULT_INTRINS_SUPPORTED 0
-#endif
-#endif
+#if (defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64))
+#if defined(__clang__)
+#if __has_builtin(__umulh) && __has_builtin(__mulh)
+#undef _ARM64_MULT_INTRINS_SUPPORTED
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#endif // __has_builtin(__umulh) && __has_builtin(__mulh)
+#else // defined(__clang__)
+#undef _ARM64_MULT_INTRINS_SUPPORTED
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#endif // defined(__clang__)
+#endif // (defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64))
+#endif // !defined(_ARM64_MULT_INTRINS_SUPPORTED)
 
 #if !defined(_M_CEE) && \
     ((defined(_M_X64) && !defined(_M_ARM64EC)) || \

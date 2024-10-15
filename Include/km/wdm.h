@@ -3904,11 +3904,6 @@ YieldProcessor (
 //
 //
 
-// TODO: Remove when clang-cl supports __ldar/__stlr/__loadacquire intrinsics
-#if !defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && defined(__clang__)
-#define __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ 1
-#endif
-
 FORCEINLINE
 CHAR
 ReadAcquire8 (
@@ -3919,20 +3914,15 @@ ReadAcquire8 (
 
     CHAR Value;
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
-    Value = __iso_volatile_load8(Source);
-    __dmb(_ARM64_BARRIER_ISH);
-
-#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    Value = (CHAR)__atomic_load_n((unsigned __int8 volatile*)Source, 2);
+#else // defined(__clang__) && !defined(RUST_BINDGEN)
 #if _MSC_FULL_VER >= 193632407
     Value = (CHAR)__load_acquire8((unsigned __int8 volatile*)Source);
 #else
     Value = (CHAR)__ldar8((unsigned __int8 volatile*)Source);
+#endif // defined(__clang__) && !defined(RUST_BINDGEN)
 #endif
-
-#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
 
     return Value;
 }
@@ -3960,9 +3950,8 @@ WriteRelease8 (
 
 {
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-    __dmb(_ARM64_BARRIER_ISH);
-    __iso_volatile_store8(Destination, Value);
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    __atomic_store_n((unsigned __int8 volatile*)Destination, (unsigned __int8)Value, 3);
 #else
     __stlr8((unsigned __int8 volatile*)Destination, (unsigned __int8)Value);
 #endif
@@ -3993,20 +3982,15 @@ ReadAcquire16 (
 
     SHORT Value;
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
-    Value = __iso_volatile_load16(Source);
-    __dmb(_ARM64_BARRIER_ISH);
-
-#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    Value = (SHORT)__atomic_load_n((unsigned __int16 volatile*)Source, 2);
+#else // defined(__clang__) && !defined(RUST_BINDGEN)
 #if _MSC_FULL_VER >= 193632407
     Value = (SHORT)__load_acquire16((unsigned __int16 volatile*)Source);
 #else
     Value = (SHORT)__ldar16((unsigned __int16 volatile*)Source);
 #endif
-
-#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+#endif // defined(__clang__) && !defined(RUST_BINDGEN)
 
     return Value;
 }
@@ -4034,9 +4018,8 @@ WriteRelease16 (
 
 {
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-    __dmb(_ARM64_BARRIER_ISH);
-    __iso_volatile_store16(Destination, Value);
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    __atomic_store_n((unsigned __int16 volatile*)Destination, (unsigned __int16)Value, 3);
 #else
     __stlr16((unsigned __int16 volatile*)Destination, (unsigned __int16)Value);
 #endif
@@ -4067,20 +4050,15 @@ ReadAcquire (
 
     LONG Value;
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
-    Value = __iso_volatile_load32((int *)Source);
-    __dmb(_ARM64_BARRIER_ISH);
-
-#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    Value = (LONG)__atomic_load_n((unsigned __int32 volatile*)Source, 2);
+#else // defined(__clang__) && !defined(RUST_BINDGEN)
 #if _MSC_FULL_VER >= 193632407
     Value = (LONG)__load_acquire32((unsigned __int32 volatile*)Source);
 #else
     Value = (LONG)__ldar32((unsigned __int32 volatile*)Source);
 #endif
-
-#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+#endif // defined(__clang__) && !defined(RUST_BINDGEN)
 
     return Value;
 }
@@ -4108,9 +4086,8 @@ WriteRelease (
 
 {
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-    __dmb(_ARM64_BARRIER_ISH);
-    __iso_volatile_store32((int *)Destination, Value);
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    __atomic_store_n((unsigned __int32 volatile*)Destination, (unsigned __int32)Value, 3);
 #else
     __stlr32((unsigned __int32 volatile*)Destination, (unsigned __int32)Value);
 #endif
@@ -4141,20 +4118,15 @@ ReadAcquire64 (
 
     LONG64 Value;
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
-    Value = __iso_volatile_load64(Source);
-    __dmb(_ARM64_BARRIER_ISH);
-
-#else // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    Value = (LONG64)__atomic_load_n((unsigned __int64 volatile*)Source, 2);
+#else // defined(__clang__) && !defined(RUST_BINDGEN)
 #if _MSC_FULL_VER >= 193632407
     Value = (LONG64)__load_acquire64((unsigned __int64 volatile*)Source);
 #else
     Value = (LONG64)__ldar64((unsigned __int64 volatile*)Source);
 #endif
-
-#endif // defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
+#endif // defined(__clang__) && !defined(RUST_BINDGEN)
 
     return Value;
 }
@@ -4182,9 +4154,8 @@ WriteRelease64 (
 
 {
 
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__) && (__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__ != 0)
-    __dmb(_ARM64_BARRIER_ISH);
-    __iso_volatile_store64(Destination, Value);
+#if defined(__clang__) && !defined(RUST_BINDGEN)
+    __atomic_store_n((unsigned __int64 volatile*)Destination, (unsigned __int64)Value, 3);
 #else
     __stlr64((unsigned __int64 volatile*)Destination, (unsigned __int64)Value);
 #endif
@@ -4215,10 +4186,6 @@ BarrierAfterRead (
     __dmb(_ARM64_BARRIER_ISH);
     return;
 }
-
-#if defined(__USE_MS_ARM64_DMB_ACQUIRE_RELEASE__)
-#undef __USE_MS_ARM64_DMB_ACQUIRE_RELEASE__
-#endif
 
 //
 //
@@ -4386,6 +4353,14 @@ PopulationCount64 (
     _In_ ULONG64 operand
     )
 {
+#if (defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64))
+#if defined(__clang__)
+    return __builtin_popcountll(operand);
+#else
+    return _CountOneBits64(operand);
+#endif
+#else
+
     // log(n) population count
 
     ULONG64 highBits = (operand & 0xAAAAAAAAAAAAAAAA) >> 1;
@@ -4413,6 +4388,8 @@ PopulationCount64 (
     bitSum = highBits + lowBits;
 
     return bitSum;
+
+#endif // (defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64))
 }
 
 #endif // !defined(PopulationCount64)
@@ -4467,13 +4444,19 @@ ShiftRight128 (
 //
 
 #if !defined(_ARM64_MULT_INTRINS_SUPPORTED)
-#if (defined(_M_ARM64) || defined(_M_ARM64EC)) && \
-    defined(_MSC_VER) && (!defined(__clang__) || (defined(__clang_major__) && __clang_major__ >= 13))
-#define _ARM64_MULT_INTRINS_SUPPORTED 1
-#else
 #define _ARM64_MULT_INTRINS_SUPPORTED 0
-#endif
-#endif
+#if defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64)
+#if defined(__clang__)
+#if __has_builtin(__umulh) && __has_builtin(__mulh)
+#undef _ARM64_MULT_INTRINS_SUPPORTED
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#endif // __has_builtin(__umulh) && __has_builtin(__mulh)
+#else // defined(__clang__)
+#undef _ARM64_MULT_INTRINS_SUPPORTED
+#define _ARM64_MULT_INTRINS_SUPPORTED 1
+#endif // defined(__clang__)
+#endif // defined(_M_ARM64) || defined(_M_ARM64EC) || defined(_M_HYBRID_X86_ARM64)
+#endif // !defined(_ARM64_MULT_INTRINS_SUPPORTED)
 
 #if !defined(UnsignedMultiply128)
 

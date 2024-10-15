@@ -148,8 +148,8 @@ __MACHINEARM_ARM64(unsigned int _CountLeadingSigns(long))
 __MACHINEARM_ARM64(unsigned int _CountLeadingSigns64(__int64))
 __MACHINEARM_ARM64(unsigned int _CountLeadingZeros(unsigned long))
 __MACHINEARM_ARM64(unsigned int _CountLeadingZeros64(unsigned __int64))
-__MACHINEARM(unsigned int _CountOneBits(unsigned long))
-__MACHINEARM(unsigned int _CountOneBits64(unsigned __int64))
+__MACHINEARM_ARM64(unsigned int _CountOneBits(unsigned long))
+__MACHINEARM_ARM64(unsigned int _CountOneBits64(unsigned __int64))
 __MACHINEARM(int _DAddSatInt(int, int))
 __MACHINEARM(int _DSubSatInt(int, int))
 __MACHINEARM_ARM64(__int64 _InterlockedAdd64(_Interlocked_operand_ __int64 volatile * _Addend, __int64 _Value))
@@ -410,7 +410,13 @@ __MACHINEX86_X64(void __outwordstring(unsigned short, unsigned short *, unsigned
 __MACHINEX86_X64(unsigned int __popcnt(unsigned int))
 __MACHINEX86_X64(unsigned short __popcnt16(unsigned short))
 __MACHINEX64(unsigned __int64 __popcnt64(unsigned __int64))
+#if defined(__clang_major__) && (__clang_major__==18)
+// Clang 18 has an incorrect definition of __prefetch.
+// See https://github.com/llvm/llvm-project/pull/93235
+__MACHINEARM_ARM64(void __cdecl __prefetch(void *))
+#else
 __MACHINEARM_ARM64(void __cdecl __prefetch(const void *))
+#endif
 __MACHINEARM(void __cdecl __prefetchw(const void *))
 __MACHINEARM64(void __cdecl __prefetch2(const void *, unsigned __int8))
 __MACHINEARM(unsigned __int64 __rdpmccntr64(void))
