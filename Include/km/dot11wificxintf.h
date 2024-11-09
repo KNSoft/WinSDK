@@ -227,6 +227,13 @@ typedef enum _WDI_EXEMPTION_ACTION_TYPE
     WDI_EXEMPT_ON_KEY_MAPPING_KEY_UNAVAILABLE = 2,
 } WDI_EXEMPTION_ACTION_TYPE;
 
+typedef enum {
+    DiagnoseLevelNone               =0,
+    DiagnoseLevelHardwareRegisters  =1, // only device registers
+    DiagnoseLevelFirmwareImageDump  =2, // + firmware image dump
+    DiagnoseLevelDriverStateDump    =3  // + driver state dump
+} eDiagnoseLevel;
+
 /*************************************************************************
 *
 *
@@ -1169,14 +1176,6 @@ NDIS_STATUS
     );
 
 typedef MINIPORT_WDI_POST_ADAPTER_RESTART (*MINIPORT_WDI_POST_RESTART_HANDLER);
-
-
-typedef enum {
-    DiagnoseLevelNone               =0,
-    DiagnoseLevelHardwareRegisters  =1, // only device registers
-    DiagnoseLevelFirmwareImageDump  =2, // + firmware image dump
-    DiagnoseLevelDriverStateDump    =3  // + driver state dump
-} eDiagnoseLevel;
 
 
 typedef

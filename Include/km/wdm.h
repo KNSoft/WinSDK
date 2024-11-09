@@ -22497,6 +22497,7 @@ typedef struct _SYSTEM_POOL_ZEROING_INFORMATION {
 #define PF_ARM_SVE_F32MM_INSTRUCTIONS_AVAILABLE     58   
 #define PF_ARM_SVE_F64MM_INSTRUCTIONS_AVAILABLE     59   
 #define PF_BMI2_INSTRUCTIONS_AVAILABLE              60   
+#define PF_MOVDIR64B_INSTRUCTION_AVAILABLE          61   
 
 typedef enum _ALTERNATIVE_ARCHITECTURE_TYPE {
     StandardDesign,                 // None == 0 == standard design

@@ -17125,6 +17125,22 @@ C_ASSERT(sizeof(PCI_EXPRESS_CXL_DVSEC_CAPABILITY) == sizeof(PCI_EXPRESS_CXL_DVSE
 
 #define PCI_LNKINTRF_VERSION 1
 
+typedef enum _PCI_LINK_WIDTH {
+    PciLinkWidth_1x = 1<<0,
+    PciLinkWidth_2x = 1<<1,
+    PciLinkWidth_4x = 1<<2,
+    PciLinkWidth_8x = 1<<3,
+    PciLinkWidth_16x = 1<<4,
+    PciLinkWidthMax = 1<<5
+} PCI_LINK_WIDTH, *PPCI_LINK_WIDTH;
+
+#define LINKSPEED_MTS_2500 2500
+#define LINKSPEED_MTS_5000 5000
+#define LINKSPEED_MTS_8000 8000
+#define LINKSPEED_MTS_16000 16000
+#define LINKSPEED_MTS_32000 32000
+#define LINKSPEED_MTS_64000 64000
+
 typedef enum _PCI_LINK_SPEED {
     PciLinkSpeed2_5Gts = 0,
     PciLinkSpeed5_0Gts,
@@ -17158,7 +17174,10 @@ _IRQL_requires_max_(PASSIVE_LEVEL)
 NTSTATUS
 PCI_SET_MAX_LINK_BANDWIDTH(
 	_Inout_ PVOID Context,
-	_In_    ULONG TargetBandwidth
+	_In_    ULONG TargetBandwidth,
+    _In_    BOOLEAN WaitForRetrain,
+    _Out_   PBOOLEAN LinkThrottled,
+    _Out_   PPCI_LINK_SPEED NewLinkSpeed
     );
 typedef PCI_SET_MAX_LINK_BANDWIDTH *PPCI_SET_MAX_LINK_BANDWIDTH;
 

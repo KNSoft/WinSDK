@@ -14793,6 +14793,7 @@ typedef struct _REPARSE_GUID_DATA_BUFFER {
 #define IO_REPARSE_TAG_LX_FIFO                  (0x80000024L)
 #define IO_REPARSE_TAG_LX_CHR                   (0x80000025L)
 #define IO_REPARSE_TAG_LX_BLK                   (0x80000026L)
+#define IO_REPARSE_TAG_STORAGE_SYNC_FOLDER      (0x90000027L)       // winnt
 #define IO_REPARSE_TAG_WCI_LINK                 (0xA0000027L)       // winnt
 #define IO_REPARSE_TAG_WCI_LINK_1               (0xA0001027L)       // winnt
 #define IO_REPARSE_TAG_DATALESS_CIM             (0xA0000028L)       // winnt
@@ -17312,7 +17313,8 @@ typedef struct _REFS_QUERY_VOLUME_IO_METRICS_INFO_OUTPUT_BUFFER {
 
 #if (NTDDI_VERSION >= NTDDI_WIN11_GE)
 
-#define REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER_VERSION 1
+#define REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER_VERSION_V1 1
+#define REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER_VERSION    2
 
 typedef struct _REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER {
 
@@ -17320,6 +17322,7 @@ typedef struct _REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER {
     BOOLEAN FailMountOnMismatch;
     ULONG CustomPayloadLength;
     ULONG CustomPayloadOffset;
+    BOOLEAN EnableRollbackProtection; // TRUE to enable rollback protection, FALSE to disable rollback protection
 
 } REFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER, *PREFS_SET_ROLLBACK_PROTECTION_INFO_INPUT_BUFFER;
 

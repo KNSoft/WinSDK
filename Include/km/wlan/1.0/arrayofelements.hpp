@@ -20,6 +20,7 @@
 #ifdef __cplusplus
 
 extern void * __cdecl operator new(size_t _Size, ULONG_PTR AllocationContext) throw();
+extern void __cdecl operator delete(void*, ULONG_PTR) noexcept;
 
 template <class ContentType>
 struct ArrayOfElements
