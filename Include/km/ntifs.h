@@ -18411,6 +18411,8 @@ ExDisableResourceBoostLite (
 #define SECURITY_DESCRIPTOR_DO_NOT_FREE             0x04000000
 // end_ntosp
 
+#define TOKEN_SYSTEM_MANAGED_ADMIN_FULL_TOKEN       0x08000000
+
 
 typedef struct _SE_EXPORTS {
 
