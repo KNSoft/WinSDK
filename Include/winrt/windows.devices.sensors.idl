@@ -220,6 +220,8 @@ namespace Windows
 
             interface IHumanPresenceSensorReadingUpdate;
 
+            interface IHumanPresenceSensorReadingUpdate2;
+
             interface IHumanPresenceSensorStatics;
 
             interface IHumanPresenceSensorStatics2;
@@ -1511,6 +1513,15 @@ namespace Windows
                 [propput] HRESULT DistanceInMillimeters([in] Windows.Foundation.IReference<UINT32>* value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.Devices.Sensors.HumanPresenceSensorReadingUpdate)]
+            [uuid(BB95A033-C688-546A-8E2D-B12642E7EFEB)]
+            interface IHumanPresenceSensorReadingUpdate2 : IInspectable
+            {
+                [propget] HRESULT OnlookerPresence([out] [retval] Windows.Foundation.IReference<Windows.Devices.Sensors.HumanPresence>** value);
+                [propput] HRESULT OnlookerPresence([in] Windows.Foundation.IReference<Windows.Devices.Sensors.HumanPresence>* value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 15.0)]
             [exclusiveto(Windows.Devices.Sensors.HumanPresenceSensor)]
             [uuid(2AE89842-DBA9-56B2-9F27-EAC69D621004)]
@@ -2585,6 +2596,7 @@ namespace Windows
             runtimeclass HumanPresenceSensorReadingUpdate
             {
                 [default] interface Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate;
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)] interface Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 15.0)]

@@ -826,6 +826,23 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace GenericAttributeProfile {
+                    interface IGattServiceProvider2;
+                } /* GenericAttributeProfile */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2 ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProvider2
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs_FWD_DEFINED__
 namespace ABI {
@@ -876,6 +893,23 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2 ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters2
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace GenericAttributeProfile {
+                    interface IGattServiceProviderAdvertisingParameters3;
+                } /* GenericAttributeProfile */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3 ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters3
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderResult_FWD_DEFINED__
@@ -6514,6 +6548,48 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributePro
 
 /*
  *
+ * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider2[] = L"Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace GenericAttributeProfile {
+                    MIDL_INTERFACE("9ef531a9-cf12-59a3-a81c-362f4aabaacf")
+                    IGattServiceProvider2 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE UpdateAdvertisingParameters(
+                            ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters* parameters
+                            ) = 0;
+                    };
+
+                    MIDL_CONST_ID IID& IID_IGattServiceProvider2 = __uuidof(IGattServiceProvider2);
+                } /* GenericAttributeProfile */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -6640,6 +6716,57 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
+
+/*
+ *
+ * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderAdvertisingParameters3[] = L"Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace GenericAttributeProfile {
+                    MIDL_INTERFACE("a23546b2-b216-5929-9055-f1313dd53e2a")
+                    IGattServiceProviderAdvertisingParameters3 : public IInspectable
+                    {
+                    public:
+                        virtual HRESULT STDMETHODCALLTYPE get_UseLowEnergyUncoded1MPhyAsSecondaryPhy(
+                            boolean* value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE put_UseLowEnergyUncoded1MPhyAsSecondaryPhy(
+                            boolean value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE get_UseLowEnergyUncoded2MPhyAsSecondaryPhy(
+                            boolean* value
+                            ) = 0;
+                        virtual HRESULT STDMETHODCALLTYPE put_UseLowEnergyUncoded2MPhyAsSecondaryPhy(
+                            boolean value
+                            ) = 0;
+                    };
+
+                    MIDL_CONST_ID IID& IID_IGattServiceProviderAdvertisingParameters3 = __uuidof(IGattServiceProviderAdvertisingParameters3);
+                } /* GenericAttributeProfile */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -7399,8 +7526,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService ** Default Interface **
@@ -7788,6 +7915,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider ** Default Interface **
+ *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7832,6 +7960,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters ** Default Interface **
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters2
+ *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -7871,8 +8000,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8285,6 +8414,12 @@ typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2 __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2;
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisementStatusChangedEventArgs;
@@ -8302,6 +8437,12 @@ typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2 __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2;
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3 __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3;
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderResult_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderResult_FWD_DEFINED__
@@ -17826,6 +17967,79 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributePro
 
 /*
  *
+ * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider2[] = L"Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2";
+typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* UpdateAdvertisingParameters)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2* This,
+        __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters* parameters);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_UpdateAdvertisingParameters(This, parameters) \
+    ((This)->lpVtbl->UpdateAdvertisingParameters(This, parameters))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProvider2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -18055,6 +18269,94 @@ interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattSe
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x80000
+
+/*
+ *
+ * Interface Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderAdvertisingParameters3[] = L"Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3";
+typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_UseLowEnergyUncoded1MPhyAsSecondaryPhy)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* put_UseLowEnergyUncoded1MPhyAsSecondaryPhy)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        boolean value);
+    HRESULT (STDMETHODCALLTYPE* get_UseLowEnergyUncoded2MPhyAsSecondaryPhy)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* put_UseLowEnergyUncoded2MPhyAsSecondaryPhy)(__x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3* This,
+        boolean value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_get_UseLowEnergyUncoded1MPhyAsSecondaryPhy(This, value) \
+    ((This)->lpVtbl->get_UseLowEnergyUncoded1MPhyAsSecondaryPhy(This, value))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_put_UseLowEnergyUncoded1MPhyAsSecondaryPhy(This, value) \
+    ((This)->lpVtbl->put_UseLowEnergyUncoded1MPhyAsSecondaryPhy(This, value))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_get_UseLowEnergyUncoded2MPhyAsSecondaryPhy(This, value) \
+    ((This)->lpVtbl->get_UseLowEnergyUncoded2MPhyAsSecondaryPhy(This, value))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_put_UseLowEnergyUncoded2MPhyAsSecondaryPhy(This, value) \
+    ((This)->lpVtbl->put_UseLowEnergyUncoded2MPhyAsSecondaryPhy(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CGenericAttributeProfile_CIGattServiceProviderAdvertisingParameters3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -19277,8 +19579,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceServiceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService ** Default Interface **
@@ -19666,6 +19968,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider ** Default Interface **
+ *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19710,6 +20013,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters ** Default Interface **
  *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters2
+ *    Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -19749,8 +20053,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceUuidsStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *

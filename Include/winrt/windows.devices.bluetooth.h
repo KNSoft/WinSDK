@@ -160,6 +160,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                interface IBluetoothAdapter4;
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4 ABI::Windows::Devices::Bluetooth::IBluetoothAdapter4
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
 namespace ABI {
@@ -2302,6 +2317,49 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3;
 
 /*
  *
+ * Interface Windows.Devices.Bluetooth.IBluetoothAdapter4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.BluetoothAdapter
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapter4[] = L"Windows.Devices.Bluetooth.IBluetoothAdapter4";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                MIDL_INTERFACE("f875f3e1-6d9a-5d5e-aee5-a17248e5f6dd")
+                IBluetoothAdapter4 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_IsLowEnergyUncoded2MPhySupported(
+                        boolean* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_IsLowEnergyCodedPhySupported(
+                        boolean* value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IBluetoothAdapter4 = __uuidof(IBluetoothAdapter4);
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.Devices.Bluetooth.IBluetoothAdapterStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 4.0
@@ -3924,6 +3982,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelpe
  *    Windows.Devices.Bluetooth.IBluetoothAdapter ** Default Interface **
  *    Windows.Devices.Bluetooth.IBluetoothAdapter2
  *    Windows.Devices.Bluetooth.IBluetoothAdapter3
+ *    Windows.Devices.Bluetooth.IBluetoothAdapter4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -3968,8 +4027,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.IBluetoothDevice ** Default Interface **
@@ -4277,6 +4336,12 @@ typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter2 __x_A
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3 __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3;
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4 __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4;
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapterStatics_FWD_DEFINED__
@@ -6890,6 +6955,84 @@ interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter3_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+
+/*
+ *
+ * Interface Windows.Devices.Bluetooth.IBluetoothAdapter4
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Bluetooth.BluetoothAdapter
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapter4[] = L"Windows.Devices.Bluetooth.IBluetoothAdapter4";
+typedef struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_IsLowEnergyUncoded2MPhySupported)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* get_IsLowEnergyCodedPhySupported)(__x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4* This,
+        boolean* value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_get_IsLowEnergyUncoded2MPhySupported(This, value) \
+    ((This)->lpVtbl->get_IsLowEnergyUncoded2MPhySupported(This, value))
+
+#define __x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_get_IsLowEnergyCodedPhySupported(This, value) \
+    ((This)->lpVtbl->get_IsLowEnergyCodedPhySupported(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothAdapter4_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -9848,6 +9991,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CBluetooth_CIBluetoothUuidHelpe
  *    Windows.Devices.Bluetooth.IBluetoothAdapter ** Default Interface **
  *    Windows.Devices.Bluetooth.IBluetoothAdapter2
  *    Windows.Devices.Bluetooth.IBluetoothAdapter3
+ *    Windows.Devices.Bluetooth.IBluetoothAdapter4
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -9892,8 +10036,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics2 interface starting with version 2.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Bluetooth.IBluetoothDeviceStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Bluetooth.IBluetoothDevice ** Default Interface **

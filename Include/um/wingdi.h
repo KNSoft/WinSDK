@@ -1638,15 +1638,15 @@ typedef LPENUMLOGFONTEXA LPENUMLOGFONTEX;
 #endif /* WINVER >= 0x0400 */
 
 /* Font Families */
-#define FF_DONTCARE         (0<<4)  /* Don't care or don't know. */
-#define FF_ROMAN            (1<<4)  /* Variable stroke width, serifed. */
+#define FF_DONTCARE         0x00    /* Don't care or don't know. */
+#define FF_ROMAN            0x10    /* Variable stroke width, serifed. */
                                     /* Times Roman, Century Schoolbook, etc. */
-#define FF_SWISS            (2<<4)  /* Variable stroke width, sans-serifed. */
+#define FF_SWISS            0x20    /* Variable stroke width, sans-serifed. */
                                     /* Helvetica, Swiss, etc. */
-#define FF_MODERN           (3<<4)  /* Constant stroke width, serifed or sans-serifed. */
+#define FF_MODERN           0x30    /* Constant stroke width, serifed or sans-serifed. */
                                     /* Pica, Elite, Courier, etc. */
-#define FF_SCRIPT           (4<<4)  /* Cursive, etc. */
-#define FF_DECORATIVE       (5<<4)  /* Old English, etc. */
+#define FF_SCRIPT           0x40    /* Cursive, etc. */
+#define FF_DECORATIVE       0x50    /* Old English, etc. */
 
 /* Font Weights */
 #define FW_DONTCARE         0

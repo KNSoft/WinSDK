@@ -295,7 +295,11 @@ extern const long double _LZero_C, _LXbig_C;
     #define _CLASSIFY(_Val, _FFunc, _DFunc, _LDFunc)          (_CLASS_ARG(_Val) == 'f' ? _FFunc((float)(_Val)) : _CLASS_ARG(_Val) == 'd' ? _DFunc((double)(_Val)) : _LDFunc((long double)(_Val)))
     #define _CLASSIFY2(_Val1, _Val2, _FFunc, _DFunc, _LDFunc) (_CLASS_ARG((_Val1) + (_Val2)) == 'f' ? _FFunc((float)(_Val1), (float)(_Val2)) : _CLASS_ARG((_Val1) + (_Val2)) == 'd' ? _DFunc((double)(_Val1), (double)(_Val2)) : _LDFunc((long double)(_Val1), (long double)(_Val2)))
 
+#if defined(__clang__)
+    #define fpclassify(_Val)      __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, _Val)
+#else
     #define fpclassify(_Val)      (_CLASSIFY(_Val, _fdclass, _dclass, _ldclass))
+#endif
     #define _FPCOMPARE(_Val1, _Val2) (_CLASSIFY2(_Val1, _Val2, _fdpcomp, _dpcomp, _ldpcomp))
 
     #define isfinite(_Val)      (fpclassify(_Val) <= 0)
@@ -316,17 +320,29 @@ extern "C++"
 {
     _Check_return_ inline int fpclassify(_In_ float _X) throw()
     {
+#if defined(__clang__)
+        return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, _X);
+#else
         return _fdtest(&_X);
+#endif
     }
 
     _Check_return_ inline int fpclassify(_In_ double _X) throw()
     {
+#if defined(__clang__)
+        return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, _X);
+#else
         return _dtest(&_X);
+#endif
     }
 
     _Check_return_ inline int fpclassify(_In_ long double _X) throw()
     {
+#if defined(__clang__)
+        return __builtin_fpclassify(FP_NAN, FP_INFINITE, FP_NORMAL, FP_SUBNORMAL, FP_ZERO, _X);
+#else
         return _ldtest(&_X);
+#endif
     }
 
     _Check_return_ inline bool signbit(_In_ float _X) throw()

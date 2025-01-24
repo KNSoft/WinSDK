@@ -22448,6 +22448,24 @@ Notes:
 //
 #define STATUS_TPM_PPI_FUNCTION_UNSUPPORTED ((NTSTATUS)0xC0291006L)
 
+//
+// MessageId: STATUS_TPM_IN_EXCLUSIVE_MODE
+//
+// MessageText:
+//
+// The caller is trying to request an operation while the TPM driver has an exclusive context open.
+//
+#define STATUS_TPM_IN_EXCLUSIVE_MODE     ((NTSTATUS)0xC0291007L)
+
+//
+// MessageId: STATUS_TPM_REBOOT_REQUIRED
+//
+// MessageText:
+//
+// The TPM driver was previously in exclusive mode and now requires a reboot to resume normal functionality.
+//
+#define STATUS_TPM_REBOOT_REQUIRED       ((NTSTATUS)0xC0291008L)
+
 
 //
 // Platform Crypto Provider Error Codes (PCPKSP.dll and future platform crypto providers)

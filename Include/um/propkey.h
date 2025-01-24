@@ -6589,6 +6589,14 @@ DEFINE_PROPERTYKEY(PKEY_MsGraph_DateLastShared, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1
 DEFINE_PROPERTYKEY(PKEY_MsGraph_DriveId, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29, 3);
 #define INIT_PKEY_MsGraph_DriveId { { 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29 }, 3 }
 
+//  Name:     System.MsGraph.GraphFileType -- PKEY_MsGraph_GraphFileType
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {4F85567E-FFF0-4DF5-B1D9-98B314FF0729}, 16
+//
+//  A data provider defined string to represent what app (local or web) can open this graph file. Useful for telemetry if extension is not available
+DEFINE_PROPERTYKEY(PKEY_MsGraph_GraphFileType, 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29, 16);
+#define INIT_PKEY_MsGraph_GraphFileType { { 0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29 }, 16 }
+
 //  Name:     System.MsGraph.IconUrl -- PKEY_MsGraph_IconUrl
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
 //  FormatID: {4F85567E-FFF0-4DF5-B1D9-98B314FF0729}, 15
@@ -8140,6 +8148,14 @@ DEFINE_PROPERTYKEY(PKEY_Search_MatchKind, 0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C
 #define MATCH_KIND_LEXICAL                  1l
 #define MATCH_KIND_SEMANTIC                 2l
 
+//  Name:     System.Search.MatchTags -- PKEY_Search_MatchTags
+//  Type:     Multivalue String -- VT_VECTOR | VT_LPWSTR  (For variants: VT_ARRAY | VT_BSTR)
+//  FormatID: (FMTID_Query) {49691C90-7E17-101A-A91C-08002B2ECDA9}, 30
+//
+//  This multi-valued string indicates the type of result matched for the query results.
+DEFINE_PROPERTYKEY(PKEY_Search_MatchTags, 0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9, 30);
+#define INIT_PKEY_Search_MatchTags { { 0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9 }, 30 }
+
 //  Name:     System.Search.QueryFocusedSummary -- PKEY_Search_QueryFocusedSummary
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
 //  FormatID: {560C36C0-503A-11CF-BAA1-00004C752A9A}, 3
@@ -8293,6 +8309,14 @@ DEFINE_PROPERTYKEY(PKEY_Home_IsPinned, 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0
 //  Friendly name used for the folder path when displayed on File Explorer Home"
 DEFINE_PROPERTYKEY(PKEY_Home_ItemFolderPathDisplay, 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29, 6);
 #define INIT_PKEY_Home_ItemFolderPathDisplay { { 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29 }, 6 }
+
+//  Name:     System.Home.RecommendationReasonIcon -- PKEY_Home_RecommendationReasonIcon
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {30C8EEF4-A832-41E2-AB32-E3C3CA28FD29}, 21
+//
+//  The string corresponding to a glyph for the recommended section in FE home
+DEFINE_PROPERTYKEY(PKEY_Home_RecommendationReasonIcon, 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29, 21);
+#define INIT_PKEY_Home_RecommendationReasonIcon { { 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29 }, 21 }
 
 //  Name:     System.Home.Recommended -- PKEY_Home_Recommended
 //  Type:     Boolean -- VT_BOOL

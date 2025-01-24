@@ -87,8 +87,8 @@ typedef PVOID SAM_HANDLE, *PSAM_HANDLE;
 #define USER_USE_AES_KEYS                           (0x00200000)
 
 //
-// Temp flag to mark an account as shadow admin account. 
-// 
+// Temp flag to mark an account as shadow admin account.
+//
 #define USER_SHADOW_ACCOUNT                         (0x00400000)
 
 //  for generating ntsubauth.h file

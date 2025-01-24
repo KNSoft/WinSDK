@@ -3236,6 +3236,9 @@ _In_        LPWSTR   pPrintProvidorName
 #endif // (NTDDI_VERSION >= NTDDI_WIN7)
 
 
+#if (NTDDI_VERSION >= NTDDI_WIN10)
+#endif // (NTDDI_VERSION >= NTDDI_WIN10)
+
 #if (NTDDI_VERSION >= NTDDI_WIN8)
 #define    SPLREG_PRINT_QUEUE_V4_DRIVER_DIRECTORY     TEXT("PrintQueueV4DriverDirectory")
 #endif // (NTDDI_VERSION >= NTDDI_WIN8)

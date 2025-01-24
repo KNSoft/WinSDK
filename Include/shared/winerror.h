@@ -47330,6 +47330,24 @@ FORCEINLINE HRESULT HRESULT_FROM_SETUPAPI(unsigned long x) { return (((x) & (0x2
 #define TBS_E_PROVISIONING_INCOMPLETE    _HRESULT_TYPEDEF_(0x80284016L)
 
 //
+// MessageId: TBS_E_TPM_IN_EXCLUSIVE_MODE
+//
+// MessageText:
+//
+// The caller is trying to request an operation while the TPM driver has an exclusive context open.
+//
+#define TBS_E_TPM_IN_EXCLUSIVE_MODE      _HRESULT_TYPEDEF_(0x80284017L)
+
+//
+// MessageId: TBS_E_TPM_REBOOT_REQUIRED
+//
+// MessageText:
+//
+// The TPM driver was previously in exclusive mode and now requires a reboot to resume normal functionality.
+//
+#define TBS_E_TPM_REBOOT_REQUIRED        _HRESULT_TYPEDEF_(0x80284018L)
+
+//
 // TPM API error codes {0x0100..0x01ff}
 //
 //
@@ -51076,6 +51094,15 @@ FORCEINLINE HRESULT HRESULT_FROM_SETUPAPI(unsigned long x) { return (((x) & (0x2
 // BitLocker prevented an attempt to create a TPM binding for a PCR that contains events extended into the TPM after the BitLocker boot lock event.
 //
 #define FVE_E_PCR_BOOT_LOCK_BOUNDARY     _HRESULT_TYPEDEF_(0xC0310102L)
+
+//
+// MessageId: FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID
+//
+// MessageText:
+//
+// We couldn't save your BitLocker recovery information to your Microsoft Entra ID because the maximum number of recovery passwords have already been saved for this device. Please try again later.
+//
+#define FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID _HRESULT_TYPEDEF_(0xC0310104L)
 
 //
 // =======================================================

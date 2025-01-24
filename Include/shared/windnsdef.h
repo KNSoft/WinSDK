@@ -1463,15 +1463,167 @@ typedef DNS_RECORD_OPTA     DNS_RECORD_OPT, *PDNS_RECORD_OPT;
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
 #pragma endregion
 
+#pragma region Desktop Family or OneCore Family or Games Family
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES)
+
+//
+//  DNS public types
+//
+
+#if !defined(_Return_type_success_)
+# define _Return_type_success_(expr)
+#endif
+
+typedef _Return_type_success_(return == 0) LONG    DNS_STATUS;
+typedef DNS_STATUS                                *PDNS_STATUS;
+
+//
+//  DNS Address structures representing both IPv4 and IPv6 addresses.
+//
+
+#pragma pack(push, 1)
+
+#if defined( MIDL_PASS )
+
+typedef struct _DnsAddr
+{
+    CHAR        MaxSa[ DNS_ADDR_MAX_SOCKADDR_LENGTH ];
+    DWORD       DnsAddrUserDword[ 8 ];
+}
+DNS_ADDR, *PDNS_ADDR;
+
+typedef struct _DnsAddrArray
+{
+    DWORD           MaxCount;
+    DWORD           AddrCount;
+    DWORD           Tag;
+    WORD            Family;
+    WORD            WordReserved;
+    DWORD           Flags;
+    DWORD           MatchFlag;
+    DWORD           Reserved1;
+    DWORD           Reserved2;
+    [size_is( AddrCount )]  DNS_ADDR    AddrArray[];
+}
+DNS_ADDR_ARRAY, *PDNS_ADDR_ARRAY;
+
+#elif !defined( USE_PRIVATE_DNS_ADDR )
+
+typedef struct _DnsAddr
+{
+    CHAR            MaxSa[ DNS_ADDR_MAX_SOCKADDR_LENGTH ];
+    union
+    {
+        DWORD       DnsAddrUserDword[ 8 ];
+    }
+    Data;
+}
+DNS_ADDR, *PDNS_ADDR;
+
+typedef struct _DnsAddrArray
+{
+    DWORD           MaxCount;
+    DWORD           AddrCount;
+    DWORD           Tag;
+    WORD            Family;
+    WORD            WordReserved;
+    DWORD           Flags;
+    DWORD           MatchFlag;
+    DWORD           Reserved1;
+    DWORD           Reserved2;
+    DNS_ADDR        AddrArray[ 1 ];
+}
+DNS_ADDR_ARRAY, *PDNS_ADDR_ARRAY;
+
+#endif  // MIDL_PASS
+#pragma pack(pop)
+
+//
+//  DNS UDP packets no more than 512 bytes
+//
+
+#define DNS_RFC_MAX_UDP_PACKET_LENGTH   (512)
+
+
+//
+//  DNS Names limited to 255, 63 in any one label
+//
+
+#define DNS_MAX_NAME_LENGTH             (255)
+#define DNS_MAX_LABEL_LENGTH            (63)
+#define DNS_MAX_NAME_BUFFER_LENGTH      (256)
+#define DNS_MAX_LABEL_BUFFER_LENGTH     (64)
+
+#pragma pack(push, 1)
+
+//
+//  DNS Message Header
+//
+
+typedef struct _DNS_HEADER
+{
+    WORD    Xid;
+
+#ifdef MIDL_PASS
+    WORD    Flags;
+#else
+    BYTE    RecursionDesired : 1;
+    BYTE    Truncation : 1;
+    BYTE    Authoritative : 1;
+    BYTE    Opcode : 4;
+    BYTE    IsResponse : 1;
+
+    BYTE    ResponseCode : 4;
+    BYTE    CheckingDisabled : 1;
+    BYTE    AuthenticatedData : 1;
+    BYTE    Reserved : 1;
+    BYTE    RecursionAvailable : 1;
+#endif
+
+    WORD    QuestionCount;
+    WORD    AnswerCount;
+    WORD    NameServerCount;
+    WORD    AdditionalCount;
+}
+DNS_HEADER, *PDNS_HEADER;
+
+//
+//  Flags as WORD
+//
+
+#define DNS_HEADER_FLAGS(pHead)     ( *((PWORD)(pHead)+1) )
+
+#pragma pack(pop)
+
+#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM | WINAPI_PARTITION_GAMES) */
+#pragma endregion
+
 
 #pragma region Desktop Family or OneCore Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_SYSTEM)
+
+typedef enum _DNS_CHARSET
+{
+    DnsCharSetUnknown,
+    DnsCharSetUnicode,
+    DnsCharSetUtf8,
+    DnsCharSetAnsi,
+}
+DNS_CHARSET;
+
+typedef struct _DNS_MESSAGE_BUFFER
+{
+    DNS_HEADER  MessageHead;
+    CHAR        MessageBody[1];
+}
+DNS_MESSAGE_BUFFER, *PDNS_MESSAGE_BUFFER;
 
 #define DNS_CUSTOM_SERVER_TYPE_UDP 0x1
 #define DNS_CUSTOM_SERVER_TYPE_DOH 0x2
 #define DNS_CUSTOM_SERVER_TYPE_DOT 0x3
 
 #define DNS_CUSTOM_SERVER_UDP_FALLBACK 0x1
+#define DNS_CUSTOM_SERVER_UPGRADE_FROM_WELL_KNOWN_SERVERS 0x2
 
 #pragma warning(push)
 #pragma warning(disable: 4201) // nameless struct/unions

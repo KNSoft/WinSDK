@@ -87,6 +87,10 @@ namespace Windows
                 runtimeclass BluetoothLEAdvertisement;
 
                 runtimeclass BluetoothLEAdvertisementFilter;
+
+                typedef enum BluetoothLEAdvertisementPhyType BluetoothLEAdvertisementPhyType;
+
+                runtimeclass BluetoothLEAdvertisementScanParameters;
             }
         }
     }
@@ -389,9 +393,13 @@ namespace Windows
 
             interface IBluetoothLEAdvertisementPublisherTrigger2;
 
+            interface IBluetoothLEAdvertisementPublisherTrigger3;
+
             interface IBluetoothLEAdvertisementWatcherTrigger;
 
             interface IBluetoothLEAdvertisementWatcherTrigger2;
+
+            interface IBluetoothLEAdvertisementWatcherTrigger3;
 
             interface ICachedFileUpdaterTrigger;
 
@@ -1286,6 +1294,18 @@ namespace Windows
                 [propput] HRESULT IncludeTransmitPowerLevel([in] boolean value);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger)]
+            [experimental]
+            [uuid(64419D03-D604-5BDC-B7D2-A7FE25C55460)]
+            interface IBluetoothLEAdvertisementPublisherTrigger3 : IInspectable
+            {
+                [propget] HRESULT PrimaryPhy([out] [retval] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPhyType* value);
+                [propput] HRESULT PrimaryPhy([in] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPhyType value);
+                [propget] HRESULT SecondaryPhy([out] [retval] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPhyType* value);
+                [propput] HRESULT SecondaryPhy([in] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPhyType value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger)]
             [uuid(1AAB1819-BCE1-48EB-A827-59FB7CEE52A6)]
@@ -1310,6 +1330,20 @@ namespace Windows
             {
                 [propget] HRESULT AllowExtendedAdvertisements([out] [retval] boolean* value);
                 [propput] HRESULT AllowExtendedAdvertisements([in] boolean value);
+            }
+
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger)]
+            [experimental]
+            [uuid(DA50011A-8261-56A0-AC7B-A8DE1624088B)]
+            interface IBluetoothLEAdvertisementWatcherTrigger3 : IInspectable
+            {
+                [propget] HRESULT UseUncoded1MPhy([out] [retval] boolean* value);
+                [propput] HRESULT UseUncoded1MPhy([in] boolean value);
+                [propget] HRESULT UseCodedPhy([out] [retval] boolean* value);
+                [propput] HRESULT UseCodedPhy([in] boolean value);
+                [propget] HRESULT ScanParameters([out] [retval] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementScanParameters** value);
+                [propput] HRESULT ScanParameters([in] Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementScanParameters* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2003,6 +2037,7 @@ namespace Windows
                 [default] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger;
                 interface Windows.ApplicationModel.Background.IBackgroundTrigger;
                 [contract(Windows.Foundation.UniversalApiContract, 10.0)] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger2;
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)] [experimental] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2014,6 +2049,7 @@ namespace Windows
                 [default] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger;
                 interface Windows.ApplicationModel.Background.IBackgroundTrigger;
                 [contract(Windows.Foundation.UniversalApiContract, 10.0)] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger2;
+                [contract(Windows.Foundation.UniversalApiContract, 19.0)] [experimental] interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3;
             }
 
             [activatable(Windows.Foundation.UniversalApiContract, 1.0)]

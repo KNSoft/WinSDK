@@ -5558,11 +5558,13 @@ typedef enum CLUSCTL_RESOURCE_TYPE_CODES {
 } CLUSCTL_RESOURCE_TYPE_CODES;
 
 
-    // To be used with Control Code CLUSCTL_RESOURCE_TYPE_GET_LOCAL_NODE_VF_INFO Only:
-    typedef struct NodeVFInfo {
+    // To be used with Control Code CLUSCTL_RESOURCE_TYPE_GET_LOCAL_NODE_SRIOV_INFO Only:
+    typedef struct NodeSriovInfo {
         DWORD VFTotal;
         DWORD VFUsed;
-    } NodeVFInfo;
+        DWORD QPTotal;
+        DWORD QPUsed;
+    } NodeSriovInfo;
 
 
 //

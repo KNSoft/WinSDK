@@ -1103,6 +1103,33 @@
 #define WU_E_COULD_NOT_EVALUATE_PROPERTY _HRESULT_TYPEDEF_(0x80240068L)
 
 //
+// MessageId: WU_E_SERVICE_UNEXPECTED_EXIT
+//
+// MessageText:
+//
+// Operation did not complete because the service process exited unexpectedly with a non-successful exit code.
+//
+#define WU_E_SERVICE_UNEXPECTED_EXIT     _HRESULT_TYPEDEF_(0x80240069L)
+
+//
+// MessageId: WU_E_ACCESS_DENIED_CALLER_IDENTITY
+//
+// MessageText:
+//
+// Access was denied because the caller identity does not fit the requirements for this call.
+//
+#define WU_E_ACCESS_DENIED_CALLER_IDENTITY _HRESULT_TYPEDEF_(0x8024006AL)
+
+//
+// MessageId: WU_E_SERVICE_REENABLE_ACCESS_DENIED
+//
+// MessageText:
+//
+// Operation did not complete because the service is disabled and re-enabling it has failed as the access was denied.
+//
+#define WU_E_SERVICE_REENABLE_ACCESS_DENIED _HRESULT_TYPEDEF_(0x8024006BL)
+
+//
 // MessageId: WU_E_UNEXPECTED
 //
 // MessageText:

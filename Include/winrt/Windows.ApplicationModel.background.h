@@ -857,6 +857,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBluetoothLEAdvertisementPublisherTrigger3;
+            } /* Background */
+        } /* ApplicationModel */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3 ABI::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_FWD_DEFINED__
 namespace ABI {
@@ -886,6 +901,21 @@ namespace ABI {
 #define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2 ABI::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger2
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                interface IBluetoothLEAdvertisementWatcherTrigger3;
+            } /* Background */
+        } /* ApplicationModel */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3 ABI::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger3
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_FWD_DEFINED__
@@ -2943,6 +2973,47 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementFilter ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementFilter_FWD_DEFINED__
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace Advertisement {
+                    typedef enum BluetoothLEAdvertisementPhyType : int BluetoothLEAdvertisementPhyType;
+                } /* Advertisement */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace Advertisement {
+                    class BluetoothLEAdvertisementScanParameters;
+                } /* Advertisement */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Bluetooth {
+                namespace Advertisement {
+                    interface IBluetoothLEAdvertisementScanParameters;
+                } /* Advertisement */
+            } /* Bluetooth */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementScanParameters
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
 
 namespace ABI {
     namespace Windows {
@@ -5908,6 +5979,55 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoot
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementPublisherTrigger3[] = L"Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                MIDL_INTERFACE("64419d03-d604-5bdc-b7d2-a7fe25c55460")
+                IBluetoothLEAdvertisementPublisherTrigger3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_PrimaryPhy(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPhyType* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_PrimaryPhy(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPhyType value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_SecondaryPhy(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPhyType* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_SecondaryPhy(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPhyType value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IBluetoothLEAdvertisementPublisherTrigger3 = __uuidof(IBluetoothLEAdvertisementPublisherTrigger3);
+            } /* Background */
+        } /* ApplicationModel */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6004,6 +6124,61 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementWatcherTrigger3[] = L"Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3";
+namespace ABI {
+    namespace Windows {
+        namespace ApplicationModel {
+            namespace Background {
+                MIDL_INTERFACE("da50011a-8261-56a0-ac7b-a8de1624088b")
+                IBluetoothLEAdvertisementWatcherTrigger3 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_UseUncoded1MPhy(
+                        boolean* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_UseUncoded1MPhy(
+                        boolean value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_UseCodedPhy(
+                        boolean* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_UseCodedPhy(
+                        boolean value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_ScanParameters(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementScanParameters** value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_ScanParameters(
+                        ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementScanParameters* value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IBluetoothLEAdvertisementWatcherTrigger3 = __uuidof(IBluetoothLEAdvertisementWatcherTrigger3);
+            } /* Background */
+        } /* ApplicationModel */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -8454,8 +8629,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics3 interface starting with version 13.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics3 interface starting with version 13.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  */
@@ -8568,8 +8743,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IBackgroundTaskRegistration ** Default Interface **
@@ -8648,6 +8823,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger ** Default Interface **
  *    Windows.ApplicationModel.Background.IBackgroundTrigger
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger2
+ *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8674,6 +8850,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger ** Default Interface **
  *    Windows.ApplicationModel.Background.IBackgroundTrigger
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger2
+ *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -8836,8 +9013,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IContentPrefetchTrigger ** Default Interface **
@@ -9057,8 +9234,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger ** Default Interface **
@@ -9821,8 +9998,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **
@@ -10196,6 +10373,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAd
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3 __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger;
@@ -10207,6 +10390,12 @@ typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAd
 typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2 __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2;
 
 #endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3 __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3;
+
+#endif // ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_FWD_DEFINED__
 #define ____x_ABI_CWindows_CApplicationModel_CBackground_CICachedFileUpdaterTrigger_FWD_DEFINED__
@@ -13101,6 +13290,14 @@ typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoot
 typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementFilter __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementFilter;
 
 #endif // ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementFilter_FWD_DEFINED__
+
+typedef enum __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType;
+
+#ifndef ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters;
+
+#endif // ____x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters_FWD_DEFINED__
 
 typedef enum __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode __x_ABI_CWindows_CDevices_CBluetooth_CBackground_CBluetoothEventTriggeringMode;
 
@@ -16794,6 +16991,94 @@ EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoot
 
 /*
  *
+ * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementPublisherTrigger3[] = L"Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3";
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_PrimaryPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        enum __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType* value);
+    HRESULT (STDMETHODCALLTYPE* put_PrimaryPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        enum __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType value);
+    HRESULT (STDMETHODCALLTYPE* get_SecondaryPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        enum __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType* value);
+    HRESULT (STDMETHODCALLTYPE* put_SecondaryPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3* This,
+        enum __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CBluetoothLEAdvertisementPhyType value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_get_PrimaryPhy(This, value) \
+    ((This)->lpVtbl->get_PrimaryPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_put_PrimaryPhy(This, value) \
+    ((This)->lpVtbl->put_PrimaryPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_get_SecondaryPhy(This, value) \
+    ((This)->lpVtbl->get_SecondaryPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_put_SecondaryPhy(This, value) \
+    ((This)->lpVtbl->put_SecondaryPhy(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementPublisherTrigger3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -16972,6 +17257,104 @@ interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisem
 EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2;
 #endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0xa0000
+
+/*
+ *
+ * Interface Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementWatcherTrigger3[] = L"Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3";
+typedef struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_UseUncoded1MPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* put_UseUncoded1MPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        boolean value);
+    HRESULT (STDMETHODCALLTYPE* get_UseCodedPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        boolean* value);
+    HRESULT (STDMETHODCALLTYPE* put_UseCodedPhy)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        boolean value);
+    HRESULT (STDMETHODCALLTYPE* get_ScanParameters)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters** value);
+    HRESULT (STDMETHODCALLTYPE* put_ScanParameters)(__x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3* This,
+        __x_ABI_CWindows_CDevices_CBluetooth_CAdvertisement_CIBluetoothLEAdvertisementScanParameters* value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3Vtbl;
+
+interface __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3
+{
+    CONST_VTBL struct __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_get_UseUncoded1MPhy(This, value) \
+    ((This)->lpVtbl->get_UseUncoded1MPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_put_UseUncoded1MPhy(This, value) \
+    ((This)->lpVtbl->put_UseUncoded1MPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_get_UseCodedPhy(This, value) \
+    ((This)->lpVtbl->get_UseCodedPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_put_UseCodedPhy(This, value) \
+    ((This)->lpVtbl->put_UseCodedPhy(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_get_ScanParameters(This, value) \
+    ((This)->lpVtbl->get_ScanParameters(This, value))
+
+#define __x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_put_ScanParameters(This, value) \
+    ((This)->lpVtbl->put_ScanParameters(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3;
+#endif /* !defined(____x_ABI_CWindows_CApplicationModel_CBackground_CIBluetoothLEAdvertisementWatcherTrigger3_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -21378,8 +21761,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics3 interface starting with version 13.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics3 interface starting with version 13.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics2 interface starting with version 6.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  */
@@ -21492,8 +21875,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IBackgroundTaskRegistration ** Default Interface **
@@ -21572,6 +21955,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger ** Default Interface **
  *    Windows.ApplicationModel.Background.IBackgroundTrigger
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger2
+ *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -21598,6 +21982,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger ** Default Interface **
  *    Windows.ApplicationModel.Background.IBackgroundTrigger
  *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger2
+ *    Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -21760,8 +22145,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IContentPrefetchTrigger ** Default Interface **
@@ -21981,8 +22366,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory2 interface starting with version 4.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger ** Default Interface **
@@ -22745,8 +23130,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass can be activated.
- *   Type can be activated via the Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Type can be activated via RoActivateInstance starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Type can be activated via the Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.ApplicationModel.Background.IBackgroundTrigger ** Default Interface **

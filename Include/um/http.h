@@ -1699,6 +1699,12 @@ typedef struct _HTTP_REQUEST_TIMING_INFO
 
 } HTTP_REQUEST_TIMING_INFO, *PHTTP_REQUEST_TIMING_INFO;
 
+typedef struct _HTTP_REQUEST_TRANSPORT_IDLE_CONNECTION_TIMEOUT_INFO
+{
+    USHORT TransportIdleConnectionTimeout;
+
+} HTTP_REQUEST_TRANSPORT_IDLE_CONNECTION_TIMEOUT_INFO, *PHTTP_REQUEST_TRANSPORT_IDLE_CONNECTION_TIMEOUT_INFO;
+
 #if _WIN32_WINNT >= 0x0600
 
 //
@@ -1718,7 +1724,9 @@ typedef enum _HTTP_REQUEST_INFO_TYPE
     HttpRequestInfoTypeQuicStats,
     HttpRequestInfoTypeTcpInfoV1,
     HttpRequestInfoTypeQuicStatsV2,
-    HttpRequestInfoTypeTcpInfoV2
+    HttpRequestInfoTypeTcpInfoV2,
+    HttpRequestInfoTypeTransportIdleConnectionTimeout
+
 } HTTP_REQUEST_INFO_TYPE, *PHTTP_REQUEST_INFO_TYPE;
 
 typedef struct _HTTP_REQUEST_INFO
@@ -2762,7 +2770,8 @@ typedef enum _HTTP_REQUEST_PROPERTY
     HttpRequestPropertyQuicStatsV2,
     HttpRequestPropertyQuicStreamStats,
     HttpRequestPropertyTcpInfoV2,
-    HttpRequestPropertyTlsClientHello
+    HttpRequestPropertyTlsClientHello,
+    HttpRequestPropertyTransportIdleConnectionTimeout
 } HTTP_REQUEST_PROPERTY, *PHTTP_REQUEST_PROPERTY;
 
 typedef struct _HTTP_QUERY_REQUEST_QUALIFIER_TCP
@@ -2899,19 +2908,20 @@ typedef struct _HTTP_QUIC_STREAM_REQUEST_STATS
 
 typedef enum _HTTP_FEATURE_ID
 {
-    HttpFeatureUnknown                         = 0,
-    HttpFeatureResponseTrailers                = 1,
-    HttpFeatureApiTimings                      = 2,
-    HttpFeatureDelegateEx                      = 3,
-    HttpFeatureHttp3                           = 4,
-    HttpFeatureTlsSessionTickets               = 5,
-    HttpFeatureDisableTlsSessionId             = 6,
-    HttpFeatureTlsDualCerts                    = 7,
-    HttpFeatureAutomaticChunkedEncoding        = 8,
-    HttpFeatureDedicatedReqQueueDelegationType = 9,
-    HttpFeatureFastForwardResponse             = 10,
-    HttpFeatureCacheTlsClientHello             = 11,
-    HttpFeatureLast                            = 12,
+    HttpFeatureUnknown                              = 0,
+    HttpFeatureResponseTrailers                     = 1,
+    HttpFeatureApiTimings                           = 2,
+    HttpFeatureDelegateEx                           = 3,
+    HttpFeatureHttp3                                = 4,
+    HttpFeatureTlsSessionTickets                    = 5,
+    HttpFeatureDisableTlsSessionId                  = 6,
+    HttpFeatureTlsDualCerts                         = 7,
+    HttpFeatureAutomaticChunkedEncoding             = 8,
+    HttpFeatureDedicatedReqQueueDelegationType      = 9,
+    HttpFeatureFastForwardResponse                  = 10,
+    HttpFeatureCacheTlsClientHello                  = 11,
+    HttpFeatureIdleConnectionTimeoutRequestProperty = 12,
+    HttpFeatureLast                                 = 13,
 
 
     HttpFeaturemax              = 0xFFFFFFFF,

@@ -563,7 +563,7 @@ typedef NTSTATUS (*PSAM_CREDENTIAL_UPDATE_NOTIFY_ROUTINE) (
     _In_reads_bytes_(OldCredentialSize)         PVOID OldCredentials,
     _In_                                   ULONG OldCredentialSize,
     _In_                                   ULONG UserAccountControl,
-    _In_opt_                               PUNICODE_STRING UPN,  
+    _In_opt_                               PUNICODE_STRING UPN,
     _In_                                   PUNICODE_STRING UserName,
     _In_                                   PUNICODE_STRING NetbiosDomainName,
     _In_                                   PUNICODE_STRING DnsDomainName,

@@ -1265,6 +1265,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IHumanPresenceSensorReadingUpdate2;
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2 ABI::Windows::Devices::Sensors::IHumanPresenceSensorReadingUpdate2
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorStatics_FWD_DEFINED__
 namespace ABI {
@@ -9340,6 +9355,45 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorR
 
 /*
  *
+ * Interface Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HumanPresenceSensorReadingUpdate
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReadingUpdate2[] = L"Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                MIDL_INTERFACE("bb95a033-c688-546a-8e2d-b12642e7efeb")
+                IHumanPresenceSensorReadingUpdate2 : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_OnlookerPresence(
+                        __FIReference_1_Windows__CDevices__CSensors__CHumanPresence** value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_OnlookerPresence(
+                        __FIReference_1_Windows__CDevices__CSensors__CHumanPresence* value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IHumanPresenceSensorReadingUpdate2 = __uuidof(IHumanPresenceSensorReadingUpdate2);
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Devices.Sensors.IHumanPresenceSensorStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
@@ -12565,8 +12619,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIWakeOnApproachOption
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -12959,8 +13013,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ICompass ** Default Interface **
@@ -13356,6 +13410,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate ** Default Interface **
+ *    Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -13401,9 +13456,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -13696,9 +13751,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IOrientationSensor ** Default Interface **
@@ -14553,6 +14608,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadin
 typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate;
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate_FWD_DEFINED__
+
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2 __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorStatics_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorStatics_FWD_DEFINED__
@@ -27513,6 +27574,80 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorR
 
 /*
  *
+ * Interface Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.HumanPresenceSensorReadingUpdate
+ *
+ */
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReadingUpdate2[] = L"Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2";
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2Vtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_OnlookerPresence)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        __FIReference_1_Windows__CDevices__CSensors__CHumanPresence** value);
+    HRESULT (STDMETHODCALLTYPE* put_OnlookerPresence)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2* This,
+        __FIReference_1_Windows__CDevices__CSensors__CHumanPresence* value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2Vtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2Vtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_get_OnlookerPresence(This, value) \
+    ((This)->lpVtbl->get_OnlookerPresence(This, value))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_put_OnlookerPresence(This, value) \
+    ((This)->lpVtbl->put_OnlookerPresence(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSensorReadingUpdate2_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+
+/*
+ *
  * Interface Windows.Devices.Sensors.IHumanPresenceSensorStatics
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
@@ -33557,8 +33692,8 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIWakeOnApproachOption
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics2 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics3 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IAccelerometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -33951,8 +34086,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ICompassStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ICompass ** Default Interface **
@@ -34348,6 +34483,7 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate ** Default Interface **
+ *    Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2
  *
  * Class Threading Model:  Both Single and Multi Threaded Apartment
  *
@@ -34393,9 +34529,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
@@ -34688,9 +34824,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IOrientationSensor ** Default Interface **

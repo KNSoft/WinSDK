@@ -2087,7 +2087,7 @@ namespace ABI {
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("bd43e8ae-9732-5a6a-a48b-4092c1934a7d"))
+struct __declspec(uuid("adaa5f37-ba59-5c13-83e1-811a8c1c26ee"))
 ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::HoldingEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::IPhysicalGestureRecognizer*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::HoldingEventArgs*, ABI::Windows::UI::Input::IHoldingEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2118,7 +2118,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, 
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("e7bf4757-fec5-5373-862a-370655e63e2b"))
+struct __declspec(uuid("7577ec2c-6f2b-5de1-8dbb-205f02dc46e4"))
 ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::ManipulationCompletedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::IPhysicalGestureRecognizer*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::ManipulationCompletedEventArgs*, ABI::Windows::UI::Input::IManipulationCompletedEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2149,7 +2149,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, 
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("2867e03a-522b-5fd3-95a9-6fa65139c49b"))
+struct __declspec(uuid("80fefaa0-0335-5b09-8fe1-33854fe7e8c0"))
 ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::ManipulationStartedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::IPhysicalGestureRecognizer*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::ManipulationStartedEventArgs*, ABI::Windows::UI::Input::IManipulationStartedEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2180,7 +2180,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, 
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("9036c240-5d9d-5fc5-adff-682d7bdd2870"))
+struct __declspec(uuid("fd08d645-0934-5c84-a498-fe313030966d"))
 ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::ManipulationUpdatedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::IPhysicalGestureRecognizer*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::ManipulationUpdatedEventArgs*, ABI::Windows::UI::Input::IManipulationUpdatedEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2211,7 +2211,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, 
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("7fc2391d-34cd-5cc7-ba50-b775664e2b20"))
+struct __declspec(uuid("dde6ff59-be05-528a-947c-da5db69f8e6a"))
 ITypedEventHandler<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::TappedEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::PhysicalGestureRecognizer*, ABI::Windows::UI::Input::IPhysicalGestureRecognizer*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::TappedEventArgs*, ABI::Windows::UI::Input::ITappedEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2772,7 +2772,7 @@ namespace ABI {
 #endif // ____x_ABI_CWindows_CUI_CCore_CIPointerEventArgs_FWD_DEFINED__
 
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CCore__CPointerEventArgs_USE
@@ -2780,7 +2780,7 @@ namespace ABI {
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("d27bbd5e-4c5e-51a7-923f-0c8ed802c9db"))
+struct __declspec(uuid("0b05a28c-2064-5b06-94f3-324fb004ece0"))
 ITypedEventHandler<ABI::Windows::UI::Input::TouchpadGesturesController*, ABI::Windows::UI::Core::PointerEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::TouchpadGesturesController*, ABI::Windows::UI::Input::ITouchpadGesturesController*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Core::PointerEventArgs*, ABI::Windows::UI::Core::IPointerEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2799,7 +2799,7 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::TouchpadGesturesController*,
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CCore__CPointerEventArgs_USE */
 
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 namespace ABI {
@@ -2813,15 +2813,15 @@ namespace ABI {
 } /* ABI */
 
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 
 #ifndef DEF___FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_USE
 #define DEF___FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_USE
 #if !defined(RO_NO_TEMPLATE_NAME)
 namespace ABI { namespace Windows { namespace Foundation {
 template <>
-struct __declspec(uuid("e3bf5d2c-d435-5024-92cf-6218dc011648"))
+struct __declspec(uuid("3fdb14d0-c3b2-576e-b900-aaa14e0ff77c"))
 ITypedEventHandler<ABI::Windows::UI::Input::TouchpadGesturesController*, ABI::Windows::UI::Input::TouchpadGlobalActionEventArgs*> : ITypedEventHandler_impl<ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::TouchpadGesturesController*, ABI::Windows::UI::Input::ITouchpadGesturesController*>, ABI::Windows::Foundation::Internal::AggregateType<ABI::Windows::UI::Input::TouchpadGlobalActionEventArgs*, ABI::Windows::UI::Input::ITouchpadGlobalActionEventArgs*>>
 {
     static const wchar_t* z_get_rc_name_impl()
@@ -2839,8 +2839,8 @@ typedef ITypedEventHandler<ABI::Windows::UI::Input::TouchpadGesturesController*,
 #endif // !defined(RO_NO_TEMPLATE_NAME)
 #endif /* DEF___FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_USE */
 
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 namespace ABI {
@@ -3495,13 +3495,13 @@ namespace ABI {
  *
  * Struct Windows.UI.Input.TouchpadGlobalAction
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3522,20 +3522,20 @@ namespace ABI {
         } /* UI */
     } /* Windows */
 } /* ABI */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Struct Windows.UI.Input.TouchpadGlobalGestureKinds
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 namespace ABI {
     namespace Windows {
         namespace UI {
@@ -3556,7 +3556,7 @@ namespace ABI {
         } /* UI */
     } /* Windows */
 } /* ABI */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
@@ -4936,10 +4936,13 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Input {
-                MIDL_INTERFACE("a3bb83e5-6937-5f29-8707-ae4875f8fda3")
+                MIDL_INTERFACE("79a29f4d-32a6-5aa5-a999-42b0b420c66d")
                 IPhysicalGestureRecognizer : public IInspectable
                 {
                 public:
+                    virtual HRESULT STDMETHODCALLTYPE get_IsActive(
+                        boolean* value
+                        ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE get_GestureSettings(
                         ABI::Windows::UI::Input::GestureSettings* value
                         ) = 0;
@@ -6971,7 +6974,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITappedEventArgs2;
  *
  * Interface Windows.UI.Input.ITouchpadGesturesController
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -6979,7 +6982,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITappedEventArgs2;
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGesturesController[] = L"Windows.UI.Input.ITouchpadGesturesController";
@@ -6987,14 +6990,14 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Input {
-                MIDL_INTERFACE("b58f88d0-58ea-51b5-b5bf-61cc081bf21d")
+                MIDL_INTERFACE("28c13cdd-e068-549f-89c6-1a440c6fc327")
                 ITouchpadGesturesController : public IInspectable
                 {
                 public:
-                    virtual HRESULT STDMETHODCALLTYPE get_GesturesEnabled(
+                    virtual HRESULT STDMETHODCALLTYPE get_Enabled(
                         boolean* value
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE put_GesturesEnabled(
+                    virtual HRESULT STDMETHODCALLTYPE put_Enabled(
                         boolean value
                         ) = 0;
                     virtual HRESULT STDMETHODCALLTYPE get_SupportedGestures(
@@ -7024,11 +7027,11 @@ namespace ABI {
                     virtual HRESULT STDMETHODCALLTYPE remove_PointerReleased(
                         EventRegistrationToken token
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE add_TouchpadGlobalActionPerformed(
+                    virtual HRESULT STDMETHODCALLTYPE add_GlobalActionPerformed(
                         __FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs* handler,
                         EventRegistrationToken* token
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE remove_TouchpadGlobalActionPerformed(
+                    virtual HRESULT STDMETHODCALLTYPE remove_GlobalActionPerformed(
                         EventRegistrationToken token
                         ) = 0;
                 };
@@ -7041,14 +7044,14 @@ namespace ABI {
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Interface Windows.UI.Input.ITouchpadGesturesControllerStatics
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -7056,7 +7059,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController;
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGesturesControllerStatics[] = L"Windows.UI.Input.ITouchpadGesturesControllerStatics";
@@ -7084,14 +7087,14 @@ namespace ABI {
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Interface Windows.UI.Input.ITouchpadGlobalActionEventArgs
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -7099,7 +7102,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerS
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGlobalActionEventArgs[] = L"Windows.UI.Input.ITouchpadGlobalActionEventArgs";
@@ -7107,12 +7110,15 @@ namespace ABI {
     namespace Windows {
         namespace UI {
             namespace Input {
-                MIDL_INTERFACE("08103525-dbb6-5f7f-9ffe-98c84bb49591")
+                MIDL_INTERFACE("6edad206-e4e3-5f39-9d13-8575e8e2a12b")
                 ITouchpadGlobalActionEventArgs : public IInspectable
                 {
                 public:
                     virtual HRESULT STDMETHODCALLTYPE get_Action(
                         ABI::Windows::UI::Input::TouchpadGlobalAction* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_PointerDevice(
+                        ABI::Windows::Devices::Input::IPointerDevice** value
                         ) = 0;
                 };
 
@@ -7124,7 +7130,7 @@ namespace ABI {
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
@@ -7940,12 +7946,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Windows.UI.Input.TouchpadGesturesController
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.UI.Input.ITouchpadGesturesControllerStatics interface starting with version 18.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.UI.Input.ITouchpadGesturesControllerStatics interface starting with version 19.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Input.ITouchpadGesturesController ** Default Interface **
@@ -7956,19 +7962,19 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #ifndef RUNTIMECLASS_Windows_UI_Input_TouchpadGesturesController_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_TouchpadGesturesController_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_TouchpadGesturesController[] = L"Windows.UI.Input.TouchpadGesturesController";
 #endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Class Windows.UI.Input.TouchpadGlobalActionEventArgs
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -7979,12 +7985,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #ifndef RUNTIMECLASS_Windows_UI_Input_TouchpadGlobalActionEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_TouchpadGlobalActionEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_TouchpadGlobalActionEventArgs[] = L"Windows.UI.Input.TouchpadGlobalActionEventArgs";
 #endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 #else // !defined(__cplusplus)
@@ -10901,7 +10907,7 @@ typedef interface __x_ABI_CWindows_CUI_CCore_CIPointerEventArgs __x_ABI_CWindows
 #endif // ____x_ABI_CWindows_CUI_CCore_CIPointerEventArgs_FWD_DEFINED__
 
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
@@ -10950,12 +10956,12 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesControl
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CCore__CPointerEventArgs_INTERFACE_DEFINED__
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_INTERFACE_DEFINED__)
 #define ____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_INTERFACE_DEFINED__
 
@@ -11002,8 +11008,8 @@ interface __FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesControl
 #endif /* COBJMACROS */
 
 #endif // ____FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs_INTERFACE_DEFINED__
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 #ifndef ____x_ABI_CWindows_CDevices_CHaptics_CISimpleHapticsController_FWD_DEFINED__
@@ -11285,13 +11291,13 @@ enum __x_ABI_CWindows_CUI_CInput_CRadialControllerSystemMenuItemKind
  *
  * Struct Windows.UI.Input.TouchpadGlobalAction
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalAction
 {
     TouchpadGlobalAction_ThreeFingerTap = 0,
@@ -11304,20 +11310,20 @@ enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalAction
     TouchpadGlobalAction_FourFingerPressUp = 7,
     TouchpadGlobalAction_FiveFingerPressUp = 8,
 };
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Struct Windows.UI.Input.TouchpadGlobalGestureKinds
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalGestureKinds
 {
     TouchpadGlobalGestureKinds_None = 0,
@@ -11328,7 +11334,7 @@ enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalGestureKinds
     TouchpadGlobalGestureKinds_FourFingerActions = 0x10,
     TouchpadGlobalGestureKinds_FiveFingerActions = 0x20,
 };
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
@@ -13778,6 +13784,8 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizerVtbl
         HSTRING* className);
     HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer* This,
         TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_IsActive)(__x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer* This,
+        boolean* value);
     HRESULT (STDMETHODCALLTYPE* get_GestureSettings)(__x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer* This,
         enum __x_ABI_CWindows_CUI_CInput_CGestureSettings* value);
     HRESULT (STDMETHODCALLTYPE* put_GestureSettings)(__x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer* This,
@@ -13874,6 +13882,9 @@ interface __x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer
 
 #define __x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer_GetTrustLevel(This, trustLevel) \
     ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer_get_IsActive(This, value) \
+    ((This)->lpVtbl->get_IsActive(This, value))
 
 #define __x_ABI_CWindows_CUI_CInput_CIPhysicalGestureRecognizer_get_GestureSettings(This, value) \
     ((This)->lpVtbl->get_GestureSettings(This, value))
@@ -17537,7 +17548,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITappedEventArgs2;
  *
  * Interface Windows.UI.Input.ITouchpadGesturesController
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -17545,7 +17556,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITappedEventArgs2;
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGesturesController[] = L"Windows.UI.Input.ITouchpadGesturesController";
@@ -17565,9 +17576,9 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerVtbl
         HSTRING* className);
     HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         TrustLevel* trustLevel);
-    HRESULT (STDMETHODCALLTYPE* get_GesturesEnabled)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
+    HRESULT (STDMETHODCALLTYPE* get_Enabled)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         boolean* value);
-    HRESULT (STDMETHODCALLTYPE* put_GesturesEnabled)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
+    HRESULT (STDMETHODCALLTYPE* put_Enabled)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         boolean value);
     HRESULT (STDMETHODCALLTYPE* get_SupportedGestures)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalGestureKinds* value);
@@ -17588,10 +17599,10 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerVtbl
         EventRegistrationToken* token);
     HRESULT (STDMETHODCALLTYPE* remove_PointerReleased)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         EventRegistrationToken token);
-    HRESULT (STDMETHODCALLTYPE* add_TouchpadGlobalActionPerformed)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
+    HRESULT (STDMETHODCALLTYPE* add_GlobalActionPerformed)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         __FITypedEventHandler_2_Windows__CUI__CInput__CTouchpadGesturesController_Windows__CUI__CInput__CTouchpadGlobalActionEventArgs* handler,
         EventRegistrationToken* token);
-    HRESULT (STDMETHODCALLTYPE* remove_TouchpadGlobalActionPerformed)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
+    HRESULT (STDMETHODCALLTYPE* remove_GlobalActionPerformed)(__x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController* This,
         EventRegistrationToken token);
 
     END_INTERFACE
@@ -17622,11 +17633,11 @@ interface __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController
 #define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_GetTrustLevel(This, trustLevel) \
     ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
 
-#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_get_GesturesEnabled(This, value) \
-    ((This)->lpVtbl->get_GesturesEnabled(This, value))
+#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_get_Enabled(This, value) \
+    ((This)->lpVtbl->get_Enabled(This, value))
 
-#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_put_GesturesEnabled(This, value) \
-    ((This)->lpVtbl->put_GesturesEnabled(This, value))
+#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_put_Enabled(This, value) \
+    ((This)->lpVtbl->put_Enabled(This, value))
 
 #define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_get_SupportedGestures(This, value) \
     ((This)->lpVtbl->get_SupportedGestures(This, value))
@@ -17652,24 +17663,24 @@ interface __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController
 #define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_remove_PointerReleased(This, token) \
     ((This)->lpVtbl->remove_PointerReleased(This, token))
 
-#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_add_TouchpadGlobalActionPerformed(This, handler, token) \
-    ((This)->lpVtbl->add_TouchpadGlobalActionPerformed(This, handler, token))
+#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_add_GlobalActionPerformed(This, handler, token) \
+    ((This)->lpVtbl->add_GlobalActionPerformed(This, handler, token))
 
-#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_remove_TouchpadGlobalActionPerformed(This, token) \
-    ((This)->lpVtbl->remove_TouchpadGlobalActionPerformed(This, token))
+#define __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_remove_GlobalActionPerformed(This, token) \
+    ((This)->lpVtbl->remove_GlobalActionPerformed(This, token))
 
 #endif /* COBJMACROS */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Interface Windows.UI.Input.ITouchpadGesturesControllerStatics
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -17677,7 +17688,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesController;
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGesturesControllerStatics[] = L"Windows.UI.Input.ITouchpadGesturesControllerStatics";
@@ -17740,14 +17751,14 @@ interface __x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerStatics_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Interface Windows.UI.Input.ITouchpadGlobalActionEventArgs
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -17755,7 +17766,7 @@ EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGesturesControllerS
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #if !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__)
 #define ____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__
 extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_UI_Input_ITouchpadGlobalActionEventArgs[] = L"Windows.UI.Input.ITouchpadGlobalActionEventArgs";
@@ -17777,6 +17788,8 @@ typedef struct __x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgsVtbl
         TrustLevel* trustLevel);
     HRESULT (STDMETHODCALLTYPE* get_Action)(__x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs* This,
         enum __x_ABI_CWindows_CUI_CInput_CTouchpadGlobalAction* value);
+    HRESULT (STDMETHODCALLTYPE* get_PointerDevice)(__x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs* This,
+        __x_ABI_CWindows_CDevices_CInput_CIPointerDevice** value);
 
     END_INTERFACE
 } __x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgsVtbl;
@@ -17809,11 +17822,14 @@ interface __x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs
 #define __x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_get_Action(This, value) \
     ((This)->lpVtbl->get_Action(This, value))
 
+#define __x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_get_PointerDevice(This, value) \
+    ((This)->lpVtbl->get_PointerDevice(This, value))
+
 #endif /* COBJMACROS */
 
 EXTERN_C const IID IID___x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs;
 #endif /* !defined(____x_ABI_CWindows_CUI_CInput_CITouchpadGlobalActionEventArgs_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
@@ -18629,12 +18645,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * Class Windows.UI.Input.TouchpadGesturesController
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.UI.Input.ITouchpadGesturesControllerStatics interface starting with version 18.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.UI.Input.ITouchpadGesturesControllerStatics interface starting with version 19.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.UI.Input.ITouchpadGesturesController ** Default Interface **
@@ -18645,19 +18661,19 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #ifndef RUNTIMECLASS_Windows_UI_Input_TouchpadGesturesController_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_TouchpadGesturesController_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_TouchpadGesturesController[] = L"Windows.UI.Input.TouchpadGesturesController";
 #endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
  * Class Windows.UI.Input.TouchpadGlobalActionEventArgs
  *
- * Introduced to Windows.Foundation.UniversalApiContract in version 18.0
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
  *
  * Type is for evaluation purposes and is subject to change or removal in future updates.
  *
@@ -18668,12 +18684,12 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  */
 #if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #ifndef RUNTIMECLASS_Windows_UI_Input_TouchpadGlobalActionEventArgs_DEFINED
 #define RUNTIMECLASS_Windows_UI_Input_TouchpadGlobalActionEventArgs_DEFINED
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_UI_Input_TouchpadGlobalActionEventArgs[] = L"Windows.UI.Input.TouchpadGlobalActionEventArgs";
 #endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x120000
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
 #endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 #endif // defined(__cplusplus)
