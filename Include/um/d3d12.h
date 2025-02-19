@@ -1512,6 +1512,19 @@ typedef struct D3D12_BOX
     UINT back;
     } 	D3D12_BOX;
 
+#ifdef __midl
+#ifndef LUID_DEFINED
+#define LUID_DEFINED 1
+typedef struct __LUID
+    {
+    DWORD LowPart;
+    LONG HighPart;
+    } 	LUID;
+
+typedef struct __LUID *PLUID;
+
+#endif
+#endif
 typedef 
 enum D3D12_COMPARISON_FUNC
     {
@@ -8881,27 +8894,6 @@ EXTERN_C const IID IID_ID3D12CommandQueue;
 
 #endif 	/* __ID3D12CommandQueue_INTERFACE_DEFINED__ */
 
-
-/* interface __MIDL_itf_d3d12_0000_0020 */
-/* [local] */ 
-
-#ifdef __midl
-#ifndef LUID_DEFINED
-#define LUID_DEFINED 1
-typedef struct __LUID
-    {
-    DWORD LowPart;
-    LONG HighPart;
-    } 	LUID;
-
-typedef struct __LUID *PLUID;
-
-#endif
-#endif
-
-
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0020_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_d3d12_0000_0020_v0_0_s_ifspec;
 
 #ifndef __ID3D12Device_INTERFACE_DEFINED__
 #define __ID3D12Device_INTERFACE_DEFINED__

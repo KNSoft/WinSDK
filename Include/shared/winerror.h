@@ -60829,6 +60829,159 @@ FORCEINLINE HRESULT HRESULT_FROM_SETUPAPI(unsigned long x) { return (((x) & (0x2
 //
 #define MILERR_DISPLAYID_ACCESS_DENIED   _HRESULT_TYPEDEF_(0x889800A1L)
 
+//
+// MessageId: MILERR_DEVICE_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create a graphics device.
+//
+#define MILERR_DEVICE_CREATION_FAILURE   _HRESULT_TYPEDEF_(0x889800B0L)
+
+//
+// MessageId: MILERR_INTEL_DEVICE_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an Intel graphics device.
+//
+#define MILERR_INTEL_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B1L)
+
+//
+// MessageId: MILERR_AMD_DEVICE_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an AMD graphics device.
+//
+#define MILERR_AMD_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B2L)
+
+//
+// MessageId: MILERR_NVIDIA_DEVICE_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an nVidia graphics device.
+//
+#define MILERR_NVIDIA_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B3L)
+
+//
+// MessageId: MILERR_QC_DEVICE_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an Qualcomm graphics device.
+//
+#define MILERR_QC_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B4L)
+
+//
+// MessageId: MILERR_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create a display swap chain.
+//
+#define MILERR_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C0L)
+
+//
+// MessageId: MILERR_INTEL_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an Intel display swap chain.
+//
+#define MILERR_INTEL_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C1L)
+
+//
+// MessageId: MILERR_AMD_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an AMD display swap chain.
+//
+#define MILERR_AMD_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C2L)
+
+//
+// MessageId: MILERR_NVIDIA_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an nVidia display swap chain.
+//
+#define MILERR_NVIDIA_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C3L)
+
+//
+// MessageId: MILERR_QC_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create a Qualcomm display swap chain.
+//
+#define MILERR_QC_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C4L)
+
+//
+// MessageId: MILERR_IDD_SWAPCHAIN_CREATION_FAILURE
+//
+// MessageText:
+//
+// DWM failed to create an indirect display swap chain.
+//
+#define MILERR_IDD_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C5L)
+
+//
+// MessageId: MILERR_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed during present.
+//
+#define MILERR_PRESENT_FAILURE           _HRESULT_TYPEDEF_(0x889800D0L)
+
+//
+// MessageId: MILERR_INTEL_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed an Intel present.
+//
+#define MILERR_INTEL_PRESENT_FAILURE     _HRESULT_TYPEDEF_(0x889800D1L)
+
+//
+// MessageId: MILERR_AMD_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed an AMD present.
+//
+#define MILERR_AMD_PRESENT_FAILURE       _HRESULT_TYPEDEF_(0x889800D2L)
+
+//
+// MessageId: MILERR_NVIDIA_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed an nVidia present.
+//
+#define MILERR_NVIDIA_PRESENT_FAILURE    _HRESULT_TYPEDEF_(0x889800D3L)
+
+//
+// MessageId: MILERR_QC_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed a Qualcomm present.
+//
+#define MILERR_QC_PRESENT_FAILURE        _HRESULT_TYPEDEF_(0x889800D4L)
+
+//
+// MessageId: MILERR_IDD_PRESENT_FAILURE
+//
+// MessageText:
+//
+// DWM failed an indirect display present.
+//
+#define MILERR_IDD_PRESENT_FAILURE       _HRESULT_TYPEDEF_(0x889800D5L)
+
 // Composition engine errors
 //
 // MessageId: UCEERR_INVALIDPACKETHEADER

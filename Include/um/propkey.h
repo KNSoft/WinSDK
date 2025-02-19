@@ -8310,6 +8310,14 @@ DEFINE_PROPERTYKEY(PKEY_Home_IsPinned, 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0
 DEFINE_PROPERTYKEY(PKEY_Home_ItemFolderPathDisplay, 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29, 6);
 #define INIT_PKEY_Home_ItemFolderPathDisplay { { 0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29 }, 6 }
 
+//  Name:     System.Home.RecommendationProviderSource -- PKEY_Home_RecommendationProviderSource
+//  Type:     UInt32 -- VT_UI4
+//  FormatID: {5CA9B1CB-C69F-404B-ABC6-FD336793A6A7}, 22
+//
+//  The provider source property for items in the recommended section on FE home
+DEFINE_PROPERTYKEY(PKEY_Home_RecommendationProviderSource, 0x5CA9B1CB, 0xC69F, 0x404B, 0xAB, 0xC6, 0xFD, 0x33, 0x67, 0x93, 0xA6, 0xA7, 22);
+#define INIT_PKEY_Home_RecommendationProviderSource { { 0x5CA9B1CB, 0xC69F, 0x404B, 0xAB, 0xC6, 0xFD, 0x33, 0x67, 0x93, 0xA6, 0xA7 }, 22 }
+
 //  Name:     System.Home.RecommendationReasonIcon -- PKEY_Home_RecommendationReasonIcon
 //  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
 //  FormatID: {30C8EEF4-A832-41E2-AB32-E3C3CA28FD29}, 21

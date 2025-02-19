@@ -1048,6 +1048,12 @@ namespace winrt::impl
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceFeatures2)->get_IsAdaptiveDimmingSupported(&value));
         return value;
     }
+    template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceFeatures3<D>::IsPrivacyScreenSupported() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceFeatures3)->get_IsPrivacyScreenSupported(&value));
+        return value;
+    }
     template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceSensor<D>::DeviceId() const
     {
         void* value{};
@@ -1384,6 +1390,22 @@ namespace winrt::impl
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceSettings2)->get_LockOptions(&value));
         return winrt::Windows::Devices::Sensors::LockOnLeaveOptions{ value, take_ownership_from_abi };
     }
+    template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceSettings3<D>::IsPrivacyScreenEnabled() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceSettings3)->get_IsPrivacyScreenEnabled(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceSettings3<D>::IsPrivacyScreenEnabled(bool value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceSettings3)->put_IsPrivacyScreenEnabled(value));
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceSettings3<D>::PrivacyScreenOptions() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IHumanPresenceSettings3)->get_PrivacyScreenOptions(&value));
+        return winrt::Windows::Devices::Sensors::PrivacyScreenOptions{ value, take_ownership_from_abi };
+    }
     template <typename D> auto consume_Windows_Devices_Sensors_IHumanPresenceSettingsStatics<D>::GetCurrentSettingsAsync() const
     {
         void* operation{};
@@ -1684,6 +1706,12 @@ namespace winrt::impl
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensor3)->get_ReportThreshold(&value));
         return winrt::Windows::Devices::Sensors::LightSensorDataThreshold{ value, take_ownership_from_abi };
     }
+    template <typename D> auto consume_Windows_Devices_Sensors_ILightSensor4<D>::IsChromaticitySupported() const
+    {
+        bool supported{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensor4)->IsChromaticitySupported(&supported));
+        return supported;
+    }
     template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorDataThreshold<D>::LuxPercentage() const
     {
         float value{};
@@ -1703,6 +1731,16 @@ namespace winrt::impl
     template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorDataThreshold<D>::AbsoluteLux(float value) const
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensorDataThreshold)->put_AbsoluteLux(value));
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorDataThreshold2<D>::Chromaticity() const
+    {
+        winrt::Windows::Devices::Sensors::LightSensorChromaticity value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2)->get_Chromaticity(put_abi(value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorDataThreshold2<D>::Chromaticity(winrt::Windows::Devices::Sensors::LightSensorChromaticity const& value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2)->put_Chromaticity(impl::bind_in(value)));
     }
     template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorDeviceId<D>::DeviceId() const
     {
@@ -1733,6 +1771,12 @@ namespace winrt::impl
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensorReading2)->get_Properties(&value));
         return winrt::Windows::Foundation::Collections::IMapView<hstring, winrt::Windows::Foundation::IInspectable>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorReading3<D>::Chromaticity() const
+    {
+        winrt::Windows::Devices::Sensors::LightSensorChromaticity value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::ILightSensorReading3)->get_Chromaticity(put_abi(value)));
+        return value;
     }
     template <typename D> auto consume_Windows_Devices_Sensors_ILightSensorReadingChangedEventArgs<D>::Reading() const
     {
@@ -2215,6 +2259,26 @@ namespace winrt::impl
         void* result{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IPedometerStatics2)->GetReadingsFromTriggerDetails(*(void**)(&triggerDetails), &result));
         return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::PedometerReading>{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IPrivacyScreenOptions<D>::Action() const
+    {
+        winrt::Windows::Devices::Sensors::PrivacyScreenAction value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IPrivacyScreenOptions)->get_Action(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IPrivacyScreenOptions<D>::Action(winrt::Windows::Devices::Sensors::PrivacyScreenAction const& value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IPrivacyScreenOptions)->put_Action(static_cast<int32_t>(value)));
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IPrivacyScreenOptions<D>::BackOnMode() const
+    {
+        winrt::Windows::Devices::Sensors::PrivacyScreenBackOnMode value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IPrivacyScreenOptions)->get_BackOnMode(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Devices_Sensors_IPrivacyScreenOptions<D>::BackOnMode(winrt::Windows::Devices::Sensors::PrivacyScreenBackOnMode const& value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Devices::Sensors::IPrivacyScreenOptions)->put_BackOnMode(static_cast<int32_t>(value)));
     }
     template <typename D> auto consume_Windows_Devices_Sensors_IProximitySensor<D>::DeviceId() const
     {
@@ -4216,6 +4280,19 @@ namespace winrt::impl
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
     template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::IHumanPresenceFeatures3> : produce_base<D, winrt::Windows::Devices::Sensors::IHumanPresenceFeatures3>
+    {
+        int32_t __stdcall get_IsPrivacyScreenSupported(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().IsPrivacyScreenSupported());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
     struct produce<D, winrt::Windows::Devices::Sensors::IHumanPresenceSensor> : produce_base<D, winrt::Windows::Devices::Sensors::IHumanPresenceSensor>
     {
         int32_t __stdcall get_DeviceId(void** value) noexcept final try
@@ -4763,6 +4840,34 @@ namespace winrt::impl
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
     template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::IHumanPresenceSettings3> : produce_base<D, winrt::Windows::Devices::Sensors::IHumanPresenceSettings3>
+    {
+        int32_t __stdcall get_IsPrivacyScreenEnabled(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().IsPrivacyScreenEnabled());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_IsPrivacyScreenEnabled(bool value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsPrivacyScreenEnabled(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_PrivacyScreenOptions(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Devices::Sensors::PrivacyScreenOptions>(this->shim().PrivacyScreenOptions());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
     struct produce<D, winrt::Windows::Devices::Sensors::IHumanPresenceSettingsStatics> : produce_base<D, winrt::Windows::Devices::Sensors::IHumanPresenceSettingsStatics>
     {
         int32_t __stdcall GetCurrentSettingsAsync(void** operation) noexcept final try
@@ -5255,6 +5360,19 @@ namespace winrt::impl
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
     template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::ILightSensor4> : produce_base<D, winrt::Windows::Devices::Sensors::ILightSensor4>
+    {
+        int32_t __stdcall IsChromaticitySupported(bool* supported) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *supported = detach_from<bool>(this->shim().IsChromaticitySupported());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
     struct produce<D, winrt::Windows::Devices::Sensors::ILightSensorDataThreshold> : produce_base<D, winrt::Windows::Devices::Sensors::ILightSensorDataThreshold>
     {
         int32_t __stdcall get_LuxPercentage(float* value) noexcept final try
@@ -5282,6 +5400,27 @@ namespace winrt::impl
         {
             typename D::abi_guard guard(this->shim());
             this->shim().AbsoluteLux(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2> : produce_base<D, winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2>
+    {
+        int32_t __stdcall get_Chromaticity(struct struct_Windows_Devices_Sensors_LightSensorChromaticity* value) noexcept final try
+        {
+            zero_abi<winrt::Windows::Devices::Sensors::LightSensorChromaticity>(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Devices::Sensors::LightSensorChromaticity>(this->shim().Chromaticity());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_Chromaticity(struct struct_Windows_Devices_Sensors_LightSensorChromaticity value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Chromaticity(*reinterpret_cast<winrt::Windows::Devices::Sensors::LightSensorChromaticity const*>(&value));
             return 0;
         }
         catch (...) { return to_hresult(); }
@@ -5339,6 +5478,20 @@ namespace winrt::impl
             clear_abi(value);
             typename D::abi_guard guard(this->shim());
             *value = detach_from<winrt::Windows::Foundation::Collections::IMapView<hstring, winrt::Windows::Foundation::IInspectable>>(this->shim().Properties());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::ILightSensorReading3> : produce_base<D, winrt::Windows::Devices::Sensors::ILightSensorReading3>
+    {
+        int32_t __stdcall get_Chromaticity(struct struct_Windows_Devices_Sensors_LightSensorChromaticity* value) noexcept final try
+        {
+            zero_abi<winrt::Windows::Devices::Sensors::LightSensorChromaticity>(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Devices::Sensors::LightSensorChromaticity>(this->shim().Chromaticity());
             return 0;
         }
         catch (...) { return to_hresult(); }
@@ -6172,6 +6325,40 @@ namespace winrt::impl
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
     template <typename D>
+    struct produce<D, winrt::Windows::Devices::Sensors::IPrivacyScreenOptions> : produce_base<D, winrt::Windows::Devices::Sensors::IPrivacyScreenOptions>
+    {
+        int32_t __stdcall get_Action(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Devices::Sensors::PrivacyScreenAction>(this->shim().Action());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_Action(int32_t value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Action(*reinterpret_cast<winrt::Windows::Devices::Sensors::PrivacyScreenAction const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_BackOnMode(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Devices::Sensors::PrivacyScreenBackOnMode>(this->shim().BackOnMode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_BackOnMode(int32_t value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().BackOnMode(*reinterpret_cast<winrt::Windows::Devices::Sensors::PrivacyScreenBackOnMode const*>(&value));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
     struct produce<D, winrt::Windows::Devices::Sensors::IProximitySensor> : produce_base<D, winrt::Windows::Devices::Sensors::IProximitySensor>
     {
         int32_t __stdcall get_DeviceId(void** value) noexcept final try
@@ -6963,6 +7150,7 @@ namespace std
     template<> struct hash<winrt::Windows::Devices::Sensors::IHingeAngleSensorStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceFeatures> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceFeatures2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceFeatures3> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSensor> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSensor2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSensor3> : winrt::impl::hash_base {};
@@ -6977,6 +7165,7 @@ namespace std
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSensorStatics2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSettings> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSettings2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSettings3> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IHumanPresenceSettingsStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IInclinometer> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IInclinometer2> : winrt::impl::hash_base {};
@@ -6995,10 +7184,13 @@ namespace std
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensor> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensor2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensor3> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensor4> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorDataThreshold> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorDeviceId> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorReading> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorReading2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorReading3> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorReadingChangedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ILightSensorStatics2> : winrt::impl::hash_base {};
@@ -7033,6 +7225,7 @@ namespace std
     template<> struct hash<winrt::Windows::Devices::Sensors::IPedometerReadingChangedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IPedometerStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IPedometerStatics2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::IPrivacyScreenOptions> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IProximitySensor> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IProximitySensorDataThresholdFactory> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::IProximitySensorReading> : winrt::impl::hash_base {};
@@ -7108,6 +7301,7 @@ namespace std
     template<> struct hash<winrt::Windows::Devices::Sensors::PedometerDataThreshold> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::PedometerReading> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::PedometerReadingChangedEventArgs> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Devices::Sensors::PrivacyScreenOptions> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ProximitySensor> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ProximitySensorDataThreshold> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Devices::Sensors::ProximitySensorDisplayOnOffController> : winrt::impl::hash_base {};

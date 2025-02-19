@@ -178,7 +178,6 @@ extern "C" {
 //          - EXPERIMENTAL_WebAuthNPluginAuthenticatorGetAllCredentials
 //          - EXPERIMENTAL_WebAuthNPluginPerformUv
 //          - EXPERIMENTAL_WebAuthNPluginFreePerformUvResponse
-//          - EXPERIMENTAL_WebAuthNPluginGetNonce
 //          - EXPERIMENTAL_WebAuthNEncodeMakeCredentialResponse
 //          - EXPERIMENTAL_WebAuthNDecodeMakeCredentialRequest
 //          - EXPERIMENTAL_WebAuthNFreeDecodedMakeCredentialRequest
@@ -523,6 +522,10 @@ typedef struct _WEBAUTHN_CREDENTIAL_DETAILS {
     _Field_size_bytes_(EXPERIMENTAL_cbAuthenticatorLogo)
     #endif
     PBYTE EXPERIMENTAL_pbAuthenticatorLogo;
+
+    // ThirdPartyPayment Credential or not.
+    BOOL EXPERIMENTAL_bThirdPartyPayment;
+
 } WEBAUTHN_CREDENTIAL_DETAILS, *PWEBAUTHN_CREDENTIAL_DETAILS;
 typedef const WEBAUTHN_CREDENTIAL_DETAILS *PCWEBAUTHN_CREDENTIAL_DETAILS;
 
@@ -880,6 +883,9 @@ typedef struct _WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS {
     LPCWSTR *EXPERIMENTAL_ppwszCredentialHints;
     #endif
 
+    // Enable ThirdPartyPayment
+    BOOL EXPERIMENTAL_bThirdPartyPayment;
+
 } WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS, *PWEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS;
 typedef const WEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS *PCWEBAUTHN_AUTHENTICATOR_MAKE_CREDENTIAL_OPTIONS;
 
@@ -1195,6 +1201,9 @@ typedef struct _WEBAUTHN_CREDENTIAL_ATTESTATION {
 
     PWEBAUTHN_HMAC_SECRET_SALT EXPERIMENTAL_pHmacSecret;
 
+    // ThirdPartyPayment Credential or not.
+    BOOL EXPERIMENTAL_bThirdPartyPayment;
+
 } WEBAUTHN_CREDENTIAL_ATTESTATION, *PWEBAUTHN_CREDENTIAL_ATTESTATION;
 typedef const WEBAUTHN_CREDENTIAL_ATTESTATION *PCWEBAUTHN_CREDENTIAL_ATTESTATION;
 
@@ -1449,11 +1458,6 @@ typedef struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS {
     _Field_size_bytes_(cbAuthenticatorInfo)
     PBYTE pbAuthenticatorInfo;
 
-    // Plugin Id Public Key - Used to sign the request for all other plugin APIs.
-    DWORD cbPluginIdKey;
-    _Field_size_bytes_(cbPluginIdKey)
-    PBYTE pbPluginIdKey;
-
 } EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS, *EXPERIMENTAL_PWEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS;
 typedef const EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS *EXPERIMENTAL_PCWEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS;
 
@@ -1481,27 +1485,10 @@ EXPERIMENTAL_WebAuthNPluginFreeAddAuthenticatorResponse(
 // Plugin Authenticator API: WebAuthNRemovePluginAuthenticator: Remove Plugin Authenticator
 //
 
-typedef struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS {
-    // Plugin COM ClsId
-    LPCWSTR pwszPluginClsId;
-
-    // Nonce used while creating operation signature
-    DWORD cbNonce;
-    //_Field_size_bytes_(cbNonce)
-    PBYTE pbNonce;
-
-    // Signature of the remove options with the Plugin Id Key
-    DWORD cbSignature;
-    _Field_size_bytes_(cbSignature)
-    PBYTE pbSignature;
-
-} EXPERIMENTAL_WEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS, *EXPERIMENTAL_PWEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS;
-typedef const EXPERIMENTAL_WEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS *EXPERIMENTAL_PCWEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS;
-
 HRESULT
 WINAPI
 EXPERIMENTAL_WebAuthNPluginRemoveAuthenticator(
-    _In_ EXPERIMENTAL_PCWEBAUTHN_PLUGIN_REMOVE_AUTHENTICATOR_OPTIONS pPluginRemoveAuthenticatorOptions);
+    _In_ LPCWSTR pwszPluginClsId);
 
 //
 // Plugin Authenticator API: WebAuthNPluginAuthenticatorUpdateDetails: Update Credential Metadata for Browser AutoFill Scenarios
@@ -1523,25 +1510,10 @@ typedef struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS {
     // Plugin Authenticator Logo for the Dark themes. base64 svg (Optional)
     LPCWSTR pwszDarkThemeLogo;
 
-    // Plugin Id Public Key (Optional)
-    DWORD cbPluginIdKey;
-    _Field_size_bytes_(cbPluginIdKey)
-    PBYTE pbPluginIdKey;
-
     // CTAP CBOR encoded authenticatorGetInfo (Optional)
     DWORD cbAuthenticatorInfo;
     _Field_size_bytes_(cbAuthenticatorInfo)
     PBYTE pbAuthenticatorInfo;
-
-    // Nonce used while creating operation signature
-    DWORD cbNonce;
-    //_Field_size_bytes_(cbNonce)
-    PBYTE pbNonce;
-
-    // Signature of the update details with the Plugin Id Key
-    DWORD cbSignature;
-    _Field_size_bytes_(cbSignature)
-    PBYTE pbSignature;
 
 } EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS, *EXPERIMENTAL_PWEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS;
 typedef const EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS *EXPERIMENTAL_PCWEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS;
@@ -1611,24 +1583,6 @@ typedef struct _EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST {
     #endif
     EXPERIMENTAL_PWEBAUTHN_PLUGIN_CREDENTIAL_DETAILS *pCredentialDetails;
 
-    // Nonce used while creating operation signature
-    DWORD cbNonce;
-    #ifdef __midl
-    [size_is(cbSignature)]
-    #else
-    _Field_size_bytes_(cbSignature)
-    #endif
-    PBYTE pbNonce;
-
-    // Result of Sign operation on concatenation of above fields using the Plugin Id Registrtaion Key
-    DWORD cbSignature;
-    #ifdef __midl
-    [size_is(cbSignature)]
-    #else
-    _Field_size_bytes_(cbSignature)
-    #endif
-    PBYTE pbSignature;
-
 } EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST, *EXPERIMENTAL_PWEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST;
 typedef const EXPERIMENTAL_WEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST *EXPERIMENTAL_PCWEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST;
 
@@ -1655,11 +1609,7 @@ EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveCredentials(
 HRESULT
 WINAPI
 EXPERIMENTAL_WebAuthNPluginAuthenticatorRemoveAllCredentials(
-    _In_ LPCWSTR pwszPluginClsId,
-    _In_ DWORD cbNonce,
-    _In_reads_bytes_(cbNonce) PBYTE pbNonce,
-    _In_ DWORD cbSignature,
-    _In_reads_bytes_(cbSignature) PBYTE pbSignature);
+    _In_ LPCWSTR pwszPluginClsId);
 
 //
 // Plugin Authenticator API: WebAuthNPluginAuthenticatorGetAllCredentials: Get All Credential Metadata cached for Browser AutoFill Scenarios
@@ -1668,10 +1618,6 @@ HRESULT
 WINAPI
 EXPERIMENTAL_WebAuthNPluginAuthenticatorGetAllCredentials(
     _In_ LPCWSTR pwszPluginClsId,
-    _In_ DWORD cbNonce,
-    _In_reads_bytes_(cbNonce) PBYTE pbNonce,
-    _In_ DWORD cbSignature,
-    _In_reads_bytes_(cbSignature) PBYTE pbSignature,
     _Outptr_result_maybenull_ EXPERIMENTAL_PWEBAUTHN_PLUGIN_CREDENTIAL_DETAILS_LIST *ppCredentialDetailsList);
 
 //
@@ -1710,13 +1656,6 @@ void
 WINAPI
 EXPERIMENTAL_WebAuthNPluginFreePerformUvResponse(
     _In_opt_ EXPERIMENTAL_PWEBAUTHN_PLUGIN_PERFORM_UV_RESPONSE ppPluginPerformUvResponse);
-
-HRESULT
-WINAPI
-EXPERIMENTAL_WebAuthNPluginGetNonce(
-    _In_ LPCWSTR pwszPluginClsId,
-    _Out_ DWORD* pcbNonce, 
-    _Outptr_result_buffer_maybenull_(*pcbNonce) PBYTE* ppbNonce);
 
 #define EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_VERSION_1 1
 #define EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_CURRENT_VERSION EXPERIMENTAL_WEBAUTHN_CTAPCBOR_AUTHENTICATOR_OPTIONS_VERSION_1

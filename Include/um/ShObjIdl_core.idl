@@ -399,6 +399,20 @@ interface IContextMenu3 : IContextMenu2
 
 typedef IContextMenu3 * LPCONTEXTMENU3;
 
+// Implemented by IContextMenu objects that offer static verbs, e.g. CRegistryVerbsContextMenu.
+// Allows callers to query if the provider offers a specific verb. This is helpful to optimize
+// verb invocation codepaths (CMF_OPTIMIZEFORINVOKE) by avoiding having to build a full context
+// menu including 3P extensions.
+[
+    uuid(4B770DA6-D111-4015-96FD-8C1C56F06C55),
+    object,
+    pointer_default(unique)
+]
+interface IStaticVerbProvider : IUnknown
+{
+    HRESULT IsVerbSupported([in] LPCWSTR verbName, [out] BOOL* result);
+};
+
 // IExecuteCommand
 [
     uuid(7F9185B0-CB92-43c5-80A9-92277A4F7B54),

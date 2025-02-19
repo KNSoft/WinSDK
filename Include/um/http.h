@@ -2296,6 +2296,17 @@ typedef struct _HTTP_SERVICE_CONFIG_SSL_CCS_KEY
 #endif
 
 //
+// Define various certificate check mode flags used by DefaultCertCheckMode.
+//
+
+#define HTTP_CERT_CHECK_MODE_NO_REVOCATION            0x00001
+#define HTTP_CERT_CHECK_MODE_CACHED_REVOCATION        0x00002
+#define HTTP_CERT_CHECK_MODE_USE_REVOCATION_FRESHNESS 0x00004
+#define HTTP_CERT_CHECK_MODE_CACHED_URLS              0x00008
+#define HTTP_CERT_CHECK_MODE_NO_AIA                   0x00010
+#define HTTP_CERT_CHECK_MODE_NO_USAGE_CHECK           0x10000
+
+//
 // This defines a record for the SSL config store.
 //
 
@@ -2319,6 +2330,8 @@ typedef struct _HTTP_SERVICE_CONFIG_SSL_PARAM
     //  0x1     - Client certificate will not be verified for revocation
     //  0x2     - Only cached certificate revocation will be used.
     //  0x4     - Enable use of the DefaultRevocationFreshnessTime setting
+    //  0x8     - Disable network URL retrieval.
+    //  0x10    - Disable AIA checks.
     //  0x10000 - No usage check.
 
     DWORD DefaultCertCheckMode;
@@ -2921,7 +2934,8 @@ typedef enum _HTTP_FEATURE_ID
     HttpFeatureFastForwardResponse                  = 10,
     HttpFeatureCacheTlsClientHello                  = 11,
     HttpFeatureIdleConnectionTimeoutRequestProperty = 12,
-    HttpFeatureLast                                 = 13,
+    HttpFeatureDisableAiaFlag                       = 13,
+    HttpFeatureLast                                 = 14,
 
 
     HttpFeaturemax              = 0xFFFFFFFF,

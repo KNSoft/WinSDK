@@ -572,6 +572,19 @@ typedef struct D3D12_BOX
     UINT back;
 } D3D12_BOX;
 
+//--------------------------------------------------------------------------------------------------------
+// The system LUID struct isn't defined in wtypes, so we repeat it here just
+// for the MIDL compiler.
+cpp_quote("#ifdef __midl")
+cpp_quote("#ifndef LUID_DEFINED")
+cpp_quote("#define LUID_DEFINED 1")
+typedef struct __LUID {
+    DWORD LowPart;
+    LONG HighPart;
+} LUID, * PLUID;
+cpp_quote("#endif")
+cpp_quote("#endif")
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -3281,6 +3294,7 @@ interface ID3D12Fence1
     D3D12_FENCE_FLAGS GetCreationFlags();
 };
 
+
 [ uuid( 765a30f3-f624-4c6f-a828-ace948622445 ), object, local, pointer_default( unique ) ]
 interface ID3D12PipelineState
     : ID3D12Pageable
@@ -3738,19 +3752,6 @@ interface ID3D12CommandQueue
 
     D3D12_COMMAND_QUEUE_DESC GetDesc();
 }
-
-//--------------------------------------------------------------------------------------------------------
-// The system LUID struct isn't defined in wtypes, so we repeat it here just
-// for the MIDL compiler.
-cpp_quote("#ifdef __midl")
-cpp_quote("#ifndef LUID_DEFINED")
-cpp_quote("#define LUID_DEFINED 1")
-typedef struct __LUID {
-    DWORD LowPart;
-    LONG HighPart;
-} LUID, *PLUID;
-cpp_quote("#endif")
-cpp_quote("#endif")
 
 [ uuid( 189819f1-1db6-4b57-be54-1821339b85f7 ), object, local, pointer_default( unique ) ]
 interface ID3D12Device

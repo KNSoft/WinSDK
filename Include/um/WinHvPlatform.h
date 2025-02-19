@@ -216,7 +216,6 @@ WHvSetVirtualProcessorRegisters(
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_VB)
 #pragma deprecated("WHvGetVirtualProcessorInterruptControllerState is deprecated; use WHvGetVirtualProcessorInterruptControllerState2")
 #endif
-
 HRESULT
 WINAPI
 WHvGetVirtualProcessorInterruptControllerState(
@@ -226,13 +225,13 @@ WHvGetVirtualProcessorInterruptControllerState(
     _In_ UINT32 StateSize,
     _Out_opt_ UINT32* WrittenSize
     );
+
 #endif
 
 #if defined(_AMD64_)
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_VB)
 #pragma deprecated("WHvSetVirtualProcessorInterruptControllerState is deprecated; use WHvSetVirtualProcessorInterruptControllerState2")
 #endif
-
 HRESULT
 WINAPI
 WHvSetVirtualProcessorInterruptControllerState(
@@ -241,6 +240,7 @@ WHvSetVirtualProcessorInterruptControllerState(
     _In_reads_bytes_(StateSize) const VOID* State,
     _In_ UINT32 StateSize
     );
+
 #endif
 
 HRESULT
@@ -255,7 +255,6 @@ WHvRequestInterrupt(
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvGetVirtualProcessorXsaveState is deprecated; use WHvGetVirtualProcessorState")
 #endif
-
 HRESULT
 WINAPI
 WHvGetVirtualProcessorXsaveState(
@@ -265,13 +264,13 @@ WHvGetVirtualProcessorXsaveState(
     _In_ UINT32 BufferSizeInBytes,
     _Out_ UINT32* BytesWritten
     );
+
 #endif
 
 #if defined(_AMD64_)
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvSetVirtualProcessorXsaveState is deprecated; use WHvSetVirtualProcessorState")
 #endif
-
 HRESULT
 WINAPI
 WHvSetVirtualProcessorXsaveState(
@@ -280,6 +279,7 @@ WHvSetVirtualProcessorXsaveState(
     _In_reads_bytes_(BufferSizeInBytes) const VOID* Buffer,
     _In_ UINT32 BufferSizeInBytes
     );
+
 #endif
 
 HRESULT
@@ -317,7 +317,6 @@ WHvGetVirtualProcessorCounters(
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvGetVirtualProcessorInterruptControllerState2 is deprecated; use WHvGetVirtualProcessorState")
 #endif
-
 HRESULT
 WINAPI
 WHvGetVirtualProcessorInterruptControllerState2(
@@ -327,13 +326,13 @@ WHvGetVirtualProcessorInterruptControllerState2(
     _In_ UINT32 StateSize,
     _Out_opt_ UINT32* WrittenSize
     );
+
 #endif
 
 #if defined(_AMD64_)
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvSetVirtualProcessorInterruptControllerState2 is deprecated; use WHvSetVirtualProcessorState")
 #endif
-
 HRESULT
 WINAPI
 WHvSetVirtualProcessorInterruptControllerState2(
@@ -342,12 +341,12 @@ WHvSetVirtualProcessorInterruptControllerState2(
     _In_reads_bytes_(StateSize) const VOID* State,
     _In_ UINT32 StateSize
     );
+
 #endif
 
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvRegisterPartitionDoorbellEvent is deprecated; use WHvCreateNotificationPort")
 #endif
-
 HRESULT
 WINAPI
 WHvRegisterPartitionDoorbellEvent(
@@ -359,7 +358,6 @@ WHvRegisterPartitionDoorbellEvent(
 #if defined(NTDDI_VERSION) && (NTDDI_VERSION >= NTDDI_WIN10_FE)
 #pragma deprecated("WHvRegisterPartitionDoorbellEvent is deprecated; use WHvDeleteNotificationPort")
 #endif
-
 HRESULT
 WINAPI
 WHvUnregisterPartitionDoorbellEvent(
@@ -641,7 +639,6 @@ WHvPostVirtualProcessorSynicMessage(
     );
 
 #if defined(_AMD64_)
-
 HRESULT
 WINAPI
 WHvGetVirtualProcessorCpuidOutput(
@@ -651,10 +648,10 @@ WHvGetVirtualProcessorCpuidOutput(
     _In_ UINT32 Ecx,
     _Out_ WHV_CPUID_OUTPUT* CpuidOutput
     );
+
 #endif
 
 #if defined(_AMD64_)
-
 HRESULT
 WINAPI
 WHvGetInterruptTargetVpSet(
@@ -665,6 +662,7 @@ WHvGetInterruptTargetVpSet(
     _In_ UINT32 VpCount,
     _Out_ UINT32* TargetVpCount
     );
+
 #endif
 
 HRESULT

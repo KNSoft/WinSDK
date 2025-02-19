@@ -10,6 +10,19 @@
 #include "winrt/impl/Windows.Devices.Sensors.1.h"
 WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
 {
+    struct LightSensorChromaticity
+    {
+        double X;
+        double Y;
+    };
+    inline bool operator==(LightSensorChromaticity const& left, LightSensorChromaticity const& right) noexcept
+    {
+        return left.X == right.X && left.Y == right.Y;
+    }
+    inline bool operator!=(LightSensorChromaticity const& left, LightSensorChromaticity const& right) noexcept
+    {
+        return !(left == right);
+    }
     struct __declspec(empty_bases) Accelerometer : winrt::Windows::Devices::Sensors::IAccelerometer,
         impl::require<Accelerometer, winrt::Windows::Devices::Sensors::IAccelerometerDeviceId, winrt::Windows::Devices::Sensors::IAccelerometer2, winrt::Windows::Devices::Sensors::IAccelerometer3, winrt::Windows::Devices::Sensors::IAccelerometer4, winrt::Windows::Devices::Sensors::IAccelerometer5>
     {
@@ -204,7 +217,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         HingeAngleSensorReadingChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IHingeAngleSensorReadingChangedEventArgs(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) HumanPresenceFeatures : winrt::Windows::Devices::Sensors::IHumanPresenceFeatures,
-        impl::require<HumanPresenceFeatures, winrt::Windows::Devices::Sensors::IHumanPresenceFeatures2>
+        impl::require<HumanPresenceFeatures, winrt::Windows::Devices::Sensors::IHumanPresenceFeatures2, winrt::Windows::Devices::Sensors::IHumanPresenceFeatures3>
     {
         HumanPresenceFeatures(std::nullptr_t) noexcept {}
         HumanPresenceFeatures(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IHumanPresenceFeatures(ptr, take_ownership_from_abi) {}
@@ -239,7 +252,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         HumanPresenceSensorReadingUpdate();
     };
     struct __declspec(empty_bases) HumanPresenceSettings : winrt::Windows::Devices::Sensors::IHumanPresenceSettings,
-        impl::require<HumanPresenceSettings, winrt::Windows::Devices::Sensors::IHumanPresenceSettings2>
+        impl::require<HumanPresenceSettings, winrt::Windows::Devices::Sensors::IHumanPresenceSettings2, winrt::Windows::Devices::Sensors::IHumanPresenceSettings3>
     {
         HumanPresenceSettings(std::nullptr_t) noexcept {}
         HumanPresenceSettings(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IHumanPresenceSettings(ptr, take_ownership_from_abi) {}
@@ -283,7 +296,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         InclinometerReadingChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IInclinometerReadingChangedEventArgs(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) LightSensor : winrt::Windows::Devices::Sensors::ILightSensor,
-        impl::require<LightSensor, winrt::Windows::Devices::Sensors::ILightSensorDeviceId, winrt::Windows::Devices::Sensors::ILightSensor2, winrt::Windows::Devices::Sensors::ILightSensor3>
+        impl::require<LightSensor, winrt::Windows::Devices::Sensors::ILightSensorDeviceId, winrt::Windows::Devices::Sensors::ILightSensor2, winrt::Windows::Devices::Sensors::ILightSensor3, winrt::Windows::Devices::Sensors::ILightSensor4>
     {
         LightSensor(std::nullptr_t) noexcept {}
         LightSensor(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::ILightSensor(ptr, take_ownership_from_abi) {}
@@ -291,13 +304,14 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         static auto GetDeviceSelector();
         static auto FromIdAsync(param::hstring const& deviceId);
     };
-    struct __declspec(empty_bases) LightSensorDataThreshold : winrt::Windows::Devices::Sensors::ILightSensorDataThreshold
+    struct __declspec(empty_bases) LightSensorDataThreshold : winrt::Windows::Devices::Sensors::ILightSensorDataThreshold,
+        impl::require<LightSensorDataThreshold, winrt::Windows::Devices::Sensors::ILightSensorDataThreshold2>
     {
         LightSensorDataThreshold(std::nullptr_t) noexcept {}
         LightSensorDataThreshold(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::ILightSensorDataThreshold(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) LightSensorReading : winrt::Windows::Devices::Sensors::ILightSensorReading,
-        impl::require<LightSensorReading, winrt::Windows::Devices::Sensors::ILightSensorReading2>
+        impl::require<LightSensorReading, winrt::Windows::Devices::Sensors::ILightSensorReading2, winrt::Windows::Devices::Sensors::ILightSensorReading3>
     {
         LightSensorReading(std::nullptr_t) noexcept {}
         LightSensorReading(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::ILightSensorReading(ptr, take_ownership_from_abi) {}
@@ -388,6 +402,11 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
     {
         PedometerReadingChangedEventArgs(std::nullptr_t) noexcept {}
         PedometerReadingChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IPedometerReadingChangedEventArgs(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) PrivacyScreenOptions : winrt::Windows::Devices::Sensors::IPrivacyScreenOptions
+    {
+        PrivacyScreenOptions(std::nullptr_t) noexcept {}
+        PrivacyScreenOptions(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IPrivacyScreenOptions(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) ProximitySensor : winrt::Windows::Devices::Sensors::IProximitySensor
     {

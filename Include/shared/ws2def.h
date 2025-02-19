@@ -220,6 +220,10 @@ typedef USHORT ADDRESS_FAMILY;
 #define IP6T_SO_ORIGINAL_DST SO_ORIGINAL_DST
 #endif //(_WIN32_WINNT >= 0x0600)
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_GE)
+#define SO_RECEIVED_HOPLIMIT 0x3010
+#endif // NTDDI_VERSION >= NTDDI_WIN11_GE
+
 //
 // Base constant used for defining WSK-specific options.
 //
