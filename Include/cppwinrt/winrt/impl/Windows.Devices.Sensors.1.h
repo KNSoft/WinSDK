@@ -877,6 +877,13 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         IMagnetometerStatics2(std::nullptr_t = nullptr) noexcept {}
         IMagnetometerStatics2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
+    struct __declspec(empty_bases) IOnlookerDetectionOptions :
+        winrt::Windows::Foundation::IInspectable,
+        impl::consume_t<IOnlookerDetectionOptions>
+    {
+        IOnlookerDetectionOptions(std::nullptr_t = nullptr) noexcept {}
+        IOnlookerDetectionOptions(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) IOrientationSensor :
         winrt::Windows::Foundation::IInspectable,
         impl::consume_t<IOrientationSensor>
@@ -1009,13 +1016,6 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
     {
         IPedometerStatics2(std::nullptr_t = nullptr) noexcept {}
         IPedometerStatics2(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
-    };
-    struct __declspec(empty_bases) IPrivacyScreenOptions :
-        winrt::Windows::Foundation::IInspectable,
-        impl::consume_t<IPrivacyScreenOptions>
-    {
-        IPrivacyScreenOptions(std::nullptr_t = nullptr) noexcept {}
-        IPrivacyScreenOptions(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Foundation::IInspectable(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) IProximitySensor :
         winrt::Windows::Foundation::IInspectable,

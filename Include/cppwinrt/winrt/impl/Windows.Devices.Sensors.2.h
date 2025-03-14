@@ -351,6 +351,11 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
         MagnetometerReadingChangedEventArgs(std::nullptr_t) noexcept {}
         MagnetometerReadingChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IMagnetometerReadingChangedEventArgs(ptr, take_ownership_from_abi) {}
     };
+    struct __declspec(empty_bases) OnlookerDetectionOptions : winrt::Windows::Devices::Sensors::IOnlookerDetectionOptions
+    {
+        OnlookerDetectionOptions(std::nullptr_t) noexcept {}
+        OnlookerDetectionOptions(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IOnlookerDetectionOptions(ptr, take_ownership_from_abi) {}
+    };
     struct __declspec(empty_bases) OrientationSensor : winrt::Windows::Devices::Sensors::IOrientationSensor,
         impl::require<OrientationSensor, winrt::Windows::Devices::Sensors::IOrientationSensorDeviceId, winrt::Windows::Devices::Sensors::IOrientationSensor2, winrt::Windows::Devices::Sensors::IOrientationSensor3>
     {
@@ -402,11 +407,6 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Sensors
     {
         PedometerReadingChangedEventArgs(std::nullptr_t) noexcept {}
         PedometerReadingChangedEventArgs(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IPedometerReadingChangedEventArgs(ptr, take_ownership_from_abi) {}
-    };
-    struct __declspec(empty_bases) PrivacyScreenOptions : winrt::Windows::Devices::Sensors::IPrivacyScreenOptions
-    {
-        PrivacyScreenOptions(std::nullptr_t) noexcept {}
-        PrivacyScreenOptions(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Sensors::IPrivacyScreenOptions(ptr, take_ownership_from_abi) {}
     };
     struct __declspec(empty_bases) ProximitySensor : winrt::Windows::Devices::Sensors::IProximitySensor
     {

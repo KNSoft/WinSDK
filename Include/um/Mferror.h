@@ -3434,6 +3434,15 @@ Notes:
 //
 #define MF_E_CAMERA_PRIVACY_NOT_ALLOWED  _HRESULT_TYPEDEF_(0xC00DB798L)
 
+//
+// MessageId: MF_E_CAMERA_FSPROFILE_INVALID
+//
+// MessageText:
+//
+// Camera profile is invalid.%0
+//
+#define MF_E_CAMERA_FSPROFILE_INVALID    _HRESULT_TYPEDEF_(0xC00DB799L)
+
 
 //////////////////////////////////////////////////////////////////////////////
 //

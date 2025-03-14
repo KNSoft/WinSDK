@@ -56,11 +56,11 @@ namespace Windows
 
             typedef enum MagnetometerAccuracy MagnetometerAccuracy;
 
+            typedef enum OnlookerDetectionAction OnlookerDetectionAction;
+
+            typedef enum OnlookerDetectionBackOnMode OnlookerDetectionBackOnMode;
+
             typedef enum PedometerStepKind PedometerStepKind;
-
-            typedef enum PrivacyScreenAction PrivacyScreenAction;
-
-            typedef enum PrivacyScreenBackOnMode PrivacyScreenBackOnMode;
 
             typedef enum SensorOptimizationGoal SensorOptimizationGoal;
 
@@ -320,6 +320,8 @@ namespace Windows
 
             interface IMagnetometerStatics2;
 
+            interface IOnlookerDetectionOptions;
+
             interface IOrientationSensor;
 
             interface IOrientationSensor2;
@@ -357,8 +359,6 @@ namespace Windows
             interface IPedometerStatics;
 
             interface IPedometerStatics2;
-
-            interface IPrivacyScreenOptions;
 
             interface IProximitySensor;
 
@@ -496,6 +496,8 @@ namespace Windows
 
             runtimeclass MagnetometerReadingChangedEventArgs;
 
+            runtimeclass OnlookerDetectionOptions;
+
             runtimeclass OrientationSensor;
 
             runtimeclass OrientationSensorReading;
@@ -509,8 +511,6 @@ namespace Windows
             runtimeclass PedometerReading;
 
             runtimeclass PedometerReadingChangedEventArgs;
-
-            runtimeclass PrivacyScreenOptions;
 
             runtimeclass ProximitySensor;
 
@@ -730,17 +730,9 @@ namespace Windows
                 High        = 3
             };
 
-            [contract(Windows.Foundation.UniversalApiContract, 1.0)]
-            enum PedometerStepKind
-            {
-                Unknown = 0,
-                Walking = 1,
-                Running = 2
-            };
-
             [contract(Windows.Foundation.UniversalApiContract, 19.0)]
             [experimental]
-            enum PrivacyScreenAction
+            enum OnlookerDetectionAction
             {
                 Dim          = 0,
                 Notify       = 1,
@@ -749,12 +741,20 @@ namespace Windows
 
             [contract(Windows.Foundation.UniversalApiContract, 19.0)]
             [experimental]
-            enum PrivacyScreenBackOnMode
+            enum OnlookerDetectionBackOnMode
             {
                 Manually  = 0,
                 OneHour   = 1,
                 FourHours = 2,
                 OneDay    = 3
+            };
+
+            [contract(Windows.Foundation.UniversalApiContract, 1.0)]
+            enum PedometerStepKind
+            {
+                Unknown = 0,
+                Walking = 1,
+                Running = 2
             };
 
             [contract(Windows.Foundation.UniversalApiContract, 3.0)]
@@ -1464,10 +1464,10 @@ namespace Windows
             [contract(Windows.Foundation.UniversalApiContract, 19.0)]
             [exclusiveto(Windows.Devices.Sensors.HumanPresenceFeatures)]
             [experimental]
-            [uuid(78541E49-CB08-510C-B70F-123F3B2DD367)]
+            [uuid(ED4E03AA-5CA2-5C02-B783-262E91295619)]
             interface IHumanPresenceFeatures3 : IInspectable
             {
-                [propget] HRESULT IsPrivacyScreenSupported([out] [retval] boolean* value);
+                [propget] HRESULT IsOnlookerDetectionSupported([out] [retval] boolean* value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 15.0)]
@@ -1635,9 +1635,9 @@ namespace Windows
             [uuid(89757226-ACC1-4F58-81DF-47F1D69537F2)]
             interface IHumanPresenceSettings3 : IInspectable
             {
-                [propget] HRESULT IsPrivacyScreenEnabled([out] [retval] boolean* value);
-                [propput] HRESULT IsPrivacyScreenEnabled([in] boolean value);
-                [propget] HRESULT PrivacyScreenOptions([out] [retval] Windows.Devices.Sensors.PrivacyScreenOptions** value);
+                [propget] HRESULT IsOnlookerDetectionEnabled([out] [retval] boolean* value);
+                [propput] HRESULT IsOnlookerDetectionEnabled([in] boolean value);
+                [propget] HRESULT OnlookerDetectionOptions([out] [retval] Windows.Devices.Sensors.OnlookerDetectionOptions** value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 15.0)]
@@ -2021,6 +2021,18 @@ namespace Windows
                 HRESULT FromIdAsync([in] HSTRING deviceId, [out] [retval] Windows.Foundation.IAsyncOperation<Windows.Devices.Sensors.Magnetometer*>** operation);
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [exclusiveto(Windows.Devices.Sensors.OnlookerDetectionOptions)]
+            [experimental]
+            [uuid(0412B36F-36E6-51E2-876E-65197CC53C12)]
+            interface IOnlookerDetectionOptions : IInspectable
+            {
+                [propget] HRESULT Action([out] [retval] Windows.Devices.Sensors.OnlookerDetectionAction* value);
+                [propput] HRESULT Action([in] Windows.Devices.Sensors.OnlookerDetectionAction value);
+                [propget] HRESULT BackOnMode([out] [retval] Windows.Devices.Sensors.OnlookerDetectionBackOnMode* value);
+                [propput] HRESULT BackOnMode([in] Windows.Devices.Sensors.OnlookerDetectionBackOnMode value);
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [exclusiveto(Windows.Devices.Sensors.OrientationSensor)]
             [uuid(5E354635-CF6B-4C63-ABD8-10252B0BF6EC)]
@@ -2199,18 +2211,6 @@ namespace Windows
             interface IPedometerStatics2 : IInspectable
             {
                 HRESULT GetReadingsFromTriggerDetails([in] Windows.Devices.Sensors.SensorDataThresholdTriggerDetails* triggerDetails, [out] [retval] Windows.Foundation.Collections.IVectorView<Windows.Devices.Sensors.PedometerReading*>** result);
-            }
-
-            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
-            [exclusiveto(Windows.Devices.Sensors.PrivacyScreenOptions)]
-            [experimental]
-            [uuid(800805EA-18E7-55EA-928E-4E165D139D52)]
-            interface IPrivacyScreenOptions : IInspectable
-            {
-                [propget] HRESULT Action([out] [retval] Windows.Devices.Sensors.PrivacyScreenAction* value);
-                [propput] HRESULT Action([in] Windows.Devices.Sensors.PrivacyScreenAction value);
-                [propget] HRESULT BackOnMode([out] [retval] Windows.Devices.Sensors.PrivacyScreenBackOnMode* value);
-                [propput] HRESULT BackOnMode([in] Windows.Devices.Sensors.PrivacyScreenBackOnMode value);
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2840,6 +2840,14 @@ namespace Windows
                 [default] interface Windows.Devices.Sensors.IMagnetometerReadingChangedEventArgs;
             }
 
+            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
+            [experimental]
+            [marshaling_behavior(agile)]
+            runtimeclass OnlookerDetectionOptions
+            {
+                [default] [experimental] interface Windows.Devices.Sensors.IOnlookerDetectionOptions;
+            }
+
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]
             [marshaling_behavior(agile)]
             [static(Windows.Devices.Sensors.IOrientationSensorStatics, Windows.Foundation.UniversalApiContract, 1.0)]
@@ -2904,14 +2912,6 @@ namespace Windows
             runtimeclass PedometerReadingChangedEventArgs
             {
                 [default] interface Windows.Devices.Sensors.IPedometerReadingChangedEventArgs;
-            }
-
-            [contract(Windows.Foundation.UniversalApiContract, 19.0)]
-            [experimental]
-            [marshaling_behavior(agile)]
-            runtimeclass PrivacyScreenOptions
-            {
-                [default] [experimental] interface Windows.Devices.Sensors.IPrivacyScreenOptions;
             }
 
             [contract(Windows.Foundation.UniversalApiContract, 1.0)]

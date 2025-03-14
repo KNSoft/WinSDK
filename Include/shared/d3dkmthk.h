@@ -1719,6 +1719,7 @@ typedef struct _D3DKMT_OPENNATIVEFENCEFROMNTHANDLE
     D3DDDI_SYNCHRONIZATIONOBJECT_FLAGS  Flags;              // in: Flags.
     D3DKMT_HANDLE                       hSyncObject;        // out: Handle to the opened fence object
     D3DDDI_NATIVEFENCEMAPPING           NativeFenceMapping; // out: process mapping information for the fence object
+    BYTE                                PrivateDriverData[D3DDDI_NATIVE_FENCE_PDD_SIZE]; // in/out: Private driver data to pass to KMD DdiOpenNativeFence call and copy back to UMD
     BYTE                                Reserved[32];
 } D3DKMT_OPENNATIVEFENCEFROMNTHANDLE;
 

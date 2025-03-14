@@ -8371,6 +8371,14 @@ DEFINE_PROPERTYKEY(PKEY_Link_TargetUrl, 0x5CBF2787, 0x48CF, 0x4208, 0xB9, 0x0E, 
 DEFINE_PROPERTYKEY(PKEY_NamespaceCLSID, 0x28636AA6, 0x953D, 0x11D2, 0xB5, 0xD6, 0x00, 0xC0, 0x4F, 0xD9, 0x18, 0xD0, 6);
 #define INIT_PKEY_NamespaceCLSID { { 0x28636AA6, 0x953D, 0x11D2, 0xB5, 0xD6, 0x00, 0xC0, 0x4F, 0xD9, 0x18, 0xD0 }, 6 }
 
+//  Name:     System.Shell.CopilotKeyProviderFastPathMessage -- PKEY_Shell_CopilotKeyProviderFastPathMessage
+//  Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)
+//  FormatID: {38652BCA-4329-4E74-86F9-39CF29345EEA}, 2
+//  
+//  Property for Copilot Key Provider application to opt in to fastpath activation
+DEFINE_PROPERTYKEY(PKEY_Shell_CopilotKeyProviderFastPathMessage, 0x38652BCA, 0x4329, 0x4E74, 0x86, 0xF9, 0x39, 0xCF, 0x29, 0x34, 0x5E, 0xEA, 2);
+#define INIT_PKEY_Shell_CopilotKeyProviderFastPathMessage { { 0x38652BCA, 0x4329, 0x4E74, 0x86, 0xF9, 0x39, 0xCF, 0x29, 0x34, 0x5E, 0xEA }, 2 }
+
 //  Name:     System.Shell.SFGAOFlagsStrings -- PKEY_Shell_SFGAOFlagsStrings
 //  Type:     Multivalue String -- VT_VECTOR | VT_LPWSTR  (For variants: VT_ARRAY | VT_BSTR)
 //  FormatID: {D6942081-D53B-443D-AD47-5E059D9CD27A}, 2

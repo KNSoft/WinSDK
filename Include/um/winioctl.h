@@ -366,6 +366,7 @@ extern "C" {
 #define IOCTL_STORAGE_GET_MEDIA_SERIAL_NUMBER CTL_CODE(IOCTL_STORAGE_BASE, 0x0304, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_STORAGE_GET_HOTPLUG_INFO        CTL_CODE(IOCTL_STORAGE_BASE, 0x0305, METHOD_BUFFERED, FILE_ANY_ACCESS)
 #define IOCTL_STORAGE_SET_HOTPLUG_INFO        CTL_CODE(IOCTL_STORAGE_BASE, 0x0306, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)
+#define IOCTL_STORAGE_GET_SYSTEM_FEATURE_SUPPORT CTL_CODE(IOCTL_STORAGE_BASE, 0x0307, METHOD_BUFFERED, FILE_READ_ACCESS)
 
 #define IOCTL_STORAGE_RESET_BUS               CTL_CODE(IOCTL_STORAGE_BASE, 0x0400, METHOD_BUFFERED, FILE_READ_ACCESS)
 #define IOCTL_STORAGE_RESET_DEVICE            CTL_CODE(IOCTL_STORAGE_BASE, 0x0401, METHOD_BUFFERED, FILE_READ_ACCESS)
@@ -552,6 +553,56 @@ typedef struct _STORAGE_HOTPLUG_INFO {
     BOOLEAN DeviceHotplug;  // ie. 1394, USB, etc.
     BOOLEAN WriteCacheEnableOverride; // This field should not be relied upon because it is no longer used
 } STORAGE_HOTPLUG_INFO, *PSTORAGE_HOTPLUG_INFO;
+
+//
+// IOCTL_STORAGE_GET_SYSTEM_FEATURE_SUPPORT
+//
+// This IOCTL can be sent to any disk or adapter device but the query itself returns system-wide
+// feature support as offered by the currently-installed version of the storage stack.
+//
+
+#define STORAGE_FEATURE_SUPPORT_V1              0x1
+
+#pragma warning(push)
+#pragma warning(disable:4201) // nameless struct/unions
+#pragma warning(disable:4214) // bit fields other than int to disable this around the struct
+
+typedef struct _STORAGE_FEATURE_SUPPORT {
+    //
+    // Size of this structure
+    //
+    DWORD Size;
+
+    //
+    // Version of this structure
+    //
+    DWORD Version;
+
+    union {
+
+        struct {
+
+            //
+            // If set to '1', indicates that support for StorMQ miniports is present
+            //
+            DWORDLONG StorMQMiniportsSupported : 1;
+
+            //
+            // Reserved for future use. Must be set to zero.
+            //
+            DWORDLONG Reserved : 63;
+
+        } DUMMYSTRUCTNAME;
+
+        DWORDLONG AsUlonglong;
+
+    } Flags;
+
+    DWORDLONG Reserved[6];
+
+} STORAGE_FEATURE_SUPPORT, *PSTORAGE_FEATURE_SUPPORT;
+
+#pragma warning(pop)
 
 //
 // IOCTL_STORAGE_GET_DEVICE_NUMBER

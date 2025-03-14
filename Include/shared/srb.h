@@ -888,6 +888,34 @@ typedef struct _SCSI_PNP_REQUEST_BLOCK {
 #define POINTER_ALIGN
 #endif
 
+#if (NTDDI_VERSION >= NTDDI_WIN11_DT)
+
+//
+// This is the STOR_ADDRESS type used by StorMQ.
+// The Controller field will contain the StorMQ controller extension known to the miniport.
+//
+
+//
+// N.B. The other legacy STOR_ADDRESS_TYPE_xxx values and structs are defined in scsi.h.
+// Any updates to STOR_ADDRESS should be put here to not introduce new dependencies on legacy
+// SCSI infrastructure.
+//
+#define STOR_ADDRESS_TYPE_NVME      0x2
+
+#define STOR_ADDR_NVME_ADDRESS_LENGTH    16
+typedef struct STOR_ADDRESS_ALIGN _STOR_ADDR_NVME {
+    _Field_range_(STOR_ADDRESS_TYPE_NVME, STOR_ADDRESS_TYPE_NVME)
+    USHORT Type;
+    USHORT Port;
+    _Field_range_(STOR_ADDR_NVME_ADDRESS_LENGTH, STOR_ADDR_NVME_ADDRESS_LENGTH)
+    ULONG AddressLength;
+    PVOID Controller;
+    ULONG NamespaceId;
+    ULONG Reserved;
+} STOR_ADDR_NVME, *PSTOR_ADDR_NVME;
+
+#endif
+
 // SRB extended data types.
 
 

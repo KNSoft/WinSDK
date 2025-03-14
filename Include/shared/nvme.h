@@ -45,6 +45,7 @@ Revision:
 
 #define NVME_CONTROLLER_ID_MIN           0x0000
 #define NVME_CONTROLLER_ID_MAX           0xFFEF
+#define NVME_CONTROLLER_ID_STAT_PERSIST  0xFFFE
 #define NVME_CONTROLLER_ID_DYN           0xFFFF
 
 //
@@ -716,6 +717,9 @@ typedef enum {
     NVME_IO_COMMAND_SET_COMBINATION_REJECTED                        = 0x2B,         // Set Features
     NVME_IO_COMMAND_SET_INVALID                                     = 0x2C,         // Identify, Namespace Management
 
+    NVME_STATUS_INVALID_DISCOVERY_INFORMATION                       = 0x2F,         // Discovery Information Management
+    NVME_STATUS_INSUFFICIENT_DISCOVERY_RESOURCES                    = 0x32,         // Discovery Information Management
+
     NVME_STATUS_STREAM_RESOURCE_ALLOCATION_FAILED                   = 0x7F,         // Streams Directive
     NVME_STATUS_ZONE_INVALID_FORMAT                                 = 0x7F,         // Namespace Management
 
@@ -736,7 +740,7 @@ typedef enum {
 } NVME_STATUS_COMMAND_SPECIFIC_CODES;
 
 //
-//  Status Code (SC) of NVME_STATUS_TYPE_COMMAND_SPECIFIC, Fabrics Commands
+//  Status Code (SC) of NVME_STATUS_TYPE_COMMAND_SPECIFIC, Fabrics Commands (NVME_ADMIN_COMMAND_FABRICS)
 //
 typedef enum {
 
@@ -815,7 +819,11 @@ typedef enum {
     NVME_ADMIN_COMMAND_NVME_MI_SEND             = 0x1D,
     NVME_ADMIN_COMMAND_NVME_MI_RECEIVE          = 0x1E,
 
+    NVME_ADMIN_COMMAND_DISCOVERY_INFO_MGMT      = 0x21,
+
     NVME_ADMIN_COMMAND_DOORBELL_BUFFER_CONFIG   = 0x7C,
+
+    NVME_ADMIN_COMMAND_FABRICS                  = 0x7F,
 
     NVME_ADMIN_COMMAND_FORMAT_NVM               = 0x80,
     NVME_ADMIN_COMMAND_SECURITY_SEND            = 0x81,
@@ -905,7 +913,7 @@ typedef enum {
 
     NVME_IDENTIFY_CNS_SPECIFIC_NAMESPACE_IO_COMMAND_SET     = 0x5,
     NVME_IDENTIFY_CNS_SPECIFIC_CONTROLLER_IO_COMMAND_SET    = 0x6,
-    NVME_IDENTIFY_CNS_ACTIVE_NAMESPACE_LIST_IO_COMMAND_SET  = 0x7, 
+    NVME_IDENTIFY_CNS_ACTIVE_NAMESPACE_LIST_IO_COMMAND_SET  = 0x7,
 
     NVME_IDENTIFY_CNS_ALLOCATED_NAMESPACE_LIST              = 0x10,
     NVME_IDENTIFY_CNS_ALLOCATED_NAMESPACE                   = 0x11,
@@ -951,9 +959,9 @@ typedef union {
         USHORT  NVMSETID;               // NVM Set Identifier
         USHORT  Reserved;
     } DUMMYSTRUCTNAME;
-    
+
     struct {
-        ULONG   CNSID       : 16;       // CNS Specific Identifier (NVM Set ID/Domain ID/Endurance Group ID) 
+        ULONG   CNSID       : 16;       // CNS Specific Identifier (NVM Set ID/Domain ID/Endurance Group ID)
         ULONG   Reserved2   : 8;
         ULONG   CSI         : 8;        // Command Set Identifier (CSI, Defined in NVME_COMMAND_SET_IDENTIFIERS)
     } DUMMYSTRUCTNAME2;
@@ -1107,7 +1115,7 @@ typedef struct {
         UCHAR   Reserved            : 7;
     } NSATTR;                           // byte 99 O - Namespace Attributes
 
-    USHORT          NVMSETID;           // byte 100:101 O - Associated NVM Set Identifier: 1-based value specifying NVM Set of this namespace. 
+    USHORT          NVMSETID;           // byte 100:101 O - Associated NVM Set Identifier: 1-based value specifying NVM Set of this namespace.
 
     USHORT          ENDGID;             // byte 102:103 O - Associated Endurance Group Identier
 
@@ -1129,6 +1137,21 @@ typedef struct {
 //
 // Output of NVME_IDENTIFY_CNS_CONTROLLER (0x01)
 //
+
+//
+// Discovery Controller Type
+//
+typedef enum _NVME_DISC_CTRL_TYPE {
+
+    NvmeDiscCtrlTypeUnspecified = 0,
+    NvmeDiscCtrlTypeDDC         = 1,
+    NvmeDiscCtrlTypeCDC         = 2,
+    NvmeDiscCtrlTypeReserved1   = 3,
+    NvmeDiscCtrlTypeReservedMax = 255,
+
+} NVME_DISC_CTRL_TYPE;
+
+
 typedef struct {
     USHORT  MP;                 // bit 0:15.    Maximum  Power (MP)
 
@@ -1184,7 +1207,7 @@ typedef struct {
     UCHAR   IEEE[3];            // byte 73:75.  M - IEEE OUI Identifier (IEEE). Controller Vendor code.
 
     struct {
-        UCHAR   MultiPCIePorts      : 1;
+        UCHAR   MultiPorts          : 1;
         UCHAR   MultiControllers    : 1;
         UCHAR   SRIOV               : 1;
         UCHAR   ANAR                : 1;
@@ -1253,11 +1276,11 @@ typedef struct {
     } RRLS;                     // byte 100:101. O - Read Recovery Levels Supported (RRLS)
 
     UCHAR   Reserved0[9];       // byte 102:110.
-    
+
     UCHAR   CNTRLTYPE;          // byte 111.     M - Controller Type
     UCHAR   FGUID[16];          // byte 112:127. O - FRU Globally Unique Identifier (FGUID)
 
-    USHORT  CRDT1;              // byte 128:129. O - Command Retry Delay Time 1 
+    USHORT  CRDT1;              // byte 128:129. O - Command Retry Delay Time 1
     USHORT  CRDT2;              // byte 130:131. O - Command Retry Delay Time 1
     USHORT  CRDT3;              // byte 132:133. O - Command Retry Delay Time 1
 
@@ -1362,7 +1385,7 @@ typedef struct {
 
     USHORT  NSETIDMAX;          // byte 338:339  O - NVM Set Identifier Maximum: 1-based maximum value of a valid NVM Set Identifier.
     USHORT  ENDGIDMAX;          // byte 340:341  O - Endurance Group Identifier Maximum (ENDGIDMAX)
-    
+
     UCHAR   ANATT;              // byte 342      O - ANA Transition Time (ANATT)
 
     struct {
@@ -1375,19 +1398,25 @@ typedef struct {
         UCHAR   StaticANAGRPID          : 1;     // If set, ANAGRPID in Identify Namespace doesn't change
         UCHAR   SupportNonZeroANAGRPID  : 1;     // If set, Controller supports a non-zero value in ANAGRPID field of Namespace Mgmt Command
     } ANACAP;                   // byte 343      O - Asymmetric Namespace Access Capabilities (ANACAP)
-   
+
     ULONG  ANAGRPMAX;           // byte 344:347  O - ANA Group Identifier Maximum (ANAGRPMAX)
     ULONG  NANAGRPID;           // byte 348:351  O - Number of ANA Group Identifiers (NANAGRPID)
 
     ULONG   PELS;               // byte 352:355  O - Persistent Event Log Size (PELS)
-    
+
     USHORT  DomainId;           // byte 356:357  O - Domain Identifier
 
     UCHAR   Reserved2[10];      // byte 358:367
 
     UCHAR   MEGCAP[16];         // byte 368:383  O - Max Endurance Group Capacity
 
-    UCHAR   Reserved3[128];     // byte 384:511.
+    UCHAR   TMPTHHA;            // byte 384      O - Temperature Threshold Hysteresis Attributes
+
+    UCHAR   Reserved3;          // byte 385
+
+    USHORT  CQT;                // byte 386:387  M - Command Quiesce Time (milliseconds)
+
+    UCHAR   Reserved4[124];     // byte 388:511
 
     //
     // byte 512 : 703, NVM Command Set Attributes
@@ -1503,7 +1532,9 @@ typedef struct {
         USHORT   Reserved        : 15;
     } OFCS;                    // byte 1804:1805. M - Optional Fabric Commands Support (OFCS)
 
-    UCHAR   Reserved8[242];    // byte 1806:2047
+    UCHAR DCTYPE;              // byte 1806. Discovery Controller Type (NVME_DISC_CTRL_TYPE)
+
+    UCHAR   Reserved8[241];    // byte 1807:2047
 
     //
     // byte 2048 : 3071, Power State Descriptors
@@ -1556,7 +1587,7 @@ typedef enum {
     NVME_IDENTIFIER_TYPE_NGUID      = 0x2,
     NVME_IDENTIFIER_TYPE_UUID       = 0x3,
     NVME_IDENTIFIER_TYPE_CSI        = 0x4,
-    
+
 } NVME_IDENTIFIER_TYPE;
 
 //
@@ -1567,7 +1598,7 @@ typedef enum {
     NVME_IDENTIFIER_TYPE_NGUID_LENGTH      = 0x10,
     NVME_IDENTIFIER_TYPE_UUID_LENGTH       = 0x10,
     NVME_IDENTIFIER_TYPE_CSI_LENGTH        = 0x1,
-    
+
 } NVME_IDENTIFIER_TYPE_LENGTH;
 
 //
@@ -1754,7 +1785,7 @@ typedef struct {
 } IO_COMMAND_SET_VECTOR, *PIO_COMMAND_SET_VECTOR;
 
 typedef struct {
-    
+
     IO_COMMAND_SET_VECTOR IOCommandSetVector[512];
 
 } NVME_IDENTIFY_IO_COMMAND_SET, *PNVME_IDENTIFY_IO_COMMAND_SET;
@@ -1936,7 +1967,7 @@ typedef enum _NVME_WCS_DEVICE_RECOVERY_ACTION1
 {
     NVMeDeviceRecoveryNoAction = 0,          // Requires no action
     NVMeDeviceRecoveryFormatNVM,             // Requires Format NVM
-    NVMeDeviceRecoveryVendorSpecificCommand, // Requires Vendor Specific Command 
+    NVMeDeviceRecoveryVendorSpecificCommand, // Requires Vendor Specific Command
     NVMeDeviceRecoveryVendorAnalysis,        // Requires Vendor Analysis
     NVMeDeviceRecoveryDeviceReplacement,     // Requires Device Replacement
     NVMeDeviceRecoverySanitize,              // Requires Sanitize
@@ -2822,6 +2853,19 @@ typedef union {
 
 } NVME_CDW11_CREATE_IO_CQ, *PNVME_CDW11_CREATE_IO_CQ;
 
+//
+// Parameters for NVME_ADMIN_COMMAND_DELETE_IO_CQ and NVME_ADMIN_COMMAND_DELETE_IO_SQ
+//
+typedef union {
+
+    struct {
+        ULONG   QID         : 16;       // Queue Identifier (QID)
+        ULONG   Reserved    : 16;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW10_DELETE_IO_QUEUE, *PNVME_CDW10_DELETE_IO_QUEUE;
 
 //
 // Parameters for NVME_ADMIN_COMMAND_CREATE_IO_SQ
@@ -3614,7 +3658,7 @@ typedef enum {
 
 //
 // Get LOG PAGE format which conforms to < 1.2.1 NVMe Specification
-// 
+//
 typedef union {
 
     struct {
@@ -3645,7 +3689,7 @@ typedef union {
 
 //
 // Get Log Page CDW10 format for NVM Express specification revisions 1.3a thru 1.4, inclusive.
-// 
+//
 typedef union {
 
     struct {
@@ -3662,7 +3706,7 @@ typedef union {
 
 //
 // Get Log Page CDW10 format for NVM Express Base Specification revision 2.0a and above.
-// 
+//
 typedef union {
 
     struct {
@@ -3677,7 +3721,7 @@ typedef union {
 } NVME_CDW10_GET_LOG_PAGE_V20, *PNVME_CDW10_GET_LOG_PAGE_V20;
 
 //
-// Defined values for bits 09:08 of Log Specific Field (LSP) in CDW10 for Get Log Page, Persistent Event Log (Log Identifier 0Dh) 
+// Defined values for bits 09:08 of Log Specific Field (LSP) in CDW10 for Get Log Page, Persistent Event Log (Log Identifier 0Dh)
 // NVM Express Base Specification, revision >= 2.0a.
 //
 
@@ -3730,7 +3774,7 @@ typedef union {
 
     struct {
         ULONG   UUIDIndex               : 7;       // UUID Index
-        ULONG   Reserved                : 16;   
+        ULONG   Reserved                : 16;
         ULONG   OffsetType              : 1;       // Offset Type (OT)
         ULONG   CommandSetIdentifier    : 8;       // Command Set Identifier (CSI)
     } DUMMYSTRUCTNAME;
@@ -3788,7 +3832,7 @@ typedef struct {
     ULONGLONG           ErrorCount;
     USHORT              SQID;           // Submission Queue ID
     USHORT              CMDID;          // Command ID
-    NVME_COMMAND_STATUS Status;         // Status Field: This field indicates the Status Field for the command  that completed.  The Status 
+    NVME_COMMAND_STATUS Status;         // Status Field: This field indicates the Status Field for the command  that completed.  The Status
                                         // Field is located in bits 15:01, bit 00 corresponds to the Phase Tag posted for the command.
 
     struct {
@@ -5037,12 +5081,12 @@ typedef enum {
     NVME_NVM_COMMAND_COMPARE                = 0x05,
     NVME_NVM_COMMAND_WRITE_ZEROES           = 0x08,
     NVME_NVM_COMMAND_DATASET_MANAGEMENT     = 0x09,
-    NVME_NVM_COMMAND_VERIFY                 = 0x0C,    
+    NVME_NVM_COMMAND_VERIFY                 = 0x0C,
     NVME_NVM_COMMAND_RESERVATION_REGISTER   = 0x0D,
     NVME_NVM_COMMAND_RESERVATION_REPORT     = 0x0E,
     NVME_NVM_COMMAND_RESERVATION_ACQUIRE    = 0x11,
     NVME_NVM_COMMAND_RESERVATION_RELEASE    = 0x15,
-    NVME_NVM_COMMAND_COPY                   = 0x19, 
+    NVME_NVM_COMMAND_COPY                   = 0x19,
 
     NVME_NVM_COMMAND_ZONE_MANAGEMENT_SEND       = 0x79,
     NVME_NVM_COMMAND_ZONE_MANAGEMENT_RECEIVE    = 0x7A,
@@ -5240,10 +5284,10 @@ typedef enum {
     NVME_ZONE_SEND_CLOSE        = 1,    // Close one or more zones
     NVME_ZONE_SEND_FINISH       = 2,    // Finish one or more zones
     NVME_ZONE_SEND_OPEN         = 3,    // Open one or more zones
-    NVME_ZONE_SEND_RESET        = 4,    // Reset one or more zones  
-    NVME_ZONE_SEND_OFFLINE      = 5,    // Offline one or more zones  
+    NVME_ZONE_SEND_RESET        = 4,    // Reset one or more zones
+    NVME_ZONE_SEND_OFFLINE      = 5,    // Offline one or more zones
 
-    NVME_ZONE_SEND_SET_ZONE_DESCRIPTOR      = 0x10,    // Attach Zone Descriptor Extension data to a zone in the Empty state and 
+    NVME_ZONE_SEND_SET_ZONE_DESCRIPTOR      = 0x10,    // Attach Zone Descriptor Extension data to a zone in the Empty state and
                                                        // transition the zone to the Closed state
 } NVME_ZONE_SEND_ACTION;
 
@@ -5384,6 +5428,28 @@ typedef union {
     ULONG   AsUlong;
 
 } NVME_CDW10_DEVICE_SELF_TEST, *PNVME_CDW10_DEVICE_SELF_TEST;
+
+//
+// Parameters for NVME_ADMIN_COMMAND_DISCOVERY_INFO_MGMT
+//
+typedef enum {
+
+    NVME_DISCOVERY_INFO_MGMT_TASK_REGISTER = 0,
+    NVME_DISCOVERY_INFO_MGMT_TASK_DEREGISTER = 1,
+    NVME_DISCOVERY_INFO_MGMT_TASK_UPDATE = 2
+
+} NVME_DISCOVERY_INFO_MGMT_TASK;
+
+typedef union {
+
+    struct {
+        ULONG   TAS         : 4;       // Task (TAS) - NVME_DISCOVERY_INFO_MGMT_TASK
+        ULONG   Reserved    : 28;
+    } DUMMYSTRUCTNAME;
+
+    ULONG   AsUlong;
+
+} NVME_CDW10_DISCOVERY_INFO_MGMT, *PNVME_CDW10_DISCOVERY_INFO_MGMT;
 
 //
 // Command Dword 0
@@ -5577,6 +5643,13 @@ typedef struct {
         } CREATEIOSQ;
 
         //
+        // Admin Command: Delete IO Queue (Submission or Completion)
+        //
+        struct {
+            NVME_CDW10_DELETE_IO_QUEUE CDW10;
+        } DELETEIOQUEUE;
+
+        //
         // NVM Command: Dataset Management
         //
         struct {
@@ -5683,7 +5756,7 @@ typedef struct {
             ULONG   CDW14;
             ULONG   CDW15;
         } SANITIZE;
-        
+
         //
         // NVM Command: Read/Write
         //
@@ -5788,6 +5861,18 @@ typedef struct {
             ULONG                       CDW14;
             ULONG                       CDW15;
         } DEVICESELFTEST;
+
+        //
+        //
+        //
+        struct {
+            NVME_CDW10_DISCOVERY_INFO_MGMT CDW10;
+            ULONG                          CDW11;
+            ULONG                          CDW12;
+            ULONG                          CDW13;
+            ULONG                          CDW14;
+            ULONG                          CDW15;
+        } DISCOVERYINFOMGMT;
 
         //
         // Admin or NVM Command: Vendor Specific Common Format
@@ -5986,6 +6071,16 @@ typedef struct _NVME_SGL_LASTSEG_DESC {
 C_ASSERT(sizeof(NVME_SGL_LASTSEG_DESC) == 2 * sizeof(ULONGLONG));
 
 //
+// SGL Descriptor Sub Type defined in
+// the Scatter Gather List section
+//
+typedef enum _NVME_RDMA_KEYED_SGL_DESC_SUBTYPE {
+
+    NvmeRdmaKeyedSglDescSubtypeInvalidate = 0xF
+
+} NVME_RDMA_KEYED_SGL_DESC_SUBTYPE;
+
+//
 // NVMe SGL Keyed Data Block descriptor
 //
 typedef struct _NVME_SGL_KEYDATABLOCK_DESC {
@@ -6058,8 +6153,6 @@ C_ASSERT(sizeof(NVME_SGL_TRANSPORTDATA_DESC) == 2 * sizeof(ULONGLONG));
 #define NVMEOF_NUM_AEN_DISC_CTRL           1 // Number of AEN commands for Discovery controller
 #define NVMEOF_NUM_AEN_IO_CTRL             1 // Number of AEN commands for IO controller
 
-#define NVME_FABRICS_COMMAND               0x7F
-
 //
 // Fabrics Command Types
 //
@@ -6111,10 +6204,11 @@ typedef enum _NVMEOF_ADDRESS_FAMILY {
 //
 typedef enum _NVMEOF_SUBSYSTEM_TYPE {
 
-    NvmeofSubsysTypeUnknown   = 0,
-    NvmeofSubsysTypeDiscovery = 1,
-    NvmeofSubsysTypeIo        = 2,
-    NvmeofSubsysTypeMax       = 255
+    NvmeofSubsysTypeUnknown      = 0,
+    NvmeofSubsysTypeDiscReferral = 1,
+    NvmeofSubsysTypeIo           = 2,
+    NvmeofSubsysTypeDiscCurrent  = 3,
+    NvmeofSubsysTypeMax          = 255
 
 } NVMEOF_SUBSYSTEM_TYPE;
 
@@ -6125,12 +6219,27 @@ typedef enum _NVMEOF_SUBSYSTEM_TYPE {
 //
 typedef enum _NVMEOF_SECURE_CHANNEL {
 
-    NvmeofFSCUnspecified = 0,
-    NvmeofFSCRequired    = 1,
-    NvmeofFSCNotRequired = 2,
-    NvmeofFSCReserved    = 3
+    NvmeofSCUnspecified = 0,
+    NvmeofSCRequired    = 1,
+    NvmeofSCNotRequired = 2,
+    NvmeofSCReserved    = 3
 
 } NVMEOF_SECURE_CHANNEL;
+
+//
+// Fabric authentication and secure channel
+// requirement in the Transport requirements
+// (TREQ) field in the Get Log Page -
+// Discovery Log Page Entry
+//
+typedef enum _NVMEOF_AUTH_SECURE_CHANNEL {
+
+    NvmeofAuthSCUnspecified          = 0,
+    NvmeofAuthSCAuthRequired         = 1,
+    NvmeofAuthSCAuthConcatSCRequired = 2,
+    NvmeofAuthSCReserved             = 3
+
+} NVMEOF_AUTH_SECURE_CHANNEL;
 
 //
 // NVMe Fabrics Command Capsule
@@ -6185,7 +6294,7 @@ typedef struct _NVMEOF_CONNECT_COMMAND {
             UCHAR PriorityClass : 2;
             UCHAR SqFlowControlDisable : 1;
             UCHAR IoQueueDeletion : 1;
-            UCHAR Reserved : 4; 
+            UCHAR Reserved : 4;
         } DUMMYSTRUCTNAME;
 
         UCHAR AsUchar;
@@ -6475,21 +6584,24 @@ typedef struct _NVMEOF_AUTH_SEND_RESPONSE {
 C_ASSERT(sizeof(NVMEOF_AUTH_SEND_RESPONSE) == 16);
 
 //
-// NVMeoF Discovery Log Page and Entry
+// NVMe Discovery and Extended Discovery Entry
+// for Subsystem and Host information.
 //
-typedef struct _NVMEOF_DISC_LPE {
+typedef struct _NVME_DISCOVERY_ENTRY {
 
-    UCHAR TRTYPE;  // NVMEOF_TRANSPORT_TYPE
-    UCHAR ADRFAM;  // NVMEOF_ADDRESS_FAMILY
-    UCHAR SUBTYPE; // NVMEOF_SUBSYSTEM_TYPE
+    UCHAR TRTYPE;  // Transport Type - NVMEOF_TRANSPORT_TYPE
+    UCHAR ADRFAM;  // Address Family - NVMEOF_ADDRESS_FAMILY
+    UCHAR SUBTYPE; // Subsystem Type - NVMEOF_SUBSYSTEM_TYPE
 
     union {
 
         struct {
 
-            UCHAR FabricSecureChannel : 2; // NVMEOF_SECURE_CHANNEL
+            UCHAR SecureChannel : 2; // NVMEOF_SECURE_CHANNEL
             UCHAR SqFlowControlDisable : 1;
-            UCHAR Reserved : 5; 
+            UCHAR ZeroHostIdSupport : 1;
+            UCHAR AuthAndSecureChannel : 2; //NVMEOF_AUTH_SECURE_CHANNEL
+            UCHAR Reserved : 2;
         } DUMMYSTRUCTNAME;
 
         UCHAR AsUchar;
@@ -6504,25 +6616,216 @@ typedef struct _NVMEOF_DISC_LPE {
                    // If subsystem supports static controller model and value is between
                    // 0h and FFEFh, then a specific controller is specified.
     USHORT ASQSZ;  // Maximum size of an Admin Submission Queue, minimum value of 32
-    UCHAR Reserved0[22];
+
+    union {
+
+        struct {
+
+            USHORT DuplicateReturnedInfo : 1;
+            USHORT ExplicitPersistentConnectionSupport : 1;
+            USHORT NoCDCConnectivity : 1;
+            USHORT Reserved : 13;
+        } DUMMYSTRUCTNAME;
+
+        USHORT AsUshort;
+
+    } EFLAGS;        // Entry Flags
+
+    UCHAR Reserved0[20];
     UCHAR TRSVCID[NVMEOF_TRANSPORT_SERVID_MAX_LEN]; // NVMe Transport service identifier
     UCHAR Reserved1[192];
-    UCHAR SUBNQN[NVME_NQN_MAX_LEN]; // NQN that uniquely identifies the NVM subsystem
-    UCHAR TRADDR[NVMEOF_TRANSPORT_ADDR_MAX_LEN]; // Address of the NVM subsystem for Connect
+    UCHAR NQN[NVME_NQN_MAX_LEN]; // NQN that uniquely identifies the NVM entity (Subsystem/Host)
+
+    UCHAR TRADDR[NVMEOF_TRANSPORT_ADDR_MAX_LEN]; // Address of the fabric interface on the NVM entity (Subsystem/Host)
     UCHAR TSAS[NVMEOF_TRANSPORT_SAS_MAX_LEN]; // Transport specific information of the address
 
-} NVMEOF_DISC_LPE, *PNVMEOF_DISC_LPE;
+} NVME_DISCOVERY_ENTRY, *PNVME_DISCOVERY_ENTRY;
 
+C_ASSERT(sizeof(NVME_DISCOVERY_ENTRY) == 1024);
 
-typedef struct _NVMEOF_DISC_LOGPAGE {
+typedef struct _NVME_EXTENDED_DISCOVERY_ENTRY {
+
+    UCHAR TRTYPE;  // Transport Type - NVMEOF_TRANSPORT_TYPE
+    UCHAR ADRFAM;  // Address Family - NVMEOF_ADDRESS_FAMILY
+    UCHAR SUBTYPE; // Subsystem Type - NVMEOF_SUBSYSTEM_TYPE
+
+    union {
+
+        struct {
+
+            UCHAR SecureChannel : 2; // NVMEOF_SECURE_CHANNEL
+            UCHAR SqFlowControlDisable : 1;
+            UCHAR ZeroHostIdSupport : 1;
+            UCHAR AuthAndSecureChannel : 2; //NVMEOF_AUTH_SECURE_CHANNEL
+            UCHAR Reserved : 2;
+        } DUMMYSTRUCTNAME;
+
+        UCHAR AsUchar;
+
+    } TREQ;        // Transport Requirements
+
+    USHORT PORTID; // Subsystem Port Id
+    USHORT CNTLID; // Controller Id
+                   // If subsystem supports dynamic controller model the value will be FFFFh.
+                   // If subsystem supports static controller model and value is FFFEh, the
+                   //   host should remember the controller Id returned by Connect command.
+                   // If subsystem supports static controller model and value is between
+                   // 0h and FFEFh, then a specific controller is specified.
+    USHORT ASQSZ;  // Maximum size of an Admin Submission Queue, minimum value of 32
+
+    union {
+
+        struct {
+
+            USHORT DuplicateReturnedInfo : 1;
+            USHORT ExplicitPersistentConnectionSupport : 1;
+            USHORT NoCDCConnectivity : 1;
+            USHORT Reserved : 13;
+        } DUMMYSTRUCTNAME;
+
+        USHORT AsUshort;
+
+    } EFLAGS;        // Entry Flags
+
+    UCHAR Reserved0[20];
+    UCHAR TRSVCID[NVMEOF_TRANSPORT_SERVID_MAX_LEN]; // NVMe Transport service identifier
+    UCHAR Reserved1[192];
+    UCHAR NQN[NVME_NQN_MAX_LEN]; // NQN that uniquely identifies the NVM entity (Subsystem/Host)
+
+    UCHAR TRADDR[NVMEOF_TRANSPORT_ADDR_MAX_LEN]; // Address of the fabric interface on the NVM entity (Subsystem/Host)
+    UCHAR TSAS[NVMEOF_TRANSPORT_SAS_MAX_LEN]; // Transport specific information of the address
+
+    ULONG TEL; // Length in bytes of the entire extended discovery information entry
+
+    USHORT NUMEXAT; // Number of Extended Attributes
+
+    USHORT Reserved2;
+
+} NVME_EXTENDED_DISCOVERY_ENTRY, *PNVME_EXTENDED_DISCOVERY_ENTRY;
+
+C_ASSERT(sizeof(NVME_EXTENDED_DISCOVERY_ENTRY) == 1032);
+
+typedef enum _NVME_EXTENDED_ATTR_TYPE {
+
+    NvmeExtAttrReserved0 = 0x0,
+    NvmeExtAttrHostId = 0x1,
+    NvmeExtAttrAdminLabelAscii = 0x2,
+    NvmeExtAttrAdminLabelUtf8 = 0x3,
+    NvmeExtAttrReservedStart = 0x4,
+    NvmeExtAttrReservedEnd = 0xFEFF,
+    NvmeExtAttrVendorStart = 0xFF00,
+    NvmeExtAttrVendorEnd = 0xFFFF
+
+} NVME_EXTENDED_ATTR_TYPE;
+
+typedef struct _NVME_EXTENDED_ATTR {
+
+    USHORT EXATTYPE; // Extended Attribute Type - NVME_EXTENDED_ATTR_TYPE
+
+    USHORT EXATLEN; // Extended Attribute Length
+
+    _Field_size_(EXATLEN)
+    UCHAR EXATVAL[0]; // Extended Attribute Value
+
+} NVME_EXTENDED_ATTR, *PNVME_EXTENDED_ATTR;
+
+//
+// NVMe Discovery Log Page Header
+//
+typedef struct _NVME_DISCOVERY_HEADER {
 
     ULONGLONG GENCTR; // Version of the discovery information starting at 0h and incrementing
     ULONGLONG NUMREC; // Number of records contained in the log
     USHORT RECFMT; // Format of the Discovery Log Page
-    UCHAR Reserved0[1006];
-    NVMEOF_DISC_LPE Entries[ANYSIZE_ARRAY]; // Discovery Log Page entries
 
-} NVMEOF_DISC_LOGPAGE;
+    union {
+
+        struct {
+
+            UCHAR Extended : 1;
+            UCHAR PortLocal : 1;
+            UCHAR AllSubsystems : 1;
+            UCHAR Reserved : 5;
+        } DUMMYSTRUCTNAME;
+
+        UCHAR AsUchar;
+
+    } DLPF;        // Entry Flags
+
+    UCHAR Reserved0;
+
+    ULONG TDLPL;
+
+    UCHAR Reserved1[1000];
+
+} NVME_DISCOVERY_HEADER, *PNVME_DISCOVERY_HEADER;
+
+C_ASSERT(sizeof(NVME_DISCOVERY_HEADER) == 1024);
+
+//
+// Data for NVME_ADMIN_COMMAND_DISCOVERY_INFO_MGMT
+//
+typedef enum {
+
+    NVME_DISCOVERY_INFO_ENTRY_FORMAT_RESERVED = 0,
+    NVME_DISCOVERY_INFO_ENTRY_FORMAT_BASIC = 1,
+    NVME_DISCOVERY_INFO_ENTRY_FORMAT_EXTENDED = 2
+
+} NVME_DISCOVERY_INFO_ENTRY_FORMATS;
+
+typedef enum {
+
+    NVME_DISCOVERY_INFO_ENTITY_TYPE_RESERVED = 0,
+    NVME_DISCOVERY_INFO_ENTITY_TYPE_HOST = 1,
+    NVME_DISCOVERY_INFO_ENTITY_TYPE_DDC = 2,
+    NVME_DISCOVERY_INFO_ENTITY_TYPE_CDC = 3
+
+} NVME_DISCOVERY_INFO_ENTITY_TYPES;
+
+#define NVME_DISCOVERY_INFO_MGMT_EKTYPE_PORTID      0x003F   // EKTYPE - Port ID Based (For Subsystem)
+#define NVME_DISCOVERY_INFO_MGMT_EKTYPE_TRADDR      0x005F   // EKTYPE - TRADDR Based (For Subsystem and Host)
+
+typedef struct _NVME_DISCOVERY_INFO_MGMT_HEADER {
+
+    ULONG       TDL;               // Total Data Length (TDL)
+    ULONG       Reserved0;
+
+    ULONGLONG   NUMENT;            // Number of Entries (NUMENT)
+
+    USHORT      ENTFMT;            // Entry Format (ENTFMT)
+    USHORT      ETYPE;             // Entity Type (ETYPE)
+
+    UCHAR       PORTLCL;           // Port Local (PORTLCL)
+    UCHAR       Reserved1;
+
+    union {
+
+        struct {
+
+            USHORT  NQN          : 1;
+            USHORT  TSAS         : 1;
+            USHORT  TRSVCID      : 1;
+            USHORT  ADRFAM       : 1;
+            USHORT  TRTYPE       : 1;
+            USHORT  PORTID       : 1;
+            USHORT  TRADDR       : 1;
+            USHORT  Reserved     : 9;
+
+        } DUMMYSTRUCTNAME;
+
+        USHORT AsUshort;
+
+    } EKTYPE;                      // Entry Key Type (EKTYPE)
+
+    UCHAR       EID[256];          // Entity Identifier (EID)
+    UCHAR       ENAME[256];        // Entity Name (ENAME)
+    UCHAR       EVER[64];          // Entity Version (EVER)
+
+    UCHAR       Reserved2[424];
+
+} NVME_DISCOVERY_INFO_MGMT_HEADER, *PNVME_DISCOVERY_INFO_MGMT_HEADER;
+
+C_ASSERT(sizeof(NVME_DISCOVERY_INFO_MGMT_HEADER) == 1024);
 
 #if _MSC_VER >= 1200
 #pragma warning(pop)

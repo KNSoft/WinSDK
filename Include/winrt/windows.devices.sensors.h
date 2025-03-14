@@ -1970,6 +1970,21 @@ namespace ABI {
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIMagnetometerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                interface IOnlookerDetectionOptions;
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions ABI::Windows::Devices::Sensors::IOnlookerDetectionOptions
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor_FWD_DEFINED__
 namespace ABI {
@@ -2254,21 +2269,6 @@ namespace ABI {
 #define __x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2 ABI::Windows::Devices::Sensors::IPedometerStatics2
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2_FWD_DEFINED__
-
-#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                interface IPrivacyScreenOptions;
-            } /* Sensors */
-        } /* Devices */
-    } /* Windows */
-} /* ABI */
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions ABI::Windows::Devices::Sensors::IPrivacyScreenOptions
-
-#endif // ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIProximitySensor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIProximitySensor_FWD_DEFINED__
@@ -5640,7 +5640,7 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
-                typedef enum PrivacyScreenAction : int PrivacyScreenAction;
+                typedef enum OnlookerDetectionAction : int OnlookerDetectionAction;
             } /* Sensors */
         } /* Devices */
     } /* Windows */
@@ -5650,7 +5650,7 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
-                typedef enum PrivacyScreenBackOnMode : int PrivacyScreenBackOnMode;
+                typedef enum OnlookerDetectionBackOnMode : int OnlookerDetectionBackOnMode;
             } /* Sensors */
         } /* Devices */
     } /* Windows */
@@ -5920,6 +5920,16 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
+                class OnlookerDetectionOptions;
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
                 class OrientationSensorReading;
             } /* Sensors */
         } /* Devices */
@@ -5931,16 +5941,6 @@ namespace ABI {
         namespace Devices {
             namespace Sensors {
                 class PedometerDataThreshold;
-            } /* Sensors */
-        } /* Devices */
-    } /* Windows */
-} /* ABI */
-
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                class PrivacyScreenOptions;
             } /* Sensors */
         } /* Devices */
     } /* Windows */
@@ -6157,6 +6157,63 @@ namespace ABI {
 
 /*
  *
+ * Struct Windows.Devices.Sensors.OnlookerDetectionAction
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                enum OnlookerDetectionAction : int
+                {
+                    OnlookerDetectionAction_Dim = 0,
+                    OnlookerDetectionAction_Notify = 1,
+                    OnlookerDetectionAction_DimAndNotify = 2,
+                };
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
+ * Struct Windows.Devices.Sensors.OnlookerDetectionBackOnMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                enum OnlookerDetectionBackOnMode : int
+                {
+                    OnlookerDetectionBackOnMode_Manually = 0,
+                    OnlookerDetectionBackOnMode_OneHour = 1,
+                    OnlookerDetectionBackOnMode_FourHours = 2,
+                    OnlookerDetectionBackOnMode_OneDay = 3,
+                };
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Struct Windows.Devices.Sensors.PedometerStepKind
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -6178,63 +6235,6 @@ namespace ABI {
     } /* Windows */
 } /* ABI */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-/*
- *
- * Struct Windows.Devices.Sensors.PrivacyScreenAction
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                enum PrivacyScreenAction : int
-                {
-                    PrivacyScreenAction_Dim = 0,
-                    PrivacyScreenAction_Notify = 1,
-                    PrivacyScreenAction_DimAndNotify = 2,
-                };
-            } /* Sensors */
-        } /* Devices */
-    } /* Windows */
-} /* ABI */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-
-/*
- *
- * Struct Windows.Devices.Sensors.PrivacyScreenBackOnMode
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                enum PrivacyScreenBackOnMode : int
-                {
-                    PrivacyScreenBackOnMode_Manually = 0,
-                    PrivacyScreenBackOnMode_OneHour = 1,
-                    PrivacyScreenBackOnMode_FourHours = 2,
-                    PrivacyScreenBackOnMode_OneDay = 3,
-                };
-            } /* Sensors */
-        } /* Devices */
-    } /* Windows */
-} /* ABI */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -9186,11 +9186,11 @@ namespace ABI {
     namespace Windows {
         namespace Devices {
             namespace Sensors {
-                MIDL_INTERFACE("78541e49-cb08-510c-b70f-123f3b2dd367")
+                MIDL_INTERFACE("ed4e03aa-5ca2-5c02-b783-262e91295619")
                 IHumanPresenceFeatures3 : public IInspectable
                 {
                 public:
-                    virtual HRESULT STDMETHODCALLTYPE get_IsPrivacyScreenSupported(
+                    virtual HRESULT STDMETHODCALLTYPE get_IsOnlookerDetectionSupported(
                         boolean* value
                         ) = 0;
                 };
@@ -9878,14 +9878,14 @@ namespace ABI {
                 IHumanPresenceSettings3 : public IInspectable
                 {
                 public:
-                    virtual HRESULT STDMETHODCALLTYPE get_IsPrivacyScreenEnabled(
+                    virtual HRESULT STDMETHODCALLTYPE get_IsOnlookerDetectionEnabled(
                         boolean* value
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE put_IsPrivacyScreenEnabled(
+                    virtual HRESULT STDMETHODCALLTYPE put_IsOnlookerDetectionEnabled(
                         boolean value
                         ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE get_PrivacyScreenOptions(
-                        ABI::Windows::Devices::Sensors::IPrivacyScreenOptions** value
+                    virtual HRESULT STDMETHODCALLTYPE get_OnlookerDetectionOptions(
+                        ABI::Windows::Devices::Sensors::IOnlookerDetectionOptions** value
                         ) = 0;
                 };
 
@@ -11537,6 +11537,55 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIMagnetometerStatics2
 
 /*
  *
+ * Interface Windows.Devices.Sensors.IOnlookerDetectionOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.OnlookerDetectionOptions
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IOnlookerDetectionOptions[] = L"Windows.Devices.Sensors.IOnlookerDetectionOptions";
+namespace ABI {
+    namespace Windows {
+        namespace Devices {
+            namespace Sensors {
+                MIDL_INTERFACE("0412b36f-36e6-51e2-876e-65197cc53c12")
+                IOnlookerDetectionOptions : public IInspectable
+                {
+                public:
+                    virtual HRESULT STDMETHODCALLTYPE get_Action(
+                        ABI::Windows::Devices::Sensors::OnlookerDetectionAction* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_Action(
+                        ABI::Windows::Devices::Sensors::OnlookerDetectionAction value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE get_BackOnMode(
+                        ABI::Windows::Devices::Sensors::OnlookerDetectionBackOnMode* value
+                        ) = 0;
+                    virtual HRESULT STDMETHODCALLTYPE put_BackOnMode(
+                        ABI::Windows::Devices::Sensors::OnlookerDetectionBackOnMode value
+                        ) = 0;
+                };
+
+                MIDL_CONST_ID IID& IID_IOnlookerDetectionOptions = __uuidof(IOnlookerDetectionOptions);
+            } /* Sensors */
+        } /* Devices */
+    } /* Windows */
+} /* ABI */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.Devices.Sensors.IOrientationSensor
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -12318,55 +12367,6 @@ namespace ABI {
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
-
-/*
- *
- * Interface Windows.Devices.Sensors.IPrivacyScreenOptions
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- * Interface is a part of the implementation of type Windows.Devices.Sensors.PrivacyScreenOptions
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IPrivacyScreenOptions[] = L"Windows.Devices.Sensors.IPrivacyScreenOptions";
-namespace ABI {
-    namespace Windows {
-        namespace Devices {
-            namespace Sensors {
-                MIDL_INTERFACE("800805ea-18e7-55ea-928e-4e165d139d52")
-                IPrivacyScreenOptions : public IInspectable
-                {
-                public:
-                    virtual HRESULT STDMETHODCALLTYPE get_Action(
-                        ABI::Windows::Devices::Sensors::PrivacyScreenAction* value
-                        ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE put_Action(
-                        ABI::Windows::Devices::Sensors::PrivacyScreenAction value
-                        ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE get_BackOnMode(
-                        ABI::Windows::Devices::Sensors::PrivacyScreenBackOnMode* value
-                        ) = 0;
-                    virtual HRESULT STDMETHODCALLTYPE put_BackOnMode(
-                        ABI::Windows::Devices::Sensors::PrivacyScreenBackOnMode value
-                        ) = 0;
-                };
-
-                MIDL_CONST_ID IID& IID_IPrivacyScreenOptions = __uuidof(IPrivacyScreenOptions);
-            } /* Sensors */
-        } /* Devices */
-    } /* Windows */
-} /* ABI */
-
-EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions;
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -13796,8 +13796,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics2 interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics2 interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IHumanPresenceSensor ** Default Interface **
@@ -13915,9 +13915,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IInclinometer ** Default Interface **
@@ -14008,8 +14008,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ILightSensor ** Default Interface **
@@ -14120,8 +14120,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IMagnetometer ** Default Interface **
@@ -14206,15 +14206,38 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.Sensors.OnlookerDetectionOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IOnlookerDetectionOptions ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_OnlookerDetectionOptions_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_OnlookerDetectionOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_OnlookerDetectionOptions[] = L"Windows.Devices.Sensors.OnlookerDetectionOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Class Windows.Devices.Sensors.OrientationSensor
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IOrientationSensor ** Default Interface **
@@ -14363,29 +14386,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_PedometerReadingChangedEventArgs[] = L"Windows.Devices.Sensors.PedometerReadingChangedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-/*
- *
- * Class Windows.Devices.Sensors.PrivacyScreenOptions
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- * Class implements the following interfaces:
- *    Windows.Devices.Sensors.IPrivacyScreenOptions ** Default Interface **
- *
- * Class Marshaling Behavior:  Agile - Class is agile
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#ifndef RUNTIMECLASS_Windows_Devices_Sensors_PrivacyScreenOptions_DEFINED
-#define RUNTIMECLASS_Windows_Devices_Sensors_PrivacyScreenOptions_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_PrivacyScreenOptions[] = L"Windows.Devices.Sensors.PrivacyScreenOptions";
-#endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -14569,8 +14569,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ISimpleOrientationSensor ** Default Interface **
@@ -15375,6 +15375,12 @@ typedef interface __x_ABI_CWindows_CDevices_CSensors_CIMagnetometerStatics2 __x_
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIMagnetometerStatics2_FWD_DEFINED__
 
+#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+#define ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+typedef interface __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions;
+
+#endif // ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_FWD_DEFINED__
+
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor_FWD_DEFINED__
 typedef interface __x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor __x_ABI_CWindows_CDevices_CSensors_CIOrientationSensor;
@@ -15488,12 +15494,6 @@ typedef interface __x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics __x_ABI_
 typedef interface __x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2 __x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2;
 
 #endif // ____x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2_FWD_DEFINED__
-
-#ifndef ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
-#define ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
-typedef interface __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions;
-
-#endif // ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_FWD_DEFINED__
 
 #ifndef ____x_ABI_CWindows_CDevices_CSensors_CIProximitySensor_FWD_DEFINED__
 #define ____x_ABI_CWindows_CDevices_CSensors_CIProximitySensor_FWD_DEFINED__
@@ -21875,9 +21875,9 @@ typedef enum __x_ABI_CWindows_CDevices_CSensors_CActivitySensorReadingConfidence
 
 typedef enum __x_ABI_CWindows_CDevices_CSensors_CMagnetometerAccuracy __x_ABI_CWindows_CDevices_CSensors_CMagnetometerAccuracy;
 
-typedef enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenAction __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenAction;
+typedef enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionAction __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionAction;
 
-typedef enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenBackOnMode __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenBackOnMode;
+typedef enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionBackOnMode __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionBackOnMode;
 
 typedef enum __x_ABI_CWindows_CDevices_CSensors_CSensorOptimizationGoal __x_ABI_CWindows_CDevices_CSensors_CSensorOptimizationGoal;
 
@@ -21992,6 +21992,47 @@ enum __x_ABI_CWindows_CDevices_CSensors_CMagnetometerAccuracy
 
 /*
  *
+ * Struct Windows.Devices.Sensors.OnlookerDetectionAction
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionAction
+{
+    OnlookerDetectionAction_Dim = 0,
+    OnlookerDetectionAction_Notify = 1,
+    OnlookerDetectionAction_DimAndNotify = 2,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
+ * Struct Windows.Devices.Sensors.OnlookerDetectionBackOnMode
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionBackOnMode
+{
+    OnlookerDetectionBackOnMode_Manually = 0,
+    OnlookerDetectionBackOnMode_OneHour = 1,
+    OnlookerDetectionBackOnMode_FourHours = 2,
+    OnlookerDetectionBackOnMode_OneDay = 3,
+};
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Struct Windows.Devices.Sensors.PedometerStepKind
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -22005,47 +22046,6 @@ enum __x_ABI_CWindows_CDevices_CSensors_CPedometerStepKind
     PedometerStepKind_Running = 2,
 };
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-/*
- *
- * Struct Windows.Devices.Sensors.PrivacyScreenAction
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenAction
-{
-    PrivacyScreenAction_Dim = 0,
-    PrivacyScreenAction_Notify = 1,
-    PrivacyScreenAction_DimAndNotify = 2,
-};
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-
-/*
- *
- * Struct Windows.Devices.Sensors.PrivacyScreenBackOnMode
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenBackOnMode
-{
-    PrivacyScreenBackOnMode_Manually = 0,
-    PrivacyScreenBackOnMode_OneHour = 1,
-    PrivacyScreenBackOnMode_FourHours = 2,
-    PrivacyScreenBackOnMode_OneDay = 3,
-};
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -27434,7 +27434,7 @@ typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3Vtbl
         HSTRING* className);
     HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3* This,
         TrustLevel* trustLevel);
-    HRESULT (STDMETHODCALLTYPE* get_IsPrivacyScreenSupported)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3* This,
+    HRESULT (STDMETHODCALLTYPE* get_IsOnlookerDetectionSupported)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3* This,
         boolean* value);
 
     END_INTERFACE
@@ -27465,8 +27465,8 @@ interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3
 #define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3_GetTrustLevel(This, trustLevel) \
     ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
 
-#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3_get_IsPrivacyScreenSupported(This, value) \
-    ((This)->lpVtbl->get_IsPrivacyScreenSupported(This, value))
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceFeatures3_get_IsOnlookerDetectionSupported(This, value) \
+    ((This)->lpVtbl->get_IsOnlookerDetectionSupported(This, value))
 
 #endif /* COBJMACROS */
 
@@ -28723,12 +28723,12 @@ typedef struct __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3Vtbl
         HSTRING* className);
     HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
         TrustLevel* trustLevel);
-    HRESULT (STDMETHODCALLTYPE* get_IsPrivacyScreenEnabled)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
+    HRESULT (STDMETHODCALLTYPE* get_IsOnlookerDetectionEnabled)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
         boolean* value);
-    HRESULT (STDMETHODCALLTYPE* put_IsPrivacyScreenEnabled)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
+    HRESULT (STDMETHODCALLTYPE* put_IsOnlookerDetectionEnabled)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
         boolean value);
-    HRESULT (STDMETHODCALLTYPE* get_PrivacyScreenOptions)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
-        __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions** value);
+    HRESULT (STDMETHODCALLTYPE* get_OnlookerDetectionOptions)(__x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3* This,
+        __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions** value);
 
     END_INTERFACE
 } __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3Vtbl;
@@ -28758,14 +28758,14 @@ interface __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3
 #define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_GetTrustLevel(This, trustLevel) \
     ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
 
-#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_get_IsPrivacyScreenEnabled(This, value) \
-    ((This)->lpVtbl->get_IsPrivacyScreenEnabled(This, value))
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_get_IsOnlookerDetectionEnabled(This, value) \
+    ((This)->lpVtbl->get_IsOnlookerDetectionEnabled(This, value))
 
-#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_put_IsPrivacyScreenEnabled(This, value) \
-    ((This)->lpVtbl->put_IsPrivacyScreenEnabled(This, value))
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_put_IsOnlookerDetectionEnabled(This, value) \
+    ((This)->lpVtbl->put_IsOnlookerDetectionEnabled(This, value))
 
-#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_get_PrivacyScreenOptions(This, value) \
-    ((This)->lpVtbl->get_PrivacyScreenOptions(This, value))
+#define __x_ABI_CWindows_CDevices_CSensors_CIHumanPresenceSettings3_get_OnlookerDetectionOptions(This, value) \
+    ((This)->lpVtbl->get_OnlookerDetectionOptions(This, value))
 
 #endif /* COBJMACROS */
 
@@ -31853,6 +31853,94 @@ EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIMagnetometerStatics2
 
 /*
  *
+ * Interface Windows.Devices.Sensors.IOnlookerDetectionOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Interface is a part of the implementation of type Windows.Devices.Sensors.OnlookerDetectionOptions
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__)
+#define ____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__
+extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IOnlookerDetectionOptions[] = L"Windows.Devices.Sensors.IOnlookerDetectionOptions";
+typedef struct __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptionsVtbl
+{
+    BEGIN_INTERFACE
+
+    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        REFIID riid,
+        void** ppvObject);
+    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This);
+    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This);
+    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        ULONG* iidCount,
+        IID** iids);
+    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        HSTRING* className);
+    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        TrustLevel* trustLevel);
+    HRESULT (STDMETHODCALLTYPE* get_Action)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionAction* value);
+    HRESULT (STDMETHODCALLTYPE* put_Action)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionAction value);
+    HRESULT (STDMETHODCALLTYPE* get_BackOnMode)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionBackOnMode* value);
+    HRESULT (STDMETHODCALLTYPE* put_BackOnMode)(__x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions* This,
+        enum __x_ABI_CWindows_CDevices_CSensors_COnlookerDetectionBackOnMode value);
+
+    END_INTERFACE
+} __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptionsVtbl;
+
+interface __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions
+{
+    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptionsVtbl* lpVtbl;
+};
+
+#ifdef COBJMACROS
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_QueryInterface(This, riid, ppvObject) \
+    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_AddRef(This) \
+    ((This)->lpVtbl->AddRef(This))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_Release(This) \
+    ((This)->lpVtbl->Release(This))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_GetIids(This, iidCount, iids) \
+    ((This)->lpVtbl->GetIids(This, iidCount, iids))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_GetRuntimeClassName(This, className) \
+    ((This)->lpVtbl->GetRuntimeClassName(This, className))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_GetTrustLevel(This, trustLevel) \
+    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_get_Action(This, value) \
+    ((This)->lpVtbl->get_Action(This, value))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_put_Action(This, value) \
+    ((This)->lpVtbl->put_Action(This, value))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_get_BackOnMode(This, value) \
+    ((This)->lpVtbl->get_BackOnMode(This, value))
+
+#define __x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_put_BackOnMode(This, value) \
+    ((This)->lpVtbl->put_BackOnMode(This, value))
+
+#endif /* COBJMACROS */
+
+EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions;
+#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIOnlookerDetectionOptions_INTERFACE_DEFINED__) */
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Interface Windows.Devices.Sensors.IOrientationSensor
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
@@ -33317,94 +33405,6 @@ interface __x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2
 EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2;
 #endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIPedometerStatics2_INTERFACE_DEFINED__) */
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x20000
-
-/*
- *
- * Interface Windows.Devices.Sensors.IPrivacyScreenOptions
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- * Interface is a part of the implementation of type Windows.Devices.Sensors.PrivacyScreenOptions
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#if !defined(____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__)
-#define ____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__
-extern const __declspec(selectany) _Null_terminated_ WCHAR InterfaceName_Windows_Devices_Sensors_IPrivacyScreenOptions[] = L"Windows.Devices.Sensors.IPrivacyScreenOptions";
-typedef struct __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptionsVtbl
-{
-    BEGIN_INTERFACE
-
-    HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        REFIID riid,
-        void** ppvObject);
-    ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This);
-    ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This);
-    HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        ULONG* iidCount,
-        IID** iids);
-    HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        HSTRING* className);
-    HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        TrustLevel* trustLevel);
-    HRESULT (STDMETHODCALLTYPE* get_Action)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenAction* value);
-    HRESULT (STDMETHODCALLTYPE* put_Action)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenAction value);
-    HRESULT (STDMETHODCALLTYPE* get_BackOnMode)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenBackOnMode* value);
-    HRESULT (STDMETHODCALLTYPE* put_BackOnMode)(__x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions* This,
-        enum __x_ABI_CWindows_CDevices_CSensors_CPrivacyScreenBackOnMode value);
-
-    END_INTERFACE
-} __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptionsVtbl;
-
-interface __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions
-{
-    CONST_VTBL struct __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptionsVtbl* lpVtbl;
-};
-
-#ifdef COBJMACROS
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_QueryInterface(This, riid, ppvObject) \
-    ((This)->lpVtbl->QueryInterface(This, riid, ppvObject))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_AddRef(This) \
-    ((This)->lpVtbl->AddRef(This))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_Release(This) \
-    ((This)->lpVtbl->Release(This))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_GetIids(This, iidCount, iids) \
-    ((This)->lpVtbl->GetIids(This, iidCount, iids))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_GetRuntimeClassName(This, className) \
-    ((This)->lpVtbl->GetRuntimeClassName(This, className))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_GetTrustLevel(This, trustLevel) \
-    ((This)->lpVtbl->GetTrustLevel(This, trustLevel))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_get_Action(This, value) \
-    ((This)->lpVtbl->get_Action(This, value))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_put_Action(This, value) \
-    ((This)->lpVtbl->put_Action(This, value))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_get_BackOnMode(This, value) \
-    ((This)->lpVtbl->get_BackOnMode(This, value))
-
-#define __x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_put_BackOnMode(This, value) \
-    ((This)->lpVtbl->put_BackOnMode(This, value))
-
-#endif /* COBJMACROS */
-
-EXTERN_C const IID IID___x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions;
-#endif /* !defined(____x_ABI_CWindows_CDevices_CSensors_CIPrivacyScreenOptions_INTERFACE_DEFINED__) */
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -35451,8 +35451,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 15.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics2 interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IHumanPresenceSensorStatics2 interface starting with version 15.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IHumanPresenceSensor ** Default Interface **
@@ -35570,9 +35570,9 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  *
  * RuntimeClass contains static methods.
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IInclinometerStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IInclinometer ** Default Interface **
@@ -35663,8 +35663,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ILightSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ILightSensor ** Default Interface **
@@ -35775,8 +35775,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics2 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.IMagnetometerStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IMagnetometer ** Default Interface **
@@ -35861,15 +35861,38 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 
 /*
  *
+ * Class Windows.Devices.Sensors.OnlookerDetectionOptions
+ *
+ * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
+ *
+ * Type is for evaluation purposes and is subject to change or removal in future updates.
+ *
+ * Class implements the following interfaces:
+ *    Windows.Devices.Sensors.IOnlookerDetectionOptions ** Default Interface **
+ *
+ * Class Marshaling Behavior:  Agile - Class is agile
+ *
+ */
+#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#ifndef RUNTIMECLASS_Windows_Devices_Sensors_OnlookerDetectionOptions_DEFINED
+#define RUNTIMECLASS_Windows_Devices_Sensors_OnlookerDetectionOptions_DEFINED
+extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_OnlookerDetectionOptions[] = L"Windows.Devices.Sensors.OnlookerDetectionOptions";
+#endif
+#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
+#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
+
+/*
+ *
  * Class Windows.Devices.Sensors.OrientationSensor
  *
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
+ *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics4 interface starting with version 5.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics2 interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
- *   Static Methods exist on the Windows.Devices.Sensors.IOrientationSensorStatics3 interface starting with version 3.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.IOrientationSensor ** Default Interface **
@@ -36018,29 +36041,6 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
 extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_PedometerReadingChangedEventArgs[] = L"Windows.Devices.Sensors.PedometerReadingChangedEventArgs";
 #endif
 #endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x10000
-
-/*
- *
- * Class Windows.Devices.Sensors.PrivacyScreenOptions
- *
- * Introduced to Windows.Foundation.UniversalApiContract in version 19.0
- *
- * Type is for evaluation purposes and is subject to change or removal in future updates.
- *
- * Class implements the following interfaces:
- *    Windows.Devices.Sensors.IPrivacyScreenOptions ** Default Interface **
- *
- * Class Marshaling Behavior:  Agile - Class is agile
- *
- */
-#if defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
-#if WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#ifndef RUNTIMECLASS_Windows_Devices_Sensors_PrivacyScreenOptions_DEFINED
-#define RUNTIMECLASS_Windows_Devices_Sensors_PrivacyScreenOptions_DEFINED
-extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_Devices_Sensors_PrivacyScreenOptions[] = L"Windows.Devices.Sensors.PrivacyScreenOptions";
-#endif
-#endif // WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION >= 0x130000
-#endif // defined(ENABLE_WINRT_EXPERIMENTAL_TYPES)
 
 /*
  *
@@ -36224,8 +36224,8 @@ extern const __declspec(selectany) _Null_terminated_ WCHAR RuntimeClass_Windows_
  * Introduced to Windows.Foundation.UniversalApiContract in version 1.0
  *
  * RuntimeClass contains static methods.
- *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics2 interface starting with version 7.0 of the Windows.Foundation.UniversalApiContract API contract
+ *   Static Methods exist on the Windows.Devices.Sensors.ISimpleOrientationSensorStatics interface starting with version 1.0 of the Windows.Foundation.UniversalApiContract API contract
  *
  * Class implements the following interfaces:
  *    Windows.Devices.Sensors.ISimpleOrientationSensor ** Default Interface **
